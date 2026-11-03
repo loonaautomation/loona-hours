@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time and a Half Calculator: Your Overtime Rate & Pay | Loona Hours</title>
+<meta name="description" content="Free time and a half calculator: enter your rate and overtime hours to get your 1.5x overtime rate, overtime pay, the extra premium, and full-week gross pay.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/time-and-a-half-calculator.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time and a Half Calculator: Your Overtime Rate & Pay | Loona Hours">
+<meta property="og:description" content="Free time and a half calculator: enter your rate and overtime hours to get your 1.5x overtime rate, overtime pay, the extra premium, and full-week gross pay.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/time-and-a-half-calculator.html">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Time and a Half Calculator: Your Overtime Rate & Pay | Loona Hours">
+<meta name="twitter:description" content="Free time and a half calculator: enter your rate and overtime hours to get your 1.5x overtime rate, overtime pay, the extra premium, and full-week gross pay.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours \u2014 Time and a Half Calculator","url":"https://loonaautomation.github.io/loona-hours/time-and-a-half-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate time and a half?","acceptedAnswer":{"@type":"Answer","text":"Multiply your hourly rate by 1.5. At $18/hour, time and a half is $27/hour. Then multiply that rate by your overtime hours for the overtime pay."}},{"@type":"Question","name":"What is time and a half for $20 an hour?","acceptedAnswer":{"@type":"Answer","text":"$30 an hour. Ten overtime hours at that rate pay $300, of which $100 is the premium over straight time."}},{"@type":"Question","name":"Is time and a half paid on the whole check?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 only on the overtime hours themselves. Your first 40 hours in the week are paid at your regular rate; only hours beyond the trigger earn the 1.5\u00d7 rate."}},{"@type":"Question","name":"What is double time compared with time and a half?","acceptedAnswer":{"@type":"Answer","text":"Double time is 2\u00d7 your rate, used in narrower situations: California hours past 12 in a day, some 7th-day hours, and certain union contracts and holidays. See the Double Time Calculator."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="index.html">Loona <span>Hours</span></a><nav><a href="time-card-calculator.html">Time Card</a><a href="overtime-calculator.html">Overtime</a><a href="california-overtime-calculator.html">California</a><a href="overtime-calculator-by-state.html">By State</a><a href="index.html#tools">All Tools</a><a href="about.html">About</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Time and a Half Calculator — Your Overtime Rate and Pay</h1><p>Time and a half means your rate plus half again. Enter your rate and overtime hours to see the rate, the pay, and the premium separately.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>In short:</strong> multiply your hourly rate by 1.5 to get your overtime rate, apply it to your overtime hours, and see both the total overtime pay and the extra 0.5× premium that overtime actually adds over straight time.</div>
+<div class="strip" aria-label="Popular tools"><a href="time-card-calculator.html">Time Card Calculator</a><a href="hours-calculator.html">Hours Calculator</a><a href="overtime-calculator.html">Overtime Calculator</a><a href="california-overtime-calculator.html">California Overtime Calculator</a><a href="time-and-a-half-calculator.html">Time and a Half Calculator</a><a href="minutes-to-decimal-converter.html">Minutes to Decimal Hours Converter</a></div>
+<div class="calc">
+<h2>Time and a Half Calculator</h2>
+<div class="frow">
+<div class="field"><label for="otH">Overtime hours</label><input type="number" id="otH" value="10" step="0.25" min="0" ></div><div class="field"><label for="rate">Regular hourly rate ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div>
+<div class="field"><label for="incl">Show pay</label><select id="incl"><option value="ot" selected>Overtime hours only</option><option value="full">Add a 40-hour regular week</option></select></div>
+</div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">Calculate time and a half</button></div>
+<div class="stats" id="stats"></div>
+<div id="payTable"></div>
+<div id="quickLine"></div>
+</div>
+<div class="sec"><h2>How It Works — The Rule Behind This Calculator</h2><p>"Time and a half" is exactly what it sounds like: your regular hourly rate, plus half of it again — a <strong>1.5× multiplier</strong>. At $20/hour, your overtime rate is $30/hour. Of each overtime hour's $30, $20 is the straight-time value of the hour and $10 is the <em>premium</em> — the extra the law requires for hours past 40 in a week (or past the daily trigger in daily-overtime states).</p>
+<p>That split matters beyond curiosity: the premium half is the part the temporary federal tax deduction for overtime (tax years 2025–2028) is built around — see the <a href="overtime-calculator-with-taxes.html">Overtime Calculator with Taxes</a>. And if you are checking a full week rather than just the premium hours, the <a href="overtime-calculator.html">Overtime Calculator</a> splits the whole week for you.</p></div>
+<div class="sec"><h2>Related Hours Tools</h2><div class="grid"><a class="card" href="double-time-calculator.html"><h3>Double Time Calculator</h3><p>Double time is 2× your rate — rarer than overtime and worth real money. See the rate, the pay, and when the law or a contract actually owes it.</p><span class="badge">Free — try it</span></a><a class="card" href="overtime-calculator.html"><h3>Overtime Calculator</h3><p>The federal rule in one box: weekly hours and your rate in, regular hours, overtime hours at 1.5× and total gross pay out.</p><span class="badge">Free — try it</span></a><a class="card" href="overtime-calculator-with-taxes.html"><h3>Overtime Calculator with Taxes</h3><p>A dated, time-limited estimator for the temporary federal overtime deduction (tax years 2025–2028): the qualified premium, the caps, the phase-out, the saving.</p><span class="badge">Free — try it</span></a><a class="card" href="weekly-pay-calculator.html"><h3>Weekly Gross Pay Calculator</h3><p>From hours to every paycheque shape: weekly gross split into regular, overtime and double time, then converted to biweekly, monthly and annual equivalents.</p><span class="badge">Free — try it</span></a></div></div>
+<div class="sec"><h2>Frequently Asked Questions</h2><details class="faq"><summary>How do I calculate time and a half?</summary><p>Multiply your hourly rate by 1.5. At $18/hour, time and a half is $27/hour. Then multiply that rate by your overtime hours for the overtime pay.</p></details><details class="faq"><summary>What is time and a half for $20 an hour?</summary><p>$30 an hour. Ten overtime hours at that rate pay $300, of which $100 is the premium over straight time.</p></details><details class="faq"><summary>Is time and a half paid on the whole check?</summary><p>No — only on the overtime hours themselves. Your first 40 hours in the week are paid at your regular rate; only hours beyond the trigger earn the 1.5× rate.</p></details><details class="faq"><summary>What is double time compared with time and a half?</summary><p>Double time is 2× your rate, used in narrower situations: California hours past 12 in a day, some 7th-day hours, and certain union contracts and holidays. See the Double Time Calculator.</p></details></div>
+<div class="disc"><strong>Disclaimer:</strong> Estimates only — not payroll or legal advice. Your employer's payroll rules and state law control your actual pay. Figures are rounded for display; your pay stub and payroll department are the official record.</div>
+</div>
+<footer>© 2026 Loona Automation — Loona Hours: free timesheet, hours and overtime calculators for US workers.<br><a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>All calculations run on your device — nothing is uploaded or stored on a server.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'Daily overtime after 8 hours in a day. Employers with fewer than 4 employees are exempt, and employees on a DOL-approved voluntary flexible work-hour plan can work up to 10 hours a day at straight time.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'Daily overtime: 1.5x after 8 hours, 2x after 12 hours, plus special rules on the 7th consecutive day of a workweek. Meal and rest break premiums are separate and are not included in this estimate. A validly adopted alternative workweek schedule (up to 10 hours a day by employee election) changes the daily rule.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'Overtime after 40 hours in a week, 12 hours in a day, or 12 consecutive hours — whichever gives the employee the greater benefit. This estimator uses hours per day; the 12-consecutive-hours rule can differ for split shifts.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'Hawaii',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'Louisiana',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'Daily overtime after 8 hours in a workday applies only if your regular rate is less than 1.5 times the Nevada minimum wage ($18.00/hour at the $12.00 minimum wage). At or above that rate, only weekly overtime after 40 hours applies. Nevada counts a workday as a rolling 24-hour period from when you start work, and a mutually agreed 4-day/10-hour schedule is exempt from the daily rule.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'New Jersey',ruleType:'federal'},
+    NM:{name:'New Mexico',ruleType:'federal'}, NY:{name:'New York',ruleType:'federal'},
+    NC:{name:'North Carolina',ruleType:'federal'}, ND:{name:'North Dakota',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'Most Oregon employers owe overtime only after 40 hours in a week. Daily overtime after 10 hours in a day applies in mills, factories and manufacturing (and a few specific sectors), where the employee is paid the greater of daily or weekly overtime.'},
+    PA:{name:'Pennsylvania',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'South Carolina',ruleType:'federal'}, SD:{name:'South Dakota',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'West Virginia',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "New Year's Day"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Christmas Day')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">Total hours ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">Overtime 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">Double time 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">Gross pay</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Amount</th></tr>'
+ +'<tr><td>Regular pay</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>Overtime pay (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>Double-time pay (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>Shift differential premium</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>Gross pay</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var rate=gv('rate');var otMin=Math.round(gv('otH')*60);var full=document.getElementById('incl').value==='full';var reg=full?2400:0;
+var pay=LH.grossPay(reg,otMin,0,rate);
+var el=document.getElementById('stats');
+el.innerHTML='<div class="stat"><div class="v">'+LH.money(rate*1.5)+'</div><div class="k">Time-and-a-half rate</div></div>'
++'<div class="stat"><div class="v">'+LH.money(pay.otPay)+'</div><div class="k">Overtime pay</div></div>'
++'<div class="stat"><div class="v">'+LH.money(pay.otPay-(otMin/60*rate))+'</div><div class="k">Extra premium over straight time</div></div>'
++(full?'<div class="stat"><div class="v">'+LH.money(pay.total)+'</div><div class="k">Week gross (40 + OT)</div></div>':'');
+payTable(document.getElementById('payTable'),reg,otMin,0,rate,pay);
+document.getElementById('quickLine').innerHTML='<p class="small" style="margin-top:8px">Quick check: time and a half of '+LH.money(rate)+' is <strong>'+LH.money(rate*1.5)+'</strong> per hour.</p>';}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+</body>
+</html>
