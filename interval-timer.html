@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interval Timer for HIIT &amp; Workouts — Work/Rest Rounds with Beeps | Loona Hours</title>
+<meta name="description" content="Free interval timer: set work seconds, rest seconds and rounds, with a get-ready countdown, big phase labels and beeps at every change. Tabata-ready, timestamp-accurate.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/interval-timer.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Interval Timer for HIIT &amp; Workouts — Work/Rest Rounds with Beeps | Loona Hours">
+<meta property="og:description" content="Free interval timer: set work seconds, rest seconds and rounds, with a get-ready countdown, big phase labels and beeps at every change. Tabata-ready, timestamp-accurate.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/interval-timer.html">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interval Timer for HIIT &amp; Workouts — Work/Rest Rounds with Beeps | Loona Hours">
+<meta name="twitter:description" content="Free interval timer: set work seconds, rest seconds and rounds, with a get-ready countdown, big phase labels and beeps at every change. Tabata-ready, timestamp-accurate.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Loona Hours \u2014 Interval Timer for HIIT Workouts", "url": "https://loonaautomation.github.io/loona-hours/interval-timer.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Loona Automation"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a Tabata timer setting?", "acceptedAnswer": {"@type": "Answer", "text": "Tabata is 20 seconds of work and 10 seconds of rest for 8 rounds, with no prepare time needed once you are warmed up: set Get ready 0, Work 20, Rest 10, Rounds 8. The whole block takes exactly 3 minutes 50 seconds because there is no rest after the final round."}}, {"@type": "Question", "name": "Is there a rest after the last round?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 the workout ends the moment the final work round ends, which is how interval training is normally programmed and how the totals in the worked example below are calculated."}}, {"@type": "Question", "name": "Why does the timer beep at different counts?", "acceptedAnswer": {"@type": "Answer", "text": "So you can train by ear: three beeps mean a work round starts, two mean rest, and five mean the workout is finished. Sound needs one interaction first \u2014 pressing Start unlocks it."}}, {"@type": "Question", "name": "Will the rounds stay accurate if my phone screen turns off?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Phases come from timestamps, not from counting updates, so when the screen wakes the timer is already in the correct phase with the correct seconds left. Keep the tab open and the volume up for the beeps."}}, {"@type": "Question", "name": "Can I use this for boxing, sparring or circuit classes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 boxing rounds are typically 180 seconds of work with 60 seconds of rest: set Work 180, Rest 60, Rounds 12, Get ready 10. Teachers also use it for station rotations: one work block per station, rest as the changeover."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+
+.bigclock{font-size:2.6rem;font-weight:800;color:var(--teal);text-align:center;font-variant-numeric:tabular-nums;letter-spacing:1px;margin:8px 0}
+.bigclock small{display:block;font-size:.8rem;font-weight:600;color:var(--mut);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip{background:var(--soft);border:1.5px solid var(--teal2);color:var(--teal);border-radius:20px;padding:7px 14px;font-size:.9rem;font-weight:700;cursor:pointer}
+.chip:hover{background:var(--teal);color:#fff}
+.ringwrap{display:flex;justify-content:center;margin:6px 0 2px}
+.ringbg{fill:none;stroke:#e7f2ee;stroke-width:10}
+.ringfg{fill:none;stroke:var(--gold);stroke-width:10;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center}
+.prog{height:12px;background:var(--soft);border-radius:8px;overflow:hidden;margin:10px 0}
+.prog>div{height:100%;background:var(--gold);width:0%}
+.center{text-align:center}
+table.laps td,table.laps th{text-align:right}
+table.laps td:first-child,table.laps th:first-child{text-align:left}
+.zstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:14px 0}
+.zstat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.zstat .v{font-size:1.15rem;font-weight:800;color:var(--teal)}
+.zstat .k{font-size:.75rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.scrollx{overflow-x:auto}
+.phase{font-size:1.05rem;font-weight:800;color:var(--teal2);text-align:center;text-transform:uppercase;letter-spacing:2px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Loona Automation",
+   "item": "https://loonaautomation.github.io/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Loona Hours",
+   "item": "https://loonaautomation.github.io/loona-hours/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Interval Timer for HIIT & Workouts — Work/Rest Rounds with Beeps",
+   "item": "https://loonaautomation.github.io/loona-hours/interval-timer.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="index.html">Loona <span>Hours</span></a><nav><a href="time-card-calculator.html">Time Card</a><a href="overtime-calculator.html">Overtime</a><a href="california-overtime-calculator.html">California</a><a href="overtime-calculator-by-state.html">By State</a><a href="index.html#tools">All Tools</a><a href="about.html">About</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Interval Timer — HIIT Work &amp; Rest Rounds</h1><p>Set your work time, rest time and rounds once, then train hands-free: a prepare countdown, big WORK and REST labels, and beeps at every change tell you exactly where you are without looking at the clock math.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>In short:</strong> defaults are a classic starter: 10 seconds to get ready, 30 seconds of work, 15 seconds of rest, 8 rounds. Every phase is derived from timestamps, so a sleeping tab can never stretch a rest or shrink a work round.</div>
+<div class="strip" aria-label="Popular tools"><a href="time-card-calculator.html">Time Card Calculator</a><a href="hours-calculator.html">Hours Calculator</a><a href="overtime-calculator.html">Overtime Calculator</a><a href="california-overtime-calculator.html">California Overtime Calculator</a><a href="time-and-a-half-calculator.html">Time and a Half Calculator</a><a href="minutes-to-decimal-converter.html">Minutes to Decimal Hours Converter</a></div>
+<div class="calc">
+<h2>Interval Timer</h2>
+<div class="phase" id="iPhase">Ready</div>
+<div class="bigclock" id="iDisp">0:30<small>per work round</small></div>
+<div class="prog"><div id="iBar"></div></div>
+<div class="frow">
+<div class="field"><label for="iPrep">Get ready (seconds)</label><input type="number" id="iPrep" value="10" min="0" max="120"></div>
+<div class="field"><label for="iWork">Work (seconds)</label><input type="number" id="iWork" value="30" min="1" max="3600"></div>
+<div class="field"><label for="iRest">Rest (seconds)</label><input type="number" id="iRest" value="15" min="0" max="3600"></div>
+<div class="field"><label for="iRounds">Rounds</label><input type="number" id="iRounds" value="8" min="1" max="99"></div>
+</div>
+<div class="btnrow">
+<button class="go" id="iStart" type="button">Start</button>
+<button class="alt" id="iPause" type="button">Pause</button>
+<button class="alt" id="iReset" type="button">Reset</button>
+</div>
+<p class="small">Popular setups: Tabata = 0 ready, 20 work, 10 rest, 8 rounds. EMOM training = 60 work, 0 rest, 10 rounds. Circuit = 40 work, 20 rest, 12 rounds.</p>
+</div>
+<div class="sec"><h2>How It Works</h2><p>An interval workout is a fixed timeline: prepare, then work and rest alternating, with rest only <em>between</em> rounds. This timer precomputes that timeline from your four numbers and then simply asks, on every refresh, “where are we on the timeline?” — answered from timestamps. That design matters mid-workout: phones throttle background tabs aggressively, and a naive ticking timer would quietly hand you longer rests. Here the phases stay honest, and the beeps (three for work, two for rest, five at the finish) mean you rarely need to look at the screen at all.</p></div>
+<div class="sec"><h2>Related Hours Tools</h2><div class="grid"><a class="card" href="stopwatch.html"><h3>Online Stopwatch with Laps</h3><p>Free-form timing with lap splits for runs, swims and circuits.</p><span class="badge">Free — try it</span></a><a class="card" href="online-timer.html"><h3>Online Timer with Presets</h3><p>One simple countdown with preset minutes and an alarm.</p><span class="badge">Free — try it</span></a><a class="card" href="pomodoro-timer.html"><h3>Pomodoro Timer</h3><p>The work/rest pattern tuned for desk focus instead of exercise.</p><span class="badge">Free — try it</span></a><a class="card" href="12-hour-shift-calculator.html"><h3>12-Hour Shift Calculator</h3><p>Weekly totals and overtime for long-shift schedules.</p><span class="badge">Free — try it</span></a></div></div>
+<div class="sec"><h2>Frequently Asked Questions</h2><details class="faq"><summary>What is a Tabata timer setting?</summary><p>Tabata is 20 seconds of work and 10 seconds of rest for 8 rounds, with no prepare time needed once you are warmed up: set Get ready 0, Work 20, Rest 10, Rounds 8. The whole block takes exactly 3 minutes 50 seconds because there is no rest after the final round.</p></details><details class="faq"><summary>Is there a rest after the last round?</summary><p>No — the workout ends the moment the final work round ends, which is how interval training is normally programmed and how the totals in the worked example below are calculated.</p></details><details class="faq"><summary>Why does the timer beep at different counts?</summary><p>So you can train by ear: three beeps mean a work round starts, two mean rest, and five mean the workout is finished. Sound needs one interaction first — pressing Start unlocks it.</p></details><details class="faq"><summary>Will the rounds stay accurate if my phone screen turns off?</summary><p>Yes. Phases come from timestamps, not from counting updates, so when the screen wakes the timer is already in the correct phase with the correct seconds left. Keep the tab open and the volume up for the beeps.</p></details><details class="faq"><summary>Can I use this for boxing, sparring or circuit classes?</summary><p>Yes — boxing rounds are typically 180 seconds of work with 60 seconds of rest: set Work 180, Rest 60, Rounds 12, Get ready 10. Teachers also use it for station rotations: one work block per station, rest as the changeover.</p></details></div>
+<div class="sec"><h2>How it works — the maths</h2>
+<p>The schedule is fully determined by your four settings:</p>
+<div class="inshort"><strong>The formula:</strong><br>
+Total time = prepare + rounds &times; work + (rounds &minus; 1) &times; rest<br>
+Phase at any moment = walk the timeline with (now &minus; start time) until the elapsed time is used up</div>
+<h3>Worked example</h3>
+<p>With the defaults — prepare <strong>10 s</strong>, work <strong>30 s</strong>, rest <strong>15 s</strong>, <strong>8 rounds</strong> — the total is 10 + (8 &times; 30) + (7 &times; 15) = 10 + 240 + 105 = <strong>355 seconds, i.e. 5 minutes 55 seconds</strong>. The last rest is the one that never happens: rests sit only between rounds, so 8 rounds need just 7 rests. At 3 minutes 25 seconds into the workout (205 seconds elapsed), the timeline says: prepare (10) + four full rounds of 45 s (180) = 190 seconds used, so you are 15 seconds into round 5&rsquo;s work — exactly what the display shows.</p>
+</div>
+<div class="sec" id="loona-embed">
+<h2>Embed this tool on your website — free</h2>
+<p>Add this tool to your own website or blog — it is completely free, needs no sign-up, and always shows the latest version. Copy the code below and paste it into your page where you want the tool to appear. Keeping the small &ldquo;Powered by Loona Automation&rdquo; credit line under the embed helps keep this tool free &mdash; but you are free to style or remove it; the tool works either way.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/interval-timer.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Interval Timer for HIIT Workouts by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;Powered by &lt;a href="https://loonaautomation.github.io/loona-hours/interval-timer.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; free Interval Timer for HIIT Workouts&lt;/p&gt;</textarea>
+<p style="margin-top:10px"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">Copy embed code</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy embed code';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+</div>
+<footer>© 2026 Loona Automation — Loona Hours: free timesheet, hours and overtime calculators for US workers.<br><a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>All calculations run on your device — nothing is uploaded or stored on a server.</footer>
+<script>
+
+/* LH-INTERVAL: the schedule is a pure function of (config, start timestamp, now). */
+function intervalTotalMs(cfg){
+  var total = cfg.prepSec*1000, i;
+  for(i=0;i<cfg.rounds;i++){
+    total += cfg.workSec*1000;
+    if(i < cfg.rounds-1) total += cfg.restSec*1000;
+  }
+  return total;
+}
+function intervalPhaseAt(cfg, startTs, now){
+  var t = now - startTs;
+  if(t < 0) t = 0;
+  var prep = cfg.prepSec*1000;
+  if(t < prep) return { phase:'prep', round:0, remainingMs: prep - t, phaseDur: prep };
+  var acc = prep, i;
+  for(i=0;i<cfg.rounds;i++){
+    var w = cfg.workSec*1000;
+    if(t < acc + w) return { phase:'work', round:i+1, remainingMs: acc + w - t, phaseDur: w };
+    acc += w;
+    if(i < cfg.rounds-1){
+      var r = cfg.restSec*1000;
+      if(t < acc + r) return { phase:'rest', round:i+1, remainingMs: acc + r - t, phaseDur: r };
+      acc += r;
+    }
+  }
+  return { phase:'done', round: cfg.rounds, remainingMs: 0, phaseDur: 0 };
+}
+function fmtClockFixed(ms){
+  if(ms < 0) ms = 0;
+  var totalSec = Math.ceil(ms/1000);
+  var h = Math.floor(totalSec/3600), m = Math.floor((totalSec%3600)/60), s = totalSec%60;
+  function p(n){ return (n<10?'0':'')+n; }
+  return h > 0 ? h + ':' + p(m) + ':' + p(s) : p(m) + ':' + p(s);
+}
+
+function loonaBeep(times){
+  try{
+    var AC = window.AudioContext || window.webkitAudioContext; if(!AC) return;
+    var ctx = loonaBeep._ctx || (loonaBeep._ctx = new AC());
+    if(ctx.state === 'suspended'){ ctx.resume(); }
+    var t0 = ctx.currentTime;
+    for(var i=0;i<(times||3);i++){
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type='sine'; o.frequency.value = 880;
+      g.gain.setValueAtTime(0.0001, t0 + i*0.35);
+      g.gain.exponentialRampToValueAtTime(0.4, t0 + i*0.35 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + i*0.35 + 0.28);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t0 + i*0.35); o.stop(t0 + i*0.35 + 0.3);
+    }
+  }catch(e){}
+}
+
+if (typeof document !== 'undefined'){
+  var cfg = { prepSec:10, workSec:30, restSec:15, rounds:8 };
+  var startTs = 0, pausedAt = 0, running = false, tick = null, lastKey = '';
+  var disp = document.getElementById('iDisp'), phaseEl = document.getElementById('iPhase');
+  var bar = document.getElementById('iBar');
+  function readCfg(){
+    cfg.prepSec = Math.max(0, parseInt(document.getElementById('iPrep').value||'0',10)||0);
+    cfg.workSec = Math.max(1, parseInt(document.getElementById('iWork').value||'30',10)||30);
+    cfg.restSec = Math.max(0, parseInt(document.getElementById('iRest').value||'0',10)||0);
+    cfg.rounds = Math.max(1, parseInt(document.getElementById('iRounds').value||'8',10)||8);
+  }
+  function render(){
+    if(!startTs){
+      disp.firstChild.nodeValue = fmtClockFixed(cfg.workSec*1000);
+      phaseEl.textContent = 'Ready — ' + cfg.rounds + ' rounds';
+      bar.style.width = '0%';
+      return;
+    }
+    var ph = intervalPhaseAt(cfg, startTs, running ? Date.now() : pausedAt);
+    disp.firstChild.nodeValue = fmtClockFixed(ph.remainingMs);
+    phaseEl.textContent = ph.phase === 'prep' ? 'Get ready' :
+      ph.phase === 'work' ? ('Work — round ' + ph.round + ' of ' + cfg.rounds) :
+      ph.phase === 'rest' ? ('Rest — next: round ' + (ph.round+1)) : 'Done — workout complete';
+    bar.style.width = ph.phaseDur ? (100*(1 - ph.remainingMs/ph.phaseDur)) + '%' : '100%';
+    var key = ph.phase + ':' + ph.round;
+    if(running && lastKey && key !== lastKey){
+      loonaBeep(ph.phase === 'done' ? 5 : (ph.phase === 'work' ? 3 : 2));
+      if(ph.phase === 'done'){ clearInterval(tick); tick = null; running = false; }
+    }
+    lastKey = key;
+  }
+  document.getElementById('iStart').addEventListener('click', function(){
+    if(running) return;
+    readCfg();
+    if(!startTs){ startTs = Date.now(); }
+    else { startTs += (Date.now() - pausedAt); }
+    running = true; lastKey = '';
+    tick = setInterval(render, 150); render();
+  });
+  document.getElementById('iPause').addEventListener('click', function(){
+    if(!running) return;
+    pausedAt = Date.now(); running = false; clearInterval(tick); tick = null; render();
+  });
+  document.getElementById('iReset').addEventListener('click', function(){
+    running = false; if(tick) clearInterval(tick); tick = null;
+    startTs = 0; lastKey = ''; readCfg(); render();
+  });
+  ['iPrep','iWork','iRest','iRounds'].forEach(function(id){
+    document.getElementById(id).addEventListener('change', function(){ if(!startTs){ readCfg(); render(); } });
+  });
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden && running) render(); });
+  render();
+}
+if (typeof module !== 'undefined' && module.exports){
+  module.exports = { intervalPhaseAt: intervalPhaseAt, intervalTotalMs: intervalTotalMs, fmtClockFixed: fmtClockFixed };
+}
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+</body>
+</html>
