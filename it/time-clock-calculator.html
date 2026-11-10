@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolatore marcatempo: somma più timbrature in un giorno | Loona Hours</title>
+<meta name="description" content="Calcolatore gratuito di orario per giornate con più timbrature: aggiungere fino a quattro coppie entrata/uscita, escludere gli intervalli e ottenere il tempo retribuito totale più le ore decimali.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/time-clock-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/time-clock-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/time-clock-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/time-clock-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/time-clock-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/time-clock-calculator.html"><meta property="og:locale" content="it_IT">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calcolatore marcatempo: somma più timbrature in un giorno | Loona Hours">
+<meta property="og:description" content="Calcolatore gratuito di orario per giornate con più timbrature: aggiungere fino a quattro coppie entrata/uscita, escludere gli intervalli e ottenere il tempo retribuito totale più le ore decimali.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calcolatore marcatempo: somma più timbrature in un giorno | Loona Hours">
+<meta name="twitter:description" content="Calcolatore gratuito di orario per giornate con più timbrature: aggiungere fino a quattro coppie entrata/uscita, escludere gli intervalli e ottenere il tempo retribuito totale più le ore decimali.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — Calcolatore marcatempo","url":"https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quante timbrature posso aggiungere?","acceptedAnswer":{"@type":"Answer","text":"Quattro coppie entrata/uscita al giorno, che coprono gli schemi comuni: giornata regolare con timbratura del pranzo (2 coppie), turni spezzati e giornate con un intervallo extra per una commissione. Deseleziona le coppie che non ti servono."}},{"@type":"Question","name":"Il tempo tra le timbrature è pagato?","acceptedAnswer":{"@type":"Answer","text":"No. Conta solo il tempo all’interno di ogni coppia entrata→uscita. L’intervallo tra l’uscita e la successiva entrata è tempo libero dal servizio ed è escluso automaticamente."}},{"@type":"Question","name":"E se ho dimenticato di timbrare l’uscita?","acceptedAnswer":{"@type":"Answer","text":"L’ultimo segmento sembrerà troppo lungo — quello è il segnale. Inserire l’orario in cui si è effettivamente smesso di lavorare e dire al supervisore della timbratura mancata in modo che il registro ufficiale possa essere corretto."}},{"@type":"Question","name":"Una coppia che supera la mezzanotte funziona?","acceptedAnswer":{"@type":"Answer","text":"Sì. Se l’orario di uscita è precedente a quello di entrata, è trattato come la mattina successiva, quindi una coppia 10:00 PM → 6:00 AM conta 8 ore."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Calcolatore orario di lavoro: sommare più timbrature in un giorno",
+      "item": "https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>Ore</span></a><nav><a href="time-card-calculator.html">Scheda oraria</a><a href="overtime-calculator.html">Straordinario</a><a href="california-overtime-calculator.html">California</a><a href="overtime-calculator-by-state.html">Per Stato</a><a href="./#tools">Tutti gli strumenti</a><a href="about.html">Informazioni</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Calcolatore marcatempo — Somma una giornata di timbrature</h1><p>Hai timbrato entrata e uscita più di una volta oggi? Somma ogni coppia, salta gli intervalli e ottieni l’unico numero che conta per la busta paga.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>In breve:</strong> somma fino a quattro coppie di timbrature di entrata e uscita per un singolo giorno. Il tempo tra una timbratura di uscita e la successiva di entrata (pranzo, commissioni, turni spezzati) non viene contato; il tempo di ogni coppia e il totale del giorno sono mostrati in h:mm e in decimali.</div>
+<div class="strip" aria-label="Strumenti popolari"><a href="time-card-calculator.html">Calcolatore di scheda presenze</a><a href="hours-calculator.html">Calcolatore delle ore</a><a href="overtime-calculator.html">Calcolatore degli straordinari</a><a href="california-overtime-calculator.html">Calcolatore straordinari della California</a><a href="time-and-a-half-calculator.html">Calcolatore di una volta e mezza</a><a href="minutes-to-decimal-converter.html">Convertitore da minuti a ore decimali</a></div>
+<div class="calc">
+<h2>Calcolatore dell'orologio — più timbrature, un giorno</h2>
+<p class="small">Per i giorni con più di una coppia entrata/uscita — entrata, uscita per pranzo, rientro, uscita alla fine. Spunta solo le coppie che hai usato; gli intervalli tra le coppie sono tempo non retribuito fuori orario.</p>
+<div style="overflow-x:auto"><table><tr><th>Coppia</th><th>A</th><th>Out</th><th></th><th>Tempo in coppia</th></tr>
+<tr><td>Timbratura 1</td><td><span class="tsel"><select id="P0InH" aria-label="Ora"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P0InM" aria-label="Minuto"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P0InAP" aria-label="AM or PM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="P0OutH" aria-label="Ora"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12" selected>12</option></select><select id="P0OutM" aria-label="Minuto"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P0OutAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><label class="chk"><input type="checkbox" id="P0Use" checked> Usa</label></td><td class="num" id="P0Dur">—</td></tr><tr><td>Timbratura 2</td><td><span class="tsel"><select id="P1InH" aria-label="Ora"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P1InM" aria-label="Minuto"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P1InAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><span class="tsel"><select id="P1OutH" aria-label="Ora"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P1OutM" aria-label="Minuto"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P1OutAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><label class="chk"><input type="checkbox" id="P1Use" checked> Usa</label></td><td class="num" id="P1Dur">—</td></tr><tr><td>Timbratura 3</td><td><span class="tsel"><select id="P2InH" aria-label="Ora"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P2InM" aria-label="Minuto"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P2InAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><span class="tsel"><select id="P2OutH" aria-label="Ora"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P2OutM" aria-label="Minuto"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P2OutAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><label class="chk"><input type="checkbox" id="P2Use"> Usa</label></td><td class="num" id="P2Dur">—</td></tr><tr><td>Timbratura 4</td><td><span class="tsel"><select id="P3InH" aria-label="Ora"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P3InM" aria-label="Minuto"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P3InAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><span class="tsel"><select id="P3OutH" aria-label="Ora"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="P3OutM" aria-label="Minuto"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="P3OutAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></td><td><label class="chk"><input type="checkbox" id="P3Use"> Usa</label></td><td class="num" id="P3Dur">—</td></tr>
+</table></div>
+<div class="frow">
+<div class="field"><label for="rate">Tariffa oraria ($, facoltativa)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div>
+</div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">Sommare le mie timbrature</button></div>
+<div class="stats" id="stats"></div>
+</div>
+<div class="sec"><h2>Come funziona — La regola dietro questo calcolatore</h2><p>Una giornata di timbrature è un insieme di segmenti. Il tempo retribuito è il <strong>somma dei soli segmenti</strong> — gli intervalli tra i segmenti sono fuori orario. È esattamente così che il software di timbratura totalizza una giornata, ed è perché timbrare l'uscita per il pranzo non costa nulla in più da calcolare: il pranzo diventa semplicemente un intervallo.</p>
+<p>Due cose da osservare: un segmento che supera la mezzanotte funziona comunque (l'orario di uscita passa al giorno successivo), e una timbratura dimenticata — dimenticare di timbrare l'uscita — gonfierà un segmento, ed è per questo che il tempo individuale di ogni coppia è mostrato per un rapido controllo di sanità. Per un'intera settimana di giorni a coppia singola, il <a href="time-card-calculator.html">Calcolatore di scheda presenze</a> è più veloce; per giornate con turno diviso e più timbrature, questa pagina è lo strumento giusto.</p></div>
+<div class="sec"><h2>Strumenti Hours correlati</h2><div class="grid"><a class="card" href="hours-calculator.html"><h3>Calcolatore delle ore</h3><p>Un turno in ingresso, una risposta esatta in uscita: ore e minuti, ore decimali, gestione delle pause, arrotondamento e paga lorda per quel turno.</p><span class="badge">Gratis — provalo</span></a><a class="card" href="time-card-calculator.html"><h3>Calcolatore di scheda presenze</h3><p>La scheda presenze settimanale di punta: entrata/uscita e pause per 7 giorni, suddivisione degli straordinari a 40 ore, retribuzione lorda, stampa e CSV — più Salva la mia settimana sul tuo dispositivo.</p><span class="badge">Gratis — provalo</span></a><a class="card" href="timesheet-calculator-with-lunch-break.html"><h3>Calcolatore del foglio presenze con pausa pranzo</h3><p>Un foglio presenze settimanale con calcoli onesti per il pranzo: pause manuali, più una detrazione automatica del pranzo quando in un turno lungo non è stata inserita nessuna pausa.</p><span class="badge">Gratis — provalo</span></a><a class="card" href="time-rounding-calculator.html"><h3>Calcolatore di arrotondamento del tempo</h3><p>I datori di lavoro arrotondano le timbrature — vedere esattamente come. Applicare la regola dei 7 minuti, il quarto d’ora, i 5 minuti o l’arrotondamento al decimo d’ora e confrontare con il tempo esatto.</p><span class="badge">Gratis — provalo</span></a></div></div>
+<div class="sec"><h2>Domande frequenti</h2><details class="faq"><summary>Quante timbrature posso aggiungere?</summary><p>Quattro coppie entrata/uscita al giorno, che coprono gli schemi comuni: giornata regolare con timbratura del pranzo (2 coppie), turni spezzati e giornate con un intervallo extra per una commissione. Deseleziona le coppie che non ti servono.</p></details><details class="faq"><summary>Il tempo tra le timbrature è pagato?</summary><p>No. Conta solo il tempo all’interno di ogni coppia entrata→uscita. L’intervallo tra l’uscita e la successiva entrata è tempo libero dal servizio ed è escluso automaticamente.</p></details><details class="faq"><summary>E se ho dimenticato di timbrare l’uscita?</summary><p>L’ultimo segmento sembrerà troppo lungo — quello è il segnale. Inserire l’orario in cui si è effettivamente smesso di lavorare e dire al supervisore della timbratura mancata in modo che il registro ufficiale possa essere corretto.</p></details><details class="faq"><summary>Una coppia che supera la mezzanotte funziona?</summary><p>Sì. Se l’orario di uscita è precedente a quello di entrata, è trattato come la mattina successiva, quindi una coppia 10:00 PM → 6:00 AM conta 8 ore.</p></details></div>
+<div class="disc"><strong>Avvertenza:</strong> Solo stime — non sono consulenza paghe o legale. Le regole paghe del tuo datore di lavoro e la legge statale determinano la tua retribuzione effettiva. Le cifre sono arrotondate per la visualizzazione; la tua busta paga e l'ufficio paghe sono la registrazione ufficiale.</div>
+<div class="sec"><h2>Come funziona — la formula</h2>
+<p>Alcuni giorni non sono un unico blocco di lavoro — sono più periodi separati con intervalli non retribuiti tra loro. Questo calcolatore gestisce uno di quei giorni: fino a quattro coppie entrata/uscita. Ogni coppia attiva è convertita in minuti (un'uscita prima dell'entrata passa al giorno successivo), le coppie sono sommate, e la pagina mostra il giorno come ore:minuti, come ore decimali e — se inserisci una tariffa — come retribuzione lorda a tariffa ordinaria.</p>
+<div class="inshort"><strong>La formula:</strong><br>
+Minuti della coppia = timbratura di uscita &minus; timbratura di entrata (+24 ore se il risultato non è positivo)<br>
+Tempo retribuito totale = la somma delle sole coppie attivate<br>
+Ore decimali = minuti totali &divide; 60, a due cifre decimali<br>
+Lordo (paga ordinaria) = ore decimali &times; tariffa oraria</div>
+<h3>Esempio calcolato</h3>
+<p>Una giornata divisa con tre periodi di lavoro: <strong>7:55 AM–12:05 PM</strong> (4:10), <strong>12:35 PM–4:40 PM</strong> (4:05), e un extra serale <strong>6:00 PM–7:15 PM</strong> (1:15). Gli intervalli intermedi non vengono conteggiati. Tempo retribuito totale: <strong>9:30</strong>, che è <strong>9.50</strong> ore decimali. A una tariffa oraria di $18, il lordo a paga ordinaria del giorno è 9.50 &times; $18 = <strong>$171.00</strong> — esattamente ciò che mostra il calcolatore.</p>
+<h3>Domande frequenti</h3>
+<details class="faq"><summary>9:30 è uguale a 9.30 ore?</summary><p>No — questa è la confusione più comune sui fogli presenze. 9:30 significa 9 ore e 30 minuti, e 30 minuti sono mezz'ora, quindi in forma decimale è 9.50 ore. I sistemi paghe moltiplicano la retribuzione per la cifra decimale, ed è per questo che questa pagina mostra sempre entrambi i formati fianco a fianco.</p></details>
+<details class="faq"><summary>Questo calcolatore calcola lo straordinario della giornata?</summary><p>No. Totalizza un giorno a tariffa ordinaria. Se alcune di quelle ore siano straordinario dipende dall’intera settimana lavorativa — ore oltre le 40 secondo la regola federale — quindi per lo straordinario, inserire invece la settimana nel Calcolatore scheda presenze o nel Calcolatore straordinari.</p></details>
+<details class="faq"><summary>Cosa succede quando disattivo una coppia?</summary><p>La sua visualizzazione della durata diventa un trattino e i suoi minuti sono completamente esclusi dal totale della giornata. Riattivandola, le stesse timbrature rientrano nel totale — nulla viene eliminato.</p></details>
+<details class="faq"><summary>Faccio due lavori separati in un giorno. Posso sommarli entrambi?</summary><p>Sì, se pagano la stessa tariffa: inserire le ore di ogni lavoro come propria coppia (o coppie) e il totale le prezza insieme. Se le tariffe differiscono, eseguire la pagina una volta per i periodi di ogni lavoro con la tariffa di quel lavoro, e sommare le due cifre lorde.</p></details>
+<details class="faq"><summary>Posso usare questa pagina per un’intera settimana?</summary><p>È costruito per un singolo giorno fino a quattro periodi. Si può eseguire una volta al giorno e sommare i totali giornalieri da soli, ma per una settimana intera — con pause, arrotondamento e ripartizione degli straordinari fatti per l’utente — il Calcolatore scheda presenze è lo strumento migliore.</p></details>
+</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">Incorpora questo calcolatore nel tuo sito web — gratis</h2>
+<p style="margin:0 0 12px;line-height:1.6">Aggiungere questo calcolatore al proprio sito web o blog — è completamente gratuito, non richiede registrazione e mostra sempre la versione più recente. Copiare il codice qui sotto e incollarlo nella pagina dove si vuole far apparire il calcolatore. Mantenere la piccola riga di credito &ldquo;Realizzato da Loona Automation&rdquo; sotto l’incorporamento aiuta a mantenere gratuito questo strumento &mdash; ma si è liberi di modificarne lo stile o rimuoverla; lo strumento funziona in ogni caso.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Time Clock Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;Realizzato da &lt;a href="https://loonaautomation.github.io/loona-hours/it/time-clock-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; gratuito Calcolatore orario di lavoro&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">Copia il codice di incorporamento</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='Copiato!';setTimeout(function(){b.textContent='Copia il codice di incorporamento';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: calcolatori gratuiti di fogli presenze, ore e straordinari per i lavoratori statunitensi.<br><a href="about.html">Informazioni</a> · <a href="privacy.html">Informativa sulla privacy</a> · <a href="terms.html">Termini</a> · <a href="contact.html">Contatti</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>Tutti i calcoli avvengono sul dispositivo — nulla viene caricato o salvato su un server.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'Straordinario giornaliero dopo 8 ore in un giorno. I datori di lavoro con meno di 4 dipendenti sono esenti, e i dipendenti con un piano di orario flessibile volontario approvato dal DOL possono lavorare fino a 10 ore al giorno a tariffa ordinaria.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'Straordinario giornaliero: 1.5x dopo 8 ore, 2x dopo 12 ore, più regole speciali nel 7° giorno consecutivo di una settimana lavorativa. Le maggiorazioni per pause pasto e riposo sono separate e non sono incluse in questa stima. Una turnazione settimanale alternativa validamente adottata (fino a 10 ore al giorno per elezione dei dipendenti) cambia la regola giornaliera.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'Straordinario dopo 40 ore in una settimana, 12 ore in un giorno o 12 ore consecutive — a seconda di quale dia al dipendente il beneficio maggiore. Questo strumento di stima usa le ore al giorno; la regola delle 12 ore consecutive può differire per i turni divisi.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'Hawaii',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'Louisiana',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'Lo straordinario giornaliero dopo 8 ore in una giornata lavorativa si applica solo se la tariffa ordinaria è inferiore a 1.5 volte il salario minimo del Nevada ($18.00/ora al salario minimo di $12.00). A quella tariffa o sopra, si applica solo lo straordinario settimanale dopo 40 ore. Il Nevada conta una giornata lavorativa come un periodo mobile di 24 ore da quando si inizia a lavorare, e una turnazione 4 giorni/10 ore concordata reciprocamente è esente dalla regola giornaliera.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'New Jersey',ruleType:'federal'},
+    NM:{name:'Nuovo Messico',ruleType:'federal'}, NY:{name:'New York',ruleType:'federal'},
+    NC:{name:'Carolina del Nord',ruleType:'federal'}, ND:{name:'Dakota del Nord',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'La maggior parte dei datori di lavoro dell’Oregon deve lo straordinario solo dopo 40 ore in una settimana. Lo straordinario giornaliero dopo 10 ore in un giorno si applica in mulini, fabbriche e manifattura (e alcuni settori specifici), dove il dipendente è pagato con il maggiore tra straordinario giornaliero o settimanale.'},
+    PA:{name:'Pennsylvania',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'Carolina del Sud',ruleType:'federal'}, SD:{name:'Dakota del Sud',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'Virginia Occidentale',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "Capodanno"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Natale')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">Ore totali ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Ordinario</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">Straordinario 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">Paga doppia 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">Retribuzione lorda</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Voce di paga</th><th class="num">Ore</th><th class="num">Tariffa</th><th class="num">Importo</th></tr>'
+ +'<tr><td>Paga ordinaria</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>Paga per straordinario (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>Paga a paga doppia (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>Maggiorazione per differenziale di turno</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>Retribuzione lorda</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var tot=0;for(var i=0;i<4;i++){var dEl=document.getElementById('P'+i+'Dur');
+if(!document.getElementById('P'+i+'Usare').checked){dEl.textContent='\u2014';continue;}
+var m=LH.shiftMinutes(tv('P'+i+'In'),tv('P'+i+'Out'),0,true);tot+=m;dEl.textContent=LH.fmtHM(m);}
+var rate=gv('rate');var el=document.getElementById('stats');
+el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(tot)+'</div><div class="k">Tempo retribuito totale</div></div>'
++'<div class="stat"><div class="v">'+LH.decimal(tot).toFixed(2)+'</div><div class="k">Ore decimali</div></div>'
++(rate>0?'<div class="stat"><div class="v">'+LH.money(tot/60*rate)+'</div><div class="k">Lordo (tariffa ordinaria)</div></div>':'');}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>

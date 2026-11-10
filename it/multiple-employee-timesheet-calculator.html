@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolatore foglio presenze per più dipendenti per piccoli team | Loona Hours</title>
+<meta name="description" content="Calcolatore gratuito di fogli presenze per più dipendenti per piccole squadre: fino a 10 persone, tariffe individuali, straordinario per dipendente oltre le 40 ore, payroll lordo totale e CSV.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/multiple-employee-timesheet-calculator.html"><meta property="og:locale" content="it_IT">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calcolatore foglio presenze per più dipendenti per piccoli team | Loona Hours">
+<meta property="og:description" content="Calcolatore gratuito di fogli presenze per più dipendenti per piccole squadre: fino a 10 persone, tariffe individuali, straordinario per dipendente oltre le 40 ore, payroll lordo totale e CSV.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calcolatore foglio presenze per più dipendenti per piccoli team | Loona Hours">
+<meta name="twitter:description" content="Calcolatore gratuito di fogli presenze per più dipendenti per piccole squadre: fino a 10 persone, tariffe individuali, straordinario per dipendente oltre le 40 ore, payroll lordo totale e CSV.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — Calcolatore foglio presenze per più dipendenti","url":"https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Lo straordinario si calcola per dipendente o sul totale delle ore della squadra?","acceptedAnswer":{"@type":"Answer","text":"Per dipendente, sempre. Lo straordinario si attacca alle ore oltre le 40 in una settimana lavorativa del singolo lavoratore alla tariffa propria di quel lavoratore — combinare prima le ore della squadra sottopagherebbe chiunque abbia personalmente superato le 40."}},{"@type":"Question","name":"E i dipendenti che hanno lavorato in due ruoli a tariffe diverse?","acceptedAnswer":{"@type":"Answer","text":"Usare una tariffa mista: totalizzare i guadagni a tariffa ordinaria della persona in entrambi i ruoli e dividere per le sue ore totali — quella media ponderata è la tariffa ordinaria su cui si basa lo straordinario. Il Calcolatore differenziale di turno mostra in dettaglio il metodo della tariffa mista."}},{"@type":"Question","name":"Gestisce le squadre della California?","acceptedAnswer":{"@type":"Answer","text":"Non le regole giornaliere — questa pagina applica la regola settimanale federale. Per lo straordinario giornaliero e la tariffa doppia della California, fai passare ogni dipendente dal Calcolatore straordinario California, oppure verifica prima lo strumento Per Stato."}},{"@type":"Question","name":"I dati della mia squadra sono salvati da qualche parte?","acceptedAnswer":{"@type":"Answer","text":"No. Nomi, ore e tariffe esistono solo in questa pagina aperta sul dispositivo. Usa il download CSV o il pulsante di stampa per i registri paghe prima di chiudere la scheda."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Calcolatore del foglio presenze per più dipendenti per piccole squadre",
+      "item": "https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>Ore</span></a><nav><a href="time-card-calculator.html">Scheda oraria</a><a href="overtime-calculator.html">Straordinario</a><a href="california-overtime-calculator.html">California</a><a href="overtime-calculator-by-state.html">Per Stato</a><a href="./#tools">Tutti gli strumenti</a><a href="about.html">Informazioni</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Calcolatore foglio presenze per più dipendenti — Payroll per piccole squadre in minuti</h1><p>Gestire il payroll per un piccolo team? Allineare le ore e le tariffe di tutti, e ottenere lo straordinario per dipendente e un unico totale netto per la squadra.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>In breve:</strong> inserisci fino a 10 dipendenti con le loro ore settimanali e tariffe individuali; lo straordinario di ciascuna persona (oltre 40 ore a 1.5×) è calcolato separatamente, poi totalizzato in ore della squadra, straordinario della squadra e paga lorda totale, con stampa ed esportazione CSV.</div>
+<div class="strip" aria-label="Strumenti popolari"><a href="time-card-calculator.html">Calcolatore di scheda presenze</a><a href="hours-calculator.html">Calcolatore delle ore</a><a href="overtime-calculator.html">Calcolatore degli straordinari</a><a href="california-overtime-calculator.html">Calcolatore straordinari della California</a><a href="time-and-a-half-calculator.html">Calcolatore di una volta e mezza</a><a href="minutes-to-decimal-converter.html">Convertitore da minuti a ore decimali</a></div>
+<div class="calc">
+<h2>Calcolatore del foglio presenze per più dipendenti — paga per piccole squadre</h2>
+<p class="small">Fino a 10 dipendenti: nome, ore totali questa settimana e tariffa di ciascuno. Lo straordinario (oltre 40 a 1.5×) è applicato per dipendente, e il totale della squadra è la cifra di payroll. Le righe con 0 ore sono ignorate.</p>
+<div style="overflow-x:auto"><table><tr><th>Dipendente</th><th>Ore questa settimana</th><th>Tariffa ($)</th><th>Ore di straordinario</th><th>Paga lorda</th></tr>
+<tr><td><input type="text" id="E0N" placeholder="Dipendente 1" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E0H" value="40" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E0R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E0OT">—</td><td class="num" id="E0P">—</td></tr><tr><td><input type="text" id="E1N" placeholder="Dipendente 2" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E1H" value="40" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E1R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E1OT">—</td><td class="num" id="E1P">—</td></tr><tr><td><input type="text" id="E2N" placeholder="Dipendente 3" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E2H" value="40" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E2R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E2OT">—</td><td class="num" id="E2P">—</td></tr><tr><td><input type="text" id="E3N" placeholder="Dipendente 4" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E3H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E3R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E3OT">—</td><td class="num" id="E3P">—</td></tr><tr><td><input type="text" id="E4N" placeholder="Dipendente 5" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E4H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E4R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E4OT">—</td><td class="num" id="E4P">—</td></tr><tr><td><input type="text" id="E5N" placeholder="Dipendente 6" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E5H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E5R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E5OT">—</td><td class="num" id="E5P">—</td></tr><tr><td><input type="text" id="E6N" placeholder="Dipendente 7" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E6H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E6R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E6OT">—</td><td class="num" id="E6P">—</td></tr><tr><td><input type="text" id="E7N" placeholder="Dipendente 8" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E7H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E7R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E7OT">—</td><td class="num" id="E7P">—</td></tr><tr><td><input type="text" id="E8N" placeholder="Dipendente 9" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E8H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E8R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E8OT">—</td><td class="num" id="E8P">—</td></tr><tr><td><input type="text" id="E9N" placeholder="Dipendente 10" style="width:130px" aria-label="Nome del dipendente"></td><td><input type="number" id="E9H" value="0" min="0" step="0.25" style="width:84px" aria-label="Ore settimanali"></td><td><input type="number" id="E9R" value="18" min="0" step="0.25" style="width:84px" aria-label="Tariffa oraria"></td><td class="num" id="E9OT">—</td><td class="num" id="E9P">—</td></tr>
+</table></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">Calcola la paga della squadra</button>
+<button class="alt" id="csvBtn" type="button">Scarica CSV</button>
+<button class="alt" id="printBtn" type="button">Stampa</button></div>
+<div class="stats" id="stats"></div>
+</div>
+<div class="sec"><h2>Come funziona — La regola dietro questo calcolatore</h2><p>I piccoli datori di lavoro di solito falliscono il payroll negli stessi due punti: applicare lo straordinario alla <em>della squadra</em> ore combinate invece di quelle di ciascuna persona, e dimenticare che la settimana tranquilla di un dipendente non può compensare lo straordinario di un altro. La legge federale è per dipendente e per settimana lavorativa: le ore oltre le 40 nella settimana di ogni lavoratore guadagnano 1.5× <em>loro</em> tariffa, indipendentemente dall’orario di chiunque altro. Questo calcolatore applica esattamente questo — una riga per persona, maggiorazione calcolata dentro la riga.</p>
+<p>Due limiti onesti: questo è uno strumento di stima della paga lorda, non un servizio paghe — non trattiene tasse, non applica le regole statali sullo straordinario giornaliero (usa il <a href="overtime-calculator-by-state.html">Strumento di stima per stato</a> per quei cinque stati), o gestire il personale stipendiato. E i nomi dei dipendenti che digiti restano in questa pagina sul tuo dispositivo; nulla è memorizzato o inviato da nessuna parte quando la chiudi, quindi scarica il CSV se ti serve la registrazione.</p></div>
+<div class="sec"><h2>Strumenti Hours correlati</h2><div class="grid"><a class="card" href="time-card-calculator.html"><h3>Calcolatore di scheda presenze</h3><p>La scheda presenze settimanale di punta: entrata/uscita e pause per 7 giorni, suddivisione degli straordinari a 40 ore, retribuzione lorda, stampa e CSV — più Salva la mia settimana sul tuo dispositivo.</p><span class="badge">Gratis — provalo</span></a><a class="card" href="overtime-calculator-by-state.html"><h3>Calcolatore straordinario per Stato</h3><p>Un unico strumento di stima per tutti i 50 stati: la regola federale dove si applica, e la vera logica dello straordinario giornaliero per California, Alaska, Colorado, Nevada e Oregon.</p><span class="badge">Gratis — provalo</span></a><a class="card" href="shift-differential-calculator.html"><h3>Calcolatore differenziale di turno</h3><p>Le maggiorazioni notturne e del fine settimana cambiano la tariffa reale. Questo calcolatore fonde la maggiorazione nella tariffa ordinaria — anche per lo straordinario, come richiede la legge.</p><span class="badge">Gratis — provalo</span></a><a class="card" href="weekly-pay-calculator.html"><h3>Calcolatore della retribuzione lorda settimanale</h3><p>Dalle ore a ogni forma di busta paga: lordo settimanale suddiviso in ordinarie, straordinario e tariffa doppia, poi convertito in equivalenti bisettimanali, mensili e annuali.</p><span class="badge">Gratis — provalo</span></a></div></div>
+<div class="sec"><h2>Domande frequenti</h2><details class="faq"><summary>Lo straordinario si calcola per dipendente o sul totale delle ore della squadra?</summary><p>Per dipendente, sempre. Lo straordinario si attacca alle ore oltre le 40 in una settimana lavorativa del singolo lavoratore alla tariffa propria di quel lavoratore — combinare prima le ore della squadra sottopagherebbe chiunque abbia personalmente superato le 40.</p></details><details class="faq"><summary>E i dipendenti che hanno lavorato in due ruoli a tariffe diverse?</summary><p>Usare una tariffa mista: totalizzare i guadagni a tariffa ordinaria della persona in entrambi i ruoli e dividere per le sue ore totali — quella media ponderata è la tariffa ordinaria su cui si basa lo straordinario. Il Calcolatore differenziale di turno mostra in dettaglio il metodo della tariffa mista.</p></details><details class="faq"><summary>Gestisce le squadre della California?</summary><p>Non le regole giornaliere — questa pagina applica la regola settimanale federale. Per lo straordinario giornaliero e la tariffa doppia della California, fai passare ogni dipendente dal Calcolatore straordinario California, oppure verifica prima lo strumento Per Stato.</p></details><details class="faq"><summary>I dati della mia squadra sono salvati da qualche parte?</summary><p>No. Nomi, ore e tariffe esistono solo in questa pagina aperta sul dispositivo. Usa il download CSV o il pulsante di stampa per i registri paghe prima di chiudere la scheda.</p></details></div>
+<div class="sec"><h2>Come funziona — la formula</h2>
+<p>Ogni riga è valutata in modo indipendente, perché lo straordinario appartiene a una persona, non a una squadra. Dentro ogni riga, le prime 40 ore sono ordinarie e tutto ciò che supera le 40 è straordinario a 1.5&times; la tariffa propria di quel dipendente. I totali della squadra in alto sono poi semplicemente le somme delle righe completate — dipendenti pagati, ore totali, ore totali di straordinario e paga lorda totale — e le righe lasciate a zero ore sono escluse da ogni totale.</p>
+<div class="inshort"><strong>La formula per dipendente:</strong> Ore ordinarie = min(ore lavorate, 40). Ore di straordinario = max(ore lavorate &minus; 40, 0). Lordo di riga = (ore ordinarie &times; tariffa) + (ore di straordinario &times; tariffa &times; 1.5). Totali della squadra = la somma su tutte le righe con ore maggiori di zero.</div>
+<h3>Esempio calcolato</h3>
+<p>Una squadra di tre persone per una settimana: <strong>Alicia</strong> funziona <strong>44 ore a $20</strong> — 40 ordinarie + 4 di straordinario — per <strong>$920.00</strong>. <strong>Ben</strong> funziona <strong>38 ore a $16.50</strong>, tutte ordinarie, per <strong>$627.00</strong>. <strong>Chen</strong> funziona <strong>40 ore a $18</strong> per <strong>$720.00</strong>. Il riepilogo mostra <strong>3 dipendenti retribuiti, 122.00 ore della squadra, 4.00 ore di straordinario della squadra</strong> e una <strong>paga lorda totale di $2,267.00</strong>. Nota che le 2 ore inutilizzate di Ben non annullano nessuno straordinario di Alicia — la suddivisione è per persona.</p>
+<h3>Domande frequenti</h3>
+<details class="faq"><summary>Cosa succede se lascio una riga a 0 ore?</summary><p>La riga è saltata del tutto: mostra un trattino invece di cifre e non è contata in dipendenti pagati, ore della squadra o paga lorda. Le righe inutilizzate sono il modo in cui lo stesso foglio da 10 righe serve una squadra di tre — nessuna cancellazione necessaria.</p></details>
+<details class="faq"><summary>Due dipendenti possono avere tariffe orarie diverse?</summary><p>Sì — ogni riga ha la sua tariffa, e la maggiorazione per gli straordinari di ogni riga è 1.5&times; la tariffa di quella riga. Un'ora di straordinario di un dipendente da $20 costa $30 mentre quella di un dipendente da $16.50 costa $24.75, e i totali sommano semplicemente le righe.</p></details>
+<details class="faq"><summary>Quanti dipendenti può gestire un foglio?</summary><p>Dieci righe. Coprono la maggior parte delle piccole squadre in un unico passaggio; per una squadra più grande, elabora il foglio in due passaggi (per esempio per reparto) e somma i due totali lordi delle paghe — ogni dipendente compare comunque una sola volta, quindi nessuno straordinario viene contato due volte.</p></details>
+<details class="faq"><summary>Posso esportare il foglio della squadra?</summary><p>Sì. Il pulsante Stampa produce una copia pulita per il fascicolo paghe, e il pulsante CSV scarica una riga per dipendente retribuito — nome, ore, tariffa, ore di straordinario e paga lorda — pronta per un foglio di calcolo o da inviare a un contabile.</p></details>
+<details class="faq"><summary>E se qualcuno ha lavorato esattamente 40 ore?</summary><p>Tutte le 40 sono orario ordinario e la cifra dello straordinario è 0.00. Lo straordinario inizia dal primo minuto oltre le 40 nella settimana per quel dipendente — 40.5 ore, per esempio, sono 40 ordinarie più 0.5 alla tariffa con maggiorazione.</p></details>
+</div>
+<div class="disc"><strong>Avvertenza:</strong> Solo stime — non sono consulenza paghe o legale. Le regole paghe del tuo datore di lavoro e la legge statale determinano la tua retribuzione effettiva. Le cifre sono arrotondate per la visualizzazione; la tua busta paga e l'ufficio paghe sono la registrazione ufficiale.</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">Incorpora questo calcolatore nel tuo sito web — gratis</h2>
+<p style="margin:0 0 12px;line-height:1.6">Aggiungere questo calcolatore al proprio sito web o blog — è completamente gratuito, non richiede registrazione e mostra sempre la versione più recente. Copiare il codice qui sotto e incollarlo nella pagina dove si vuole far apparire il calcolatore. Mantenere la piccola riga di credito &ldquo;Realizzato da Loona Automation&rdquo; sotto l’incorporamento aiuta a mantenere gratuito questo strumento &mdash; ma si è liberi di modificarne lo stile o rimuoverla; lo strumento funziona in ogni caso.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Multiple Employee Timesheet Calculator for Small Teams by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;Realizzato da &lt;a href="https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; gratuito Calcolatore del foglio presenze per più dipendenti per piccole squadre&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">Copia il codice di incorporamento</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='Copiato!';setTimeout(function(){b.textContent='Copia il codice di incorporamento';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: calcolatori gratuiti di fogli presenze, ore e straordinari per i lavoratori statunitensi.<br><a href="about.html">Informazioni</a> · <a href="privacy.html">Informativa sulla privacy</a> · <a href="terms.html">Termini</a> · <a href="contact.html">Contatti</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>Tutti i calcoli avvengono sul dispositivo — nulla viene caricato o salvato su un server.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'Straordinario giornaliero dopo 8 ore in un giorno. I datori di lavoro con meno di 4 dipendenti sono esenti, e i dipendenti con un piano di orario flessibile volontario approvato dal DOL possono lavorare fino a 10 ore al giorno a tariffa ordinaria.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'Straordinario giornaliero: 1.5x dopo 8 ore, 2x dopo 12 ore, più regole speciali nel 7° giorno consecutivo di una settimana lavorativa. Le maggiorazioni per pause pasto e riposo sono separate e non sono incluse in questa stima. Una turnazione settimanale alternativa validamente adottata (fino a 10 ore al giorno per elezione dei dipendenti) cambia la regola giornaliera.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'Straordinario dopo 40 ore in una settimana, 12 ore in un giorno o 12 ore consecutive — a seconda di quale dia al dipendente il beneficio maggiore. Questo strumento di stima usa le ore al giorno; la regola delle 12 ore consecutive può differire per i turni divisi.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'Hawaii',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'Louisiana',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'Lo straordinario giornaliero dopo 8 ore in una giornata lavorativa si applica solo se la tariffa ordinaria è inferiore a 1.5 volte il salario minimo del Nevada ($18.00/ora al salario minimo di $12.00). A quella tariffa o sopra, si applica solo lo straordinario settimanale dopo 40 ore. Il Nevada conta una giornata lavorativa come un periodo mobile di 24 ore da quando si inizia a lavorare, e una turnazione 4 giorni/10 ore concordata reciprocamente è esente dalla regola giornaliera.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'New Jersey',ruleType:'federal'},
+    NM:{name:'Nuovo Messico',ruleType:'federal'}, NY:{name:'New York',ruleType:'federal'},
+    NC:{name:'Carolina del Nord',ruleType:'federal'}, ND:{name:'Dakota del Nord',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'La maggior parte dei datori di lavoro dell’Oregon deve lo straordinario solo dopo 40 ore in una settimana. Lo straordinario giornaliero dopo 10 ore in un giorno si applica in mulini, fabbriche e manifattura (e alcuni settori specifici), dove il dipendente è pagato con il maggiore tra straordinario giornaliero o settimanale.'},
+    PA:{name:'Pennsylvania',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'Carolina del Sud',ruleType:'federal'}, SD:{name:'Dakota del Sud',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'Virginia Occidentale',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "Capodanno"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Natale')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">Ore totali ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Ordinario</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">Straordinario 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">Paga doppia 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">Retribuzione lorda</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Voce di paga</th><th class="num">Ore</th><th class="num">Tariffa</th><th class="num">Importo</th></tr>'
+ +'<tr><td>Paga ordinaria</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>Paga per straordinario (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>Paga a paga doppia (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>Maggiorazione per differenziale di turno</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>Retribuzione lorda</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+var lastRows=[];
+function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];
+for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('Dipendente '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');
+var reg=Math.min(hrs,40),ot=Math.max(0,hrs-40);var pay=LH.grossPay(Math.round(reg*60),Math.round(ot*60),0,rate);
+document.getElementById('E'+i+'OT').textContent=hrs>0?ot.toFixed(2):'\u2014';
+document.getElementById('E'+i+'P').textContent=hrs>0?LH.money(pay.total):'\u2014';
+if(hrs>0){lastRows.push([name,hrs.toFixed(2),rate.toFixed(2),ot.toFixed(2),pay.total.toFixed(2)]);tReg+=reg;tOt+=ot;tPay+=pay.total;tHours+=hrs;}}
+var el=document.getElementById('stats');
+el.innerHTML='<div class="stat"><div class="v">'+lastRows.length+'</div><div class="k">Dipendenti pagati</div></div>'
++'<div class="stat"><div class="v">'+tHours.toFixed(2)+'</div><div class="k">Ore della squadra</div></div>'
++'<div class="stat"><div class="v">'+tOt.toFixed(2)+'</div><div class="k">Ore di straordinario della squadra</div></div>'
++'<div class="stat"><div class="v">'+LH.money(tPay)+'</div><div class="k">Payroll lordo totale</div></div>';}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Dipendente','Ore','Tariffa','Ore di straordinario','Retribuzione lorda']].concat(lastRows);
+var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-crew-payroll.csv';a.click();URL.revokeObjectURL(a.href);});
+document.querySelectorAll('input').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
