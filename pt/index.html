@@ -90,6 +90,21 @@ footer a{color:var(--gold2);text-decoration:none}
 .chk input{width:18px;height:18px}
 @media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
 @media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+
+.ls{max-width:640px;margin:22px auto 4px;position:relative;text-align:left}
+.ls-box{display:flex;background:#fff;border-radius:999px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.28);border:2px solid var(--gold,#d4af37)}
+.ls-box input{flex:1;border:0;outline:0;padding:14px 18px;font-size:1.02rem;min-width:0;color:var(--ink,#12211c);background:#fff}
+.ls-box button{border:0;background:var(--gold,#d4af37);color:#231a00;font-weight:800;padding:0 22px;font-size:1rem;cursor:pointer}
+.ls-box button:hover{background:var(--gold2,#b8912a)}
+.ls-list{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.35);z-index:60;max-height:70vh;overflow-y:auto;text-align:left}
+.ls-item{display:block;padding:10px 16px;text-decoration:none;border-bottom:1px solid #eee9da}
+.ls-item:last-of-type{border-bottom:0}
+.ls-item:hover,.ls-item.act{background:#fbf6df}
+.ls-nm{font-weight:700;color:var(--ink,#12211c)}
+.ls-badge{display:inline-block;margin-left:8px;background:var(--teal,#062e2a);color:#ffe9a8;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:2px;white-space:nowrap}
+.ls-ds{display:block;color:#5a6660;font-size:.85rem;margin-top:1px}
+.ls-none{padding:12px 16px;color:#5a6660;font-size:.92rem}
+@media(max-width:560px){.ls-box button{padding:0 14px}.ls-box input{padding:12px 14px;font-size:.98rem}}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -109,7 +124,12 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="topbar"><a class="logo" href="./">Loona <span>Horas</span></a><nav><a href="time-card-calculator.html">Registo de Horas</a><a href="overtime-calculator.html">Horas extra</a><a href="california-overtime-calculator.html">Califórnia</a><a href="overtime-calculator-by-state.html">Por Estado</a><a href="./#tools">Todas as Ferramentas</a><a href="about.html">Sobre</a></nav></div>
 <header class="hero"><div class="brand">Loona Automation</div>
 <h1>Loona Hours — Calculadoras Grátis de Cartão de Ponto, Folha de Horas &amp; Horas Extraordinárias</h1>
-<p>Vinte calculadoras gratuitas para trabalhadores à hora: transforme registos em horas pagas, horas extraordinárias e salário bruto — feito como deve ser, no seu dispositivo, sem nada para registar.</p></header>
+<p>Vinte calculadoras gratuitas para trabalhadores à hora: transforme registos em horas pagas, horas extraordinárias e salário bruto — feito como deve ser, no seu dispositivo, sem nada para registar.</p>
+<div class="ls"><form id="lsForm" role="search" autocomplete="off">
+<div class="ls-box"><input id="lsInput" type="search" placeholder="Pesquisar nas 117 calculadoras de horas&hellip; experimente &lsquo;calculadora&rsquo;" aria-label="Pesquisar nas 117 calculadoras de horas" autocomplete="off"><button type="submit">Pesquisar</button></div>
+<div id="lsList" class="ls-list" role="listbox" hidden></div>
+</form></div>
+</header>
 <div class="wrap">
 <div class="inshort"><strong>Em resumo:</strong> O Loona Hours calcula registos de horas, folhas de horas, horas extra (federais, da Califórnia e por estado), conversões decimais, deduções de pausa para almoço, diferenciais de turno e pagamento semanal para trabalhadores horários dos EUA. Todas as ferramentas são gratuitas, funcionam no telemóvel e mantêm os dados no dispositivo — e a principal Calculadora de Registo de Horas guarda a semana automaticamente.</div>
 <div class="strip" aria-label="Ferramentas populares"><a href="time-card-calculator.html">Calculadora de Cartão de Horas</a><a href="hours-calculator.html">Calculadora de Horas</a><a href="overtime-calculator.html">Calculadora de Horas Extraordinárias</a><a href="california-overtime-calculator.html">Calculadora de Horas Extraordinárias da Califórnia</a><a href="time-and-a-half-calculator.html">Calculadora de Hora e Meia</a><a href="minutes-to-decimal-converter.html">Conversor de Minutos para Horas Decimais</a></div>
@@ -164,6 +184,236 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="disc"><strong>Exclusão de responsabilidade:</strong> Apenas estimativas — não é aconselhamento de salários nem jurídico. As regras de salários do empregador e a lei estatal controlam o pagamento real. Os valores são arredondados para apresentação; o talão de pagamento e o departamento de salários são o registo oficial.</div>
 </div>
 <footer>© 2026 Loona Automation — Loona Hours: calculadoras gratuitas de folha de horas, horas e horas extraordinárias para trabalhadores dos EUA.<br><a href="about.html">Sobre</a> · <a href="privacy.html">Política de Privacidade</a> · <a href="terms.html">Termos</a> · <a href="contact.html">Contacto</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>Todos os cálculos correm no dispositivo — nada é carregado nem guardado num servidor.</footer>
+<script>/*loona-hours-search*/
+/* Loona Hours search (per-site build of the Loona hub tool search v2) — lazy-loads /search-index.json on first focus/typing.
+   v2 fixes: a failed fetch no longer poisons the session (it retries on the next
+   keystroke/focus), a "Loading tools…" state shows while the index downloads,
+   an embedded popular-tools fallback keeps search alive offline, Roman Urdu
+   aliases, joined-word matching, dedupe and tool-over-guide ranking. */
+(function () {
+  "use strict";
+  var form = document.getElementById('lsForm'),
+      input = document.getElementById('lsInput'),
+      list = document.getElementById('lsList');
+  if (!form || !input || !list) return;
+  var INDEX_URL = '/loona-hours/pt/search-index.json';
+  var STR = {"loading": "A carregar ferramentas…", "fb": "A mostrar ferramentas populares — o índice completo está a caminho…", "zero1": "Sem correspondência exata para “", "zero2": "” — experimente estas ferramentas populares:"};
+  var FALLBACK = [{"n": "Calculadora de Cartão de Horas", "u": "https://loonaautomation.github.io/loona-hours/pt/time-card-calculator.html", "s": "Loona Hours", "d": "O cartão de horas semanal emblemático: entrada/saída e pausas para 7 dias, repartição de horas extraordinárias às 40 horas, salário bruto, impressão e CSV — mais Guardar a Minha Semana no seu dispositivo.", "k": "time card calculator time card calculator o cartao de horas semanal emblematico entrada saida e pausas para 7 dias reparticao de horas extraordinarias as 40 horas salario bruto impressao e csv mais guardar a minha semana no seu dispositivo", "p": 0, "c": "Tool"}, {"n": "Calculadora de Horas Extraordinárias", "u": "https://loonaautomation.github.io/loona-hours/pt/overtime-calculator.html", "s": "Loona Hours", "d": "A regra federal numa caixa: horas semanais e a taxa dentro, horas normais, horas extraordinárias a 1.5× e salário bruto total fora.", "k": "overtime calculator overtime calculator a regra federal numa caixa horas semanais e a taxa dentro horas normais horas extraordinarias a 1 5 e salario bruto total fora", "p": 1, "c": "Tool"}, {"n": "Calculadora de Horas", "u": "https://loonaautomation.github.io/loona-hours/pt/hours-calculator.html", "s": "Loona Hours", "d": "Um turno dentro, uma resposta exata fora: horas e minutos, horas decimais, tratamento de pausas, arredondamento e o pagamento bruto desse turno.", "k": "hours calculator hours calculator um turno dentro uma resposta exata fora horas e minutos horas decimais tratamento de pausas arredondamento e o pagamento bruto desse turno", "p": 2, "c": "Tool"}, {"n": "Calculadora de Folha de Horas com Pausa para Almoço", "u": "https://loonaautomation.github.io/loona-hours/pt/timesheet-calculator-with-lunch-break.html", "s": "Loona Hours", "d": "Uma folha de horas semanal com contas de almoço honestas: pausas manuais, mais uma dedução automática de almoço quando um turno longo não tem pausa registada.", "k": "timesheet calculator with lunch break timesheet calculator with lunch break uma folha de horas semanal com contas de almoco honestas pausas manuais mais uma deducao automatica de almoco quando um turno longo nao tem pausa registada", "p": 3, "c": "Tool"}, {"n": "Salário Mínimo 2026", "u": "https://loonaautomation.github.io/loona-hours/pt/minimum-wage-2026.html", "s": "Loona Hours", "d": "Cada salário mínimo de 2026 num só lugar: todos os 50 estados, DC e 20 cidades — com regras de horas extraordinárias, salários com gorjetas e um cartão de horas pré-carregado a cada taxa.", "k": "minimum wage 2026 minimum wage 2026 cada salario minimo de 2026 num so lugar todos os 50 estados dc e 20 cidades com regras de horas extraordinarias salarios com gorjetas e um cartao de horas pre carregado a cada taxa", "p": 4, "c": "Tool"}, {"n": "Calculadora de Hora e Meia", "u": "https://loonaautomation.github.io/loona-hours/pt/time-and-a-half-calculator.html", "s": "Loona Hours", "d": "O seu valor de horas extraordinárias e o pagamento de horas extraordinárias num só passo — mais a parte que as pessoas esquecem: quanto dele é o prémio extra acima do tempo normal.", "k": "time and a half calculator time and a half calculator o seu valor de horas extraordinarias e o pagamento de horas extraordinarias num so passo mais a parte que as pessoas esquecem quanto dele e o premio extra acima do tempo normal", "p": 5, "c": "Tool"}];
+  var data = null, loading = null, usingFallback = false, active = -1, current = [];
+
+  /*CORE-START*/
+/* Loona search core v2 — shared by the homepage dropdown and the /search/ page.
+   Adds over v1: Roman Urdu alias layer, joined-word matching, keyword prefix match,
+   URL+name dedupe, tool-over-guide boost. `data` is supplied by the page glue. */
+var ALIASES = {
+  "waqt": "time",
+  "ghanta": "hour",
+  "mazdoori": "wage"
+};
+function norm(s) { s = (s || '').toLowerCase().replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/ł/g, 'l').replace(/đ/g, 'd'); try { s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } catch (e) {} return s.replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim(); }
+function lev(a, b) {
+  if (a === b) return 0;
+  var la = a.length, lb = b.length, i, j;
+  if (Math.abs(la - lb) > 1) return 2;
+  var prev = [], cur = [];
+  for (j = 0; j <= lb; j++) prev[j] = j;
+  for (i = 1; i <= la; i++) {
+    cur[0] = i; var best = 99;
+    for (j = 1; j <= lb; j++) {
+      var v = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+      cur[j] = v; if (v < best) best = v;
+    }
+    if (best > 1) return 2;
+    var t = prev; prev = cur; cur = t;
+  }
+  return prev[lb];
+}
+function wordLevel(w, nameWords, hayWords, nameJoined) {
+  var i;
+  for (i = 0; i < nameWords.length; i++) if (nameWords[i] === w) return 30;
+  for (i = 0; i < nameWords.length; i++) if (w.length >= 3 && nameWords[i].indexOf(w) === 0) return 24;
+  for (i = 0; i < hayWords.length; i++) if (hayWords[i] === w) return 20;
+  for (i = 0; i < hayWords.length; i++) if (w.length >= 3 && hayWords[i].indexOf(w) === 0) return 18;
+  if (w.length >= 4 && nameJoined.indexOf(w) >= 0) return 22;
+  if (w.length >= 4) {
+    for (i = 0; i < nameWords.length; i++) if (lev(w, nameWords[i]) <= 1) return 17;
+    for (i = 0; i < hayWords.length; i++) if (lev(w, hayWords[i]) <= 1) return 12;
+  }
+  for (i = 0; i < nameWords.length; i++) if (nameWords[i].indexOf(w) >= 0) return 14;
+  return 0;
+}
+function expandWords(qw) {
+  /* variants tried (best score wins): the words themselves; each Roman Urdu
+     word swapped for the FIRST word of its English meaning; the full meaning;
+     and — for multi-word queries — the words joined into one ("wi fi"→"wifi"). */
+  var prim = [], full = [], changed = false;
+  for (var i = 0; i < qw.length; i++) {
+    var a = ALIASES[qw[i]];
+    if (a) {
+      changed = true;
+      var parts = a.split(' ');
+      prim.push(parts[0]);
+      for (var j = 0; j < parts.length; j++) full.push(parts[j]);
+    } else { prim.push(qw[i]); full.push(qw[i]); }
+  }
+  var out = [qw];
+  if (changed) { out.push(prim); if (full.join(' ') !== prim.join(' ')) out.push(full); }
+  if (qw.length > 1) out.push([qw.join('')]);
+  return out;
+}
+function runSearch(q, limit) {
+  var query = norm(q);
+  if (!query || !data) return [];
+  var variants = expandWords(query.split(' ')), out = [];
+  for (var e = 0; e < data.length; e++) {
+    var it = data[e], name = norm(it.n),
+        hay = name + ' ' + norm(it.s) + ' ' + (it.k || ''),
+        nameWords = name.split(' '), hayWords = hay.split(' '),
+        nameJoined = name.replace(/ /g, ''), best = -1;
+    for (var v = 0; v < variants.length; v++) {
+      var qw = variants[v], sum = 0, ok = true;
+      for (var i = 0; i < qw.length; i++) {
+        var lv = wordLevel(qw[i], nameWords, hayWords, nameJoined);
+        if (lv === 0) { ok = false; break; }
+        sum += lv;
+      }
+      if (!ok) continue;
+      var score = sum * 10, qs = qw.join(' '), qJoined = qs.replace(/ /g, '');
+      if (name === qs) score += 100000;
+      else if (name.indexOf(qs) === 0) score += 5000;
+      else if (name.indexOf(qs) >= 0) score += 2000;
+      if (nameJoined === qJoined) score += 9000;
+      else if (qJoined.length >= 4 && nameJoined.indexOf(qJoined) >= 0) score += 2500;
+      if (qw.length > 1) {
+        var allN = true;
+        for (var k = 0; k < qw.length; k++) if (nameWords.indexOf(qw[k]) < 0) allN = false;
+        if (allN) score += 800;
+      }
+      /* tool whose name carries the searched word beats a guide about it */
+      if (it.c !== 'Guide') {
+        for (var m = 0; m < qw.length; m++) if (nameWords.indexOf(qw[m]) >= 0) { score += 350; break; }
+      }
+      score -= (typeof it.p === 'number' ? it.p : 400) * 0.6;
+      score -= name.length * 0.3;
+      if (score > best) best = score;
+    }
+    if (best >= 0) out.push({ it: it, score: best });
+  }
+  out.sort(function (a, b) { return b.score - a.score; });
+  /* dedupe: same URL once, same tool name once (keep the better-ranked copy) */
+  var seenU = {}, seenN = {}, res = [];
+  for (var r = 0; r < out.length; r++) {
+    var en = out[r].it, key = norm(en.n);
+    if (seenU[en.u] || seenN[key]) continue;
+    seenU[en.u] = 1; seenN[key] = 1; res.push(en);
+    if (res.length >= limit) break;
+  }
+  return res;
+}
+function popular(n) {
+  if (!data) return [];
+  return data.filter(function (e) { return (typeof e.p === 'number' ? e.p : 400) < 30; })
+             .sort(function (a, b) { return a.p - b.p; }).slice(0, n);
+}
+/*CORE-END*/
+
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function badge(e) { return e.c === 'Website' ? 'Website' : (e.c === 'Guide' ? 'Guide' : e.s.replace(/^Loona /, '')); }
+  function itemHtml(e, i) {
+    return '<a class="ls-item" role="option" data-i="' + i + '" href="' + esc(e.u) + '">' +
+           '<span class="ls-nm">' + esc(e.n) + '</span><span class="ls-badge">' + esc(badge(e)) + '</span>' +
+           '<span class="ls-ds">' + esc(e.d) + '</span></a>';
+  }
+  function bindItems() {
+    var links = list.querySelectorAll('.ls-item');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('mouseenter', function () { setActive(parseInt(this.getAttribute('data-i'), 10)); });
+    }
+  }
+  function render(items, q) {
+    active = -1; current = items;
+    var h = '';
+    if (usingFallback) h += '<div class="ls-none">' + STR.fb + '</div>';
+    h += items.map(itemHtml).join('');
+    list.innerHTML = h;
+    bindItems();
+    list.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+  function renderZero(q) {
+    var pop = popular(6);
+    active = -1; current = pop;
+    var h = '<div class="ls-none">' + STR.zero1 + esc(q) + STR.zero2 + '</div>' +
+            pop.map(itemHtml).join('') +
+            '';
+    list.innerHTML = h;
+    bindItems();
+    list.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+  function renderLoading() {
+    list.innerHTML = '<div class="ls-none">' + STR.loading + '</div>';
+    list.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+  function refresh() {
+    var q = input.value;
+    if (!data) { renderLoading(); return; }
+    if (!norm(q)) { render(popular(6), ''); return; }
+    var res = runSearch(q, 8);
+    if (res.length) render(res, q); else renderZero(q);
+  }
+  function hide() { list.hidden = true; active = -1; input.setAttribute('aria-expanded', 'false'); }
+  function setActive(i) {
+    active = i;
+    var links = list.querySelectorAll('.ls-item');
+    for (var j = 0; j < links.length; j++) links[j].classList.toggle('act', j === i);
+    if (i >= 0 && links[i]) links[i].scrollIntoView({ block: 'nearest' });
+  }
+  function ensureIndex() {
+    if (data && !usingFallback) return;
+    if (loading) return;
+    loading = fetch(INDEX_URL).then(function (r) {
+      if (!r.ok) throw new Error('index ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      data = j; usingFallback = false; loading = null; refresh();
+    }).catch(function () {
+      loading = null;                 /* not poisoned: next keystroke/focus retries */
+      if (!data) { data = FALLBACK; usingFallback = true; }
+      refresh();
+    });
+  }
+  var timer = null;
+  function onType() { ensureIndex(); refresh(); }
+  input.addEventListener('focus', onType);
+  input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(onType, 70); });
+  input.addEventListener('keydown', function (ev) {
+    if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+      ev.preventDefault();
+      if (list.hidden) { onType(); return; }
+      var n = current.length; if (!n) return;
+      setActive(ev.key === 'ArrowDown' ? (active + 1) % n : (active - 1 + n) % n);
+    } else if (ev.key === 'Escape') { hide(); }
+  });
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var q = input.value;
+    if (active >= 0 && current[active]) { window.location.href = current[active].u; return; }
+    ensureIndex();
+    if (data) {
+      var best = runSearch(q, 1);
+      if (best.length) { window.location.href = best[0].u; return; }
+    }
+    if (norm(q)) renderZero(q);
+  });
+  document.addEventListener('click', function (ev) { if (!form.contains(ev.target)) hide(); });
+})();
+
+</script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
 </body>
 </html>
