@@ -1,0 +1,1055 @@
+[
+ {
+  "n": "Минимальная зарплата 2026",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/minimum-wage-2026.html",
+  "s": "Loona Hours",
+  "d": "Все минимальные зарплаты 2026 года в одном месте: все 50 штатов, округ Колумбия и 20 городов — с правилами сверхурочных, зарплатами с чаевыми и табелем, предварительно загруженным по каждой ставке.",
+  "k": "минимальная зарплата 2026 minimum wage 2026 minimum wage 2026 every 2026 minimum wage in one place all 50 states dc and 20 cities with overtime rules tipped wages and a time card pre loaded at each rate 20 2026 50 в все года городов загруженным зарплата зарплатами зарплаты и каждой колумбия месте минимальная минимальные одном округ по правилами предварительно с сверхурочных ставке табелем чаевыми штатов",
+  "p": 4,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Основная недельная карта учёта рабочего времени: приход/уход и перерывы за 7 дней, разбивка сверхурочных на отметке 40 часов, зарплата до вычетов, печать и CSV — плюс сохранение вашей недели на вашем устройстве.",
+  "k": "калькулятор карты учёта рабочего времени time card calculator time card calculator the flagship weekly time card clock in out and breaks for 7 days overtime split at 40 hours gross pay print and csv plus save my week on your device 40 7 csv вашей вашем времени вычетов дней до за зарплата и калькулятор карта карты на недели недельная основная отметке перерывы печать плюс приход рабочего разбивка сверхурочных сохранение устройстве уход учёта часов",
+  "p": 0,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля за две недели",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/biweekly-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Полный двухнедельный период оплаты на одной карте — но сверхурочные по-прежнему подсчитываются неделя за неделей, именно как требует FLSA. Включена суммарная зарплата брутто.",
+  "k": "калькулятор табеля за две недели biweekly time card calculator biweekly time card calculator a full two week pay period on one card but overtime is still scored week by week exactly as the flsa requires combined gross pay included flsa брутто включена две двухнедельный за зарплата именно как калькулятор карте на неделей недели неделя но одной оплаты период по-прежнему подсчитываются полный сверхурочные суммарная табеля требует",
+  "p": 102,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля за полмесяца &amp; месяц",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/monthly-timesheet-calculator.html",
+  "s": "Loona Hours",
+  "d": "Целый месяц смен на одном листе, с итогами за полумесячные периоды оплаты с 1-го по 15-е и с 16-го по конец месяца, при этом сверхурочные по-прежнему считаются по рабочим неделям.",
+  "k": "калькулятор табеля за полмесяца &amp; месяц semi monthly monthly timesheet calculator monthly timesheet calculator a whole month of shifts on one sheet totalled for the 1st 15th and 16th end semi monthly pay periods with overtime still scored per workweek 1-го 15-е 16-го amp за и итогами калькулятор конец листе месяц месяца на неделям одном оплаты периоды по по-прежнему полмесяца полумесячные при рабочим с сверхурочные смен считаются табеля целый этом",
+  "p": 103,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля с перерывом на обед",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/timesheet-calculator-with-lunch-break.html",
+  "s": "Loona Hours",
+  "d": "Еженедельный табель с честным расчётом обеда: перерывы, вводимые вручную, плюс автоматический вычет обеда, когда в длинной смене не введён ни один перерыв.",
+  "k": "калькулятор табеля с перерывом на обед timesheet calculator with lunch break timesheet calculator with lunch break a weekly timesheet with honest lunch maths manual breaks plus an automatic lunch deduction when a long shift has no break entered автоматический в введён вводимые вручную вычет длинной еженедельный калькулятор когда на не ни обед обеда один перерыв перерывом перерывы плюс расчётом с смене табель табеля честным",
+  "p": 3,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор часов",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/hours-calculator.html",
+  "s": "Loona Hours",
+  "d": "Одна смена на входе, один точный ответ на выходе: часы и минуты, десятичные часы, учёт перерывов, округление и валовая оплата за эту смену.",
+  "k": "калькулятор часов hours calculator hours calculator one shift in one exact answer out hours and minutes decimal hours break handling rounding and the gross pay for that shift валовая входе выходе десятичные за и калькулятор минуты на один одна округление оплата ответ перерывов смена смену точный учёт часов часы эту",
+  "p": 2,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор часов",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-clock-calculator.html",
+  "s": "Loona Hours",
+  "d": "Создан для настоящих табельных часов: до четырёх пар прихода/ухода в день — обеденные промежутки исключаются автоматически — с суммированием в оплачиваемое время и десятичные часы.",
+  "k": "калькулятор часов time clock calculator time clock calculator built for real punch clocks up to four in out pairs in a day lunch gaps excluded automatically totalled into paid time and decimal hours автоматически в время день десятичные для до и исключаются калькулятор настоящих обеденные оплачиваемое пар прихода промежутки с создан суммированием табельных ухода часов часы четырёх",
+  "p": 106,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор сверхурочных",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/overtime-calculator.html",
+  "s": "Loona Hours",
+  "d": "Федеральное правило в одном блоке: недельные часы и ваша ставка на входе, обычные часы, сверхурочные часы по ставке 1.5× и итоговая зарплата брутто на выходе.",
+  "k": "калькулятор сверхурочных overtime calculator overtime calculator the federal rule in one box weekly hours and your rate in regular hours overtime hours at 1 5 and total gross pay out 1 5 блоке брутто в ваша входе выходе зарплата и итоговая калькулятор на недельные обычные одном по правило сверхурочные сверхурочных ставка ставке федеральное часы",
+  "p": 1,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор сверхурочных Калифорнии",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/california-overtime-calculator.html",
+  "s": "Loona Hours",
+  "d": "Ежедневные сверхурочные в Калифорнии как положено: 1.5× после 8 часов, двойная ставка после 12, правило 7-го дня подряд и никакого двойного подсчёта.",
+  "k": "калькулятор сверхурочных калифорнии california overtime calculator california overtime calculator california s daily overtime done properly 1 5 after 8 hours double time after 12 the 7th consecutive day rule and no double counting 1 12 5 7-го 8 в двойная двойного дня ежедневные и как калифорнии калькулятор никакого подряд подсчёта положено после правило сверхурочные сверхурочных ставка часов",
+  "p": 108,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор сверхурочных по штатам",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/overtime-calculator-by-state.html",
+  "s": "Loona Hours",
+  "d": "Один оценщик для всех 50 штатов: федеральное правило там, где оно применяется, и реальная логика ежедневных сверхурочных для Калифорнии, Аляски, Колорадо, Невады и Орегона.",
+  "k": "калькулятор сверхурочных по штатам overtime calculator by state overtime calculator by state one estimator for all 50 states the federal rule where it applies and the real daily overtime logic for california alaska colorado nevada and oregon 50 аляски всех где для ежедневных и калифорнии калькулятор колорадо логика невады один оно орегона оценщик по правило применяется реальная сверхурочных там федеральное штатам штатов",
+  "p": 109,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор полуторной ставки",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-calculator.html",
+  "s": "Loona Hours",
+  "d": "Ваша ставка сверхурочных и оплата сверхурочных за один шаг — плюс та часть, о которой люди забывают: сколько из этого составляет дополнительная надбавка сверх обычной ставки.",
+  "k": "калькулятор полуторной ставки time and a half calculator time and a half calculator your overtime rate and overtime pay in one step plus the part people forget how much of it is the extra premium over straight time ваша дополнительная за забывают и из калькулятор которой люди надбавка о обычной один оплата плюс полуторной сверх сверхурочных сколько составляет ставка ставки та часть шаг этого",
+  "p": 5,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор двойной оплаты",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/double-time-calculator.html",
+  "s": "Loona Hours",
+  "d": "Двойная оплата — это 2× вашей ставки — реже, чем сверхурочные, и стоит реальных денег. Посмотрите ставку, оплату и то, когда закон или договор действительно её должны.",
+  "k": "калькулятор двойной оплаты double time calculator double time calculator double time is 2 your rate rarer than overtime and worth real money see the rate the pay and when the law or a contract actually owes it 2 вашей двойная двойной действительно денег договор должны её закон и или калькулятор когда оплата оплату оплаты посмотрите реальных реже сверхурочные ставки ставку стоит то чем это",
+  "p": 111,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор сверхурочных с налогами",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/overtime-calculator-with-taxes.html",
+  "s": "Loona Hours",
+  "d": "Датированный, ограниченный по времени оценщик временной федеральной льготы по сверхурочным (налоговые годы 2025–2028): квалифицированная надбавка, предельные суммы, постепенное сокращение, экономия.",
+  "k": "калькулятор сверхурочных с налогами overtime calculator with taxes overtime calculator with taxes a dated time limited estimator for the temporary federal overtime deduction tax years 2025 2028 the qualified premium the caps the phase out the saving 2025 2028 времени временной годы датированный калькулятор квалифицированная льготы надбавка налогами налоговые ограниченный оценщик по постепенное предельные с сверхурочным сверхурочных сокращение суммы федеральной экономия",
+  "p": 112,
+  "c": "Tool"
+ },
+ {
+  "n": "Конвертер минут в десятичные часы",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/minutes-to-decimal-converter.html",
+  "s": "Loona Hours",
+  "d": "Классическая таблица преобразования для расчёта зарплаты, от 1 до 60 минут, плюс двусторонний конвертер: минуты в десятичные часы и десятичные часы обратно в ч:мм.",
+  "k": "конвертер минут в десятичные часы minutes to decimal hours converter minutes to decimal converter the classic payroll conversion chart 1 60 minutes plus a two way converter minutes to decimal hours and decimal hours back to h mm 1 60 в двусторонний десятичные для до зарплаты и классическая конвертер минут минуты мм обратно от плюс преобразования расчёта таблица ч часы",
+  "p": 113,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор вычета за перерыв / обед",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/lunch-break-calculator.html",
+  "s": "Loona Hours",
+  "d": "Одна смена, два перерыва, ноль путаницы: какие минуты перерыва оплачиваются, какие вычитаются, и точное оплаченное время, которое остаётся.",
+  "k": "калькулятор вычета за перерыв / обед break lunch deduction calculator lunch break calculator one shift two breaks zero confusion which break minutes are paid which come off and the exact paid time that remains время вычета вычитаются два за и какие калькулятор которое минуты ноль обед одна оплаченное оплачиваются остаётся перерыв перерыва путаницы смена точное",
+  "p": 114,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор надбавки за смену",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/shift-differential-calculator.html",
+  "s": "Loona Hours",
+  "d": "Надбавки за ночь и выходные меняют вашу реальную ставку. Этот калькулятор встраивает надбавку в обычную ставку — в том числе для сверхурочных, как того требует закон.",
+  "k": "калькулятор надбавки за смену shift differential calculator shift differential calculator night and weekend premiums change your real rate this calculator blends the differential into the regular rate including for overtime as the law requires в вашу встраивает выходные для за закон и как калькулятор меняют надбавки надбавку ночь обычную реальную сверхурочных смену ставку того том требует числе этот",
+  "p": 115,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор округления времени",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-rounding-calculator.html",
+  "s": "Loona Hours",
+  "d": "Работодатели округляют ваши отметки — посмотрите, как именно. Примените правило 7 минут, четверти часа, 5 минут или десятой доли часа и сравните с вашим точным временем.",
+  "k": "калькулятор округления времени time rounding calculator time rounding calculator employers round your punches see exactly how apply the 7 minute rule quarter hour 5 minute or tenth of an hour rounding and compare with your exact time 5 7 ваши вашим временем времени десятой доли и или именно как калькулятор минут округления округляют отметки посмотрите правило примените работодатели с сравните точным часа четверти",
+  "p": 116,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор 12-часовых смен",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/12-hour-shift-calculator.html",
+  "s": "Loona Hours",
+  "d": "Для медсестёр и всех, кто работает по 12 часов: оплачиваемые часы за смену, недельные итоги 3×12 и 4×12 и сверхурочные по федеральным правилам или правилам Калифорнии.",
+  "k": "калькулятор 12-часовых смен 12 hour shift calculator 12 hour shift calculator for nurses and everyone on 12s per shift paid hours 3 12 and 4 12 weekly totals and overtime under federal or california rules 12 12-часовых 3 4 всех для за и или итоги калифорнии калькулятор кто медсестёр недельные оплачиваемые по правилам работает сверхурочные смен смену федеральным часов часы",
+  "p": 117,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор рабочих часов между двумя датами",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/work-hours-between-dates-calculator.html",
+  "s": "Loona Hours",
+  "d": "Подсчитайте реальное рабочее время в любом диапазоне дат: рабочие дни по вашему графику, федеральные праздники США исключены, общее количество запланированных часов.",
+  "k": "калькулятор рабочих часов между двумя датами work hours between two dates calculator work hours between dates calculator count the real working time in any date range workdays by your pattern us federal holidays excluded total scheduled hours в вашему время графику дат датами двумя диапазоне дни запланированных исключены калькулятор количество любом между общее по подсчитайте праздники рабочее рабочие рабочих реальное сша федеральные часов",
+  "p": 118,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля для нескольких сотрудников",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/multiple-employee-timesheet-calculator.html",
+  "s": "Loona Hours",
+  "d": "Расчёт зарплаты бригады без электронной таблицы: до 10 сотрудников с индивидуальными ставками и сверхурочными по каждому человеку, суммированными в одну цифру зарплаты до вычетов с CSV.",
+  "k": "калькулятор табеля для нескольких сотрудников multiple employee timesheet calculator multiple employee timesheet calculator crew payroll without the spreadsheet up to 10 employees with individual rates and per person overtime totalled into one gross payroll figure with csv 10 csv без бригады в вычетов для до зарплаты и индивидуальными каждому калькулятор нескольких одну по расчёт с сверхурочными сотрудников ставками суммированными табеля таблицы цифру человеку электронной",
+  "p": 119,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор недельной зарплаты до вычетов",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/weekly-pay-calculator.html",
+  "s": "Loona Hours",
+  "d": "От часов к любой форме зарплаты: недельное брутто, разделённое на обычные, сверхурочные и двойную оплату, затем преобразованное в двухнедельные, месячные и годовые эквиваленты.",
+  "k": "калькулятор недельной зарплаты до вычетов weekly gross pay calculator weekly pay calculator from hours to every paycheque shape weekly gross split into regular overtime and double time then converted to biweekly monthly and annual equivalents брутто в вычетов годовые двойную двухнедельные до зарплаты затем и к калькулятор любой месячные на недельное недельной обычные оплату от преобразованное разделённое сверхурочные форме часов эквиваленты",
+  "p": 120,
+  "c": "Tool"
+ },
+ {
+  "n": "Онлайн-таймер с предустановками",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/online-timer.html",
+  "s": "Loona Hours",
+  "d": "Таймеры на 1, 5, 10, 15, 30 и 60 минут в одно касание с кольцом прогресса, пользовательскими часами/минутами/секундами и громкой сигнализацией на нуле.",
+  "k": "онлайн-таймер с предустановками online timer with presets online timer one tap 1 5 10 15 30 and 60 minute timers with a progress ring custom hours minutes seconds and a loud alarm at zero 1 10 15 30 5 60 в громкой и касание кольцом минут минутами на нуле одно онлайн-таймер пользовательскими предустановками прогресса с секундами сигнализацией таймеры часами",
+  "p": 121,
+  "c": "Tool"
+ },
+ {
+  "n": "Онлайн-секундомер с кругами",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/stopwatch.html",
+  "s": "Loona Hours",
+  "d": "Миллисекундный секундомер со временем кругов и отсечек, таблицей кругов и выделением самого быстрого и самого медленного круга.",
+  "k": "онлайн-секундомер с кругами online stopwatch with laps stopwatch millisecond stopwatch with lap and split times a lap table and fastest slowest lap highlighting быстрого временем выделением и круга кругами кругов медленного миллисекундный онлайн-секундомер отсечек с самого секундомер со таблицей",
+  "p": 122,
+  "c": "Tool"
+ },
+ {
+  "n": "Таймер Помодоро",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/pomodoro-timer.html",
+  "s": "Loona Hours",
+  "d": "25-минутные сессии концентрации с автоматическими 5-минутными перерывами, длинным перерывом после каждых 4 сессий и счётчиком сессий.",
+  "k": "таймер помодоро pomodoro timer pomodoro timer 25 minute focus sessions with automatic 5 minute breaks a long break every 4 sessions and a session counter 25-минутные 4 5-минутными автоматическими длинным и каждых концентрации перерывами перерывом помодоро после с сессии сессий счётчиком таймер",
+  "p": 123,
+  "c": "Tool"
+ },
+ {
+  "n": "Интервальный таймер — HIIT",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/interval-timer.html",
+  "s": "Loona Hours",
+  "d": "Раунды работы/отдыха для Табата, бокса и круговых тренировок: обратный отсчёт подготовки, метки фаз и звуковые сигналы при каждой смене.",
+  "k": "интервальный таймер — hiit interval timer hiit interval timer work rest rounds for tabata boxing and circuits prepare countdown phase labels and beeps at every change hiit бокса для звуковые и интервальный каждой круговых метки обратный отдыха отсчёт подготовки при работы раунды сигналы смене табата таймер тренировок фаз",
+  "p": 124,
+  "c": "Tool"
+ },
+ {
+  "n": "Обратный отсчёт до любой даты",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/countdown-timer.html",
+  "s": "Loona Hours",
+  "d": "Назовите событие и отсчитайте живые дни, часы, минуты и секунды до него — а затем наблюдайте, как после него идёт отсчёт вверх.",
+  "k": "обратный отсчёт до любой даты countdown to any date countdown timer name an event and count the live days hours minutes and seconds to it then watch it count up afterwards а вверх даты дни до живые затем и идёт как любой минуты наблюдайте назовите него обратный отсчитайте отсчёт после секунды событие часы",
+  "p": 125,
+  "c": "Tool"
+ },
+ {
+  "n": "Конвертер часовых поясов",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-zone-converter.html",
+  "s": "Loona Hours",
+  "d": "Конвертируйте любой момент между 44 мировыми часовыми поясами с живыми часами, смещениями UTC и переходом на летнее время, обрабатываемым базой данных IANA.",
+  "k": "конвертер часовых поясов time zone converter time zone converter convert any moment between 44 world time zones with live clocks utc offsets and daylight saving handled by the iana database 44 iana utc базой время данных живыми и конвертер конвертируйте летнее любой между мировыми момент на обрабатываемым переходом поясами поясов с смещениями часами часовыми часовых",
+  "p": 126,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в лондон new york to london time new york to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный нью-йорка обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 127,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лос-Анджелеса в Нью-Йорк",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/los-angeles-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лос-анджелеса в нью-йорк los angeles to new york time los angeles to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лос-анджелеса на настроенный нью-йорк обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 128,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в дубай london to dubai time london to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер лондона на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 129,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дубая в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/dubai-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дубая в лондон dubai to london time dubai to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубая живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 130,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в дубай new york to dubai time new york to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер на настроенный нью-йорка обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 131,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Карачи",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-karachi-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в карачи london to karachi time london to karachi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из карачи конвертер лондона на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 132,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Карачи в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/karachi-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из карачи в дубай karachi to dubai time karachi to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из карачи конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 133,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Торонто в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/toronto-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из торонто в лондон toronto to london time toronto to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица торонто точная часа часы",
+  "p": 134,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Сиднея в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/sydney-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из сиднея в лондон sydney to london time sydney to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сиднея сравнительная таблица точная часа часы",
+  "p": 135,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Сидней",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-sydney-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в сидней london to sydney time london to sydney time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондона на настроенный обоих полная предварительно разница сегодня сидней сравнительная таблица точная часа часы",
+  "p": 136,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Чикаго в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/chicago-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из чикаго в лондон chicago to london time chicago to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы чикаго",
+  "p": 137,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Торонто",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-toronto-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в торонто new york to toronto time new york to toronto time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер на настроенный нью-йорка обоих полная предварительно разница сегодня сравнительная таблица торонто точная часа часы",
+  "p": 138,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Нью-Йорк",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в нью-йорк london to new york time london to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондона на настроенный нью-йорк обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 139,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Берлин",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-berlin-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в берлин new york to berlin time new york to berlin time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 берлин в время городов для живые и из конвертер на настроенный нью-йорка обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 140,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Париж",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-paris-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в париж new york to paris time new york to paris time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер на настроенный нью-йорка обоих париж полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 141,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лос-Анджелеса в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/los-angeles-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лос-анджелеса в лондон los angeles to london time los angeles to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон лос-анджелеса на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 142,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лос-Анджелеса в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/los-angeles-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лос-анджелеса в дубай los angeles to dubai time los angeles to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер лос-анджелеса на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 143,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Дели",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-delhi-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в дели london to delhi time london to delhi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов дели для живые и из конвертер лондона на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 144,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дели в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/delhi-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дели в лондон delhi to london time delhi to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов дели для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 145,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Сингапур",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в сингапур london to singapore time london to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондона на настроенный обоих полная предварительно разница сегодня сингапур сравнительная таблица точная часа часы",
+  "p": 146,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Сингапура в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/singapore-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из сингапура в лондон singapore to london time singapore to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сингапура сравнительная таблица точная часа часы",
+  "p": 147,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Токио",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-tokyo-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в токио london to tokyo time london to tokyo time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондона на настроенный обоих полная предварительно разница сегодня сравнительная таблица токио точная часа часы",
+  "p": 148,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Токио",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-tokyo-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в токио new york to tokyo time new york to tokyo time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер на настроенный нью-йорка обоих полная предварительно разница сегодня сравнительная таблица токио точная часа часы",
+  "p": 149,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дубая в Карачи",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/dubai-to-karachi-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дубая в карачи dubai to karachi time dubai to karachi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубая живые и из карачи конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 150,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Карачи в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/karachi-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из карачи в лондон karachi to london time karachi to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из карачи конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 151,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дубая в Дели",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/dubai-to-delhi-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дубая в дели dubai to delhi time dubai to delhi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов дели для дубая живые и из конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 152,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дели в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/delhi-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дели в дубай delhi to dubai time delhi to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов дели для дубай живые и из конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 153,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Торонто в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/toronto-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из торонто в дубай toronto to dubai time toronto to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица торонто точная часа часы",
+  "p": 154,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Сиднея в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/sydney-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из сиднея в дубай sydney to dubai time sydney to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер на настроенный обоих полная предварительно разница сегодня сиднея сравнительная таблица точная часа часы",
+  "p": 155,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дубая в Сидней",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/dubai-to-sydney-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дубая в сидней dubai to sydney time dubai to sydney time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубая живые и из конвертер на настроенный обоих полная предварительно разница сегодня сидней сравнительная таблица точная часа часы",
+  "p": 156,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Сингапур",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в сингапур new york to singapore time new york to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер на настроенный нью-йорка обоих полная предварительно разница сегодня сингапур сравнительная таблица точная часа часы",
+  "p": 157,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Чикаго в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/chicago-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из чикаго в дубай chicago to dubai time chicago to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы чикаго",
+  "p": 158,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Хьюстона в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/houston-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из хьюстона в лондон houston to london time houston to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная хьюстона часа часы",
+  "p": 159,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Майами в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/miami-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из майами в лондон miami to london time miami to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон майами на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 160,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Бостона в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/boston-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из бостона в лондон boston to london time boston to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 бостона в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 161,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Сан-Франциско в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/san-francisco-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из сан-франциско в лондон san francisco to london time san francisco to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сан-франциско сегодня сравнительная таблица точная часа часы",
+  "p": 162,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Ванкувера в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/vancouver-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из ванкувера в лондон vancouver to london time vancouver to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в ванкувера время городов для живые и из конвертер лондон на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 163,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Мумбаи",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-mumbai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в мумбаи london to mumbai time london to mumbai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондона мумбаи на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 164,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Мумбаи в Лондон",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/mumbai-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из мумбаи в лондон mumbai to london time mumbai to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондон мумбаи на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 165,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Гонконг",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-hong-kong-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в гонконг london to hong kong time london to hong kong time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время гонконг городов для живые и из конвертер лондона на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 166,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Нью-Йорка в Гонконг",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/new-york-to-hong-kong-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из нью-йорка в гонконг new york to hong kong time new york to hong kong time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время гонконг городов для живые и из конвертер на настроенный нью-йорка обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 167,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лос-Анджелеса в Токио",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/los-angeles-to-tokyo-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лос-анджелеса в токио los angeles to tokyo time los angeles to tokyo time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лос-анджелеса на настроенный обоих полная предварительно разница сегодня сравнительная таблица токио точная часа часы",
+  "p": 168,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лос-Анджелеса в Сидней",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/los-angeles-to-sydney-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лос-анджелеса в сидней los angeles to sydney time los angeles to sydney time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лос-анджелеса на настроенный обоих полная предварительно разница сегодня сидней сравнительная таблица точная часа часы",
+  "p": 169,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Сиднея в Сингапур",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/sydney-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из сиднея в сингапур sydney to singapore time sydney to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер на настроенный обоих полная предварительно разница сегодня сиднея сингапур сравнительная таблица точная часа часы",
+  "p": 170,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Сингапура в Дубай",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/singapore-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из сингапура в дубай singapore to dubai time singapore to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубай живые и из конвертер на настроенный обоих полная предварительно разница сегодня сингапура сравнительная таблица точная часа часы",
+  "p": 171,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Дубая в Сингапур",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/dubai-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из дубая в сингапур dubai to singapore time dubai to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для дубая живые и из конвертер на настроенный обоих полная предварительно разница сегодня сингапур сравнительная таблица точная часа часы",
+  "p": 172,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Парижа в Нью-Йорк",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/paris-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из парижа в нью-йорк paris to new york time paris to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер на настроенный нью-йорк обоих парижа полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 173,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Берлина в Нью-Йорк",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/berlin-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из берлина в нью-йорк berlin to new york time berlin to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 берлина в время городов для живые и из конвертер на настроенный нью-йорк обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 174,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Лондона в Лос-Анджелес",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/london-to-los-angeles-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из лондона в лос-анджелес london to los angeles time london to los angeles time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из конвертер лондона лос-анджелес на настроенный обоих полная предварительно разница сегодня сравнительная таблица точная часа часы",
+  "p": 175,
+  "c": "Tool"
+ },
+ {
+  "n": "Время из Карачи в Торонто",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/karachi-to-toronto-time.html",
+  "s": "Loona Hours",
+  "d": "Живые часы для обоих городов, точная разница на сегодня, предварительно настроенный конвертер и полная сравнительная таблица на 24 часа.",
+  "k": "время из карачи в торонто karachi to toronto time karachi to toronto time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table 24 в время городов для живые и из карачи конвертер на настроенный обоих полная предварительно разница сегодня сравнительная таблица торонто точная часа часы",
+  "p": 176,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для электриков",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/electrician-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для электриков: недельный табель, разбивка сверхурочных, зарплата брутто, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для электриков electrician time card calculator electrician time card calculator free time card calculator for electricians weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для зарплата и калькулятор карты на настроен недельный печать предварительно рабочего разбивка регистрации сверхурочных табель типичный учёта электриков",
+  "p": 177,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для сантехника",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/plumber-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для сантехников: недельный табель, разбивка сверхурочных, зарплата брутто, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для сантехника plumber time card calculator plumber time card calculator free time card calculator for plumbers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для зарплата и калькулятор карты на настроен недельный печать предварительно рабочего разбивка регистрации сантехника сантехников сверхурочных табель типичный учёта",
+  "p": 178,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для шеф-повара",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/chef-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для шеф-поваров: недельный табель, разбивка сверхурочных, зарплата до вычетов, печать и CSV. Предварительно настроен на типичное расписание — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для шеф-повара chef time card calculator chef time card calculator free time card calculator for chefs weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный времени вычетов для до зарплата и калькулятор карты на настроен недельный печать предварительно рабочего разбивка расписание регистрации сверхурочных табель типичное учёта шеф-повара шеф-поваров",
+  "p": 179,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карточки учёта времени для водителя-курьера",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/delivery-driver-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для водителей доставки: недельный табель, разбивка сверхурочных, валовая оплата, печать и CSV. Настроен на типичный график — без регистрации.",
+  "k": "калькулятор карточки учёта времени для водителя-курьера delivery driver time card calculator delivery driver time card calculator free time card calculator for delivery drivers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный валовая водителей водителя-курьера времени график для доставки и калькулятор карточки карты на настроен недельный оплата печать рабочего разбивка регистрации сверхурочных табель типичный учёта",
+  "p": 180,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля для фабричных рабочих",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/factory-worker-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карточки учёта времени для заводских рабочих: недельный табель, разбивка сверхурочных, зарплата брутто, печать и CSV. Предустановлен типичный график — без регистрации.",
+  "k": "калькулятор табеля для фабричных рабочих factory worker time card calculator factory worker time card calculator free time card calculator for factory workers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для заводских зарплата и калькулятор карточки недельный печать предустановлен рабочих разбивка регистрации сверхурочных табель табеля типичный учёта фабричных",
+  "p": 181,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для уборщика",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/cleaner-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карточки учёта времени для уборщиков: еженедельный табель, разбивка сверхурочных, оплата брутто, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для уборщика cleaner time card calculator cleaner time card calculator free time card calculator for cleaners weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для еженедельный и калькулятор карточки карты на настроен оплата печать предварительно рабочего разбивка регистрации сверхурочных табель типичный уборщика уборщиков учёта",
+  "p": 182,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для работника по уходу",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/caregiver-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для работников по уходу: недельный табель, разбивка сверхурочных, зарплата до вычетов, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для работника по уходу caregiver time card calculator caregiver time card calculator free time card calculator for caregivers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный времени вычетов график для до зарплата и калькулятор карты на настроен недельный печать по предварительно работника работников рабочего разбивка регистрации сверхурочных табель типичный уходу учёта",
+  "p": 183,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени бармена",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/bartender-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор табеля для барменов: недельный табель, разделение сверхурочных, валовая оплата, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени бармена bartender time card calculator bartender time card calculator free time card calculator for bartenders weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv бармена барменов без бесплатный валовая времени график для и калькулятор карты на настроен недельный оплата печать предварительно рабочего разделение регистрации сверхурочных табель табеля типичный учёта",
+  "p": 184,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для администраторов стойки регистрации",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/receptionist-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карточки учёта времени для администраторов: недельный табель, разбивка сверхурочных, зарплата брутто, печать и CSV. Предустановлен типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для администраторов стойки регистрации receptionist time card calculator receptionist time card calculator free time card calculator for receptionists weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv администраторов без бесплатный брутто времени график для зарплата и калькулятор карточки карты недельный печать предустановлен рабочего разбивка регистрации сверхурочных стойки табель типичный учёта",
+  "p": 185,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля представителя службы поддержки клиентов",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/customer-service-representative-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карточки учёта времени для представителей службы поддержки клиентов: недельный табель, распределение сверхурочных, брутто-зарплата, печать и CSV. Предустановлен типичный график — без регистрации.",
+  "k": "калькулятор табеля представителя службы поддержки клиентов customer service representative time card calculator customer service representative time card calculator free time card calculator for customer service representatives weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто-зарплата времени график для и калькулятор карточки клиентов недельный печать поддержки представителей представителя предустановлен распределение регистрации сверхурочных службы табель табеля типичный учёта",
+  "p": 186,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для сельскохозяйственных работников",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/farm-worker-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для сельскохозяйственных рабочих: недельный табель, разбивка сверхурочных, зарплата до вычетов, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для сельскохозяйственных работников farm worker time card calculator farm worker time card calculator free time card calculator for farm workers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный времени вычетов график для до зарплата и калькулятор карты на настроен недельный печать предварительно работников рабочего рабочих разбивка регистрации сверхурочных сельскохозяйственных табель типичный учёта",
+  "p": 187,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для механика",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/mechanic-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор табеля для механиков: еженедельный табель, разделение сверхурочных, оплата брутто, печать и CSV. Предустановлен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для механика mechanic time card calculator mechanic time card calculator free time card calculator for mechanics weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для еженедельный и калькулятор карты механика механиков на оплата печать предустановлен рабочего разделение регистрации сверхурочных табель табеля типичный учёта",
+  "p": 188,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карточки учёта времени для парикмахеров",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/hairdresser-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для парикмахеров: недельный табель, разбивка сверхурочных, зарплата брутто, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карточки учёта времени для парикмахеров hairdresser time card calculator hairdresser time card calculator free time card calculator for hairdressers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для зарплата и калькулятор карточки карты на настроен недельный парикмахеров печать предварительно рабочего разбивка регистрации сверхурочных табель типичный учёта",
+  "p": 189,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для бариста",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/barista-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для бариста: недельный табель, разбивка сверхурочных, зарплата брутто, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для бариста barista time card calculator barista time card calculator free time card calculator for baristas weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv бариста без бесплатный брутто времени график для зарплата и калькулятор карты на настроен недельный печать предварительно рабочего разбивка регистрации сверхурочных табель типичный учёта",
+  "p": 190,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для уборщика",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/janitor-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для уборщиков: недельный табель, разбивка сверхурочных, зарплата до вычетов, печать и CSV. Предварительно настроен на типичное расписание — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для уборщика janitor time card calculator janitor time card calculator free time card calculator for janitors weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный времени вычетов для до зарплата и калькулятор карты на настроен недельный печать предварительно рабочего разбивка расписание регистрации сверхурочных табель типичное уборщика уборщиков учёта",
+  "p": 191,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карточки учёта времени оператора вилочного погрузчика",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/forklift-operator-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для операторов погрузчиков: недельный табель, разделение сверхурочных, зарплата до вычетов, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карточки учёта времени оператора вилочного погрузчика forklift operator time card calculator forklift operator time card calculator free time card calculator for forklift operators weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный вилочного времени вычетов график для до зарплата и калькулятор карточки карты на настроен недельный оператора операторов печать погрузчика погрузчиков предварительно рабочего разделение регистрации сверхурочных табель типичный учёта",
+  "p": 192,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для домработницы",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/housekeeper-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для домработниц: недельный табель, разбивка сверхурочных, зарплата до вычетов, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для домработницы housekeeper time card calculator housekeeper time card calculator free time card calculator for housekeepers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный времени вычетов график для до домработниц домработницы зарплата и калькулятор карты на настроен недельный печать предварительно рабочего разбивка регистрации сверхурочных табель типичный учёта",
+  "p": 193,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карты учёта рабочего времени для ландшафтных работников",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/landscaper-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карточки учёта времени для ландшафтных рабочих: еженедельный табель, разбивка сверхурочных, оплата брутто, печать и CSV. Предварительно настроен на типичный график — без регистрации.",
+  "k": "калькулятор карты учёта рабочего времени для ландшафтных работников landscaper time card calculator landscaper time card calculator free time card calculator for landscapers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для еженедельный и калькулятор карточки карты ландшафтных на настроен оплата печать предварительно работников рабочего рабочих разбивка регистрации сверхурочных табель типичный учёта",
+  "p": 194,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор табеля для маляров",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/painter-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор карты учёта рабочего времени для маляров: недельный табель, разбивка сверхурочных, валовая оплата, печать и CSV. Настроен на типичный график — без регистрации.",
+  "k": "калькулятор табеля для маляров painter time card calculator painter time card calculator free time card calculator for painters weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный валовая времени график для и калькулятор карты маляров на настроен недельный оплата печать рабочего разбивка регистрации сверхурочных табель табеля типичный учёта",
+  "p": 195,
+  "c": "Tool"
+ },
+ {
+  "n": "Калькулятор карточки учёта времени сварщика",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/welder-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "Бесплатный калькулятор табеля для сварщиков: еженедельный табель, разделение сверхурочных, оплата брутто, печать и CSV. Предустановлен на типичный график — без регистрации.",
+  "k": "калькулятор карточки учёта времени сварщика welder time card calculator welder time card calculator free time card calculator for welders weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up csv без бесплатный брутто времени график для еженедельный и калькулятор карточки на оплата печать предустановлен разделение регистрации сварщика сварщиков сверхурочных табель табеля типичный учёта",
+  "p": 196,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $41 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-41-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка за $41 в час составляет $61.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель от 40 до 60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $41 в час time and a half for 41 an hour time and a half for 41 an hour time and a half for 41 an hour is 61 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 41 50 60 61 бесплатно в для до за и мини-калькулятор недель оплаты от плюс полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 197,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $42 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-42-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата при ставке $42 в час — это $63.00 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $42 в час time and a half for 42 an hour time and a half for 42 an hour time and a half for 42 an hour is 63 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 42 60 63 бесплатно в для за и из мини-калькулятор недель оплата оплаты плюс полные полуторная при сверхурочный сверхурочных ставка ставке таблицы час часов это",
+  "p": 198,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка за $43 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-43-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата за $43 в час — это $64.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель по 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка за $43 в час time and a half for 43 an hour time and a half for 43 an hour time and a half for 43 an hour is 64 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 43 50 60 64 бесплатно в для за и мини-калькулятор недель оплата оплаты плюс по полные полуторная сверхурочный сверхурочных ставка таблицы час часов это",
+  "p": 199,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $44 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-44-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $44 в час составляет $66.00 за сверхурочный час. Полные таблицы оплаты за 1–20 сверхурочных часов и недели из 40–60 часов, а также мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $44 в час time and a half for 44 an hour time and a half for 44 an hour time and a half for 44 an hour is 66 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 44 60 66 а бесплатно в за и из мини-калькулятор недели оплаты полные полуторная при сверхурочный сверхурочных составляет ставка таблицы также час часов",
+  "p": 200,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $45 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-45-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $45 в час составляет $67.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель по 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $45 в час time and a half for 45 an hour time and a half for 45 an hour time and a half for 45 an hour is 67 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 45 50 60 67 бесплатно в для за и мини-калькулятор недель оплаты плюс по полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 201,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $46 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-46-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата при ставке $46 в час — $69.00 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $46 в час time and a half for 46 an hour time and a half for 46 an hour time and a half for 46 an hour is 69 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 46 60 69 бесплатно в для за и из мини-калькулятор недель оплата оплаты плюс полные полуторная при сверхурочный сверхурочных ставка ставке таблицы час часов",
+  "p": 202,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка за $47 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-47-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $47 в час составляет $70.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка за $47 в час time and a half for 47 an hour time and a half for 47 an hour time and a half for 47 an hour is 70 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 47 50 60 70 бесплатно в для за и из мини-калькулятор недель оплаты плюс полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 203,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $48 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-48-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата при ставке $48 в час составляет $72.00 за сверхурочный час. Полные таблицы оплаты для сверхурочных от 1 до 20 часов и недель от 40 до 60 часов плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $48 в час time and a half for 48 an hour time and a half for 48 an hour time and a half for 48 an hour is 72 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 48 60 72 бесплатно в для до за и мини-калькулятор недель оплата оплаты от плюс полные полуторная при сверхурочный сверхурочных составляет ставка ставке таблицы час часов",
+  "p": 204,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $49 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-49-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $49 в час составляет $73.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $49 в час time and a half for 49 an hour time and a half for 49 an hour time and a half for 49 an hour is 73 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 49 50 60 73 бесплатно в для за и из мини-калькулятор недель оплаты плюс полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 205,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $50 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-50-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $50 в час составляет $75.00 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель по 40–60 часов плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $50 в час time and a half for 50 an hour time and a half for 50 an hour time and a half for 50 an hour is 75 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 50 60 75 бесплатно в для за и мини-калькулятор недель оплаты плюс по полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 206,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка за $51 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-51-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $51 в час составляет $76.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка за $51 в час time and a half for 51 an hour time and a half for 51 an hour time and a half for 51 an hour is 76 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 50 51 60 76 бесплатно в для за и из мини-калькулятор недель оплаты плюс полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 207,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $52 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-52-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $52 в час составляет $78.00 за час сверхурочной работы. Полные таблицы оплаты для 1–20 часов сверхурочной работы и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $52 в час time and a half for 52 an hour time and a half for 52 an hour time and a half for 52 an hour is 78 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 52 60 78 бесплатно в для за и из мини-калькулятор недель оплаты плюс полные полуторная при работы сверхурочной составляет ставка таблицы час часов",
+  "p": 208,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $53 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-53-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка за $53 в час составляет $79.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель от 40 до 60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $53 в час time and a half for 53 an hour time and a half for 53 an hour time and a half for 53 an hour is 79 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 50 53 60 79 бесплатно в для до за и мини-калькулятор недель оплаты от плюс полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 209,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $54 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-54-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата при ставке $54 в час — это $81.00 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $54 в час time and a half for 54 an hour time and a half for 54 an hour time and a half for 54 an hour is 81 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 54 60 81 бесплатно в для за и из мини-калькулятор недель оплата оплаты плюс полные полуторная при сверхурочный сверхурочных ставка ставке таблицы час часов это",
+  "p": 210,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка за $55 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-55-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата за $55 в час — это $82.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель по 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка за $55 в час time and a half for 55 an hour time and a half for 55 an hour time and a half for 55 an hour is 82 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 50 55 60 82 бесплатно в для за и мини-калькулятор недель оплата оплаты плюс по полные полуторная сверхурочный сверхурочных ставка таблицы час часов это",
+  "p": 211,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $56 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-56-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $56 в час составляет $84.00 за сверхурочный час. Полные таблицы оплаты за 1–20 сверхурочных часов и недели из 40–60 часов, а также мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $56 в час time and a half for 56 an hour time and a half for 56 an hour time and a half for 56 an hour is 84 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 56 60 84 а бесплатно в за и из мини-калькулятор недели оплаты полные полуторная при сверхурочный сверхурочных составляет ставка таблицы также час часов",
+  "p": 212,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $57 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-57-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $57 в час составляет $85.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель по 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $57 в час time and a half for 57 an hour time and a half for 57 an hour time and a half for 57 an hour is 85 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 50 57 60 85 бесплатно в для за и мини-калькулятор недель оплаты плюс по полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 213,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $58 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-58-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата при ставке $58 в час — $87.00 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $58 в час time and a half for 58 an hour time and a half for 58 an hour time and a half for 58 an hour is 87 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 58 60 87 бесплатно в для за и из мини-калькулятор недель оплата оплаты плюс полные полуторная при сверхурочный сверхурочных ставка ставке таблицы час часов",
+  "p": 214,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка за $59 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-59-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная ставка при $59 в час составляет $88.50 за сверхурочный час. Полные таблицы оплаты для 1–20 сверхурочных часов и недель из 40–60 часов, плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка за $59 в час time and a half for 59 an hour time and a half for 59 an hour time and a half for 59 an hour is 88 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 1 20 40 50 59 60 88 бесплатно в для за и из мини-калькулятор недель оплаты плюс полные полуторная при сверхурочный сверхурочных составляет ставка таблицы час часов",
+  "p": 215,
+  "c": "Tool"
+ },
+ {
+  "n": "Полуторная ставка при $60 в час",
+  "u": "https://loonaautomation.github.io/loona-hours/ru/time-and-a-half-for-60-an-hour.html",
+  "s": "Loona Hours",
+  "d": "Полуторная оплата при ставке $60 в час составляет $90.00 за сверхурочный час. Полные таблицы оплаты для сверхурочных от 1 до 20 часов и недель от 40 до 60 часов плюс мини-калькулятор. Бесплатно.",
+  "k": "полуторная ставка при $60 в час time and a half for 60 an hour time and a half for 60 an hour time and a half for 60 an hour is 90 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free 00 1 20 40 60 90 бесплатно в для до за и мини-калькулятор недель оплата оплаты от плюс полные полуторная при сверхурочный сверхурочных составляет ставка ставке таблицы час часов",
+  "p": 216,
+  "c": "Tool"
+ }
+]
