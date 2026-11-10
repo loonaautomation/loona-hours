@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur d’heures de travail entre deux dates (hors jours fériés) | Loona Hours</title>
+<meta name="description" content="Calculateur gratuit d’heures de travail entre dates : choisissez un intervalle et un schéma de travail pour compter les jours ouvrables et les heures programmées, avec les jours fériés fédéraux américains exclus automatiquement.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/work-hours-between-dates-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/work-hours-between-dates-calculator.html"><meta property="og:locale" content="fr_FR">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur d’heures de travail entre deux dates (hors jours fériés) | Loona Hours">
+<meta property="og:description" content="Calculateur gratuit d’heures de travail entre dates : choisissez un intervalle et un schéma de travail pour compter les jours ouvrables et les heures programmées, avec les jours fériés fédéraux américains exclus automatiquement.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculateur d’heures de travail entre deux dates (hors jours fériés) | Loona Hours">
+<meta name="twitter:description" content="Calculateur gratuit d’heures de travail entre dates : choisissez un intervalle et un schéma de travail pour compter les jours ouvrables et les heures programmées, avec les jours fériés fédéraux américains exclus automatiquement.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — Calculateur d’heures de travail entre deux dates","url":"https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quels jours fériés sont exclus ?","acceptedAnswer":{"@type":"Answer","text":"Les 11 jours fériés fédéraux américains du calendrier OPM : Jour de l’An, MLK Day, Washington’s Birthday, Memorial Day, Juneteenth, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving et Christmas. Ceux à l’intérieur de votre intervalle sont nommés dans le résultat."}},{"@type":"Question","name":"La date de fin compte-t-elle ?","acceptedAnswer":{"@type":"Answer","text":"Oui — les dates de début et de fin sont toutes deux incluses, ce qui est la façon dont la planification de projet et de congés compte habituellement."}},{"@type":"Question","name":"Puis-je comptabiliser un rythme de travail non standard ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Cochez n’importe quelle combinaison de jours — par exemple mardi–samedi — et le comptage suit ce schéma sur toute la période."}},{"@type":"Question","name":"Mon entreprise donne le lendemain de Thanksgiving. Est-il exclu ?","acceptedAnswer":{"@type":"Answer","text":"Pas automatiquement : c’est un jour férié d’entreprise courant mais pas fédéral. Soustrayez-le manuellement (un jour ouvrable, ou votre chiffre d’heures par jour) si votre employeur ferme ce jour-là."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Calculateur d’heures de travail entre deux dates (hors jours fériés)",
+      "item": "https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>Heures</span></a><nav><a href="time-card-calculator.html">Carte de pointage</a><a href="overtime-calculator.html">Heures supplémentaires</a><a href="california-overtime-calculator.html">Californie</a><a href="overtime-calculator-by-state.html">Par État</a><a href="./#tools">Tous les outils</a><a href="about.html">À propos</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Calculateur d’heures de travail entre deux dates</h1><p>Vous planifiez un projet, un solde de congés ou un contrat ? Comptez les vrais jours ouvrables et heures de travail entre deux dates — week-ends et jours fériés fédéraux gérés.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>En bref :</strong> comptez les jours calendaires, les jours ouvrables selon votre schéma hebdomadaire choisi, et le total des heures de travail prévues entre deux dates, les 11 jours fériés fédéraux américains (calendrier OPM) étant éventuellement exclus lorsqu’ils tombent un jour ouvrable.</div>
+<div class="strip" aria-label="Outils populaires"><a href="time-card-calculator.html">Calculateur de carte de pointage</a><a href="hours-calculator.html">Calculateur d’heures</a><a href="overtime-calculator.html">Calculateur d’heures supplémentaires</a><a href="california-overtime-calculator.html">Calculateur d’heures supplémentaires — Californie</a><a href="time-and-a-half-calculator.html">Calculateur de taux majoré de moitié</a><a href="minutes-to-decimal-converter.html">Convertisseur de minutes en heures décimales</a></div>
+<div class="calc">
+<h2>Calculateur d’heures de travail entre deux dates</h2>
+<div class="frow">
+<div class="field"><label for="dFrom">Date de début</label><input type="date" id="dFrom" value="2026-11-02"></div>
+<div class="field"><label for="dTo">Date de fin (incluse)</label><input type="date" id="dTo" value="2026-11-13"></div>
+<div class="field"><label for="hpd">Heures par journée de travail</label><input type="number" id="hpd" value="8" step="0.25" min="0" ></div>
+</div>
+<div class="frow">
+<div class="field"><label>Jours ouvrables</label><div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:8px">
+<label class="chk"><input type="checkbox" id="wd0"> Di</label><label class="chk"><input type="checkbox" id="wd1" checked> Mo</label><label class="chk"><input type="checkbox" id="wd2" checked> Tu</label><label class="chk"><input type="checkbox" id="wd3" checked> We</label><label class="chk"><input type="checkbox" id="wd4" checked> Th</label><label class="chk"><input type="checkbox" id="wd5" checked> Fr</label><label class="chk"><input type="checkbox" id="wd6"> Sa</label>
+</div></div>
+<div class="field"><label for="exHol">Jours fériés fédéraux américains</label><select id="exHol"><option value="yes" selected>Les exclure</option><option value="no">Les compter comme jours ouvrables</option></select></div>
+</div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">Compter les heures de travail</button></div>
+<div class="stats" id="stats"></div>
+<div id="holList"></div>
+</div>
+<div class="sec"><h2>Comment ça marche — La règle derrière ce calculateur</h2><p>Le calculateur parcourt la plage jour par jour : un jour compte lorsqu’il correspond à votre schéma de travail (du lundi au vendredi par défaut) et — si vous le choisissez — n’est pas un jour férié fédéral américain. La liste des jours fériés est générée à partir du <strong>Office of Personnel Management (OPM)</strong> horaire : les 11 jours fériés fédéraux, les flottants (MLK Day, Memorial Day, Thanksgiving et les autres) étant calculés selon leurs règles officielles de jour de semaine pour les années que votre période couvre, de sorte que les périodes couvrant plusieurs années restent exactes.</p>
+<p>Notez que « jour férié fédéral » et « jour de congé » ne sont pas identiques : les employeurs privés ne sont pas tenus de fermer les jours fériés fédéraux, et le report des jours fériés observés (lorsque le 4 juillet tombe un week-end) suit la politique de votre employeur. Considérez la liste d’exclusion imprimée avec votre résultat comme l’hypothèse de base, et ajustez le schéma si votre lieu de travail diffère.</p></div>
+<div class="sec"><h2>Outils d’heures associés</h2><div class="grid"><a class="card" href="monthly-timesheet-calculator.html"><h3>Calculateur de feuille de temps semi-mensuelle & mensuelle</h3><p>Un mois entier de services sur une seule feuille, totalisé pour les périodes de paie semi-mensuelles du 1er au 15 et du 16 à la fin, les heures supplémentaires étant toujours calculées par semaine de travail.</p><span class="badge">Gratuit — essayez-le</span></a><a class="card" href="weekly-pay-calculator.html"><h3>Calculateur de salaire brut hebdomadaire</h3><p>Des heures à toutes les formes de bulletin : brut hebdomadaire réparti en normal, supplémentaires et taux double, puis converti en équivalents bihebdomadaire, mensuel et annuel.</p><span class="badge">Gratuit — essayez-le</span></a><a class="card" href="time-card-calculator.html"><h3>Calculateur de carte de pointage</h3><p>La carte de pointage hebdomadaire phare : pointage d’entrée/sortie et pauses pour 7 jours, répartition des heures supplémentaires à 40 heures, salaire brut, impression et CSV — plus Enregistrer ma semaine sur votre appareil.</p><span class="badge">Gratuit — essayez-le</span></a><a class="card" href="12-hour-shift-calculator.html"><h3>Calculateur de postes de 12 heures</h3><p>Pour les infirmiers et tous ceux qui travaillent en 12 heures : heures payées par service, totaux hebdomadaires en 3×12 et 4×12, et heures supplémentaires selon les règles fédérales ou de California.</p><span class="badge">Gratuit — essayez-le</span></a></div></div>
+<div class="sec"><h2>Questions fréquemment posées</h2><details class="faq"><summary>Quels jours fériés sont exclus ?</summary><p>Les 11 jours fériés fédéraux américains du calendrier OPM : Jour de l’An, MLK Day, Washington’s Birthday, Memorial Day, Juneteenth, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving et Christmas. Ceux à l’intérieur de votre intervalle sont nommés dans le résultat.</p></details><details class="faq"><summary>La date de fin compte-t-elle ?</summary><p>Oui — les dates de début et de fin sont toutes deux incluses, ce qui est la façon dont la planification de projet et de congés compte habituellement.</p></details><details class="faq"><summary>Puis-je comptabiliser un rythme de travail non standard ?</summary><p>Oui. Cochez n’importe quelle combinaison de jours — par exemple mardi–samedi — et le comptage suit ce schéma sur toute la période.</p></details><details class="faq"><summary>Mon entreprise donne le lendemain de Thanksgiving. Est-il exclu ?</summary><p>Pas automatiquement : c’est un jour férié d’entreprise courant mais pas fédéral. Soustrayez-le manuellement (un jour ouvrable, ou votre chiffre d’heures par jour) si votre employeur ferme ce jour-là.</p></details></div>
+<div class="disc"><strong>Avis de non-responsabilité :</strong> Estimations uniquement — ce ne sont ni des conseils de paie ni des conseils juridiques. Les règles de paie de votre employeur et le droit de votre État régissent votre paie réelle. Les chiffres sont arrondis pour l’affichage ; votre bulletin de paie et votre service de paie constituent le relevé officiel.</div>
+<div class="sec"><h2>Comment ça fonctionne — la formule</h2>
+<p>Choisissez une date de début et une date de fin — les deux jours comptent. Le calculateur parcourt un par un chaque jour calendaire de la période, conserve les jours qui correspondent au modèle hebdomadaire que vous cochez, retire éventuellement les jours fériés fédéraux américains qui tombent sur ces jours du modèle, et multiplie les jours ouvrables restants par vos heures par jour.</p>
+<div class="inshort"><strong>La formule :</strong><br>
+Jours ouvrables = jours de la période (début et fin inclus) qui correspondent à votre modèle hebdomadaire, moins les jours fériés fédéraux tombant sur ces jours si vous avez choisi de les exclure<br>
+Heures de travail = jours ouvrables &times; heures par jour</div>
+<h3>Exemple travaillé</h3>
+<p>Prenez l’intervalle avec lequel la page s’ouvre : <strong>Du lundi 2 novembre au vendredi 13 novembre 2026</strong>, un schéma du lundi au vendredi, 8 heures par jour, jours fériés fédéraux exclus. L’intervalle contient 12 jours civils, dont 10 sont des jours du lundi au vendredi. Le Veterans Day tombe le mercredi 11 novembre, à l’intérieur de l’intervalle et un jour ouvrable, il est donc exclu — ce qui laisse <strong>9 jours ouvrables</strong> et 9 &times; 8 = <strong>72.00 heures de travail</strong>, le calculateur nommant le Veterans Day comme le seul jour férié exclu.</p>
+<h3>Questions fréquentes</h3>
+<details class="faq"><summary>Et si je saisis la date de fin avant la date de début ?</summary><p>Le calculateur les échange simplement et travaille sur l’intervalle entre les deux dates. Les totaux sont les mêmes, dans le sens où vous les saisissez.</p></details>
+<details class="faq"><summary>Un jour férié fédéral tombe un samedi. Le vendredi ou le lundi est-il pris à la place ?</summary><p>Pas par ce calculateur. Un jour férié n’est exclu que lorsque la date même du jour férié est l’un de vos jours ouvrables sélectionnés ; la page ne déplace pas l’observation au jour de semaine voisin comme le font les administrations fédérales. Si votre employeur l’observe le vendredi ou le lundi, décochez ce jour-là dans le modèle pour cette période.</p></details>
+<details class="faq"><summary>Puis-je compter un intervalle qui couvre deux années différentes ?</summary><p>Oui. Le calculateur construit la liste des jours fériés fédéraux pour chaque année que la période touche, de sorte qu’une période allant de décembre à janvier exclut correctement les jours fériés aux deux extrémités.</p></details>
+<details class="faq"><summary>Des jours différents peuvent-ils avoir des heures différentes — par exemple 8 heures en semaine mais 4 le vendredi ?</summary><p>Non. Un seul chiffre d’heures par jour est appliqué à chaque jour ouvrable de la plage. Pour un schéma mixte, exécutez la plage deux fois — une fois pour les journées complètes et une fois pour les journées courtes — et additionnez les deux totaux.</p></details>
+<details class="faq"><summary>Le total tient-il compte des pauses-déjeuner ?</summary><p>Non — votre chiffre d’heures par jour est pris exactement tel que saisi. Si vous voulez que les pauses soient retirées, saisissez plutôt vos heures de travail nettes par jour : 7.5 au lieu de 8, par exemple, pour une journée avec un déjeuner non payé de 30 minutes.</p></details>
+</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">Intégrez ce calculateur sur votre site web — gratuit</h2>
+<p style="margin:0 0 12px;line-height:1.6">Ajoutez ce calculateur à votre propre site web ou blog — il est entièrement gratuit, ne nécessite aucune inscription et affiche toujours la dernière version. Copiez le code ci-dessous et collez-le dans votre page à l’endroit où vous voulez que le calculateur apparaisse. Conserver la petite ligne de crédit &ldquo;Propulsé par Loona Automation&rdquo; sous l’intégration aide à garder cet outil gratuit &mdash; mais vous êtes libre de la styliser ou de la retirer ; l’outil fonctionne dans les deux cas.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Work Hours Between Two Dates Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;Propulsé par &lt;a href="https://loonaautomation.github.io/loona-hours/fr/work-hours-between-dates-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; gratuit Calculateur d’heures de travail entre deux dates&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">Copier le code d’intégration</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='Copié !';setTimeout(function(){b.textContent='Copier le code d’intégration';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours : calculateurs gratuits de feuilles de temps, d’heures et d’heures supplémentaires pour les travailleurs américains.<br><a href="about.html">À propos</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions</a> · <a href="contact.html">Contact</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>Tous les calculs s’exécutent sur votre appareil — rien n’est téléversé ni stocké sur un serveur.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'Heures supplémentaires journalières après 8 heures dans une journée. Les employeurs de moins de 4 salariés sont exemptés, et les salariés bénéficiant d’un plan volontaire d’horaires flexibles approuvé par le DOL peuvent travailler jusqu’à 10 heures par jour au taux normal.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'Heures supplémentaires journalières : 1.5x après 8 heures, 2x après 12 heures, plus des règles spéciales le 7e jour consécutif d’une semaine de travail. Les primes de pause repas et de repos sont distinctes et ne sont pas incluses dans cette estimation. Un horaire de travail alternatif valablement adopté (jusqu’à 10 heures par jour par choix des salariés) modifie la règle journalière.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'Heures supplémentaires après 40 heures dans une semaine, 12 heures dans une journée ou 12 heures consécutives — selon ce qui donne au salarié le plus grand avantage. Cet estimateur utilise les heures par jour ; la règle des 12 heures consécutives peut différer pour les postes fractionnés.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'Hawaï',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'Louisiane',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'Les heures supplémentaires journalières après 8 heures dans une journée de travail s’appliquent uniquement si votre taux normal est inférieur à 1.5 fois le salaire minimum du Nevada ($18.00/hour pour un salaire minimum de $12.00). À ce taux ou au-dessus, seules les heures supplémentaires hebdomadaires après 40 heures s’appliquent. Le Nevada compte une journée de travail comme une période glissante de 24 heures à partir du début de votre travail, et un horaire convenu d’un commun accord de 4 jours / 10 heures est exempté de la règle journalière.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'New Jersey',ruleType:'federal'},
+    NM:{name:'Nouveau-Mexique',ruleType:'federal'}, NY:{name:'New York',ruleType:'federal'},
+    NC:{name:'Caroline du Nord',ruleType:'federal'}, ND:{name:'Dakota du Nord',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'La plupart des employeurs de l’Oregon ne doivent des heures supplémentaires qu’après 40 heures dans une semaine. Les heures supplémentaires journalières après 10 heures dans une journée s’appliquent dans les moulins, les usines et l’industrie manufacturière (et quelques secteurs précis), où le salarié est payé au plus favorable entre le calcul journalier et le calcul hebdomadaire.'},
+    PA:{name:'Pennsylvanie',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'Caroline du Sud',ruleType:'federal'}, SD:{name:'Dakota du Sud',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'Virginie-Occidentale',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "Jour de l’An"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Jour de Martin Luther King Jr.' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Anniversaire de Washington (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Jour commémoratif' },
+      fixed(5, 19, 'Juneteenth — Jour de l’Indépendance nationale'),
+      fixed(6, 4, 'Jour de l’Indépendance'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Fête du Travail' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Jour de Christophe Colomb' },
+      fixed(10, 11, 'Jour des anciens combattants'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Jour de Thanksgiving' },
+      fixed(11, 25, 'Jour de Noël')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'Entrée'),tv(p+i+'Sortie'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">Total des heures ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Normal</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">Heures supplémentaires 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">Taux double 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">Salaire brut</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Ligne de paie</th><th class="num">Heures</th><th class="num">Taux</th><th class="num">Montant</th></tr>'
+ +'<tr><td>Salaire normal</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>Salaire des heures supplémentaires (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>Salaire au taux double (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>Prime de différentiel de poste</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>Salaire brut</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function iso(d){return d.toISOString().slice(0,10);}
+function calc(){var f=document.getElementById('dFrom').value,t=document.getElementById('dTo').value;var el=document.getElementById('stats');var hl=document.getElementById('holList');
+if(!f||!t){el.innerHTML='';hl.innerHTML='<p class="small">Choisissez les deux dates.</p>';return;}
+var start=new Date(f+'T00:00:00Z'),end=new Date(t+'T00:00:00Z');if(end<start){var tmp=start;start=end;end=tmp;}
+var pat=[];for(var i=0;i<7;i++)pat.push(document.getElementById('wd'+i).checked);
+var hol={};var holNames={};for(var y=start.getUTCFullYear();y<=end.getUTCFullYear();y++){LH.federalHolidays(y).forEach(function(h){hol[iso(h.date)]=true;holNames[iso(h.date)]=h.name;});}
+var excl=document.getElementById('exHol').value==='yes';
+var days=0,work=0,usedHol=[];
+for(var d=new Date(start);d<=end;d.setUTCDate(d.getUTCDate()+1)){days++;var key=iso(d);
+if(pat[d.getUTCDay()]){if(excl&&hol[key]){usedHol.push(holNames[key]+' ('+key+')');continue;}work++;}}
+var hours=work*gv('hpd');
+el.innerHTML='<div class="stat"><div class="v">'+days+'</div><div class="k">Jours calendaires</div></div>'
++'<div class="stat"><div class="v">'+work+'</div><div class="k">Jours ouvrés</div></div>'
++'<div class="stat"><div class="v">'+hours.toFixed(2)+'</div><div class="k">Heures de travail</div></div>'
++'<div class="stat"><div class="v">'+usedHol.length+'</div><div class="k">Jours fériés exclus</div></div>';
+hl.innerHTML=usedHol.length?'<p class="small">Jours fériés fédéraux exclus dans la période : '+usedHol.join('; ')+'.</p>':'<p class="small">Aucun jour férié fédéral n’est tombé un jour ouvré dans cette période (ou les jours fériés sont comptés comme des jours ouvrés).</p>';}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
