@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maandelijkse urenstaatcalculator: halfmaandelijkse loonperioden + overwerk | Loona Hours</title>
+<meta name="description" content="Gratis maandelijkse urenstaatcalculator met totalen per halfmaandelijkse loonperiode (1e–15e, 16e–einde). Overwerk wordt per werkweek beoordeeld zoals de wet vereist. CSV inbegrepen.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/monthly-timesheet-calculator.html"><meta property="og:locale" content="nl_NL">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maandelijkse urenstaatcalculator: halfmaandelijkse loonperioden + overwerk | Loona Hours">
+<meta property="og:description" content="Gratis maandelijkse urenstaatcalculator met totalen per halfmaandelijkse loonperiode (1e–15e, 16e–einde). Overwerk wordt per werkweek beoordeeld zoals de wet vereist. CSV inbegrepen.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maandelijkse urenstaatcalculator: halfmaandelijkse loonperioden + overwerk | Loona Hours">
+<meta name="twitter:description" content="Gratis maandelijkse urenstaatcalculator met totalen per halfmaandelijkse loonperiode (1e–15e, 16e–einde). Overwerk wordt per werkweek beoordeeld zoals de wet vereist. CSV inbegrepen.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — Halfmaandelijkse & maandelijkse urenstaatcalculator","url":"https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wat is het verschil tussen halfmaandelijks en tweewekelijks loon?","acceptedAnswer":{"@type":"Answer","text":"Halfmaandelijks betekent 24 betaaldagen per jaar (bijvoorbeeld de 15e en de laatste dag). Tweewekelijks betekent 26 betaaldagen per jaar (elke tweede vrijdag). De lengtes van de loonperiodes verschillen, maar overwerk wordt in beide systemen altijd per werkweek berekend."}},{"@type":"Question","name":"Waarom wordt overwerk niet over de hele maand berekend?","acceptedAnswer":{"@type":"Answer","text":"De FLSA definieert overwerk strikt per werkweek — uren boven de 40 in één werkweek. Een maand bevat altijd delen van vier of vijf werkweken, dus maandtotalen worden opgebouwd uit de wekelijkse splitsingen, nooit andersom."}},{"@type":"Question","name":"Welke dagen zijn vooraf aangevinkt?","acceptedAnswer":{"@type":"Answer","text":"Maandag tot en met vrijdag. Vink weekends uit die je niet werkte, of vink ze aan als je dat wel deed — de uren van elke datum komen alleen uit rijen die aangevinkt blijven."}},{"@type":"Question","name":"Kan ik dit voor één halfmaandelijkse periode gebruiken?","acceptedAnswer":{"@type":"Answer","text":"Ja — lees de rij voor de periode die je nodig hebt (1e–15e of 16e–einde) in de resultattabel. De rij voor de hele maand is er voor maandelijks betaald personeel."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/nl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Maandelijkse urenstaatcalculator: halfmaandelijkse loonperioden + overwerk",
+      "item": "https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>Uren</span></a><nav><a href="time-card-calculator.html">Urenkaart</a><a href="overtime-calculator.html">Overwerk</a><a href="california-overtime-calculator.html">Californië</a><a href="overtime-calculator-by-state.html">Per staat</a><a href="./#tools">Alle tools</a><a href="about.html">Over ons</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Halfmaandelijkse & maandelijkse urenstaatcalculator</h1><p>Twee keer per maand betaald? Voer de hele maand één keer in en zie beide halfmaandelijkse loonperiodes naast elkaar — met overwerk berekend op de wettelijke manier, week per week.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>Kortom:</strong> bouw een volledige maand diensten en krijg totalen voor de loonperiodes van de 1e–15e en 16e–einde plus de hele maand. Overwerk wordt nog steeds beoordeeld binnen elke werkweek van zondag–zaterdag, omdat de wet het zo telt.</div>
+<div class="strip" aria-label="Populaire tools"><a href="time-card-calculator.html">Urenkaartcalculator</a><a href="hours-calculator.html">Urencalculator</a><a href="overtime-calculator.html">Overwerkcalculator</a><a href="california-overtime-calculator.html">Overwerkcalculator Californië</a><a href="time-and-a-half-calculator.html">Calculator voor anderhalf tarief</a><a href="minutes-to-decimal-converter.html">Converter van minuten naar decimale uren</a></div>
+<div class="calc">
+<h2>Halfmaandelijkse &amp; maandelijkse urenstaatcalculator</h2>
+<div class="frow">
+<div class="field"><label for="rate">Uurtarief ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div><div class="field"><label for="monthSel">Maand</label><select id="monthSel"><option value="1">januari</option><option value="2">februari</option><option value="3">maart</option><option value="4">april</option><option value="5">mei</option><option value="6">juni</option><option value="7">juli</option><option value="8">augustus</option><option value="9">september</option><option value="10">oktober</option><option value="11" selected>november</option><option value="12">december</option></select></div><div class="field"><label for="yearIn">Jaar</label><input type="number" id="yearIn" value="2026" step="1" min="2000" ></div><div class="field"><label for="breakPaid">Pauzes zijn</label><select id="breakPaid"><option value="no" selected>Onbetaald (afgetrokken)</option><option value="yes">Betaald (niet afgetrokken)</option></select></div>
+</div>
+<p class="small">Eén rij per datum. Maandag–vrijdag beginnen aangevinkt; vink dagen uit die je niet werkte. Overwerk wordt beoordeeld per werkweek (zondag–zaterdag), daarna wordt de maand opgeteld voor de loonperiodes van de 1e–15e en 16e–einde.</p>
+<div id="monthGrid"></div>
+<div class="btnrow">
+<button class="go" id="calcBtn" type="button">De maand berekenen</button>
+<button class="alt" id="csvBtn" type="button">CSV downloaden</button>
+<button class="alt" id="printBtn" type="button">Afdrukken</button>
+</div>
+<div class="stats" id="stats"></div>
+<div id="periodTable"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>Hoe het werkt — De regel achter deze calculator</h2><p>Halfmaandelijks loon (24 betaaldagen per jaar) splitst de maand in de 1e–15e en de 16e–einde. Die splitsing gaat alleen over <em>wanneer</em> je wordt betaald. De overwerkwet erkent loonperioden helemaal niet — zij telt uren binnen een <strong>werkweek</strong>. Deze calculator doet daarom beide taken eerlijk: ze schrijft elk uur toe aan haar werkweek van zondag–zaterdag om het overwerk te vinden, en presenteert daarna de totalen in de twee halfmaandelijkse periodes die je loonadministratie gebruikt.</p>
+<p>Eén eerlijke beperking: als de officiële werkweek van je werkgever niet op zondag begint, kan je toeschrijving van overwerk aan een periodegrens een paar uur verschillen. De totale uren en het loon per maand die hier worden getoond, blijven in de meeste gevallen hoe dan ook hetzelfde; de definitie van de werkweek van je werkgever is de officiële.</p></div>
+<div class="sec"><h2>Gerelateerde urentools</h2><div class="grid"><a class="card" href="biweekly-time-card-calculator.html"><h3>Tweewekelijkse urenkaartcalculator</h3><p>Een volledige loonperiode van twee weken op één kaart — maar overwerk wordt nog steeds week per week beoordeeld, precies zoals de FLSA vereist. Gecombineerd brutoloon inbegrepen.</p><span class="badge">Gratis — probeer het</span></a><a class="card" href="time-card-calculator.html"><h3>Urenkaartcalculator</h3><p>De vlaggenschip wekelijkse urenkaart: in-/uitklokken en pauzes voor 7 dagen, overwerksplitsing bij 40 uur, brutoloon, afdrukken en CSV — plus Mijn week opslaan op je apparaat.</p><span class="badge">Gratis — probeer het</span></a><a class="card" href="weekly-pay-calculator.html"><h3>Calculator voor bruto weekloon</h3><p>Van uren naar elke vorm van loonstrook: weekbruto gesplitst in gewoon, overwerk en dubbel tarief, daarna omgerekend naar equivalenten per twee weken, per maand en per jaar.</p><span class="badge">Gratis — probeer het</span></a><a class="card" href="work-hours-between-dates-calculator.html"><h3>Calculator voor werkuren tussen twee datums</h3><p>Tel de echte werktijd in elk datumbereik: werkdagen volgens je patroon, federale feestdagen van de VS uitgesloten, totaal geplande uren.</p><span class="badge">Gratis — probeer het</span></a></div></div>
+<div class="sec"><h2>Veelgestelde vragen</h2><details class="faq"><summary>Wat is het verschil tussen halfmaandelijks en tweewekelijks loon?</summary><p>Halfmaandelijks betekent 24 betaaldagen per jaar (bijvoorbeeld de 15e en de laatste dag). Tweewekelijks betekent 26 betaaldagen per jaar (elke tweede vrijdag). De lengtes van de loonperiodes verschillen, maar overwerk wordt in beide systemen altijd per werkweek berekend.</p></details><details class="faq"><summary>Waarom wordt overwerk niet over de hele maand berekend?</summary><p>De FLSA definieert overwerk strikt per werkweek — uren boven de 40 in één werkweek. Een maand bevat altijd delen van vier of vijf werkweken, dus maandtotalen worden opgebouwd uit de wekelijkse splitsingen, nooit andersom.</p></details><details class="faq"><summary>Welke dagen zijn vooraf aangevinkt?</summary><p>Maandag tot en met vrijdag. Vink weekends uit die je niet werkte, of vink ze aan als je dat wel deed — de uren van elke datum komen alleen uit rijen die aangevinkt blijven.</p></details><details class="faq"><summary>Kan ik dit voor één halfmaandelijkse periode gebruiken?</summary><p>Ja — lees de rij voor de periode die je nodig hebt (1e–15e of 16e–einde) in de resultattabel. De rij voor de hele maand is er voor maandelijks betaald personeel.</p></details></div>
+<div class="sec"><h2>Hoe het werkt — de formule</h2>
+<p>Een maand bevat stukken van vijf of zes verschillende werkweken, en de overwerkwet erkent alleen de werkweek — dus deze calculator beoordeelt de maand week per week en presenteert haar pas daarna als een maand. Elke gewerkte dag wordt gemeten, de dagen worden gegroepeerd in werkweken van zondag&ndash;zaterdag, en elke week wordt op zichzelf gesplitst: eerste 40 uur gewoon, de rest overwerk. De totalen van de maand zijn de som van die wekelijkse splitsingen, en dezelfde splitsing dag-voor-dag wordt opnieuw opgeteld in de twee halfmaandelijkse periodes (1e&ndash;15e en 16e&ndash;einde) zodat je het brutoloon per periode kunt zien.</p>
+<div class="inshort"><strong>De formule:</strong> Per dag: betaalde minuten = (uitkloktijd &minus; inkloktijd, +24u indien 's nachts) &minus; pauze (tenzij pauzes betaald zijn). Per week van zondag&ndash;zaterdag: gewoon = eerste 40 uur, overwerk = uren boven de 40. Maandbruto = (gewone uren &times; tarief) + (overwerkuren &times; tarief &times; 1.5), opgeteld over alle weken in de maand.</div>
+<h3>Uitgewerkt voorbeeld</h3>
+<p>Neem <strong>Februari 2026</strong>: je werkt <strong>Maandag tot en met vrijdag, 9:00 AM tot 6:00 PM</strong>, met een <strong>Onbetaalde pauze van 30 minuten</strong>, om <strong>$20/uur</strong> — 8.5 betaalde uren per dag. Elke week van zondag&ndash;zaterdag bevat vijf van zulke dagen, 42.5 uur, dus elke week splitst zich in 40 gewoon + 2.5 overwerk. Over de vier volledige weken van de maand is dat <strong>170:00 uur — 160:00 gewoon en 10:00 overwerk</strong> — en een brutobedrag van <strong>$3,500.00</strong> ($3,200.00 + $300.00). Elke halfmaandelijkse periode toont 85:00 uur en <strong>$1,750.00</strong> van het brutoloon.</p>
+<h3>Veelgestelde vragen</h3>
+<details class="faq"><summary>Welke werkweek gebruikt deze pagina?</summary><p>Weken worden gegroepeerd van zondag tot zaterdag, en overwerk wordt binnen die weken geteld. Als de officiële werkweek van je werkgever op een andere dag begint, kunnen de grensweken van een maand overwerk iets anders toeschrijven — de methode is identiek, maar de definitie van de werkweek van je werkgever beheerst je werkelijke loon.</p></details>
+<details class="faq"><summary>Wat zijn de standaardtijden van het rooster?</summary><p>Elke datum begint met 9:00 AM in en 5:30 PM uit met een pauze van 30 minuten, en datums van maandag tot en met vrijdag beginnen aangevinkt als gewerkt. Verander elke dag individueel — een halve dag, een vrije dag, een langere vrijdag — en de wekelijkse splitsingen, periodetotalen en het bruto herberekenen allemaal uit het rooster zoals ingevoerd.</p></details>
+<details class="faq"><summary>Kan ik een feestdag uitvinken of een zaterdag toevoegen?</summary><p>Ja. Een weekdag uitvinken verwijdert haar uren volledig (de standaardmanier om feestdagen, ziektedagen en vakantie te verwerken), en een zaterdag of zondag aanvinken voegt die dag toe aan haar werkweek — wat vaak is wat die week boven de 40 uur in overwerk duwt.</p></details>
+<details class="faq"><summary>Waarom toont een maand met dezelfde daguren in verschillende maanden verschillend overwerk?</summary><p>Omdat overwerk de weken van zondag&ndash;zaterdag volgt, niet de kalender. Een maand waarvan de weekdagen zich splitsen als 5-5-5-5 over vier weken gedraagt zich anders dan een gesplitst als 3-5-5-5-2 over vijf gedeeltelijke weken, zelfs met identieke dagelijkse uren — de randweken bereiken mogelijk geen 40 uur, of een gewerkt weekend kan landen in een week die dat wel doet.</p></details>
+<details class="faq"><summary>Werkt een dienst die over middernacht heen gaat hier?</summary><p>Ja. Een uitkloktijd op of vóór de inkloktijd wordt meegeteld in de volgende dag, dus een dienst van 10:00 PM tot 6:00 AM meet 8 uur (vóór pauze) op de datum waarop ze begint — dezelfde nachtelijke afhandeling als in alle tools van Loona Hours.</p></details>
+</div>
+<div class="disc"><strong>Disclaimer:</strong> Alleen schattingen — geen loon- of juridisch advies. De loonregels van je werkgever en de staatswet beheersen je werkelijke loon. Cijfers worden afgerond voor weergave; je loonstrook en loonafdeling zijn het officiële record.</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">Sluit deze calculator in op je website — gratis</h2>
+<p style="margin:0 0 12px;line-height:1.6">Voeg deze calculator toe aan je eigen website of blog — ze is volledig gratis, vereist geen aanmelding en toont altijd de nieuwste versie. Kopieer de onderstaande code en plak haar in je pagina waar je wilt dat de calculator verschijnt. De kleine creditregel &ldquo;Mogelijk gemaakt door Loona Automation&rdquo; onder de embed behouden helpt deze tool gratis te houden &mdash; maar het staat je vrij haar vorm te geven of te verwijderen; de tool werkt hoe dan ook.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Monthly Timesheet Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;Mogelijk gemaakt door &lt;a href="https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; gratis Monthly Timesheet Calculator&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">Embedcode kopiëren</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='Gekopieerd!';setTimeout(function(){b.textContent='Embedcode kopiëren';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: gratis urenstaat-, uren- en overwerkcalculators voor werknemers in de VS.<br><a href="about.html">Over ons</a> · <a href="privacy.html">Privacybeleid</a> · <a href="terms.html">Voorwaarden</a> · <a href="contact.html">Contact</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>Alle berekeningen draaien op je apparaat — er wordt niets geüpload of op een server opgeslagen.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'Dagelijks overwerk na 8 uur op een dag. Werkgevers met minder dan 4 werknemers zijn vrijgesteld, en werknemers met een door het DOL goedgekeurd vrijwillig flexibel werkurenplan kunnen tot 10 uur per dag werken tegen gewoon tarief.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'Dagelijks overwerk: 1.5x na 8 uur, 2x na 12 uur, plus speciale regels op de 7e opeenvolgende dag van een werkweek. Toeslagen voor maaltijd- en rustpauzes staan apart en zijn niet inbegrepen in deze schatting. Een geldig aangenomen alternatief werkweekrooster (tot 10 uur per dag bij verkiezing door werknemers) verandert de dagregel.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'Overwerk na 40 uur in een week, 12 uur op een dag of 12 opeenvolgende uren — wat de werknemer het grootste voordeel geeft. Deze schatter gebruikt uren per dag; de regel van 12 opeenvolgende uren kan verschillen voor gesplitste diensten.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'Hawaï',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'Louisiana',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'Dagelijks overwerk na 8 uur op een werkdag geldt alleen als je gewone tarief minder is dan 1.5 keer het minimumloon van Nevada ($18.00/uur bij het minimumloon van $12.00). Tegen of boven dat tarief geldt alleen wekelijks overwerk na 40 uur. Nevada telt een werkdag als een rollende periode van 24 uur vanaf wanneer je begint te werken, en een onderling overeengekomen rooster van 4 dagen/10 uur is vrijgesteld van de dagregel.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'New Jersey',ruleType:'federal'},
+    NM:{name:'New Mexico',ruleType:'federal'}, NY:{name:'New York',ruleType:'federal'},
+    NC:{name:'Noord-Carolina',ruleType:'federal'}, ND:{name:'Noord-Dakota',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'De meeste werkgevers in Oregon zijn overwerk pas verschuldigd na 40 uur in een week. Dagelijks overwerk na 10 uur op een dag geldt in molens, fabrieken en productie (en een paar specifieke sectoren), waar de werknemer het grootste van dagelijks of wekelijks overwerk krijgt betaald.'},
+    PA:{name:'Pennsylvania',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'Zuid-Carolina',ruleType:'federal'}, SD:{name:'Zuid-Dakota',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'West Virginia',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "New Year's Day"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Christmas Day')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">Totale uren ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">Overwerk 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">Dubbel tarief 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">Brutoloon</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Loonregel</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Bedrag</th></tr>'
+ +'<tr><td>Gewoon loon</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>Overwerkloon (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>Loon tegen dubbel tarief (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>Toeslag voor diensttoeslagtarief</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>Brutoloon</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+var curDates=[];
+function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
+var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Gewerkt</th><th>Inkloktijd</th><th>Uitkloktijd</th><th>Pauze (min)</th></tr>';
+var dn=['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' aangevinkt':'';
+rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Gewerkt"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Pauzeminuten"></td></tr>';}
+rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
+document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}
+function tselHTML(p){function opts(n,sel,fmt){var s='';for(var i=0;i<n;i++){var v=fmt?fmt(i):i;s+='<option value="'+v+'"'+(String(v)===String(sel)?' geselecteerd':'')+'>'+(fmt?fmt(i):i)+'</option>';}return s;}
+return '<span class="tsel"><select id="'+p+'H" aria-label="Uur">'+opts(12,'9',function(i){return i+1;})+'</select><select id="'+p+'M" aria-label="Minuut">'+(function(){var s='';for(var i=0;i<60;i++){s+='<option value="'+i+'"'+(i===0?' geselecteerd':'')+'>'+(i<10?'0':'')+i+'</option>';}return s;})()+'</select><select id="'+p+'AP" aria-label="AM or PM"><option selected>AM</option><option>PM</option></select></span>';}
+function fixOutDefaults(){curDates.forEach(function(dt,i){var d=i+1;var outH=document.getElementById('M'+d+'OutH');if(!outH)return;outH.value='5';document.getElementById('M'+d+'OutM').value='30';document.getElementById('M'+d+'OutAP').value='PM';});}
+function calc(){var paid=document.getElementById('breakPaid').value==='ja';var rate=gv('rate');
+var dayMin=curDates.map(function(dt,i){var d=i+1;if(!document.getElementById('M'+d+'W').checked)return 0;return LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid);});
+// group into Sunday-start workweeks
+var weeks=[],cur=null;
+curDates.forEach(function(dt,i){if(dt.getDay()===0||cur===null){cur=[];weeks.push(cur);}cur.push(dayMin[i]);});
+while(cur&&cur.length<7)cur.push(0);
+var reg=0,ot=0;weeks.forEach(function(w){var s=LH.splitFederalWeek(w);reg+=s.regMin;ot+=s.otMin;});
+var pay=LH.grossPay(reg,ot,0,rate);var tot=reg+ot;
+statBoxes(document.getElementById('stats'),reg,ot,0,pay.total);
+// pay periods: 1-15 and 16-end share of gross by hours proportion of premium split — compute per-period splits by re-running weeks clipped per period is complex; instead split each day using running weekly logic:
+var per=[{reg:0,ot:0},{reg:0,ot:0}];var weekStartIdx=0;
+// recompute per-day reg/ot attribution with workweek accumulation
+var acc=0;curDates.forEach(function(dt,i){if(dt.getDay()===0)acc=0;var m=dayMin[i];var r=0,o=0;if(acc>=2400)o=m;else if(acc+m>2400){r=2400-acc;o=m-r;}else r=m;acc+=m;var p=(dt.getDate()<=15)?0:1;per[p].reg+=r;per[p].ot+=o;});
+var h='<table><tr><th>Loonperiode</th><th class="num">Hours</th><th class="num">Regular</th><th class="num">Overtime</th><th class="num">Brutoloon</th></tr>';
+per.forEach(function(p,i){var pp=LH.grossPay(p.reg,p.ot,0,rate);h+='<tr><td>'+(i===0?'1e \u2013 15e':'16e \u2013 einde van de maand')+'</td><td class="num">'+LH.fmtHM(p.reg+p.ot)+'</td><td class="num">'+LH.fmtHM(p.reg)+'</td><td class="num">'+LH.fmtHM(p.ot)+'</td><td class="num">'+LH.money(pp.total)+'</td></tr>';});
+h+='<tr><th>Hele maand</th><th class="num">'+LH.fmtHM(tot)+'</th><th class="num">'+LH.fmtHM(reg)+'</th><th class="num">'+LH.fmtHM(ot)+'</th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+document.getElementById('periodTable').innerHTML=h;
+payTable(document.getElementById('payTable'),reg,ot,0,rate,pay);}
+document.getElementById('monthSel').addEventListener('change',function(){buildGrid();fixOutDefaults();calc();});
+document.getElementById('yearIn').addEventListener('change',function(){buildGrid();fixOutDefaults();calc();});
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Datum','Uren (u:mm)','Decimale uren']];curDates.forEach(function(dt,i){var d=i+1;var paid=document.getElementById('breakPaid').value==='ja';var m=document.getElementById('M'+d+'W').checked?LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid):0;rows.push([(dt.getMonth()+1)+'/'+d+'/'+dt.getFullYear(),LH.fmtHM(m),LH.decimal(m).toFixed(2)]);});
+var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-monthly-timesheet.csv';a.click();URL.revokeObjectURL(a.href);});
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+buildGrid();fixOutDefaults();calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
