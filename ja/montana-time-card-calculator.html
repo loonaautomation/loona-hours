@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>モンタナのタイムカード計算機：連邦の40時間ルール対応のタイムシート | Loona Hours</title>
+<meta name="description" content="無料のモンタナタイムカード計算機：モンタナの時間外労働ルールを内蔵した週間タイムシート。出退勤の打刻、休憩、総支給額、印刷＆CSVに対応。登録不要。">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/montana-time-card-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/montana-time-card-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/montana-time-card-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/montana-time-card-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/montana-time-card-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/montana-time-card-calculator.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/montana-time-card-calculator.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/montana-time-card-calculator.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/montana-time-card-calculator.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/montana-time-card-calculator.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/montana-time-card-calculator.html"><link rel="alternate" hreflang="ja" href="https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/montana-time-card-calculator.html"><meta property="og:locale" content="ja_JP">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="モンタナのタイムカード計算機：連邦の40時間ルール対応のタイムシート | Loona Hours">
+<meta property="og:description" content="無料のモンタナタイムカード計算機：モンタナの時間外労働ルールを内蔵した週間タイムシート。出退勤の打刻、休憩、総支給額、印刷＆CSVに対応。登録不要。">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="モンタナのタイムカード計算機：連邦の40時間ルール対応のタイムシート | Loona Hours">
+<meta name="twitter:description" content="無料のモンタナタイムカード計算機：モンタナの時間外労働ルールを内蔵した週間タイムシート。出退勤の打刻、休憩、総支給額、印刷＆CSVに対応。登録不要。">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — モンタナのタイムカード計算機","url":"https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"このタイムカードはモンタナの時間外労働ルールを適用しますか？","acceptedAnswer":{"@type":"Answer","text":"はい。一般的な主力カードとは異なり、このページはモンタナのルールで一週間を集計します（連邦の40時間ルールのみ）。割増時間が二重に計算されることはありません。"}},{"@type":"Question","name":"2026年のモンタナの最低賃金はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"2026年のモンタナの最低賃金は、ほとんどの労働者について時給$10.85です。年間総売上$110,000を超える事業について。$4.00の賃金は、FLSAの対象とならない非常に小規模な事業についてのみ存在します。"}},{"@type":"Question","name":"モンタナの最低賃金で週48時間働くといくらになりますか？","acceptedAnswer":{"@type":"Answer","text":"$10.85で8時間勤務の日が六日：通常勤務40.00時間（$434.00）＋時間外労働8.00時間（$130.20）= 税引前総支給額$564.20 — 上のカードにあらかじめ入力されている一週間そのものです。"}},{"@type":"Question","name":"モンタナでは、一日8時間を超えると時間外労働になりますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。モンタナには民間企業のほとんどについて一日単位の時間外労働の要件がないため、勤務週が40時間を超えない限り、一日の長時間勤務も通常時給で支払われます。一日単位の時間外労働は米国ではまれで、カリフォルニア、アラスカ、コロラド、ネバダ、オレゴンなど、ごく一部の州にのみ何らかの形で存在します。"}},{"@type":"Question","name":"カードは私の週を保存しますか？","acceptedAnswer":{"@type":"Answer","text":"はい — 自動的に、このデバイス上のみ、あなたのブラウザのローカルストレージに保存されます。何もアップロードされず、アカウントもありません。新しい週が始まるときにその週をアーカイブしてください。最後の12週分のアーカイブが同じデバイスで表示可能なままとなります。"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "モンタナのタイムカード計算機：連邦の40時間ルール対応のタイムシート | Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>時間</span></a><nav><a href="time-card-calculator.html">タイムカード</a><a href="overtime-calculator.html">時間外労働</a><a href="california-overtime-calculator.html">カリフォルニア</a><a href="overtime-calculator-by-state.html">州別</a><a href="./#tools">すべてのツール</a><a href="about.html">概要</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>モンタナのタイムカード計算機 — モンタナの時間外労働ルール対応の週間タイムシート</h1><p>モンタナ方式で時間を集計する週間タイムカードです（連邦の40時間ルールのみ）。シフト、休憩、賃金を入力すると、合計、時間外労働の内訳、総支給額が入力に合わせて更新されます。</p></header>
+<div class="wrap">
+<div class="inshort"><strong>要するに：</strong> このタイムカードは、を適用します <strong>モンタナの時間外労働ルール</strong> （連邦の40時間ルールのみ）で、一般的なカードとは異なります。月曜日から土曜日までの一週間が、2026年のモンタナの最低賃金で事前入力されています： <strong>$10.85/時間</strong>; あなた自身のシフトと賃金に置き換えてください。入力内容はこのデバイスにのみ保存されます。</div>
+<div class="strip" aria-label="人気のツール"><a href="time-card-calculator.html">タイムカード計算機</a><a href="hours-calculator.html">時間計算機</a><a href="overtime-calculator.html">時間外労働計算機</a><a href="california-overtime-calculator.html">カリフォルニアの時間外労働計算機</a><a href="time-and-a-half-calculator.html">一倍半割増計算機</a><a href="minutes-to-decimal-converter.html">分から小数時間への変換ツール</a></div>
+<div class="calc">
+<h2>モンタナの週間タイムカード — モンタナの時間外労働ルールを内蔵</h2>
+<div class="frow">
+<div class="field"><label for="rate">時給（$）</label><input type="number" id="rate" value="10.85" step="0.01" min="0" ></div><div class="field"><label for="roundMode">打刻の丸め</label><select id="roundMode"><option value="none" selected>丸めなし</option><option value="seven">7分ルール</option><option value="quarter">最も近いクォーターアワー</option></select></div><div class="field"><label for="breakPaid">休憩は</label><select id="breakPaid"><option value="no" selected>無給（控除されます）</option><option value="yes">有給（控除されません）</option></select></div>
+</div>
+<div style="overflow-x:auto"><table><tr><th>日</th><th>出勤打刻</th><th>退勤打刻</th><th>休憩（分）</th></tr><tr><td><label class="chk"><input type="checkbox" id="G0W" checked> 月曜日</label></td><td><span class="tsel"><select id="G0InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G0InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G0InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G0OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G0OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G0OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G0Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr><tr><td><label class="chk"><input type="checkbox" id="G1W" checked> 火曜日</label></td><td><span class="tsel"><select id="G1InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G1InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G1InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G1OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G1OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G1OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G1Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr><tr><td><label class="chk"><input type="checkbox" id="G2W" checked> 水曜日</label></td><td><span class="tsel"><select id="G2InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G2InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G2InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G2OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G2OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G2OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G2Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr><tr><td><label class="chk"><input type="checkbox" id="G3W" checked> 木曜日</label></td><td><span class="tsel"><select id="G3InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G3InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G3InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G3OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G3OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G3OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G3Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr><tr><td><label class="chk"><input type="checkbox" id="G4W" checked> 金曜日</label></td><td><span class="tsel"><select id="G4InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G4InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G4InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G4OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G4OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G4OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G4Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr><tr><td><label class="chk"><input type="checkbox" id="G5W" checked> 土曜日</label></td><td><span class="tsel"><select id="G5InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G5InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G5InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G5OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G5OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G5OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G5Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr><tr><td><label class="chk"><input type="checkbox" id="G6W"> 日曜日</label></td><td><span class="tsel"><select id="G6InH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G6InM" aria-label="分"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G6InAP" aria-label="AMまたはPM"><option selected>AM</option><option>PM</option></select></span></td><td><span class="tsel"><select id="G6OutH" aria-label="時間"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="G6OutM" aria-label="分"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="G6OutAP" aria-label="AMまたはPM"><option>AM</option><option selected>PM</option></select></span></td><td><input type="number" id="G6Br" value="30" min="0" step="1" style="width:76px" aria-label="休憩分数"></td></tr></table></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">モンタナの給与を計算</button>
+<button class="alt" id="printBtn" type="button">印刷</button><button class="alt" id="csvBtn" type="button">CSVをダウンロード</button></div>
+<div class="stats" id="stats"></div>
+<div id="dayTable"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>私の週を保存 — 中断したところから続ける</h2>
+<p>あなたのエントリは <strong>このデバイス上のみ自動的に保存されます</strong> （ブラウザのローカルストレージ）— アカウント不要、サーバー不要、何もアップロードされません。金曜日にこのページを開いても、一週間分がそのまま残っています。新しい週が始まったら、この週をアーカイブして新しく始めましょう。過去の週は下でいつでも確認できます。</p>
+<div class="btnrow">
+<button class="alt" id="newWeekBtn" type="button">新しい週を開始（この週をアーカイブ）</button>
+</div>
+<div class="frow" style="margin-top:10px"><div class="field"><label for="histSel">このデバイス上の過去の週</label><select id="histSel"><option value="">— まだアーカイブされていません —</option></select></div></div>
+<div id="histView"></div>
+</div>
+<div class="sec"><h2>仕組み — このタイムカードの背後にあるルール</h2>
+<p>モンタナは、民間企業のほとんどについて、連邦公正労働基準法（FLSA）のルールに従い、それより厳しいルールはありません。時間外手当は、勤務週の40時間を超える時間について、通常時給の一倍半です。このカードはまず各シフトを有給分数に換算し（退勤打刻から出勤打刻を引き、無給の休憩を差し引き、夜間シフトは翌日に繰り越します）、必要に応じて給与計算と同じ方法で打刻を丸めたうえで、モンタナのルールに従って一週間を集計します：</p>
+<ul><li><strong>週単位の時間外労働：</strong> 単一の勤務週における40時間を超えたすべての時間は、あなたの通常時給の1.5×で支払われます。</li><li><strong>一日単位の時間外労働なし：</strong> モンタナには、民間部門のほとんどの職種について一日単位の時間外労働法がありません。週間勤務が40時間を超えない限り、一日の長時間勤務も通常勤務として扱われます。</li><li><strong>平均化なし：</strong> 勤務週は単独で成り立ちます。忙しい週を、次の給与明細の静かな週とバランスさせることはできません。</li></ul>
+<p><strong>モンタナの最低賃金（2026年）：$10.85/時間。</strong> 年間総売上が$110,000を超える事業向け。$4.00の賃金は、FLSAの対象でない非常に小規模な事業にのみ存在します。時間外労働ルールの出典： <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">https://www.dol.gov/agencies/whd/overtime</a>. 最低賃金の出典：米国労働省、 <a href="https://www.dol.gov/agencies/whd/minimum-wage/state" rel="noopener">州の最低賃金法</a> 表。 <em>最終確認：2026年十一月。</em></p></div>
+<div class="sec"><h2>関連時間ツール</h2><div class="grid"><a class="card" href="montana-overtime-calculator.html"><h3>モンタナの時間外労働計算機</h3><p>モンタナ向けの一日あたり時間数バージョンです（連邦の40時間ルールのみ）。最低賃金$10.85での計算例付きです。</p><span class="badge">無料 — 試してみる</span></a><a class="card" href="north-dakota-time-card-calculator.html"><h3>ノースダコタのタイムカード計算機</h3><p>同じ週間タイムカードを、ノースダコタのルール（連邦の40時間ルールのみ）と最低賃金$7.25で。</p><span class="badge">無料 — 試してみる</span></a><a class="card" href="wyoming-time-card-calculator.html"><h3>ワイオミングのタイムカード計算機</h3><p>同じ週間タイムカードを、ワイオミングのルール（連邦の40時間ルールのみ）と最低賃金$7.25で。</p><span class="badge">無料 — 試してみる</span></a><a class="card" href="time-card-calculator.html"><h3>タイムカード計算機（フラッグシップ）</h3><p>連邦ルールの下でのオリジナルの週次タイムカード：7日グリッド、40時間での時間外労働、総支給額、印刷、CSV、「私の週を保存」。</p><span class="badge">無料 — 試してみる</span></a><a class="card" href="overtime-calculator-by-state.html"><h3>州別時間外労働計算機</h3><p>50州とDCすべてに対する一つの試算ツール — 任意の州を選ぶと、その州自身のルールがあなたの週に適用されます。</p><span class="badge">無料 — 試してみる</span></a></div></div>
+<div class="sec"><h2>よくある質問</h2><details class="faq"><summary>このタイムカードはモンタナの時間外労働ルールを適用しますか？</summary><p>はい。一般的な主力カードとは異なり、このページはモンタナのルールで一週間を集計します（連邦の40時間ルールのみ）。割増時間が二重に計算されることはありません。</p></details><details class="faq"><summary>2026年のモンタナの最低賃金はいくらですか？</summary><p>2026年のモンタナの最低賃金は、ほとんどの労働者について時給$10.85です。年間総売上$110,000を超える事業について。$4.00の賃金は、FLSAの対象とならない非常に小規模な事業についてのみ存在します。</p></details><details class="faq"><summary>モンタナの最低賃金で週48時間働くといくらになりますか？</summary><p>$10.85で8時間勤務の日が六日：通常勤務40.00時間（$434.00）＋時間外労働8.00時間（$130.20）= 税引前総支給額$564.20 — 上のカードにあらかじめ入力されている一週間そのものです。</p></details><details class="faq"><summary>モンタナでは、一日8時間を超えると時間外労働になりますか？</summary><p>いいえ。モンタナには民間企業のほとんどについて一日単位の時間外労働の要件がないため、勤務週が40時間を超えない限り、一日の長時間勤務も通常時給で支払われます。一日単位の時間外労働は米国ではまれで、カリフォルニア、アラスカ、コロラド、ネバダ、オレゴンなど、ごく一部の州にのみ何らかの形で存在します。</p></details><details class="faq"><summary>カードは私の週を保存しますか？</summary><p>はい — 自動的に、このデバイス上のみ、あなたのブラウザのローカルストレージに保存されます。何もアップロードされず、アカウントもありません。新しい週が始まるときにその週をアーカイブしてください。最後の12週分のアーカイブが同じデバイスで表示可能なままとなります。</p></details></div>
+<div class="sec"><h2>仕組み — 計算式</h2>
+<div class="inshort"><strong>計算式：</strong> 一日ごとの有給分数 = （退勤打刻 − 出勤打刻）− 無給休憩。次に：日ではなく週を採点します。勤務週の有給時間を合計します。最初の40時間は通常で、それを超えるすべてが時間外労働です。総支給額 = （通常時間 × 賃金）+（時間外時間 × 賃金 × 1.5）。</div>
+<h3>計算例</h3>
+<p>月曜日から土曜日、午前9:00から午後5:30まで、無給の休憩30分 — 一日8時間の有給勤務、週間で48時間 — モンタナの最低賃金： <strong>$10.85/時間</strong>：カードの合計は <strong>48:00時間 — 通常 40:00、時間外 8:00</strong>、総支給額は <strong>$564.20</strong> （$434.00 + $130.20）。これは上の計算機にすでに入力されている一週間です。</p>
+<h3>よくある質問</h3>
+<details class="faq"><summary>私の12時間の日が時間外労働を生まなかったのはなぜですか？</summary><p>ルールが週単位であるためです。一日の十二時間は、その勤務週が40時間以下で終われば通常時間です。割増は、その週の合計が40を超えたときにのみ始まります。一日単位の時間外労働のある州は例外であり、標準ではありません。</p></details><details class="faq"><summary>休憩が有給の場合、何が変わりますか？</summary><p>有給の休憩分数は、シフトから差し引かれる代わりに有給時間の中に残ります。それにより、一日や一週間がしきい値を超える場合があります：有給の30分間の休憩のある9:00から6:30までのシフトは9ではなく9.5有給時間を保持します。</p></details>
+</div>
+<div class="disc"><strong>免責事項：</strong> 試算のみ — 給与や法律のアドバイスではありません。雇用主の給与規則と州法があなたの実際の給与を決定します。数値は表示用に丸められています。あなたの給与明細と給与部門が公式の記録です。</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">この計算機をあなたのウェブサイトに埋め込む — 無料</h2>
+<p style="margin:0 0 12px;line-height:1.6">この計算機をあなた自身のウェブサイトやブログに追加してください — 完全に無料で、登録不要、常に最新版が表示されます。下のコードをコピーし、計算機を表示したいページの場所に貼り付けてください。埋め込みの下にある小さな&ldquo;Powered by Loona Automation&rdquo;クレジット行を残していただくと、このツールを無料で維持する助けになります — しかし、スタイルを変更したり削除したりしても自由です。ツールはどちらの場合でも動作します。</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Montana Time Card Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;提供 &lt;a href="https://loonaautomation.github.io/loona-hours/ja/montana-time-card-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 無料の モンタナのタイムカード計算機&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">埋め込みコードをコピー</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='コピーしました！';setTimeout(function(){b.textContent='埋め込みコードをコピー';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours：米国の労働者のための、無料のタイムシート、時間、時間外労働計算機。<br><a href="about.html">概要</a> · <a href="privacy.html">プライバシーポリシー</a> · <a href="terms.html">規約</a> · <a href="contact.html">お問い合わせ</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>すべての計算はあなたのデバイス上で実行されます — 何もアップロードされたり、サーバーに保存されたりしません。</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'一日の8時間を超える一日単位の時間外労働。従業員4人未満の雇用主は免除され、労働省承認の任意の柔軟な勤務時間プランの従業員は、一日に最大10時間まで通常時間で勤務できます。'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'一日単位の時間外労働：8時間を超えると1.5x、12時間を超えると2x、さらに勤務週の連続7日目の特別ルール。食事と休憩の割増は別であり、この試算には含まれていません。有効に採用された代替勤務週スケジュール（従業員の選挙により一日に最大10時間）は、一日単位ルールを変更します。'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'一週間の40時間、一日の12時間、または連続12時間を超える時間外労働 — 従業員に最も大きな利益を与えるもの。この試算ツールは一日あたりの時間を使います。連続12時間ルールは、分割シフトでは異なる場合があります。'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'ハワイ',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'ルイジアナ',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'勤務日の8時間を超える一日単位の時間外労働は、あなたの通常時給がネバダの最低賃金の1.5倍未満である場合にのみ適用されます（最低賃金$12.00では時給$18.00）。その賃金以上では、一週間の40時間を超える週単位の時間外労働だけが適用されます。ネバダは勤務日を、あなたが勤務を開始してからのローリング24時間として数え、相互に合意された4日/10時間スケジュールは一日単位ルールから免除されます。'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'ニュージャージー',ruleType:'federal'},
+    NM:{name:'ニューメキシコ',ruleType:'federal'}, NY:{name:'ニューヨーク',ruleType:'federal'},
+    NC:{name:'ノースカロライナ',ruleType:'federal'}, ND:{name:'ノースダコタ',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'ほとんどのオレゴンの雇用主は、一週間の40時間を超えて初めて時間外労働を支払います。一日の10時間を超える一日単位の時間外労働は、製粉所、工場、製造業（および一部の特定セクター）に適用され、従業員は一日単位または週単位の時間外労働のうち大きい方が支払われます。'},
+    PA:{name:'ペンシルベニア',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'サウスカロライナ',ruleType:'federal'}, SD:{name:'サウスダコタ',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'ウェストバージニア',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "New Year's Day"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Christmas Day')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">合計時間 ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">時間外労働 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">二倍賃金 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">総支給額</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>給与明細行</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">金額</th></tr>'
+ +'<tr><td>通常給与</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>時間外手当 (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>二倍賃金 (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>シフト手当割増</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>総支給額</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+var DAYN=['月曜日','火曜日','水曜日','木曜日','金曜日','土曜日','日曜日'];
+var lastSplit=null,lastDays=null;
+function collectState(){var rows=[];for(var i=0;i<7;i++){rows.push({w:document.getElementById('G'+i+'W').checked,inH:document.getElementById('G'+i+'InH').value,inM:document.getElementById('G'+i+'InM').value,inAP:document.getElementById('G'+i+'InAP').value,outH:document.getElementById('G'+i+'OutH').value,outM:document.getElementById('G'+i+'OutM').value,outAP:document.getElementById('G'+i+'OutAP').value,br:document.getElementById('G'+i+'Br').value});}return {rows:rows,rate:document.getElementById('rate').value,roundMode:document.getElementById('roundMode').value,breakPaid:document.getElementById('breakPaid').value};}
+function applyState(s){if(!s||!s.rows)return;for(var i=0;i<7&&i<s.rows.length;i++){var r=s.rows[i];document.getElementById('G'+i+'W').checked=!!r.w;document.getElementById('G'+i+'InH').value=r.inH;document.getElementById('G'+i+'InM').value=r.inM;document.getElementById('G'+i+'InAP').value=r.inAP;document.getElementById('G'+i+'OutH').value=r.outH;document.getElementById('G'+i+'OutM').value=r.outM;document.getElementById('G'+i+'OutAP').value=r.outAP;document.getElementById('G'+i+'Br').value=r.br;}if(s.rate)document.getElementById('rate').value=s.rate;if(s.roundMode)document.getElementById('roundMode').value=s.roundMode;if(s.breakPaid)document.getElementById('breakPaid').value=s.breakPaid;}
+function saveWeek(){try{localStorage.setItem('lh_week_montana',JSON.stringify(collectState()));}catch(e){}}
+function calc(){var paid=document.getElementById('breakPaid').value==='はい';var mode=document.getElementById('roundMode').value;var days=[];
+for(var i=0;i<7;i++){if(!document.getElementById('G'+i+'W').checked){days.push(0);continue;}days.push(LH.roundedShiftMinutes(tv('G'+i+'In'),tv('G'+i+'Out'),gv('G'+i+'Br'),paid,mode));}
+var rate=gv('rate');var split=LH.splitStateWeek(days,'MT',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='はい':false});lastSplit=split;lastDays=days;
+var pay=LH.grossPay(split.regMin,split.otMin,split.dtMin,rate);
+statBoxes(document.getElementById('stats'),split.regMin,split.otMin,split.dtMin,pay.total);
+var h='<table><tr><th>Day</th><th class="num">時間 (h:mm)</th><th class="num">Decimal</th><th class="num">Regular</th><th class="num">Overtime</th><th class="num">Double 2x</th></tr>';
+for(var j=0;j<7;j++){h+='<tr><td>'+DAYN[j]+'</td><td class="num">'+LH.fmtHM(days[j])+'</td><td class="num">'+LH.decimal(days[j]).toFixed(2)+'</td><td class="num">'+LH.fmtHM(split.days[j].regMin)+'</td><td class="num">'+LH.fmtHM(split.days[j].otMin)+'</td><td class="num">'+LH.fmtHM(split.days[j].dtMin)+'</td></tr>';}
+h+='</table>';document.getElementById('dayTable').innerHTML=h;
+payTable(document.getElementById('payTable'),split.regMin,split.otMin,split.dtMin,rate,pay);saveWeek();}
+function refreshHist(){var sel=document.getElementById('histSel');var hist=[];try{hist=JSON.parse(localStorage.getItem('lh_week_montana_history')||'[]');}catch(e){}
+sel.innerHTML=hist.length?'':'<option value="">\u2014 まだアーカイブされていません \u2014</option>';
+hist.forEach(function(en,i){var o=document.createElement('option');o.value=i;o.textContent='週がアーカイブされました '+en.archivedOn+' \u2014 '+en.totalHours+' 時間 \u2014 $'+en.gross;o.title='';sel.appendChild(o);});
+document.getElementById('histView').innerHTML='';}
+document.getElementById('histSel').addEventListener('change',function(){var hist=[];try{hist=JSON.parse(localStorage.getItem('lh_week_montana_history')||'[]');}catch(e){}
+var en=hist[+this.value];if(!en)return;var v=document.getElementById('histView');var h='<table><tr><th>日</th><th class="num">時間</th><th class="num">小数</th></tr>';
+en.days.forEach(function(d,i){h+='<tr><td>'+DAYN[i]+'</td><td class="num">'+LH.fmtHM(d)+'</td><td class="num">'+LH.decimal(d).toFixed(2)+'</td></tr>';});
+h+='</table><p class="small">Total '+en.totalHours+' 時間 \u2014 総支給額 $'+en.gross+' は$'+en.rate+'/時間（アーカイブ済み '+en.archivedOn+'）。このデバイスにのみ保存されます。</p>';v.innerHTML=h;});
+document.getElementById('newWeekBtn').addEventListener('click',function(){if(!lastSplit)calc();var rate=gv('rate');var pay=LH.grossPay(lastSplit.regMin,lastSplit.otMin,lastSplit.dtMin,rate);
+var en={archivedOn:new Date().toLocaleDateString('en-US'),days:lastDays,totalHours:LH.decimal(lastSplit.totalMin).toFixed(2),gross:pay.total.toFixed(2),rate:rate.toFixed(2)};
+var hist=[];try{hist=JSON.parse(localStorage.getItem('lh_week_montana_history')||'[]');}catch(e){}
+hist.unshift(en);hist=hist.slice(0,12);try{localStorage.setItem('lh_week_montana_history',JSON.stringify(hist));}catch(e){}
+for(var i=0;i<7;i++){document.getElementById('G'+i+'W').checked=i<5;document.getElementById('G'+i+'Br').value=30;}
+saveWeek();calc();refreshHist();alert('先週がこのデバイスにアーカイブされました。新しい週の準備ができています。');});
+document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+document.getElementById('csvBtn').addEventListener('click',function(){if(!lastSplit)calc();var rows=[['日','時間 (h:mm)','小数時間','Regular (h)','時間外労働 (h)','二倍賃金 (h)']];
+for(var j=0;j<7;j++){rows.push([DAYN[j],LH.fmtHM(lastDays[j]),LH.decimal(lastDays[j]).toFixed(2),LH.decimal(lastSplit.days[j].regMin).toFixed(2),LH.decimal(lastSplit.days[j].otMin).toFixed(2),LH.decimal(lastSplit.days[j].dtMin).toFixed(2)]);}
+rows.push(['Total',LH.fmtHM(lastSplit.totalMin),LH.decimal(lastSplit.totalMin).toFixed(2),LH.decimal(lastSplit.regMin).toFixed(2),LH.decimal(lastSplit.otMin).toFixed(2),LH.decimal(lastSplit.dtMin).toFixed(2)]);
+var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-timesheet.csv';a.click();URL.revokeObjectURL(a.href);});
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+try{var saved=JSON.parse(localStorage.getItem('lh_week_montana')||'null');if(saved)applyState(saved);}catch(e){}
+refreshHist();calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
