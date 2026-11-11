@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>점심 휴게 공제 포함 근무 기록표 계산기 — 무료 | Loona Hours</title>
+<meta name="description" content="점심 휴게 공제가 있는 무료 근무 기록표 계산기: 수동 휴게와 긴 교대용 자동 점심 규칙, 주간 초과근무와 총급여 포함.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ko" href="https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/timesheet-calculator-with-lunch-break.html"><meta property="og:locale" content="ko_KR">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="점심 휴게 공제 포함 근무 기록표 계산기 — 무료 | Loona Hours">
+<meta property="og:description" content="점심 휴게 공제가 있는 무료 근무 기록표 계산기: 수동 휴게와 긴 교대용 자동 점심 규칙, 주간 초과근무와 총급여 포함.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="점심 휴게 공제 포함 근무 기록표 계산기 — 무료 | Loona Hours">
+<meta name="twitter:description" content="점심 휴게 공제가 있는 무료 근무 기록표 계산기: 수동 휴게와 긴 교대용 자동 점심 규칙, 주간 초과근무와 총급여 포함.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 점심 휴게 포함 근무 기록표 계산기","url":"https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"내 점심 휴게는 법적으로 유급인가요, 무급인가요?","acceptedAnswer":{"@type":"Answer","text":"연방법상, 식사 휴게 30분 이상은 완전히 업무에서 벗어나면 무급이에요. 짧은 휴게 (약 5–20분)는 지급되어야 해요. 일부 주는 그 위에 자체 식사 휴게 요건을 더해요."}},{"@type":"Question","name":"자동 점심 공제란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"많은 출퇴근 시계는 설정된 기준보다 긴 교대에서 표준 점심 (종종 30분)을 자동으로 빼요. 기록했든 안 했든요. 현실을 반영하고 직원이 예외를 보고할 수 있을 때 합법적이에요 — 하지만 점심을 거르며 일했다면, 고용주에게 알려 공제가 되돌려질 수 있게 하세요."}},{"@type":"Question","name":"점심을 거르며 일했는데 30분이 공제됐어요. 이제 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"상사나 급여팀에 즉시, 이상적으로는 서면으로 보고하고, 본인 기록을 유지하세요 (이 페이지의 날짜별 공제 열이 좋은 시작이에요). 실제로 일한 시간은 지급되어야 하며, 그것이 만드는 초과근무도 포함해요."}},{"@type":"Question","name":"자동 점심은 왜 기준 이상에서만 적용돼요?","acceptedAnswer":{"@type":"Answer","text":"짧은 교대는 보통 공제할 식사 휴게가 없어요. 고용주는 보통 트리거를 5–6시간으로 정해요. 여기서 기준과 점심 길이 둘 다 바꿔 직장 정책에 맞출 수 있어요."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "점심 휴게 공제 포함 근무 기록표 계산기",
+      "item": "https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>시간</span></a><nav><a href="time-card-calculator.html">타임카드</a><a href="overtime-calculator.html">초과근무</a><a href="california-overtime-calculator.html">캘리포니아</a><a href="overtime-calculator-by-state.html">주별</a><a href="./#tools">모든 도구</a><a href="about.html">소개</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>점심 휴게 공제 포함 근무 기록표 계산기</h1><p>식사 휴게는 근무 기록표가 조용히 잘못되는 지점이에요. 이 버전은 점심 공제를 매일, 공개적으로 표시해요.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>요약하면:</strong> 교대와 실제 취한 휴게를 입력하세요; 긴 교대에 휴게가 입력되지 않았다면, 표준 자동 점심 (30시간 후 6분, 조정 가능)이 공제되어 날짜별로 표시돼요. 주간 초과근무와 총급여 포함.</div>
+<div class="strip" aria-label="인기 도구"><a href="time-card-calculator.html">타임카드 계산기</a><a href="hours-calculator.html">시간 계산기</a><a href="overtime-calculator.html">초과근무 계산기</a><a href="california-overtime-calculator.html">캘리포니아 초과근무 계산기</a><a href="time-and-a-half-calculator.html">시간 반 추가 요율 계산기</a><a href="minutes-to-decimal-converter.html">분을 소수 시간으로 변환기</a></div>
+<div class="calc">
+<h2>점심 휴게 공제 포함 근무 기록표 계산기</h2>
+<div class="frow">
+<div class="field"><label for="rate">시간당 요율 ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div>
+<div class="field"><label for="autoLunch">자동 점심 공제</label><select id="autoLunch"><option value="yes" selected>켬 — 수동 휴게가 입력되지 않으면 공제해요</option><option value="no">끔 — 수동 휴게만</option></select></div>
+<div class="field"><label for="autoMin">자동 점심 (분)</label><input type="number" id="autoMin" value="30" step="1" min="0" ></div><div class="field"><label for="autoAfter">적용 시작 (시간)</label><input type="number" id="autoAfter" value="6" step="0.5" min="0" ></div>
+</div>
+<p class="small">실제로 취한 휴게는 휴게 열에 입력하세요. 어떤 날의 휴게가 0이고 교대가 기준보다 길면, 자동 점심이 대신 공제돼요 — 많은 급여 시스템이 하는 바로 그 방식이에요. "점심 공제됨" 열은 각 날짜에 무엇이 빠졌는지 보여줘요.</p>
+<div style="overflow-x:auto"><table><tr><th>요일</th><th>출근</th><th>퇴근</th><th>사용한 휴게 (분)</th><th>점심 공제됨</th><th>유급 시간</th></tr>
+<tr><td><label class="chk"><input type="checkbox" id="L0W" checked> 월요일</label></td><td><span class="tsel"><select id="L0InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L0InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L0InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L0OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L0OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L0OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L0Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L0Ded">—</td><td class="num" id="L0Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L1W" checked> 화요일</label></td><td><span class="tsel"><select id="L1InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L1InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L1InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L1OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L1OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L1OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L1Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L1Ded">—</td><td class="num" id="L1Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L2W" checked> 수요일</label></td><td><span class="tsel"><select id="L2InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L2InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L2InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L2OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L2OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L2OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L2Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L2Ded">—</td><td class="num" id="L2Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L3W" checked> 목요일</label></td><td><span class="tsel"><select id="L3InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L3InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L3InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L3OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L3OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L3OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L3Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L3Ded">—</td><td class="num" id="L3Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L4W" checked> 금요일</label></td><td><span class="tsel"><select id="L4InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L4InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L4InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L4OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L4OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L4OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L4Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L4Ded">—</td><td class="num" id="L4Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L5W"> 토요일</label></td><td><span class="tsel"><select id="L5InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L5InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L5InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L5OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L5OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L5OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L5Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L5Ded">—</td><td class="num" id="L5Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L6W"> 일요일</label></td><td><span class="tsel"><select id="L6InH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L6InM" aria-label="분"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L6InAP" aria-label="오전 또는 오후"><option selected>오전</option><option>오후</option></select></span></td><td><span class="tsel"><select id="L6OutH" aria-label="시간"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L6OutM" aria-label="분"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L6OutAP" aria-label="오전 또는 오후"><option>오전</option><option selected>오후</option></select></span></td><td><input type="number" id="L6Br" value="0" min="0" step="1" style="width:76px" aria-label="수동 휴게 분"></td><td class="num" id="L6Ded">—</td><td class="num" id="L6Net">—</td></tr>
+</table></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">계산하기</button></div>
+<div class="stats" id="stats"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>이용 방법 — 이 계산기의 기반 규칙</h2><p>연방법은 식사 휴게를 요구하지 않지만, 고용주가 30분 이상의 무급 식사 휴게를 주고 — 직원이 완전히 업무에서 벗어나면 — 그 시간은 지급되지 않으며, 대부분의 급여 시스템은 그것을 공제해요 <strong>자동으로</strong> 교대가 정해진 길이를 넘으면요 (보통 6시간). 점심 퇴근을 잊으면, 자동 공제가 근무 기록표가 시간을 과대 표시하는 것을 구해요; 만약 <em>did</em> 점심을 거르며 일한다면, 자동 공제를 상사와 정정해야 해요.</p>
+<p>이 계산기는 그 로직을 투명하게 반영해요: 수동 휴게는 항상 이겨요; 자동 점심은 그날 휴게가 0이고 교대가 본인의 기준에 도달할 때만 적용돼요. 날짜별 "점심 공제됨" 열은 숨겨진 것이 아무것도 없다는 뜻이에요. 여러 주 ( 캘리포니아 쪽이 가장 엄격해요)는 자체 식사 휴게 규칙과 할증이 있어요 — 그 할증은 별도 법적 주제이며 이 추정치에 포함되지 않아요.</p></div>
+<div class="sec"><h2>관련 시간 도구</h2><div class="grid"><a class="card" href="time-card-calculator.html"><h3>타임카드 계산기</h3><p>대표 주간 타임카드: 7일간 출근/퇴근과 휴게, 40시간에서 초과근무 구분, 총급여, 인쇄와 CSV — 기기의 내 주간 기록 저장 포함.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="lunch-break-calculator.html"><h3>휴게 / 점심 공제 계산기</h3><p>교대 하나, 휴게 둘, 혼란 없이: 어떤 휴게 분이 유급인지, 어떤 것이 빠지는지, 남는 정확한 유급 시간.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="hours-calculator.html"><h3>시간 계산기</h3><p>교대 하나를 입력하면 정확한 답 하나가 나와요: 시간과 분, 소수 시간, 휴게 처리, 반올림, 그 교대의 총급여.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="biweekly-time-card-calculator.html"><h3>격주 타임카드 계산기</h3><p>한 카드에 이주 급여 기간 전체 — 하지만 초과근무는 FLSA가 요구하듯 여전히 주마다 채점돼요. 합산 총급여 포함.</p><span class="badge">무료 — 사용해 보세요</span></a></div></div>
+<div class="sec"><h2>자주 묻는 질문</h2><details class="faq"><summary>내 점심 휴게는 법적으로 유급인가요, 무급인가요?</summary><p>연방법상, 식사 휴게 30분 이상은 완전히 업무에서 벗어나면 무급이에요. 짧은 휴게 (약 5–20분)는 지급되어야 해요. 일부 주는 그 위에 자체 식사 휴게 요건을 더해요.</p></details><details class="faq"><summary>자동 점심 공제란 무엇인가요?</summary><p>많은 출퇴근 시계는 설정된 기준보다 긴 교대에서 표준 점심 (종종 30분)을 자동으로 빼요. 기록했든 안 했든요. 현실을 반영하고 직원이 예외를 보고할 수 있을 때 합법적이에요 — 하지만 점심을 거르며 일했다면, 고용주에게 알려 공제가 되돌려질 수 있게 하세요.</p></details><details class="faq"><summary>점심을 거르며 일했는데 30분이 공제됐어요. 이제 어떻게 하나요?</summary><p>상사나 급여팀에 즉시, 이상적으로는 서면으로 보고하고, 본인 기록을 유지하세요 (이 페이지의 날짜별 공제 열이 좋은 시작이에요). 실제로 일한 시간은 지급되어야 하며, 그것이 만드는 초과근무도 포함해요.</p></details><details class="faq"><summary>자동 점심은 왜 기준 이상에서만 적용돼요?</summary><p>짧은 교대는 보통 공제할 식사 휴게가 없어요. 고용주는 보통 트리거를 5–6시간으로 정해요. 여기서 기준과 점심 길이 둘 다 바꿔 직장 정책에 맞출 수 있어요.</p></details></div>
+<div class="disc"><strong>면책 조항:</strong> 추정치만 제공해요 — 급여·법률 자문이 아니에요. 고용주의 급여 규칙과 주 법이 실제 급여를 결정해요. 수치는 표시용으로 반올림돼요; 급여 명세서와 급여 부서가 공식 기록이에요.</div>
+<div class="sec"><h2>이용 방법 — 공식</h2>
+<p>매일은 출근부터 퇴근까지의 원본 구간으로 시작해요. 그런 다음 휴게가 제거되며, 이 페이지는 얼마를 정할지 엄격한 순서가 있어요: 그날 입력한 휴게 분이 이겨요; 자동 점심 공제는 그날 수동 휴게가 없을 때만 개입해요 <em>및</em> 교대가 설정한 기준만큼 길게 이어지면요 (기본 6시간). 그 주의 순 분은 그런 다음 40시간에서 연방 방식으로 나뉘고 요율로 가격이 매겨져요.</p>
+<div class="inshort"><strong>공식:</strong><br>
+원 교대 = 퇴근 &minus; 출근 (교대가 밤새 이어지면 +24시간)<br>
+공제 = 그날 입력한 수동 휴게; 입력하지 않았다면, 원 교대가 기준에 닿을 때의 자동 점심 분<br>
+순 근무 분 = 원 교대 시간 &minus; 공제<br>
+총급여 = (통상 시간 &times; 요율) + (초과근무 시간 &times; 요율 &times; 1.5), 그 주의 순 분을 40시간에서 나누며</div>
+<h3>계산 예시</h3>
+<p>근무 시간은 <strong>월요일부터 금요일까지, 오전 8:00부터 오후 4:45까지</strong>, 수동 휴게를 입력하지 말고, 자동 점심을 켜 두세요 — 30시간 이상 교대에서 6분 — 조건: <strong>시간당 $20</strong>. 각 원 교대는 8:45이며, 6시간 기준을 넘어서, 0:30가 빠지고 각 하루는 순 <strong>8:15</strong> (페이지는 모든 행에 공제 0:30, 순 8:15를 표시해요). 주 합계는 <strong>41:15</strong>: 통상 40:00 ($800.00)에 금요일의 초과근무 1:15 (시간당 $30.00, $37.50)을 더해 — 총급여 <strong>$837.50</strong>.</p>
+<h3>자주 묻는 질문</h3>
+<details class="faq"><summary>하루 휴게를 입력했어요 — 그날도 자동 점심이 적용돼요?</summary><p>아니요. 수동 휴게는 그날 항상 이겨요: 자동 공제는 휴게 칸이 0인 날에만 사용돼요. 그래서 45분 점심을 먹고 45을 입력한 날은 자동 규칙이 켜져 있어도 45을 유지해요.</p></details>
+<details class="faq"><summary>기준보다 짧은 교대에서는 어떻게 돼요?</summary><p>자동 공제는 없어요. 기본 기준 5시간인 6시간 교대는 그날 직접 휴게를 입력하지 않는 한 모든 5시간을 유지해요. 페이지의 공제 열은 그런 날에 0:00를 표시해요.</p></details>
+<details class="faq"><summary>날마다 점심 휴게가 다를 수 있나요?</summary><p>네. 휴게 칸은 날짜별이라서, 월요일은 30분을 공제하고 수요일은 60분을 공제할 수 있어요. 자동 금액과 그 기준만 주 전체에 공유돼요 — 자동 금액은 아무것도 입력하지 않은 날에만 채워진다는 점을 기억하세요.</p></details>
+<details class="faq"><summary>점심은 초과근무 계산 전에 공제돼요?</summary><p>네. 초과근무는 매일 공제 후 주의 순 분으로 계산돼요. 계산 예시에서는 원본 주가 43:45이지만, 통상 41시간과 초과근무 15:40로 나뉘는 것은 순 1:15예요.</p></details>
+<details class="faq"><summary>내 점심 휴게는 유급이에요. 공제를 완전히 멈추려면 어떻게 하나요?</summary><p>자동 점심 공제를 끄세요. 어떤 날의 휴게 칸에 0을 입력하는 것만으로는 충분하지 않아요: 자동 규칙이 켜져 있으면, 0 항목은 &ldquo;수동 휴게 없음&rdquo;으로 읽혀 기준에 도달하는 모든 교대에서 자동 분이 대신 공제돼요.</p></details>
+</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">이 계산기를 내 웹사이트에 삽입하세요 — 무료</h2>
+<p style="margin:0 0 12px;line-height:1.6">이 계산기를 본인 웹사이트나 블로그에 추가하세요 — 완전히 무료이고, 회원가입이 필요 없으며, 항상 최신 버전을 표시해요. 아래 코드를 복사해 계산기가 나타나길 원하는 페이지에 붙여넣으세요. 삽입 아래 작은 &ldquo;Powered by Loona Automation&rdquo; 크레딧 항목을 유지하면 이 도구를 무료로 유지하는 데 도움이 돼요 &mdash; 하지만 스타일을 바꾸거나 제거해도 자유예요; 도구는 어느 쪽이든 작동해요.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Timesheet Calculator with Lunch Break Deduction by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;제공: &lt;a href="https://loonaautomation.github.io/loona-hours/ko/timesheet-calculator-with-lunch-break.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 무료 점심 휴게 공제 포함 근무 기록표 계산기&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">삽입 코드 복사</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='복사됐어요!';setTimeout(function(){b.textContent='임베드 코드 복사';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: 미국 근로자를 위한 무료 근무 기록표, 시간, 초과근무 계산기.<br><a href="about.html">소개</a> · <a href="privacy.html">개인정보 처리방침</a> · <a href="terms.html">약관</a> · <a href="contact.html">문의</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>모든 계산은 기기에서 실행돼요 — 서버에 업로드되거나 저장되지 않아요.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'하루 8시간 이후 일일 초과근무. 직원 4명 미만 고용주는 면제되며, DOL 승인의 자발적 유연 근무 시간 계획상의 직원은 통상 근무로 하루 최대 10시간 일할 수 있어요.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'일일 초과근무: 8시간 이후 1.5x, 12시간 이후 2x, 근무 주 연속 일곱째 날의 특별 규칙 추가. 식사·휴식 휴게 할증은 별도이며 이 추정치에 포함되지 않아요. 유효하게 채택된 대체 근무 주 일정 (직원 선거로 하루 최대 10시간)은 일일 규칙을 바꿔요.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'주 40시간, 하루 12시간, 또는 연속 12시간 이후 초과근무 — 직원에게 더 큰 혜택을 주는 쪽. 이 추정기는 하루 시간을 사용해요; 연속 12시간 규칙은 분할 교대에서 다를 수 있어요.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'하와이',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'루이지애나',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'근무일 8시간 이후 일일 초과근무는 통상 요율이 네바다 최저임금의 1.5배 미만일 때만 적용돼요 (최저임금 $12.00 기준 시간당 $18.00). 그 요율 이상에서는 주간 40시간 이후 초과근무만 적용돼요. 네바다는 근무일을 근무 시작 시점부터 굴러가는 24시간 기간으로 세며, 상호 합의한 4일/10시간 일정은 일일 규칙에서 면제돼요.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'뉴저지',ruleType:'federal'},
+    NM:{name:'뉴멕시코',ruleType:'federal'}, NY:{name:'뉴욕',ruleType:'federal'},
+    NC:{name:'노스캐롤라이나',ruleType:'federal'}, ND:{name:'노스다코타',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'대부분의 오리건 고용주는 주 40시간 이후에만 초과근무를 빚져요. 하루 10시간 이후 일일 초과근무는 공장, 제분소, 제조업 (과 소수 특정 부문)에 적용되며, 직원은 일일·주간 초과근무 중 더 큰 쪽을 받아요.'},
+    PA:{name:'펜실베이니아',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'사우스캐롤라이나',ruleType:'federal'}, SD:{name:'사우스다코타',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'웨스트버지니아',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "New Year's Day"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Christmas Day')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">총 시간 ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">초과근무 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">두 배 요율 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">총급여</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>급여 항목</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">금액</th></tr>'
+ +'<tr><td>통상 급여</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>초과근무 수당 (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>두 배 요율 급여 (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>교대 차등 할증</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>총급여</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var rate=gv('rate');var auto=document.getElementById('autoLunch').value==='예';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
+for(var i=0;i<7;i++){var dedEl=document.getElementById('L'+i+'Ded'),netEl=document.getElementById('L'+i+'Net');
+if(!document.getElementById('L'+i+'W').checked){days.push(0);dedEl.textContent='\u2014';netEl.textContent='\u2014';continue;}
+var raw=LH.shiftMinutes(tv('L'+i+'In'),tv('L'+i+'Out'),0,true);var manual=gv('L'+i+'Br');var ded=manual;
+if(manual===0&&auto&&raw>=autoAfterMin)ded=autoMin;
+var net=Math.max(0,raw-ded);days.push(net);
+dedEl.textContent=ded>0?LH.fmtHM(ded):'0:00';netEl.textContent=LH.fmtHM(net);}
+var split=LH.splitFederalWeek(days);var pay=LH.grossPay(split.regMin,split.otMin,0,rate);
+statBoxes(document.getElementById('stats'),split.regMin,split.otMin,0,pay.total);
+payTable(document.getElementById('payTable'),split.regMin,split.otMin,0,rate,pay);}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>

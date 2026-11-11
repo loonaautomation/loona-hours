@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아이다호 초과근무 계산기: 연방 40시간 규칙 | Loona Hours</title>
+<meta name="description" content="무료 아이다호 초과근무 계산기(연방 40시간 규칙, 일일 초과근무 없음): 한 주의 시간을 입력하면 통상/초과근무 구분과 총급여를 계산해요. 회원가입이 필요 없어요.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/idaho-overtime-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/idaho-overtime-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/idaho-overtime-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/idaho-overtime-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/idaho-overtime-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/idaho-overtime-calculator.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/idaho-overtime-calculator.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/idaho-overtime-calculator.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/idaho-overtime-calculator.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/idaho-overtime-calculator.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/idaho-overtime-calculator.html"><link rel="alternate" hreflang="ko" href="https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/idaho-overtime-calculator.html"><meta property="og:locale" content="ko_KR">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="아이다호 초과근무 계산기: 연방 40시간 규칙 | Loona Hours">
+<meta property="og:description" content="무료 아이다호 초과근무 계산기(연방 40시간 규칙, 일일 초과근무 없음): 한 주의 시간을 입력하면 통상/초과근무 구분과 총급여를 계산해요. 회원가입이 필요 없어요.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="아이다호 초과근무 계산기: 연방 40시간 규칙 | Loona Hours">
+<meta name="twitter:description" content="무료 아이다호 초과근무 계산기(연방 40시간 규칙, 일일 초과근무 없음): 한 주의 시간을 입력하면 통상/초과근무 구분과 총급여를 계산해요. 회원가입이 필요 없어요.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 아이다호 초과근무 계산기","url":"https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"아이다호에서는 초과근무가 어떻게 적용돼요?","acceptedAnswer":{"@type":"Answer","text":"아이다호에서는 대부분의 민간 고용주에게 연방 공정근로기준법(FLSA) 규칙을 따르고 그보다 엄격한 규칙은 없어요: 근무 주 40시간을 초과한 시간에 통상 요율의 시간 반 추가 요율을 지급해요. 할증 시간은 통상 요율의 1.5배로 지급되고, 한 시간이 두 가지 할증으로 중복 지급되는 일은 없어요."}},{"@type":"Question","name":"아이다호의 2026년 최저임금은 얼마예요?","acceptedAnswer":{"@type":"Answer","text":"2026년 아이다호 최저임금은 대부분의 근로자에게 시간당 $7.25예요. 아이다호의 최저임금은 연방 최저임금 $7.25예요."}},{"@type":"Question","name":"아이다호 최저임금으로 45시간 일하면 얼마예요?","acceptedAnswer":{"@type":"Answer","text":"시간당 $7.25으로 하루 9시간씩 닷새 근무: 통상 40.00시간($290.00)에 초과근무 5.00시간(시간당 $10.88, $54.38)을 더해 세전 $344.38예요."}},{"@type":"Question","name":"아이다호에서는 하루 8시간 초과 시 초과근무를 요구하나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 아이다호에는 대부분의 민간 고용주에게 일일 초과근무 요건이 없어서, 근무 주가 40시간을 넘기지 않으면 긴 하루도 통상 요율로 지급돼요. 일일 초과근무는 미국에서도 드물어요 — 캘리포니아, 알래스카, 콜로라도, 네바다, 오리건 등 소수 주에만 어떤 형태로든 있어요."}},{"@type":"Question","name":"고용주가 두 주 급여 기간에 걸쳐 내 시간을 평균 낼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 초과근무는 급여 기간이 아니라 근무 주마다 계산돼요. 50시간 주 다음에 30시간 주가 와도 첫 주에는 여전히 초과근무 10시간이에요. 급여 명세서 하나로 두 주를 커버하더라도요."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "아이다호 초과근무 계산기: 연방 40시간 규칙 | Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>시간</span></a><nav><a href="time-card-calculator.html">타임카드</a><a href="overtime-calculator.html">초과근무</a><a href="california-overtime-calculator.html">캘리포니아</a><a href="overtime-calculator-by-state.html">주별</a><a href="./#tools">모든 도구</a><a href="about.html">소개</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>아이다호 초과근무 계산기 — 연방 40시간 규칙</h1><p>아이다호에서는 대부분의 민간 고용주에게 연방 공정근로기준법(FLSA) 규칙을 따르고 그보다 엄격한 규칙은 없어요: 근무 주 40시간을 초과한 시간에 통상 요율의 시간 반 추가 요율을 지급해요. 각 날짜의 근무 시간과 요율을 입력하면 구분과 총급여가 입력 즉시 업데이트돼요.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>요약하면:</strong> 아이다호에서는 대부분의 민간 고용주에게 연방 공정근로기준법(FLSA) 규칙을 따르고 그보다 엄격한 규칙은 없어요: 근무 주 40시간을 초과한 시간에 통상 요율의 시간 반 추가 초과근무 수당을 지급해요. 아이다호의 2026년 최저임금은 <strong>시간당 $7.25</strong>. 아래 계산기는 아이다호의 규칙과 최저임금으로 미리 설정되어 있어요 — 요율을 본인의 요율로 바꿔보세요.</div>
+<div class="strip" aria-label="인기 도구"><a href="time-card-calculator.html">타임카드 계산기</a><a href="hours-calculator.html">시간 계산기</a><a href="overtime-calculator.html">초과근무 계산기</a><a href="california-overtime-calculator.html">캘리포니아 초과근무 계산기</a><a href="time-and-a-half-calculator.html">시간 반 추가 요율 계산기</a><a href="minutes-to-decimal-converter.html">분을 소수 시간으로 변환기</a></div>
+<div class="calc">
+<h2>아이다호 초과근무 계산기 — 아이다호 규칙으로 계산하는 나의 한 주</h2>
+<div class="frow">
+<div class="field"><label for="rate">시간당 요율 ($)</label><input type="number" id="rate" value="7.25" step="0.01" min="0" ></div>
+</div>
+<div class="frow"><div class="field"><label for="S0">월요일 (시간)</label><input type="number" id="S0" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S1">화요일 (시간)</label><input type="number" id="S1" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S2">수요일 (시간)</label><input type="number" id="S2" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S3">목요일 (시간)</label><input type="number" id="S3" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S4">금요일 (시간)</label><input type="number" id="S4" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S5">토요일 (시간)</label><input type="number" id="S5" value="0" min="0" max="24" step="0.25"></div><div class="field"><label for="S6">일요일 (시간)</label><input type="number" id="S6" value="0" min="0" max="24" step="0.25"></div></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">아이다호 급여 계산하기</button></div>
+<div class="stats" id="stats"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>이용 방법 — 아이다호 규칙 안내</h2>
+<p>아이다호에서는 대부분의 민간 고용주에게 연방 공정근로기준법(FLSA) 규칙을 따르고 그보다 엄격한 규칙은 없어요: 근무 주 40시간을 초과한 시간에 통상 요율의 시간 반 추가 요율을 지급해요. 아래 규칙이 이 계산기가 적용하는 규칙이에요.</p>
+<ul><li><strong>주간 초과근무:</strong> 단일 근무 주 40시간 초과 모든 시간은 통상 요율의 1.5배로 지급돼요.</li><li><strong>일일 초과근무 없음:</strong> 아이다호에는 대부분의 민간 일자리에서 일일 초과근무법이 없어요 — 근무 주가 40시간을 넘지 않으면 긴 하루도 통상 근무로 계산돼요.</li><li><strong>평균 계산 없음:</strong> 근무 주는 단독으로 서요. 바쁜 주를 다음 급여의 한가한 주와 균형 맞출 수 없어요.</li></ul>
+<p><strong>아이다호 최저임금(2026년): 시간당 $7.25</strong> 아이다호의 최저임금은 연방 최저임금 $7.25예요. 초과근무 규칙 출처: <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">https://www.dol.gov/agencies/whd/overtime</a>. 최저임금 출처: 미국 노동부, <a href="https://www.dol.gov/agencies/whd/minimum-wage/state" rel="noopener">주 최저임금법</a> 표예요. <em>최종 확인: 십일월 2026일.</em></p></div>
+<div class="sec"><h2>관련 시간 도구</h2><div class="grid"><a class="card" href="idaho-time-card-calculator.html"><h3>아이다호 타임카드 계산기</h3><p>아이다호 전용 주간 근무 기록표예요: 출퇴근 기록, 휴게시간, 아이다호 초과근무 구분, 총급여, 인쇄와 CSV 저장을 지원해요.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="washington-overtime-calculator.html"><h3>워싱턴 초과근무 계산기</h3><p>옆 동네 이야기: 연방 40시간 규칙만 적용해요 — 2026년 최저임금 $17.13인 워싱턴의 초과근무 계산기예요.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="montana-overtime-calculator.html"><h3>몬태나 초과근무 계산기</h3><p>옆 동네 이야기: 연방 40시간 규칙만 적용해요 — 2026년 최저임금 $10.85인 몬태나의 초과근무 계산기예요.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="overtime-calculator-by-state.html"><h3>주별 초과근무 계산기</h3><p>모든 50개 주와 DC를 위한 하나의 추정기: 적용되는 곳에는 연방 규칙, CA, AK, CO, NV, OR에는 실제 일일 초과근무 로직.</p><span class="badge">무료 — 사용해 보세요</span></a><a class="card" href="overtime-calculator.html"><h3>초과근무 계산기 (연방)</h3><p>연방 규칙을 한 상자에: 주간 시간과 요율을 입력하면, 통상 시간, 1.5배 초과근무 시간, 총 총급여가 나와요.</p><span class="badge">무료 — 사용해 보세요</span></a></div></div>
+<div class="sec"><h2>자주 묻는 질문</h2><details class="faq"><summary>아이다호에서는 초과근무가 어떻게 적용돼요?</summary><p>아이다호에서는 대부분의 민간 고용주에게 연방 공정근로기준법(FLSA) 규칙을 따르고 그보다 엄격한 규칙은 없어요: 근무 주 40시간을 초과한 시간에 통상 요율의 시간 반 추가 요율을 지급해요. 할증 시간은 통상 요율의 1.5배로 지급되고, 한 시간이 두 가지 할증으로 중복 지급되는 일은 없어요.</p></details><details class="faq"><summary>아이다호의 2026년 최저임금은 얼마예요?</summary><p>2026년 아이다호 최저임금은 대부분의 근로자에게 시간당 $7.25예요. 아이다호의 최저임금은 연방 최저임금 $7.25예요.</p></details><details class="faq"><summary>아이다호 최저임금으로 45시간 일하면 얼마예요?</summary><p>시간당 $7.25으로 하루 9시간씩 닷새 근무: 통상 40.00시간($290.00)에 초과근무 5.00시간(시간당 $10.88, $54.38)을 더해 세전 $344.38예요.</p></details><details class="faq"><summary>아이다호에서는 하루 8시간 초과 시 초과근무를 요구하나요?</summary><p>아니요. 아이다호에는 대부분의 민간 고용주에게 일일 초과근무 요건이 없어서, 근무 주가 40시간을 넘기지 않으면 긴 하루도 통상 요율로 지급돼요. 일일 초과근무는 미국에서도 드물어요 — 캘리포니아, 알래스카, 콜로라도, 네바다, 오리건 등 소수 주에만 어떤 형태로든 있어요.</p></details><details class="faq"><summary>고용주가 두 주 급여 기간에 걸쳐 내 시간을 평균 낼 수 있나요?</summary><p>아니요. 초과근무는 급여 기간이 아니라 근무 주마다 계산돼요. 50시간 주 다음에 30시간 주가 와도 첫 주에는 여전히 초과근무 10시간이에요. 급여 명세서 하나로 두 주를 커버하더라도요.</p></details></div>
+<div class="sec"><h2>이용 방법 — 공식</h2>
+<div class="inshort"><strong>공식:</strong> 날이 아니라 주를 채점하세요. 근무 주의 유급 시간을 합산하세요; 처음 40시간은 통상, 그 너머는 전부 초과근무예요. 총급여 = (통상 시간 × 요율) + (초과근무 시간 × 요율 × 1.5).</div>
+<h3>계산 예시</h3>
+<p>아이다호 최저임금으로 하루 9시간씩 닷새(총 45시간) 일하면 <strong>시간당 $7.25</strong>. 어떤 하루도 일일 기준을 넘지 않아요. 기준 자체가 없기 때문이에요 — 구분은 순전히 주간이에요: 처음 40시간은 통상, 마지막 5시간은 초과근무: <strong>45:00시간 — 통상 40:00, 초과근무 5:00</strong> — 총급여는 <strong>$344.38</strong> ($290.00 통상 + $54.38 초과근무). 위의 요율이나 날짜별 시간을 바꾸면 같은 구분으로 즉시 다시 계산돼요.</p>
+<h3>자주 묻는 질문</h3>
+<details class="faq"><summary>내 12시간 근무일에 초과근무가 전혀 없었던 이유는 무엇인가요?</summary><p>규칙이 주간이기 때문이에요. 하루 열두 시간은 근무 주가 40시간 이하로 끝나면 통상 시간이에요; 할증은 주의 합계가 40을 넘을 때만 시작해요. 일일 초과근무가 있는 주가 예외이지 규범이 아니에요.</p></details><details class="faq"><summary>휴게가 유급이면 무엇이 달라져요?</summary><p>유급 휴게 분은 교대에서 빠지는 대신 유급 시간에 남아요. 그것은 하루나 주를 기준 너머로 이동시킬 수 있어요: 유급 9분 휴게가 있는 00:6부터 30:30까지의 교대는 9.5이 아니라 유급 9시간을 유지해요.</p></details>
+</div>
+<div class="disc"><strong>면책 조항:</strong> 추정치만 제공해요 — 급여·법률 자문이 아니에요. 고용주의 급여 규칙과 주 법이 실제 급여를 결정해요. 수치는 표시용으로 반올림돼요; 급여 명세서와 급여 부서가 공식 기록이에요.</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">이 계산기를 내 웹사이트에 삽입하세요 — 무료</h2>
+<p style="margin:0 0 12px;line-height:1.6">이 계산기를 본인 웹사이트나 블로그에 추가하세요 — 완전히 무료이고, 회원가입이 필요 없으며, 항상 최신 버전을 표시해요. 아래 코드를 복사해 계산기가 나타나길 원하는 페이지에 붙여넣으세요. 삽입 아래 작은 &ldquo;Powered by Loona Automation&rdquo; 크레딧 항목을 유지하면 이 도구를 무료로 유지하는 데 도움이 돼요 &mdash; 하지만 스타일을 바꾸거나 제거해도 자유예요; 도구는 어느 쪽이든 작동해요.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Idaho Overtime Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;제공: &lt;a href="https://loonaautomation.github.io/loona-hours/ko/idaho-overtime-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 무료 아이다호 초과근무 계산기&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">삽입 코드 복사</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='복사됐어요!';setTimeout(function(){b.textContent='임베드 코드 복사';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: 미국 근로자를 위한 무료 근무 기록표, 시간, 초과근무 계산기.<br><a href="about.html">소개</a> · <a href="privacy.html">개인정보 처리방침</a> · <a href="terms.html">약관</a> · <a href="contact.html">문의</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>모든 계산은 기기에서 실행돼요 — 서버에 업로드되거나 저장되지 않아요.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'하루 8시간 이후 일일 초과근무. 직원 4명 미만 고용주는 면제되며, DOL 승인의 자발적 유연 근무 시간 계획상의 직원은 통상 근무로 하루 최대 10시간 일할 수 있어요.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'일일 초과근무: 8시간 이후 1.5x, 12시간 이후 2x, 근무 주 연속 일곱째 날의 특별 규칙 추가. 식사·휴식 휴게 할증은 별도이며 이 추정치에 포함되지 않아요. 유효하게 채택된 대체 근무 주 일정 (직원 선거로 하루 최대 10시간)은 일일 규칙을 바꿔요.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'주 40시간, 하루 12시간, 또는 연속 12시간 이후 초과근무 — 직원에게 더 큰 혜택을 주는 쪽. 이 추정기는 하루 시간을 사용해요; 연속 12시간 규칙은 분할 교대에서 다를 수 있어요.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'하와이',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'루이지애나',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'근무일 8시간 이후 일일 초과근무는 통상 요율이 네바다 최저임금의 1.5배 미만일 때만 적용돼요 (최저임금 $12.00 기준 시간당 $18.00). 그 요율 이상에서는 주간 40시간 이후 초과근무만 적용돼요. 네바다는 근무일을 근무 시작 시점부터 굴러가는 24시간 기간으로 세며, 상호 합의한 4일/10시간 일정은 일일 규칙에서 면제돼요.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'뉴저지',ruleType:'federal'},
+    NM:{name:'뉴멕시코',ruleType:'federal'}, NY:{name:'뉴욕',ruleType:'federal'},
+    NC:{name:'노스캐롤라이나',ruleType:'federal'}, ND:{name:'노스다코타',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'대부분의 오리건 고용주는 주 40시간 이후에만 초과근무를 빚져요. 하루 10시간 이후 일일 초과근무는 공장, 제분소, 제조업 (과 소수 특정 부문)에 적용되며, 직원은 일일·주간 초과근무 중 더 큰 쪽을 받아요.'},
+    PA:{name:'펜실베이니아',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'사우스캐롤라이나',ruleType:'federal'}, SD:{name:'사우스다코타',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'웨스트버지니아',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "New Year's Day"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Christmas Day')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">총 시간 ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">초과근무 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">두 배 요율 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">총급여</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>급여 항목</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">금액</th></tr>'
+ +'<tr><td>통상 급여</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>초과근무 수당 (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>두 배 요율 급여 (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>교대 차등 할증</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>총급여</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var rate=gv('rate');
+var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
+var s=LH.splitStateWeek(days,'ID',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='예':false});
+var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
+statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
+payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
