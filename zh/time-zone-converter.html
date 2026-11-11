@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时区换算器 — 在 44 个世界时区之间换算任何时间 | Loona Hours</title>
+<meta name="description" content="免费的时区换算器：选择任何时刻，在 44 个世界时区之间换算，带实时时钟、UTC 偏移，夏令时由 IANA 数据库自动处理。">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/time-zone-converter.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/time-zone-converter.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/time-zone-converter.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/time-zone-converter.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/time-zone-converter.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/time-zone-converter.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/time-zone-converter.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/time-zone-converter.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/time-zone-converter.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/time-zone-converter.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/time-zone-converter.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/time-zone-converter.html"><meta property="og:locale" content="zh_CN">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="时区换算器 — 在 44 个世界时区之间换算任何时间 | Loona Hours">
+<meta property="og:description" content="免费的时区换算器：选择任何时刻，在 44 个世界时区之间换算，带实时时钟、UTC 偏移，夏令时由 IANA 数据库自动处理。">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="时区换算器 — 在 44 个世界时区之间换算任何时间 | Loona Hours">
+<meta name="twitter:description" content="免费的时区换算器：选择任何时刻，在 44 个世界时区之间换算，带实时时钟、UTC 偏移，夏令时由 IANA 数据库自动处理。">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 时区换算器","url":"https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"为什么同样的换算在夏天给出不同的答案？","acceptedAnswer":{"@type":"Answer","text":"因为两个时区中至少一个通常会为夏令时改变它的偏移，而这些时区很少在同一日期改变。纽约州在三月的第二个周日移动；伦敦要到三月的最后一个周日 — 所以大约三周内，纽约州–伦敦的差异是 4 小时，而不是通常的 5 小时。本换算器始终使用您所选日期上生效的偏移。"}},{"@type":"Question","name":"“UTC−5”或“UTC+1”是什么意思？","acceptedAnswer":{"@type":"Answer","text":"它是那个地方的时钟在那一刻距协调世界时的距离。冬天的纽约州是 UTC−5（比 UTC 慢五小时）；夏天的伦敦是 UTC+1（快一小时）。任何两个地方之间的差就是它们的两个偏移相减。"}},{"@type":"Question","name":"换算使用实时数据库还是固定数字？","acceptedAnswer":{"@type":"Answer","text":"实时的规则，而不是固定数字：本页使用您浏览器内置的 IANA 时区数据库，它带有每个时区当前的规则和历史 — 包括南半球的季节和已废除夏令时的时区。"}},{"@type":"Question","name":"我可以换算过去的时间吗？","acceptedAnswer":{"@type":"Answer","text":"是的 — 选择任何日期。历史偏移在同一个数据库中，所以去年的换算使用去年的规则，它们偶尔与今天的不同。"}},{"@type":"Question","name":"为什么列表中没有“EST”或“PST”？","acceptedAnswer":{"@type":"Answer","text":"像 EST 这样的缩写是有歧义的 — EST 是一个固定的冬季偏移，而“纽约州时间”全年遵循城市的真实规则。选择城市（它的 IANA 时区）能在每个月给出正确答案，这就是为什么本换算器列出的是地点，而不是缩写。"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+
+.bigclock{font-size:2.6rem;font-weight:800;color:var(--teal);text-align:center;font-variant-numeric:tabular-nums;letter-spacing:1px;margin:8px 0}
+.bigclock small{display:block;font-size:.8rem;font-weight:600;color:var(--mut);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip{background:var(--soft);border:1.5px solid var(--teal2);color:var(--teal);border-radius:20px;padding:7px 14px;font-size:.9rem;font-weight:700;cursor:pointer}
+.chip:hover{background:var(--teal);color:#fff}
+.ringwrap{display:flex;justify-content:center;margin:6px 0 2px}
+.ringbg{fill:none;stroke:#e7f2ee;stroke-width:10}
+.ringfg{fill:none;stroke:var(--gold);stroke-width:10;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center}
+.prog{height:12px;background:var(--soft);border-radius:8px;overflow:hidden;margin:10px 0}
+.prog>div{height:100%;background:var(--gold);width:0%}
+.center{text-align:center}
+table.laps td,table.laps th{text-align:right}
+table.laps td:first-child,table.laps th:first-child{text-align:left}
+.zstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:14px 0}
+.zstat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.zstat .v{font-size:1.15rem;font-weight:800;color:var(--teal)}
+.zstat .k{font-size:.75rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.scrollx{overflow-x:auto}
+.phase{font-size:1.05rem;font-weight:800;color:var(--teal2);text-align:center;text-transform:uppercase;letter-spacing:2px}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "时区换算器 — 在 44 个世界时区之间换算任何时间",
+      "item": "https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>小时</span></a><nav><a href="time-card-calculator.html">工时卡</a><a href="overtime-calculator.html">加班</a><a href="california-overtime-calculator.html">加利福尼亚州</a><a href="overtime-calculator-by-state.html">按州</a><a href="./#tools">全部工具</a><a href="about.html">关于</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>时区换算器</h1><p>选择一个时刻，选择两个地点，看到完全相同的时刻在两地的显示 — 带今天的 UTC 偏移、已处理好的夏令时，以及每一侧的实时时钟。</p></header>
+<div class="wrap">
+<div class="inshort"><strong>简而言之：</strong> 选择“从”和“到”时区以及日期和时间。换算器使用您浏览器内置的 IANA 时区数据库 — 操作系统使用的同一数据 — 所以纽约州的三月时钟变化和悉尼的反季节夏令时已经在答案中了。</div>
+<div class="strip" aria-label="热门工具"><a href="time-card-calculator.html">工时卡计算器</a><a href="hours-calculator.html">工时计算器</a><a href="overtime-calculator.html">加班计算器</a><a href="california-overtime-calculator.html">加利福尼亚州加班计算器</a><a href="time-and-a-half-calculator.html">一倍半工资计算器</a><a href="minutes-to-decimal-converter.html">分钟转小数小时换算器</a></div>
+<div class="calc">
+<h2>换算时间</h2>
+<div class="frow">
+<div class="field"><label for="zFrom">从</label><select id="zFrom"><option value="UTC">UTC — UTC</option>
+<option value="Europe/London">伦敦，英国 — Europe/伦敦</option>
+<option value="Europe/Paris">巴黎，法国 — Europe/巴黎</option>
+<option value="Europe/Berlin">柏林，德国 — Europe/柏林</option>
+<option value="Europe/Madrid">马德里，西班牙 — Europe/Madrid</option>
+<option value="Europe/Rome">罗马，意大利 — Europe/Rome</option>
+<option value="Europe/Amsterdam">阿姆斯特丹，荷兰 — Europe/Amsterdam</option>
+<option value="Europe/Warsaw">华沙，波兰 — Europe/Warsaw</option>
+<option value="Europe/Vienna">维也纳，奥地利 — Europe/Vienna</option>
+<option value="Europe/Athens">雅典，希腊 — Europe/Athens</option>
+<option value="Europe/Lisbon">里斯本，葡萄牙 — Europe/Lisbon</option>
+<option value="Europe/Dublin">都柏林，爱尔兰 — Europe/Dublin</option>
+<option value="Europe/Istanbul">伊斯坦布尔，土耳其 — Europe/Istanbul</option>
+<option value="America/New_York" selected>纽约州，美国 — America/纽约州</option>
+<option value="America/Toronto">多伦多，加拿大 — America/多伦多</option>
+<option value="America/Chicago">芝加哥，美国 — America/芝加哥</option>
+<option value="America/Denver">丹佛，美国 — America/丹佛</option>
+<option value="America/Los_Angeles">洛杉矶，美国 — America/洛杉矶</option>
+<option value="America/Vancouver">温哥华，加拿大 — America/Vancouver</option>
+<option value="America/Anchorage">安克雷奇，美国 — America/Anchorage</option>
+<option value="Pacific/Honolulu">檀香山，美国 — Pacific/Honolulu</option>
+<option value="America/Mexico_City">墨西哥城，墨西哥 — America/Mexico City</option>
+<option value="America/Sao_Paulo">圣保罗，巴西 — America/Sao Paulo</option>
+<option value="Asia/Dubai">迪拜，阿联酋 — Asia/迪拜</option>
+<option value="Asia/Riyadh">利雅得，沙特阿拉伯 — Asia/Riyadh</option>
+<option value="Asia/Tehran">德黑兰，伊朗 — Asia/Tehran</option>
+<option value="Asia/Karachi">卡拉奇，巴基斯坦 — Asia/卡拉奇</option>
+<option value="Asia/Kolkata">加尔各答，印度 — Asia/Kolkata</option>
+<option value="Asia/Dhaka">达卡，孟加拉国 — Asia/Dhaka</option>
+<option value="Asia/Bangkok">曼谷，泰国 — Asia/Bangkok</option>
+<option value="Asia/Jakarta">雅加达，印度尼西亚 — Asia/Jakarta</option>
+<option value="Asia/Singapore">新加坡 — Asia/新加坡</option>
+<option value="Asia/Kuala_Lumpur">吉隆坡，马来西亚 — Asia/Kuala Lumpur</option>
+<option value="Asia/Manila">马尼拉，菲律宾 — Asia/Manila</option>
+<option value="Asia/Shanghai">上海，中国 — Asia/Shanghai</option>
+<option value="Asia/Hong_Kong">香港 — Asia/香港</option>
+<option value="Asia/Tokyo">东京，日本 — Asia/东京</option>
+<option value="Asia/Seoul">首尔，韩国 — Asia/Seoul</option>
+<option value="Australia/Perth">珀斯，澳大利亚 — Australia/Perth</option>
+<option value="Australia/Sydney">悉尼，澳大利亚 — Australia/悉尼</option>
+<option value="Pacific/Auckland">奥克兰，新西兰 — Pacific/Auckland</option>
+<option value="Africa/Cairo">开罗，埃及 — Africa/Cairo</option>
+<option value="Africa/Lagos">拉各斯，尼日利亚 — Africa/Lagos</option>
+<option value="Africa/Johannesburg">约翰内斯堡，南非 — Africa/Johannesburg</option></select></div>
+<div class="field"><label for="zTo">至</label><select id="zTo"><option value="UTC">UTC — UTC</option>
+<option value="Europe/London" selected>伦敦，英国 — Europe/伦敦</option>
+<option value="Europe/Paris">巴黎，法国 — Europe/巴黎</option>
+<option value="Europe/Berlin">柏林，德国 — Europe/柏林</option>
+<option value="Europe/Madrid">马德里，西班牙 — Europe/Madrid</option>
+<option value="Europe/Rome">罗马，意大利 — Europe/Rome</option>
+<option value="Europe/Amsterdam">阿姆斯特丹，荷兰 — Europe/Amsterdam</option>
+<option value="Europe/Warsaw">华沙，波兰 — Europe/Warsaw</option>
+<option value="Europe/Vienna">维也纳，奥地利 — Europe/Vienna</option>
+<option value="Europe/Athens">雅典，希腊 — Europe/Athens</option>
+<option value="Europe/Lisbon">里斯本，葡萄牙 — Europe/Lisbon</option>
+<option value="Europe/Dublin">都柏林，爱尔兰 — Europe/Dublin</option>
+<option value="Europe/Istanbul">伊斯坦布尔，土耳其 — Europe/Istanbul</option>
+<option value="America/New_York">纽约州，美国 — America/纽约州</option>
+<option value="America/Toronto">多伦多，加拿大 — America/多伦多</option>
+<option value="America/Chicago">芝加哥，美国 — America/芝加哥</option>
+<option value="America/Denver">丹佛，美国 — America/丹佛</option>
+<option value="America/Los_Angeles">洛杉矶，美国 — America/洛杉矶</option>
+<option value="America/Vancouver">温哥华，加拿大 — America/Vancouver</option>
+<option value="America/Anchorage">安克雷奇，美国 — America/Anchorage</option>
+<option value="Pacific/Honolulu">檀香山，美国 — Pacific/Honolulu</option>
+<option value="America/Mexico_City">墨西哥城，墨西哥 — America/Mexico City</option>
+<option value="America/Sao_Paulo">圣保罗，巴西 — America/Sao Paulo</option>
+<option value="Asia/Dubai">迪拜，阿联酋 — Asia/迪拜</option>
+<option value="Asia/Riyadh">利雅得，沙特阿拉伯 — Asia/Riyadh</option>
+<option value="Asia/Tehran">德黑兰，伊朗 — Asia/Tehran</option>
+<option value="Asia/Karachi">卡拉奇，巴基斯坦 — Asia/卡拉奇</option>
+<option value="Asia/Kolkata">加尔各答，印度 — Asia/Kolkata</option>
+<option value="Asia/Dhaka">达卡，孟加拉国 — Asia/Dhaka</option>
+<option value="Asia/Bangkok">曼谷，泰国 — Asia/Bangkok</option>
+<option value="Asia/Jakarta">雅加达，印度尼西亚 — Asia/Jakarta</option>
+<option value="Asia/Singapore">新加坡 — Asia/新加坡</option>
+<option value="Asia/Kuala_Lumpur">吉隆坡，马来西亚 — Asia/Kuala Lumpur</option>
+<option value="Asia/Manila">马尼拉，菲律宾 — Asia/Manila</option>
+<option value="Asia/Shanghai">上海，中国 — Asia/Shanghai</option>
+<option value="Asia/Hong_Kong">香港 — Asia/香港</option>
+<option value="Asia/Tokyo">东京，日本 — Asia/东京</option>
+<option value="Asia/Seoul">首尔，韩国 — Asia/Seoul</option>
+<option value="Australia/Perth">珀斯，澳大利亚 — Australia/Perth</option>
+<option value="Australia/Sydney">悉尼，澳大利亚 — Australia/悉尼</option>
+<option value="Pacific/Auckland">奥克兰，新西兰 — Pacific/Auckland</option>
+<option value="Africa/Cairo">开罗，埃及 — Africa/Cairo</option>
+<option value="Africa/Lagos">拉各斯，尼日利亚 — Africa/Lagos</option>
+<option value="Africa/Johannesburg">约翰内斯堡，南非 — Africa/Johannesburg</option></select></div>
+</div>
+<div class="frow">
+<div class="field"><label for="zWhen">日期 &amp; 时间（在“从”时区）</label><input type="datetime-local" id="zWhen"></div>
+</div>
+<div class="btnrow">
+<button class="go" id="zGo" type="button">换算</button>
+<button class="alt" id="zSwap" type="button">交换时区</button>
+</div>
+<p id="zResult" style="margin-top:12px;font-size:1.02rem"></p>
+<div class="zstats">
+<div class="zstat"><div class="v" id="zNowFrom">—</div><div class="k" id="zNowFromL">现在</div></div>
+<div class="zstat"><div class="v" id="zNowTo">—</div><div class="k" id="zNowToL">现在</div></div>
+</div>
+</div>
+<div class="sec"><h2>使用方法</h2><p>地球上的每个地方都把它的时钟保持为距 UTC 的偏移，而那个偏移不是固定的：它在夏令时开始和结束时跳变 — 在不同国家是不同的日期，在南半球是相反的季节。本换算器从不猜测偏移。它询问您浏览器内置的 IANA 时区数据库（手机和电脑用来设置时钟的同一个数据库），每个时区的偏移是 <em>就在您选择的那个时刻</em>, 通过 UTC 换算，并在目标时区格式化结果。</p>
+<p>这就是为什么同两座城市之间一月的一次换算和七月的一次换算可以合理地给出不同的答案 — 也是为什么本页总是在每个时间旁边显示该侧的 UTC 偏移，让您能看到使用了哪个偏移。</p></div>
+<div class="sec"><h2>相关工时工具</h2><div class="grid"><a class="card" href="new-york-to-london-time.html"><h3>纽约州到伦敦时间</h3><p>实时时差、24小时对照表和为最繁忙路线预设的换算器。</p><span class="badge">免费 — 试试看</span></a><a class="card" href="london-to-dubai-time.html"><h3>伦敦到迪拜时间</h3><p>今天的时差、夏季的夏令时变化，以及逐小时对照表。</p><span class="badge">免费 — 试试看</span></a><a class="card" href="london-to-karachi-time.html"><h3>伦敦到卡拉奇时间</h3><p>伦敦和卡拉奇的实时时钟和全天对照。</p><span class="badge">免费 — 试试看</span></a><a class="card" href="hours-calculator.html"><h3>工时计算器</h3><p>输入一个班次，输出精确工时和总工资。</p><span class="badge">免费 — 试试看</span></a></div></div>
+<div class="sec"><h2>常见问题</h2><details class="faq"><summary>为什么同样的换算在夏天给出不同的答案？</summary><p>因为两个时区中至少一个通常会为夏令时改变它的偏移，而这些时区很少在同一日期改变。纽约州在三月的第二个周日移动；伦敦要到三月的最后一个周日 — 所以大约三周内，纽约州–伦敦的差异是 4 小时，而不是通常的 5 小时。本换算器始终使用您所选日期上生效的偏移。</p></details><details class="faq"><summary>“UTC−5”或“UTC+1”是什么意思？</summary><p>它是那个地方的时钟在那一刻距协调世界时的距离。冬天的纽约州是 UTC−5（比 UTC 慢五小时）；夏天的伦敦是 UTC+1（快一小时）。任何两个地方之间的差就是它们的两个偏移相减。</p></details><details class="faq"><summary>换算使用实时数据库还是固定数字？</summary><p>实时的规则，而不是固定数字：本页使用您浏览器内置的 IANA 时区数据库，它带有每个时区当前的规则和历史 — 包括南半球的季节和已废除夏令时的时区。</p></details><details class="faq"><summary>我可以换算过去的时间吗？</summary><p>是的 — 选择任何日期。历史偏移在同一个数据库中，所以去年的换算使用去年的规则，它们偶尔与今天的不同。</p></details><details class="faq"><summary>为什么列表中没有“EST”或“PST”？</summary><p>像 EST 这样的缩写是有歧义的 — EST 是一个固定的冬季偏移，而“纽约州时间”全年遵循城市的真实规则。选择城市（它的 IANA 时区）能在每个月给出正确答案，这就是为什么本换算器列出的是地点，而不是缩写。</p></details></div>
+<div class="sec"><h2>运作方式 — 数学原理</h2>
+<p>所有时区换算都是经过 UTC 的一次旅程：</p>
+<div class="inshort"><strong>公式：</strong><br>
+UTC 时刻 = 时区 A 的墙上时间 &minus; 时区 A 在该时刻的偏移<br>
+时区 B 的时间 = UTC 时刻 + 时区 B 在该时刻的偏移<br>
+城市之间的时差 = 偏移 B &minus; 偏移 A</div>
+<h3>计算示例</h3>
+<p>换算 <strong>纽约州的上午9:00，在一月15日（2026年）</strong> 到伦敦。纽约州当天的偏移是 UTC&minus;5，所以该时刻是 9:00 + 5 = <strong>14:00 UTC</strong>。伦敦在一月的偏移是 UTC+0，所以伦敦显示为 <strong>2:00 下午</strong> — 快五个小时。为以下内容重复它 <strong>15 七月 2026</strong>: 纽约州正处于夏令时（UTC&minus;4），所以该时刻是 13:00 UTC — 而处于英国夏令时（UTC+1）的伦敦显示为 <strong>2:00 下午</strong> 再一次。同样的墙上时钟答案，仍是 5 小时的时差，因为两座城市都移动了一小时。有趣的情形是 <strong>15 三月 2026</strong>: 纽约州已经向前跳了，但伦敦还没有，所以纽约州的上午9:00是 13:00 UTC，而仍在 UTC+0 的伦敦显示为 <strong>1:00 下午</strong> — 时差在约三周内缩小到 4 小时。上面的换算器精确地再现了全部三个答案。</p>
+</div>
+<div class="sec" id="loona-embed">
+<h2>把这个工具免费嵌入您的网站</h2>
+<p>把本工具添加到您自己的网站或博客 — 它完全免费、无需注册，并始终显示最新版本。复制下面的代码，粘贴到您希望工具出现的页面位置。在嵌入下方保留那行小的&ldquo;Powered by Loona Automation&rdquo;署名，有助于让本工具保持免费 &mdash; 但您可以自由地设置样式或删除它；工具无论如何都会工作。</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Time Zone Converter by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;由 &lt;a href="https://loonaautomation.github.io/loona-hours/zh/time-zone-converter.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 免费 时区换算器&lt;/p&gt;</textarea>
+<p style="margin-top:10px"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">复制嵌入代码</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='已复制！';setTimeout(function(){b.textContent='复制嵌入代码';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+</div>
+<footer>© 2026 Loona Automation — Loona Hours：为美国员工提供的免费工时表、工时和加班计算器。<br><a href="about.html">关于</a> · <a href="privacy.html">隐私政策</a> · <a href="terms.html">条款</a> · <a href="contact.html">联系</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>所有计算都在您的设备上运行 — 不会上传或存储在服务器上。</footer>
+<script>
+
+/* LH-TZ: pure time-zone helpers built on Intl (the browser's IANA database). No DOM. */
+function tzParts(zone, utcMs){
+  var dtf = new Intl.DateTimeFormat('en-US',{timeZone:zone,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var parts = {};
+  var arr = dtf.formatToParts(new Date(utcMs));
+  for(var i=0;i<arr.length;i++){ parts[arr[i].type] = arr[i].value; }
+  return { year:+parts.year, month:+parts.month, day:+parts.day,
+           hour:(+parts.hour)%24, minute:+parts.minute, second:+parts.second };
+}
+function tzOffsetMs(zone, utcMs){
+  var p = tzParts(zone, utcMs);
+  var asUtc = Date.UTC(p.year, p.month-1, p.day, p.hour, p.minute, p.second);
+  return asUtc - Math.floor(utcMs/1000)*1000;
+}
+function wallToUtc(zone, y, mo, d, h, mi, s){
+  var guess = Date.UTC(y, mo-1, d, h, mi||0, s||0);
+  var off = tzOffsetMs(zone, guess);
+  var utc = guess - off;
+  var off2 = tzOffsetMs(zone, utc);
+  if(off2 !== off){ utc = guess - off2; }
+  return utc;
+}
+function pad2(n){ return (n<10?'0':'')+n; }
+function fmtTimeInZone(zone, utcMs){
+  var p = tzParts(zone, utcMs);
+  var h24 = p.hour, ap = h24 >= 12 ? 'PM' : 'AM', h12 = h24 % 12; if(h12===0) h12 = 12;
+  return h12 + ':' + pad2(p.minute) + ':' + pad2(p.second) + ' ' + ap;
+}
+function fmtTimeInZoneShort(zone, utcMs){
+  var p = tzParts(zone, utcMs);
+  var h24 = p.hour, ap = h24 >= 12 ? 'PM' : 'AM', h12 = h24 % 12; if(h12===0) h12 = 12;
+  return h12 + ':' + pad2(p.minute) + ' ' + ap;
+}
+function fmtDateInZone(zone, utcMs){
+  var months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  var days = ['周日','周一','周二','周三','周四','周五','周六'];
+  var p = tzParts(zone, utcMs);
+  var wd = new Date(Date.UTC(p.year, p.month-1, p.day)).getUTCDay();
+  return days[wd] + ', ' + months[p.month-1] + ' ' + p.day + ', ' + p.year;
+}
+function offsetLabel(zone, utcMs){
+  var mins = Math.round(tzOffsetMs(zone, utcMs)/60000);
+  var sign = mins < 0 ? '\u2212' : '+';
+  var a = Math.abs(mins), hh = Math.floor(a/60), mm = a % 60;
+  return 'UTC' + sign + hh + (mm ? ':' + pad2(mm) : '');
+}
+function diffMinutes(zoneA, zoneB, utcMs){
+  return Math.round((tzOffsetMs(zoneB, utcMs) - tzOffsetMs(zoneA, utcMs))/60000);
+}
+function fmtDiff(mins){
+  if(mins === 0) return '相同的时间';
+  var a = Math.abs(mins), h = Math.floor(a/60), m = a % 60;
+  var s = (h ? h + (h===1?' 小时':' 小时') : '') + (h && m ? ' ' : '') + (m ? m + ' 分钟' : '');
+  return s + (mins > 0 ? ' 快' : ' 慢');
+}
+/* 24 rows: every hour of one calendar date in zoneA -> the time in zoneB. */
+function dayTable(zoneA, zoneB, y, mo, d){
+  var rows = [];
+  for(var h=0; h<24; h++){
+    var utc = wallToUtc(zoneA, y, mo, d, h, 0, 0);
+    var pb = tzParts(zoneB, utc);
+    var dayShift = Math.round((Date.UTC(pb.year, pb.month-1, pb.day) - Date.UTC(y, mo-1, d))/86400000);
+    var pa = tzParts(zoneA, utc);
+    rows.push({ aHour: h, aLabel: fmtTimeInZoneShort(zoneA, utc),
+                bLabel: fmtTimeInZoneShort(zoneB, utc), dayShift: dayShift,
+                aOk: (pa.hour === h && pa.day === d) });
+  }
+  return rows;
+}
+/* Convert a wall-clock date/time in zoneA into zoneB; returns both formatted views. */
+function convertWall(zoneA, zoneB, y, mo, d, h, mi){
+  var utc = wallToUtc(zoneA, y, mo, d, h, mi, 0);
+  return { utcMs: utc,
+           aTime: fmtTimeInZone(zoneA, utc), aDate: fmtDateInZone(zoneA, utc),
+           bTime: fmtTimeInZone(zoneB, utc), bDate: fmtDateInZone(zoneB, utc),
+           aOffset: offsetLabel(zoneA, utc), bOffset: offsetLabel(zoneB, utc),
+           diff: diffMinutes(zoneA, zoneB, utc) };
+}
+if (typeof module !== 'undefined' && module.exports){
+  module.exports = { tzParts: tzParts, tzOffsetMs: tzOffsetMs, wallToUtc: wallToUtc,
+    fmtTimeInZone: fmtTimeInZone, fmtTimeInZoneShort: fmtTimeInZoneShort,
+    fmtDateInZone: fmtDateInZone, offsetLabel: offsetLabel, diffMinutes: diffMinutes,
+    fmtDiff: fmtDiff, dayTable: dayTable, convertWall: convertWall, pad2: pad2 };
+}
+
+if (typeof document !== 'undefined'){
+  var fromEl = document.getElementById('zFrom'), toEl = document.getElementById('zTo');
+  var dtEl = document.getElementById('zWhen'), res = document.getElementById('zResult');
+  function cityName(sel){ return sel.options[sel.selectedIndex].text.split(' — ')[0]; }
+  function convert(){
+    var v = dtEl.value;
+    if(!v){ res.innerHTML = '请选择要换算的日期和时间。'; return; }
+    var m = v.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if(!m){ res.innerHTML = '无法读取该日期 — 请重新选择。'; return; }
+    var r = convertWall(fromEl.value, toEl.value, +m[1], +m[2], +m[3], +m[4], +m[5]);
+    var ahead = r.diff === 0 ? cityName(toEl) + '的时间与以下地点相同：' + cityName(fromEl) + ' 在那一刻'
+      : cityName(toEl) + ' 是 ' + fmtDiff(r.diff).replace(/ (ahead|behind)$/, '') + ' ' + (r.diff > 0 ? '快于' : '慢于') + ' ' + cityName(fromEl) + ' 在那一刻';
+    res.innerHTML = '<strong>' + r.aTime + '</strong>，在 ' + cityName(fromEl) + ' (' + r.aDate + ', ' + r.aOffset + ')' +
+      '<br>= <strong>' + r.bTime + '</strong>，在 ' + cityName(toEl) + ' (' + r.bDate + ', ' + r.bOffset + ')<br>' +
+      '<span class="small">' + ahead.charAt(0).toUpperCase() + ahead.slice(1) + '.</span>';
+  }
+  function liveClocks(){
+    var now = Date.now();
+    document.getElementById('zNowFrom').textContent = fmtTimeInZone(fromEl.value, now) + ' (' + offsetLabel(fromEl.value, now) + ')';
+    document.getElementById('zNowTo').textContent = fmtTimeInZone(toEl.value, now) + ' (' + offsetLabel(toEl.value, now) + ')';
+    document.getElementById('zNowFromL').textContent = '现在在' + cityName(fromEl);
+    document.getElementById('zNowToL').textContent = '现在在' + cityName(toEl);
+  }
+  document.getElementById('zGo').addEventListener('click', convert);
+  document.getElementById('zSwap').addEventListener('click', function(){
+    var t = fromEl.value; fromEl.value = toEl.value; toEl.value = t;
+    convert(); liveClocks();
+  });
+  [fromEl, toEl].forEach(function(el){ el.addEventListener('change', function(){ convert(); liveClocks(); }); });
+  dtEl.addEventListener('change', convert);
+  var nowLocal = new Date();
+  function p2(n){ return (n<10?'0':'')+n; }
+  dtEl.value = nowLocal.getFullYear() + '-' + p2(nowLocal.getMonth()+1) + '-' + p2(nowLocal.getDate()) + 'T' + p2(nowLocal.getHours()) + ':' + p2(nowLocal.getMinutes());
+  convert(); liveClocks();
+  setInterval(liveClocks, 1000);
+}
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>

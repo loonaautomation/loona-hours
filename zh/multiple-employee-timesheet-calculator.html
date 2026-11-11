@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>适合小团队的多员工工时表计算器 | Loona Hours</title>
+<meta name="description" content="免费的多员工工时表计算器，适合小团队：最多 10 名员工、各自的费率、每位员工超过 40 小时后的加班、工资总额和 CSV。">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/multiple-employee-timesheet-calculator.html"><meta property="og:locale" content="zh_CN">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="适合小团队的多员工工时表计算器 | Loona Hours">
+<meta property="og:description" content="免费的多员工工时表计算器，适合小团队：最多 10 名员工、各自的费率、每位员工超过 40 小时后的加班、工资总额和 CSV。">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="适合小团队的多员工工时表计算器 | Loona Hours">
+<meta name="twitter:description" content="免费的多员工工时表计算器，适合小团队：最多 10 名员工、各自的费率、每位员工超过 40 小时后的加班、工资总额和 CSV。">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 多员工工时表计算器","url":"https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"加班是按员工计算，还是按团队总工时计算？","acceptedAnswer":{"@type":"Answer","text":"始终是按每位员工。加班附着于单个工人在一个工作周内超过 40 的工时，按该工人自己的费率 — 先合并团队的工大会少付任何亲自越过 40 的人。"}},{"@type":"Question","name":"在两个岗位以不同费率工作的员工呢？","acceptedAnswer":{"@type":"Answer","text":"使用混合费率：把这个人在两个岗位上的直时收入加总，除以他们的总工时 — 那个加权平均就是计算加班所依据的常规时薪。班次差额计算器详细展示了混合费率方法。"}},{"@type":"Question","name":"这能处理加利福尼亚州的团队吗？","acceptedAnswer":{"@type":"Answer","text":"每日规则不用 — 本页采用联邦的每周规则。对于加利福尼亚州的每日加班和双倍工资，把每位员工通过加利福尼亚州加班计算器运行，或先查看按州估算工具。"}},{"@type":"Question","name":"我团队的数据保存在什么地方吗？","acceptedAnswer":{"@type":"Answer","text":"不。姓名、工时和费率只存在于您设备上这个打开的页面中。关闭标签页之前，请使用 CSV 下载或打印按钮保存您的工资记录。"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "适合小团队的多员工工时表计算器",
+      "item": "https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>小时</span></a><nav><a href="time-card-calculator.html">工时卡</a><a href="overtime-calculator.html">加班</a><a href="california-overtime-calculator.html">加利福尼亚州</a><a href="overtime-calculator-by-state.html">按州</a><a href="./#tools">全部工具</a><a href="about.html">关于</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>多员工工时表计算器 — 几分钟内完成小团队工资</h1><p>为小团队运行工资？把每个人的工时和费率排好，得到每位员工的加班和一个干净的团队总计。</p></header>
+<div class="wrap">
+<div class="inshort"><strong>简而言之：</strong> 输入最多 10 名员工及其每周工时和各自的费率；每个人的加班（超过 40 小时按1.5×）单独计算，然后合计为团队工时、团队加班和总工资总额，带打印和 CSV 导出。</div>
+<div class="strip" aria-label="热门工具"><a href="time-card-calculator.html">工时卡计算器</a><a href="hours-calculator.html">工时计算器</a><a href="overtime-calculator.html">加班计算器</a><a href="california-overtime-calculator.html">加利福尼亚州加班计算器</a><a href="time-and-a-half-calculator.html">一倍半工资计算器</a><a href="minutes-to-decimal-converter.html">分钟转小数小时换算器</a></div>
+<div class="calc">
+<h2>多员工工时表计算器 — 小团队工资</h2>
+<p class="small">最多 10 名员工：姓名、本周总工时和每个人的费率。加班（超过 40 按1.5×）按每位员工计算，团队总计是您的工资数字。有 0 小时的行会被忽略。</p>
+<div style="overflow-x:auto"><table><tr><th>员工</th><th>本周工时</th><th>时薪 ($)</th><th>加班小时</th><th>总工资</th></tr>
+<tr><td><input type="text" id="E0N" placeholder="员工 1" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E0H" value="40" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E0R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E0OT">—</td><td class="num" id="E0P">—</td></tr><tr><td><input type="text" id="E1N" placeholder="员工 2" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E1H" value="40" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E1R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E1OT">—</td><td class="num" id="E1P">—</td></tr><tr><td><input type="text" id="E2N" placeholder="员工 3" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E2H" value="40" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E2R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E2OT">—</td><td class="num" id="E2P">—</td></tr><tr><td><input type="text" id="E3N" placeholder="员工 4" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E3H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E3R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E3OT">—</td><td class="num" id="E3P">—</td></tr><tr><td><input type="text" id="E4N" placeholder="员工 5" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E4H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E4R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E4OT">—</td><td class="num" id="E4P">—</td></tr><tr><td><input type="text" id="E5N" placeholder="员工 6" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E5H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E5R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E5OT">—</td><td class="num" id="E5P">—</td></tr><tr><td><input type="text" id="E6N" placeholder="员工 7" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E6H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E6R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E6OT">—</td><td class="num" id="E6P">—</td></tr><tr><td><input type="text" id="E7N" placeholder="员工 8" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E7H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E7R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E7OT">—</td><td class="num" id="E7P">—</td></tr><tr><td><input type="text" id="E8N" placeholder="员工 9" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E8H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E8R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E8OT">—</td><td class="num" id="E8P">—</td></tr><tr><td><input type="text" id="E9N" placeholder="员工 10" style="width:130px" aria-label="员工姓名"></td><td><input type="number" id="E9H" value="0" min="0" step="0.25" style="width:84px" aria-label="每周工时"></td><td><input type="number" id="E9R" value="18" min="0" step="0.25" style="width:84px" aria-label="时薪"></td><td class="num" id="E9OT">—</td><td class="num" id="E9P">—</td></tr>
+</table></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">计算团队工资</button>
+<button class="alt" id="csvBtn" type="button">下载 CSV</button>
+<button class="alt" id="printBtn" type="button">打印</button></div>
+<div class="stats" id="stats"></div>
+</div>
+<div class="sec"><h2>使用方法 — 这个计算器背后的规则</h2><p>小雇主通常在同样两个地方算错工资：把加班应用于 <em>团队的</em> 合并的工时，而不是每个人的工时，并忘记一个员工安静的一周不能抵消另一个员工的加班。联邦法律是按每位员工、按每个工作周的：每个工人本周超过 40 的工时赚到1.5× <em>他们的</em> 费率，与任何其他人的排班无关。本计算器正是这样执行的 — 每人一行，溢价在行内计算。</p>
+<p>两个诚实的限制：这是一个总工资估算工具，不是工资服务 — 它不预扣税款、不应用州每日加班规则（请使用以下工具） <a href="overtime-calculator-by-state.html">按州估算工具</a> 对于那五个州），或处理领薪员工。而且您输入的员工姓名只留在这台设备上的本页中；您关闭页面时，什么都不存储、不发送到任何地方，所以如果您需要记录，请下载 CSV。</p></div>
+<div class="sec"><h2>相关工时工具</h2><div class="grid"><a class="card" href="time-card-calculator.html"><h3>工时卡计算器</h3><p>旗舰每周工时卡：7 天的上下班打卡和休息、在 40 小时处拆分加班、总工资、打印和 CSV — 外加在您设备上的“保存我的一周”。</p><span class="badge">免费 — 试试看</span></a><a class="card" href="overtime-calculator-by-state.html"><h3>按州分类的加班计算器</h3><p>一个适用于全部 50 个州的估算工具：适用联邦规则的地方用联邦规则，对加利福尼亚州、阿拉斯加州、科罗拉多州、内华达州和俄勒冈州用真实的每日加班逻辑。</p><span class="badge">免费 — 试试看</span></a><a class="card" href="shift-differential-calculator.html"><h3>班次差额计算器</h3><p>夜间和周末溢价改变您的真实费率。本计算器把差额混合到常规时薪中 — 包括加班，正如法律所要求。</p><span class="badge">免费 — 试试看</span></a><a class="card" href="weekly-pay-calculator.html"><h3>每周总工资计算器</h3><p>从工时到每种工资单形状：每周总工资拆分为常规、加班和双倍工资，然后换算为双周、每月和每年的等值。</p><span class="badge">免费 — 试试看</span></a></div></div>
+<div class="sec"><h2>常见问题</h2><details class="faq"><summary>加班是按员工计算，还是按团队总工时计算？</summary><p>始终是按每位员工。加班附着于单个工人在一个工作周内超过 40 的工时，按该工人自己的费率 — 先合并团队的工大会少付任何亲自越过 40 的人。</p></details><details class="faq"><summary>在两个岗位以不同费率工作的员工呢？</summary><p>使用混合费率：把这个人在两个岗位上的直时收入加总，除以他们的总工时 — 那个加权平均就是计算加班所依据的常规时薪。班次差额计算器详细展示了混合费率方法。</p></details><details class="faq"><summary>这能处理加利福尼亚州的团队吗？</summary><p>每日规则不用 — 本页采用联邦的每周规则。对于加利福尼亚州的每日加班和双倍工资，把每位员工通过加利福尼亚州加班计算器运行，或先查看按州估算工具。</p></details><details class="faq"><summary>我团队的数据保存在什么地方吗？</summary><p>不。姓名、工时和费率只存在于您设备上这个打开的页面中。关闭标签页之前，请使用 CSV 下载或打印按钮保存您的工资记录。</p></details></div>
+<div class="sec"><h2>运作方式 — 公式</h2>
+<p>每一行都独立计分，因为加班属于个人，而不是团队。在每一行内，前 40 小时是常规，超过 40 的任何部分是按该员工自己费率的 1.5&times; 计算的加班。顶部的团队总计随后只是完成各行的总和 — 已支付员工数、总工时、总加班工时和总工资总额 — 留为零小时的行被排除在每个总计之外。</p>
+<div class="inshort"><strong>每位员工的公式：</strong> 常规工时 = min（已工作工时，40）。加班工时 = max（已工作工时 &minus; 40，0）。行总工资 = （常规工时 &times; 费率）+（加班工时 &times; 费率 &times; 1.5）。团队总计 = 所有工时大于零的行的总和。</div>
+<h3>计算示例</h3>
+<p>三个人团队一周的情况： <strong>Alicia</strong> 有效 <strong>按 $20 计算 44 小时</strong> — 40 常规 + 4 加班 — 为 <strong>$920.00</strong>. <strong>Ben</strong> 有效 <strong>按 $16.50 计算 38 小时</strong>, 全部按常规计算， <strong>$627.00</strong>. <strong>Chen</strong> 有效 <strong>按 $18 计算 40 小时</strong> 为 <strong>$720.00</strong>。摘要显示 <strong>已支付 3 名员工，团队工时 122.00 小时，团队加班 4.00 小时</strong> 和一个 <strong>工资总额为 $2,267.00</strong>。请注意，Ben 未用的 2 小时不会抵消 Alicia 的任何加班 — 拆分是按人计算的。</p>
+<h3>常见问题</h3>
+<details class="faq"><summary>如果我把一行留为 0 小时会怎样？</summary><p>这一行被完全跳过：它显示一条横线而不是数字，不计入已支付员工数、团队工时或工资总额。未使用的行正是同一张 10 行的表如何服务于三人队伍的方式 — 无需删除。</p></details>
+<details class="faq"><summary>两名员工可以有不同的时薪吗？</summary><p>是的 — 每行都有自己的费率，每行的加班溢价是该行费率的 1.5&times;。一名 $20 员工的加班小时花费 $30，而一名 $16.50 员工的花费 $24.75，总计只是把各行加在一起。</p></details>
+<details class="faq"><summary>一张表可以容纳多少名员工？</summary><p>十行。这在一遍中涵盖大多数小团队；对于更大的团队，分两遍运行这张表（例如按部门），再把两个工资总额加在一起 — 每位员工仍只出现一次，所以没有加班被计算两次。</p></details>
+<details class="faq"><summary>我可以导出团队表吗？</summary><p>是的。打印按钮为工资档案生成一份干净的副本，CSV 按钮下载每位已支付员工一行 — 姓名、工时、费率、加班工时和总工资 — 可用于电子表格或发给簿记员。</p></details>
+<details class="faq"><summary>如果有人正好工作了 40 小时怎么办？</summary><p>全部 40 都是常规时间，加班数字是 0.00。加班从该员工本周超过 40 的第一分钟开始 — 例如 40.5 小时是 40 常规加上 0.5 按溢价费率。</p></details>
+</div>
+<div class="disc"><strong>免责声明：</strong> 仅为估算 — 不是工资或法律建议。您雇主的工资规则和州法决定您的实际工资。数字为显示而取整；您的工资单和工资部门是官方记录。</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">把这个计算器免费嵌入您的网站</h2>
+<p style="margin:0 0 12px;line-height:1.6">把本计算器添加到您自己的网站或博客 — 它完全免费、无需注册，并始终显示最新版本。复制下面的代码，粘贴到您希望计算器出现的页面位置。在嵌入下方保留那行小的&ldquo;Powered by Loona Automation&rdquo;署名，有助于让本工具保持免费 &mdash; 但您可以自由地设置样式或删除它；计算器无论如何都会工作。</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Multiple Employee Timesheet Calculator for Small Teams by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;由 &lt;a href="https://loonaautomation.github.io/loona-hours/zh/multiple-employee-timesheet-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 免费 适合小团队的多员工工时表计算器&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">复制嵌入代码</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='已复制！';setTimeout(function(){b.textContent='复制嵌入代码';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours：为美国员工提供的免费工时表、工时和加班计算器。<br><a href="about.html">关于</a> · <a href="privacy.html">隐私政策</a> · <a href="terms.html">条款</a> · <a href="contact.html">联系</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>所有计算都在您的设备上运行 — 不会上传或存储在服务器上。</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'一天8小时后的每日加班。员工少于4人的雇主是豁免的，参加劳工部批准的自愿灵活工时计划的员工，可以以直时费率每天工作最多10小时。'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'每日加班：8小时后1.5倍，12小时后2倍，加上工作周第7个连续日的特殊规则。餐休和休息溢价是单独的，不包括在本估算中。有效采用的替代工作周排班（经员工选举，每天最多10小时）会改变每日规则。'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'一周40小时后、一天12小时后或连续12小时后加班 — 取给员工更大利益的一个。本估算工具使用每天的工时；连续12小时规则对分段班次可能不同。'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'夏威夷州',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'路易斯安那州',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'一个工作日8小时后的每日加班，仅当您的常规时薪低于内华达州最低工资的1.5倍时才适用（最低工资$12.00/小时时为$18.00/小时）。达到或超过该费率时，只适用40小时后的每周加班。内华达州把一个工作日算作从您开始工作起的一个滚动24小时时段，双方同意的4天/10小时排班免于每日规则。'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'新泽西州',ruleType:'federal'},
+    NM:{name:'新墨西哥州',ruleType:'federal'}, NY:{name:'纽约州',ruleType:'federal'},
+    NC:{name:'北卡罗来纳州',ruleType:'federal'}, ND:{name:'北达科他州',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'大多数俄勒冈州雇主只在一周40小时后才欠加班。一天10小时后的每日加班适用于磨坊、工厂和制造业（以及少数特定行业），在那里员工按每日或每周加班中较大的一个获得支付。'},
+    PA:{name:'宾夕法尼亚州',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'南卡罗来纳州',ruleType:'federal'}, SD:{name:'南达科他州',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'西弗吉尼亚州',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "元旦"),
+      { date: nthWeekday(year, 0, 1, 3), name: '马丁·路德·金纪念日' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: '阵亡将士纪念日' },
+      fixed(5, 19, '六月节国家独立日'),
+      fixed(6, 4, '独立日'),
+      { date: nthWeekday(year, 8, 1, 1), name: '劳动节' },
+      { date: nthWeekday(year, 9, 1, 2), name: '哥伦布日' },
+      fixed(10, 11, '退伍军人节'),
+      { date: nthWeekday(year, 10, 4, 4), name: '感恩节' },
+      fixed(11, 25, '圣诞节')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">总工时（'+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">加班 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">双倍工资 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">总工资</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工资行</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">金额</th></tr>'
+ +'<tr><td>常规工资</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>加班费 (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>双倍工资 (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>班次差额溢价</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>总工资</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+var lastRows=[];
+function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];
+for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('员工 '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');
+var reg=Math.min(hrs,40),ot=Math.max(0,hrs-40);var pay=LH.grossPay(Math.round(reg*60),Math.round(ot*60),0,rate);
+document.getElementById('E'+i+'加班').textContent=hrs>0?ot.toFixed(2):'\u2014';
+document.getElementById('E'+i+'P').textContent=hrs>0?LH.money(pay.total):'\u2014';
+if(hrs>0){lastRows.push([name,hrs.toFixed(2),rate.toFixed(2),ot.toFixed(2),pay.total.toFixed(2)]);tReg+=reg;tOt+=ot;tPay+=pay.total;tHours+=hrs;}}
+var el=document.getElementById('stats');
+el.innerHTML='<div class="stat"><div class="v">'+lastRows.length+'</div><div class="k">已支付员工</div></div>'
++'<div class="stat"><div class="v">'+tHours.toFixed(2)+'</div><div class="k">团队工时</div></div>'
++'<div class="stat"><div class="v">'+tOt.toFixed(2)+'</div><div class="k">团队加班工时</div></div>'
++'<div class="stat"><div class="v">'+LH.money(tPay)+'</div><div class="k">工资总额</div></div>';}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['员工','工时','Rate','加班工时','总工资']].concat(lastRows);
+var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-crew-payroll.csv';a.click();URL.revokeObjectURL(a.href);});
+document.querySelectorAll('input').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
