@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帶午餐休息扣除的工時表計算器 — 免費 | Loona Hours</title>
+<meta name="description" content="免費的帶午餐休息扣除的工時表計算器：手動休息，加上長班次的自動午餐規則，包括每週加班和總工資。">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="zh-Hant" href="https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/timesheet-calculator-with-lunch-break.html"><meta property="og:locale" content="zh_TW">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="帶午餐休息扣除的工時表計算器 — 免費 | Loona Hours">
+<meta property="og:description" content="免費的帶午餐休息扣除的工時表計算器：手動休息，加上長班次的自動午餐規則，包括每週加班和總工資。">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="帶午餐休息扣除的工時表計算器 — 免費 | Loona Hours">
+<meta name="twitter:description" content="免費的帶午餐休息扣除的工時表計算器：手動休息，加上長班次的自動午餐規則，包括每週加班和總工資。">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 帶午餐休息的工時表計算器","url":"https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"我的午餐休息依法是有薪還是無薪？","acceptedAnswer":{"@type":"Answer","text":"按聯邦法律，30 分鐘或更長的餐休，如果您完全免除職責，就是無薪的。短休息（大約 5–20 分鐘）必須帶薪。有些州在此之上另加自己的餐休要求。"}},{"@type":"Question","name":"什麼是自動午餐扣除？","acceptedAnswer":{"@type":"Answer","text":"許多考勤鍾會自動從長於設定門檻的班次中減去一次標準午餐（通常 30 分鐘），無論您是否打了下班卡。當它反映現實且員工可以報告例外時，它是合法的 — 但如果您午餐時工作了，請告訴僱主，以便扣除可以撤銷。"}},{"@type":"Question","name":"我午餐時間都在工作，但被扣了 30 分鐘。現在怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"及時向您的主管或工資部門報告，最好是書面的，並保留您自己的記錄（本頁的每日扣除列是一個好的開始）。您實際工作的時間必須支付，包括它產生的任何加班。"}},{"@type":"Question","name":"為什麼自動午餐只在超過門檻時適用？","acceptedAnswer":{"@type":"Answer","text":"短班次通常沒有餐休可扣除。僱主通常把觸發點設在 5–6 小時。您可以在這裡更改門檻和午餐時長，以匹配您工作場所的政策。"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/zh-hant/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "帶午餐休息扣除的工時表計算器",
+      "item": "https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>小時</span></a><nav><a href="time-card-calculator.html">工時卡</a><a href="overtime-calculator.html">加班</a><a href="california-overtime-calculator.html">加利福尼亞州</a><a href="overtime-calculator-by-state.html">按州</a><a href="./#tools">全部工具</a><a href="about.html">關於</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>帶午餐休息扣除的工時表計算器</h1><p>餐休是工時表悄悄出錯的地方。這個版本在每一天都公開顯示午餐扣除。</p></header>
+<div class="wrap">
+<div class="inshort"><strong>簡而言之：</strong> 輸入您的班次和您實際休的休息；如果一個長班次沒有輸入休息，會扣除一次標準的自動午餐（30 小時後 6 分鐘，可調），並按天顯示。包括每週加班和總工資。</div>
+<div class="strip" aria-label="熱門工具"><a href="time-card-calculator.html">工時卡計算器</a><a href="hours-calculator.html">工時計算器</a><a href="overtime-calculator.html">加班計算器</a><a href="california-overtime-calculator.html">加利福尼亞州加班計算器</a><a href="time-and-a-half-calculator.html">一倍半工資計算器</a><a href="minutes-to-decimal-converter.html">分鐘轉小數小時換算器</a></div>
+<div class="calc">
+<h2>帶午餐休息扣除的工時表計算器</h2>
+<div class="frow">
+<div class="field"><label for="rate">時薪 ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div>
+<div class="field"><label for="autoLunch">自動午餐扣除</label><select id="autoLunch"><option value="yes" selected>開 — 未輸入手動休息時扣除</option><option value="no">關 — 只有手動休息</option></select></div>
+<div class="field"><label for="autoMin">自動午餐（分鐘）</label><input type="number" id="autoMin" value="30" step="1" min="0" ></div><div class="field"><label for="autoAfter">適用起點（小時）</label><input type="number" id="autoAfter" value="6" step="0.5" min="0" ></div>
+</div>
+<p class="small">在休息列中輸入您實際休的任何休息。如果一天的休息是 0 且班次長於門檻，就會改為扣除自動午餐 — 這正是許多工資系統的做法。“已扣除午餐”列顯示每天扣掉了什麼。</p>
+<div style="overflow-x:auto"><table><tr><th>日期</th><th>上班打卡</th><th>下班打卡</th><th>已休休息（分鐘）</th><th>已扣除午餐</th><th>帶薪小時</th></tr>
+<tr><td><label class="chk"><input type="checkbox" id="L0W" checked> 週一</label></td><td><span class="tsel"><select id="L0InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L0InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L0InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L0OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L0OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L0OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L0Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L0Ded">—</td><td class="num" id="L0Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L1W" checked> 週二</label></td><td><span class="tsel"><select id="L1InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L1InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L1InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L1OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L1OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L1OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L1Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L1Ded">—</td><td class="num" id="L1Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L2W" checked> 週三</label></td><td><span class="tsel"><select id="L2InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L2InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L2InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L2OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L2OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L2OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L2Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L2Ded">—</td><td class="num" id="L2Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L3W" checked> 週四</label></td><td><span class="tsel"><select id="L3InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L3InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L3InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L3OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L3OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L3OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L3Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L3Ded">—</td><td class="num" id="L3Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L4W" checked> 週五</label></td><td><span class="tsel"><select id="L4InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L4InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L4InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L4OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L4OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L4OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L4Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L4Ded">—</td><td class="num" id="L4Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L5W"> 週六</label></td><td><span class="tsel"><select id="L5InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L5InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L5InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L5OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L5OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L5OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L5Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L5Ded">—</td><td class="num" id="L5Net">—</td></tr><tr><td><label class="chk"><input type="checkbox" id="L6W"> 週日</label></td><td><span class="tsel"><select id="L6InH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9" selected>9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L6InM" aria-label="分鐘"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L6InAP" aria-label="上午或下午"><option selected>上午</option><option>下午</option></select></span></td><td><span class="tsel"><select id="L6OutH" aria-label="小時"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="L6OutM" aria-label="分鐘"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="L6OutAP" aria-label="上午或下午"><option>上午</option><option selected>下午</option></select></span></td><td><input type="number" id="L6Br" value="0" min="0" step="1" style="width:76px" aria-label="手動休息分鐘數"></td><td class="num" id="L6Ded">—</td><td class="num" id="L6Net">—</td></tr>
+</table></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">計算</button></div>
+<div class="stats" id="stats"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>使用方法 — 這個計算器背後的規則</h2><p>聯邦法律不要求餐休，但當僱主給出 30 分鐘或更長的無薪餐休 — 且員工完全免除職責時 — 那段時間不支付，而且大多數工資系統會扣除它 <strong>自動地</strong> 一旦班次超過設定的長度（通常 6 小時）。如果您忘記為午餐下班打卡，自動扣除正是挽救您的工時表不虛報工時的東西；如果您 <em>確實</em> 午餐時間都在工作，自動扣除就是您需要向主管糾正的那一項。</p>
+<p>本計算器透明地映象那種邏輯：手動休息永遠勝出；自動午餐只在一天的休息是 0 且班次達到您的門檻時適用。每日的“已扣除午餐”列意味著沒有什麼被隱藏。幾個州（加利福尼亞州最嚴格）有自己的餐休規則和溢價 — 那些溢價是一個單獨的法律話題，不包括在這個估算中。</p></div>
+<div class="sec"><h2>相關工時工具</h2><div class="grid"><a class="card" href="time-card-calculator.html"><h3>工時卡計算器</h3><p>旗艦每週工時卡：7 天的上下班打卡和休息、在 40 小時處拆分加班、總工資、列印和 CSV — 外加在您裝置上的“儲存我的一週”。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="lunch-break-calculator.html"><h3>休息 / 午餐扣除計算器</h3><p>一個班次、兩次休息、零困惑：哪些休息分鐘有薪、哪些扣除、還剩多少精確帶薪時間。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="hours-calculator.html"><h3>工時計算器</h3><p>輸入一個班次，輸出一個精確答案：小時和分鐘、小數小時、休息處理、取整以及該班次的總工資。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="biweekly-time-card-calculator.html"><h3>雙週工時卡計算器</h3><p>一張卡上的完整兩週工資期 — 但加班仍按周計分，正如 FLSA 所要求。包含合併的總工資。</p><span class="badge">免費 — 試試看</span></a></div></div>
+<div class="sec"><h2>常見問題</h2><details class="faq"><summary>我的午餐休息依法是有薪還是無薪？</summary><p>按聯邦法律，30 分鐘或更長的餐休，如果您完全免除職責，就是無薪的。短休息（大約 5–20 分鐘）必須帶薪。有些州在此之上另加自己的餐休要求。</p></details><details class="faq"><summary>什麼是自動午餐扣除？</summary><p>許多考勤鍾會自動從長於設定門檻的班次中減去一次標準午餐（通常 30 分鐘），無論您是否打了下班卡。當它反映現實且員工可以報告例外時，它是合法的 — 但如果您午餐時工作了，請告訴僱主，以便扣除可以撤銷。</p></details><details class="faq"><summary>我午餐時間都在工作，但被扣了 30 分鐘。現在怎麼辦？</summary><p>及時向您的主管或工資部門報告，最好是書面的，並保留您自己的記錄（本頁的每日扣除列是一個好的開始）。您實際工作的時間必須支付，包括它產生的任何加班。</p></details><details class="faq"><summary>為什麼自動午餐只在超過門檻時適用？</summary><p>短班次通常沒有餐休可扣除。僱主通常把觸發點設在 5–6 小時。您可以在這裡更改門檻和午餐時長，以匹配您工作場所的政策。</p></details></div>
+<div class="disc"><strong>免責宣告：</strong> 僅為估算 — 不是工資或法律建議。您僱主的工資規則和州法決定您的實際工資。數字為顯示而取整；您的工資單和工資部門是官方記錄。</div>
+<div class="sec"><h2>運作方式 — 公式</h2>
+<p>每一天都從上班打卡到下班打卡的原始跨度開始。然後去掉一次休息，本頁對去掉多少有一個嚴格的順序：您為那一天輸入的休息分鐘勝出；自動午餐扣除只在一天沒有手動休息時介入 <em>和</em> 班次至少達到您設定的門檻時長（預設 6 小時）。然後，本週的淨分鐘按聯邦方式在 40 小時處拆分，並按您的費率定價。</p>
+<div class="inshort"><strong>公式：</strong><br>
+原始班次 = 下班打卡 &minus; 上班打卡（如果班次跨夜，則 +24 小時）<br>
+扣除 = 您為那天輸入的手動休息（如果您輸入了）；否則是自動午餐分鐘數，前提是原始班次達到門檻<br>
+淨工作日分鐘 = 原始班次 &minus; 扣除<br>
+總工資 =（常規工時 &times; 費率）+（加班工時 &times; 費率 &times; 1.5），在 40 小時處拆分本週的淨分鐘</div>
+<h3>計算示例</h3>
+<p>您的工作 <strong>週一至週五，上午8:00至下午4:45</strong>, 不輸入手動休息，並保持自動午餐開啟 — 在 30 小時或更長的班次上扣除 6 分鐘 — 在 <strong>$20/小時</strong>。每個原始班次是 8:45，它超過了 6 小時門檻，所以扣除 0:30，每天淨得 <strong>8:15</strong> （頁面在每一行顯示扣除 0:30，淨值 8:15）。本週總計 <strong>41:15</strong>: 40:00 常規（$800.00）加上週五按 $30.00 計算的 1:15 加班（$37.50）— 總工資 <strong>$837.50</strong>.</p>
+<h3>常見問題</h3>
+<details class="faq"><summary>我為某一天輸入了休息 — 那一天還適用自動午餐嗎？</summary><p>不。手動休息對那一天永遠勝出：自動扣除只用在休息框為 0 的日子上。所以，一天您吃了45分鐘的午餐並輸入了 45，即使自動規則開著，也保留 45。</p></details>
+<details class="faq"><summary>比門檻更短的班次會怎樣？</summary><p>不會自動扣除。一個帶預設5小時門檻的 6 小時班次會保留全部 5 小時，除非您自己為那一天輸入休息。本頁的扣除列對這樣的一天顯示 0:00。</p></details>
+<details class="faq"><summary>不同的日子可以有不同的午餐休息嗎？</summary><p>是的。休息框是按天的，所以週一可以扣除 30 分鐘，週三扣除 60。只有自動數額及其門檻是全周共享的 — 並且請記住，自動數額只為您什麼都沒輸入的日子補上。</p></details>
+<details class="faq"><summary>午餐是在計算加班之前扣除的嗎？</summary><p>是的。加班根據扣除後每週的淨分鐘計算。在計算示例中，原始的一週是 43:45，但拆分的是淨的 41:15，拆成 40 個常規小時和 1:15 的加班。</p></details>
+<details class="faq"><summary>我的午餐休息有工資。我如何完全停止扣除？</summary><p>關掉自動午餐扣除。僅在一天的休息框中輸入 0 是不夠的：自動規則開啟時，0 的輸入會被讀作&ldquo;沒有手動休息&rdquo;，任何達到門檻的班次都會改為扣除自動分鐘。</p></details>
+</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">把這個計算器免費嵌入您的網站</h2>
+<p style="margin:0 0 12px;line-height:1.6">把本計算器新增到您自己的網站或部落格 — 它完全免費、無需註冊，並始終顯示最新版本。複製下面的程式碼，貼上到您希望計算器出現的頁面位置。在嵌入下方保留那行小的&ldquo;Powered by Loona Automation&rdquo;署名，有助於讓本工具保持免費 &mdash; 但您可以自由地設定樣式或刪除它；計算器無論如何都會工作。</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Timesheet Calculator with Lunch Break Deduction by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;由 &lt;a href="https://loonaautomation.github.io/loona-hours/zh-hant/timesheet-calculator-with-lunch-break.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 免費 帶午餐休息扣除的工時表計算器&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">複製嵌入程式碼</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='已複製！';setTimeout(function(){b.textContent='複製嵌入程式碼';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours：為美國員工提供的免費工時表、工時和加班計算器。<br><a href="about.html">關於</a> · <a href="privacy.html">隱私政策</a> · <a href="terms.html">條款</a> · <a href="contact.html">聯絡</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>所有計算都在您的裝置上執行 — 不會上傳或儲存在伺服器上。</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'一天8小時後的每日加班。員工少於4人的僱主是豁免的，參加勞工部批准的自願靈活工時計劃的員工，可以以直時費率每天工作最多10小時。'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'每日加班：8小時後1.5倍，12小時後2倍，加上工作周第7個連續日的特殊規則。餐休和休息溢價是單獨的，不包括在本估算中。有效採用的替代工作周排班（經員工選舉，每天最多10小時）會改變每日規則。'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'一週40小時後、一天12小時後或連續12小時後加班 — 取給員工更大利益的一個。本估算工具使用每天的工時；連續12小時規則對分段班次可能不同。'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'夏威夷州',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'路易斯安那州',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'一個工作日8小時後的每日加班，僅當您的常規時薪低於內華達州最低工資的1.5倍時才適用（最低工資$12.00/小時時為$18.00/小時）。達到或超過該費率時，只適用40小時後的每週加班。內華達州把一個工作日算作從您開始工作起的一個滾動24小時時段，雙方同意的4天/10小時排班免於每日規則。'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'新澤西州',ruleType:'federal'},
+    NM:{name:'新墨西哥州',ruleType:'federal'}, NY:{name:'紐約州',ruleType:'federal'},
+    NC:{name:'北卡羅來納州',ruleType:'federal'}, ND:{name:'北達科他州',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'大多數俄勒岡州僱主只在一週40小時後才欠加班。一天10小時後的每日加班適用於磨坊、工廠和製造業（以及少數特定行業），在那裡員工按每日或每週加班中較大的一個獲得支付。'},
+    PA:{name:'賓夕法尼亞州',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'南卡羅來納州',ruleType:'federal'}, SD:{name:'南達科他州',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'西弗吉尼亞州',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "元旦"),
+      { date: nthWeekday(year, 0, 1, 3), name: '馬丁·路德·金紀念日' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: '陣亡將士紀念日' },
+      fixed(5, 19, '六月節國家獨立日'),
+      fixed(6, 4, '獨立日'),
+      { date: nthWeekday(year, 8, 1, 1), name: '勞動節' },
+      { date: nthWeekday(year, 9, 1, 2), name: '哥倫布日' },
+      fixed(10, 11, '退伍軍人節'),
+      { date: nthWeekday(year, 10, 4, 4), name: '感恩節' },
+      fixed(11, 25, '聖誕節')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">總工時（'+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">加班 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">雙倍工資 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">總工資</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工資行</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">金額</th></tr>'
+ +'<tr><td>常規工資</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>加班費 (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>雙倍工資 (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>班次差額溢價</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>總工資</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var rate=gv('rate');var auto=document.getElementById('autoLunch').value==='是';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
+for(var i=0;i<7;i++){var dedEl=document.getElementById('L'+i+'Ded'),netEl=document.getElementById('L'+i+'Net');
+if(!document.getElementById('L'+i+'W').checked){days.push(0);dedEl.textContent='\u2014';netEl.textContent='\u2014';continue;}
+var raw=LH.shiftMinutes(tv('L'+i+'In'),tv('L'+i+'Out'),0,true);var manual=gv('L'+i+'Br');var ded=manual;
+if(manual===0&&auto&&raw>=autoAfterMin)ded=autoMin;
+var net=Math.max(0,raw-ded);days.push(net);
+dedEl.textContent=ded>0?LH.fmtHM(ded):'0:00';netEl.textContent=LH.fmtHM(net);}
+var split=LH.splitFederalWeek(days);var pay=LH.grossPay(split.regMin,split.otMin,0,rate);
+statBoxes(document.getElementById('stats'),split.regMin,split.otMin,0,pay.total);
+payTable(document.getElementById('payTable'),split.regMin,split.otMin,0,rate,pay);}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>

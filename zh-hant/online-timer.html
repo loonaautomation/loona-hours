@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帶預設和鬧鐘的線上計時器 — 1、5、10、15、30、60 分鐘計時器 | Loona Hours</title>
+<meta name="description" content="免費的線上計時器，帶一鍵預設（1、5、10、15、20、30、45、60 分鐘）、進度環、暫停和重置，以及響亮的結束鬧鐘。即使在後臺標籤頁也準確。">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/online-timer.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/online-timer.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/online-timer.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/online-timer.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/online-timer.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/online-timer.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/online-timer.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/online-timer.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/online-timer.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/online-timer.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/online-timer.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/online-timer.html"><link rel="alternate" hreflang="zh-Hant" href="https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/online-timer.html"><meta property="og:locale" content="zh_TW">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="帶預設和鬧鐘的線上計時器 — 1、5、10、15、30、60 分鐘計時器 | Loona Hours">
+<meta property="og:description" content="免費的線上計時器，帶一鍵預設（1、5、10、15、20、30、45、60 分鐘）、進度環、暫停和重置，以及響亮的結束鬧鐘。即使在後臺標籤頁也準確。">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="帶預設和鬧鐘的線上計時器 — 1、5、10、15、30、60 分鐘計時器 | Loona Hours">
+<meta name="twitter:description" content="免費的線上計時器，帶一鍵預設（1、5、10、15、20、30、45、60 分鐘）、進度環、暫停和重置，以及響亮的結束鬧鐘。即使在後臺標籤頁也準確。">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 帶預設和鬧鐘的線上計時器","url":"https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"如果我切換標籤頁或螢幕休眠，這個計時器還會繼續工作嗎？","acceptedAnswer":{"@type":"Answer","text":"是的。計時器基於一個結束時間戳，而不是數螢幕更新。瀏覽器會節流後臺標籤頁，但每次頁面醒來時，它都會從您的時鐘重新計算確切的剩餘時間，而且它仍會在結束時間過去的那一刻觸發。"}},{"@type":"Question","name":"為什麼我聽不到鬧鐘？","acceptedAnswer":{"@type":"Answer","text":"瀏覽器只允許在您與頁面互動之後發聲 — 按開始算數，所以鬧鐘被解鎖了。檢查裝置音量，以及標籤頁沒有被靜音（在某些瀏覽器中右鍵單擊標籤頁）。計時器結束時標籤頁標題也會閃爍，所以一個安靜的房間仍有視覺訊號。"}},{"@type":"Question","name":"我能設定的最長計時器是多少？","acceptedAnswer":{"@type":"Answer","text":"用輸入框最多可達 99 小時、59 分鐘和 59 秒 — 遠遠超出任何預設。對於幾天之外的目標，本站的“倒計時到任何日期”工具更合適，因為它給活動命名並計算天數。"}},{"@type":"Question","name":"我可以同時執行兩個計時器嗎？","acceptedAnswer":{"@type":"Answer","text":"在第二個標籤頁開啟本頁 — 每個標籤頁都有自己獨立的計時器、結束時間和鬧鐘。"}},{"@type":"Question","name":"如果我關閉頁面，我的計時器還儲存嗎？","acceptedAnswer":{"@type":"Answer","text":"不 — 關閉標籤頁會丟棄計時器。只要倒計時還重要，就保持標籤頁開啟（可以放在後臺）。"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+
+.bigclock{font-size:2.6rem;font-weight:800;color:var(--teal);text-align:center;font-variant-numeric:tabular-nums;letter-spacing:1px;margin:8px 0}
+.bigclock small{display:block;font-size:.8rem;font-weight:600;color:var(--mut);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip{background:var(--soft);border:1.5px solid var(--teal2);color:var(--teal);border-radius:20px;padding:7px 14px;font-size:.9rem;font-weight:700;cursor:pointer}
+.chip:hover{background:var(--teal);color:#fff}
+.ringwrap{display:flex;justify-content:center;margin:6px 0 2px}
+.ringbg{fill:none;stroke:#e7f2ee;stroke-width:10}
+.ringfg{fill:none;stroke:var(--gold);stroke-width:10;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center}
+.prog{height:12px;background:var(--soft);border-radius:8px;overflow:hidden;margin:10px 0}
+.prog>div{height:100%;background:var(--gold);width:0%}
+.center{text-align:center}
+table.laps td,table.laps th{text-align:right}
+table.laps td:first-child,table.laps th:first-child{text-align:left}
+.zstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:14px 0}
+.zstat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.zstat .v{font-size:1.15rem;font-weight:800;color:var(--teal)}
+.zstat .k{font-size:.75rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.scrollx{overflow-x:auto}
+.phase{font-size:1.05rem;font-weight:800;color:var(--teal2);text-align:center;text-transform:uppercase;letter-spacing:2px}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/zh-hant/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "帶預設和鬧鐘的線上計時器 — 1、5、10、15、30、60 分鐘計時器",
+      "item": "https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>小時</span></a><nav><a href="time-card-calculator.html">工時卡</a><a href="overtime-calculator.html">加班</a><a href="california-overtime-calculator.html">加利福尼亞州</a><a href="overtime-calculator-by-state.html">按州</a><a href="./#tools">全部工具</a><a href="about.html">關於</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>線上計時器 — 預設分鐘、進度環 &amp; 鬧鐘</h1><p>人們實際上會設定的那種計時器的一鍵預設 — 雞蛋 5 分鐘、課堂任務 10、專注 25、考試 60 — 外加任何自定義時間、一個大進度環和一個在隔壁房間也能聽到的鬧鐘。</p></header>
+<div class="wrap">
+<div class="inshort"><strong>簡而言之：</strong> 選擇一個預設晶片或輸入小時、分鐘和秒，然後按開始。計時器從真實的時間戳計數（而不是數滴答），所以即使您切換標籤頁它也保持準確，結束時它會響鈴並閃爍標籤頁標題。</div>
+<div class="strip" aria-label="熱門工具"><a href="time-card-calculator.html">工時卡計算器</a><a href="hours-calculator.html">工時計算器</a><a href="overtime-calculator.html">加班計算器</a><a href="california-overtime-calculator.html">加利福尼亞州加班計算器</a><a href="time-and-a-half-calculator.html">一倍半工資計算器</a><a href="minutes-to-decimal-converter.html">分鐘轉小數小時換算器</a></div>
+<div class="calc">
+<h2>設定計時器</h2>
+<div class="ringwrap"><svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="計時器進度環"><circle class="ringbg" cx="100" cy="100" r="84"></circle><circle class="ringfg" id="tRing" cx="100" cy="100" r="84"></circle></svg></div>
+<div class="bigclock" id="tDisp">5:00<small id="tState">就緒</small></div>
+<div class="chips" aria-label="計時器預設">
+<button type="button" class="chip" data-preset="1">1 分鐘</button>
+<button type="button" class="chip" data-preset="5">5 分鐘</button>
+<button type="button" class="chip" data-preset="10">10 分鐘</button>
+<button type="button" class="chip" data-preset="15">15 分鐘</button>
+<button type="button" class="chip" data-preset="20">20 分鐘</button>
+<button type="button" class="chip" data-preset="30">30 分鐘</button>
+<button type="button" class="chip" data-preset="45">45 分鐘</button>
+<button type="button" class="chip" data-preset="60">60 分鐘</button>
+</div>
+<div class="frow">
+<div class="field"><label for="tH">小時</label><input type="number" id="tH" value="0" min="0" max="99"></div>
+<div class="field"><label for="tM">分鐘</label><input type="number" id="tM" value="5" min="0" max="59"></div>
+<div class="field"><label for="tS">秒</label><input type="number" id="tS" value="0" min="0" max="59"></div>
+</div>
+<div class="btnrow">
+<button class="go" id="tStart" type="button">開始</button>
+<button class="alt" id="tPause" type="button">暫停</button>
+<button class="alt" id="tReset" type="button">重置</button>
+</div>
+<p class="small">鬧鐘聲音透過您的裝置揚聲器播放 — 請保持音量開啟。如果計時器結束時標籤頁在後臺，標籤頁標題會閃爍，讓您能注意到它。</p>
+</div>
+<div class="sec"><h2>使用方法</h2><p>按下一個預設片（或設定好輸入框），然後開始。頁面只儲存一樣東西：精確的結束時刻，計算方式為 <em>現在 + 您設定的時間</em>。然後每次重新整理螢幕都會顯示 <em>結束時間 − 現在</em>，從您裝置的時鐘重新計算。這就是為什麼本計時器不會漂移：一個只數自己滴答的計時器，每當瀏覽器減慢標籤頁時就會丟時間，但一個結束時間計時器在您回到它的一瞬間就是正確的 — 即使標籤頁睡過。</p>
+<p>當剩餘時間到零時，本頁透過 Web Audio API 播放重複的提示音，並在標籤頁標題中閃爍“⏰ 時間到！”直到您回來。暫停會凍結剩餘時間；重置會重新載入輸入框中的任何內容。</p></div>
+<div class="sec"><h2>相關工時工具</h2><div class="grid"><a class="card" href="stopwatch.html"><h3>帶圈速的線上秒錶</h3><p>帶圈速和分段時間的毫秒秒錶、圈速表以及最佳/最差圈速高亮。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="pomodoro-timer.html"><h3>番茄鍾計時器</h3><p>25分鐘的專注會話，帶自動短休息和長休息以及會話計數器。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="interval-timer.html"><h3>間歇計時器 — HIIT</h3><p>工作和休息輪次，帶準備倒計時和每個階段變化時的提示音。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="countdown-timer.html"><h3>倒計時到任意日期</h3><p>倒計時到生日、截止日期、釋出或假日 — 經過之後改為正計時。</p><span class="badge">免費 — 試試看</span></a></div></div>
+<div class="sec"><h2>常見問題</h2><details class="faq"><summary>如果我切換標籤頁或螢幕休眠，這個計時器還會繼續工作嗎？</summary><p>是的。計時器基於一個結束時間戳，而不是數螢幕更新。瀏覽器會節流後臺標籤頁，但每次頁面醒來時，它都會從您的時鐘重新計算確切的剩餘時間，而且它仍會在結束時間過去的那一刻觸發。</p></details><details class="faq"><summary>為什麼我聽不到鬧鐘？</summary><p>瀏覽器只允許在您與頁面互動之後發聲 — 按開始算數，所以鬧鐘被解鎖了。檢查裝置音量，以及標籤頁沒有被靜音（在某些瀏覽器中右鍵單擊標籤頁）。計時器結束時標籤頁標題也會閃爍，所以一個安靜的房間仍有視覺訊號。</p></details><details class="faq"><summary>我能設定的最長計時器是多少？</summary><p>用輸入框最多可達 99 小時、59 分鐘和 59 秒 — 遠遠超出任何預設。對於幾天之外的目標，本站的“倒計時到任何日期”工具更合適，因為它給活動命名並計算天數。</p></details><details class="faq"><summary>我可以同時執行兩個計時器嗎？</summary><p>在第二個標籤頁開啟本頁 — 每個標籤頁都有自己獨立的計時器、結束時間和鬧鐘。</p></details><details class="faq"><summary>如果我關閉頁面，我的計時器還儲存嗎？</summary><p>不 — 關閉標籤頁會丟棄計時器。只要倒計時還重要，就保持標籤頁開啟（可以放在後臺）。</p></details></div>
+<div class="sec"><h2>運作方式 — 數學原理</h2>
+<p>唯一的算術是減法，每次重新整理都重新計算：</p>
+<div class="inshort"><strong>公式：</strong><br>
+結束時間 = 您按開始的時刻 + 您設定的時長<br>
+剩餘時間 = 結束時間 &minus; 現在，每次跳動都根據時鐘重新計算（從不靠數跳動次數）<br>
+圓環比例 = 剩餘 &divide; 總時長</div>
+<h3>計算示例</h3>
+<p>您點選 <strong>10 分鐘</strong> 預設恰好在 <strong>上午9:41:00</strong> 然後按開始。頁面會儲存一個結束時間為 <strong>上午9:51:00</strong>。您切換到另一個標籤頁七分鐘；當您在上午9:48:12回看時，計時器顯示 <strong>2:48</strong> 剩餘 — 恰好正確，因為它從 9:51:00 中減去了當前時間，而不是試圖在一個睡著的標籤頁中數 420 個一秒的滴答。在 9:51:00 時，剩餘時間到零，提示音響起，標題開始閃爍。</p>
+</div>
+<div class="sec" id="loona-embed">
+<h2>把這個工具免費嵌入您的網站</h2>
+<p>把本工具新增到您自己的網站或部落格 — 它完全免費、無需註冊，並始終顯示最新版本。複製下面的程式碼，貼上到您希望工具出現的頁面位置。在嵌入下方保留那行小的&ldquo;Powered by Loona Automation&rdquo;署名，有助於讓本工具保持免費 &mdash; 但您可以自由地設定樣式或刪除它；工具無論如何都會工作。</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Online Timer with Presets and Alarm by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;由 &lt;a href="https://loonaautomation.github.io/loona-hours/zh-hant/online-timer.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 免費 Online Timer with Presets and Alarm&lt;/p&gt;</textarea>
+<p style="margin-top:10px"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">複製嵌入程式碼</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='已複製！';setTimeout(function(){b.textContent='複製嵌入程式碼';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+</div>
+<footer>© 2026 Loona Automation — Loona Hours：為美國員工提供的免費工時表、工時和加班計算器。<br><a href="about.html">關於</a> · <a href="privacy.html">隱私政策</a> · <a href="terms.html">條款</a> · <a href="contact.html">聯絡</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>所有計算都在您的裝置上執行 — 不會上傳或儲存在伺服器上。</footer>
+<script>
+
+/* LH-TIMER: pure helpers (node-testable). All timing derives from timestamps. */
+function fmtClockFixed(ms){
+  if(ms < 0) ms = 0;
+  var totalSec = Math.ceil(ms/1000);
+  var h = Math.floor(totalSec/3600), m = Math.floor((totalSec%3600)/60), s = totalSec%60;
+  function p(n){ return (n<10?'0':'')+n; }
+  return h > 0 ? h + ':' + p(m) + ':' + p(s) : p(m) + ':' + p(s);
+}
+function timerRemaining(endTs, now){ return Math.max(0, endTs - now); }
+function timerFraction(remaining, total){ return total > 0 ? remaining/total : 0; }
+
+function loonaBeep(times){
+  try{
+    var AC = window.AudioContext || window.webkitAudioContext; if(!AC) return;
+    var ctx = loonaBeep._ctx || (loonaBeep._ctx = new AC());
+    if(ctx.state === 'suspended'){ ctx.resume(); }
+    var t0 = ctx.currentTime;
+    for(var i=0;i<(times||3);i++){
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type='sine'; o.frequency.value = 880;
+      g.gain.setValueAtTime(0.0001, t0 + i*0.35);
+      g.gain.exponentialRampToValueAtTime(0.4, t0 + i*0.35 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + i*0.35 + 0.28);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t0 + i*0.35); o.stop(t0 + i*0.35 + 0.3);
+    }
+  }catch(e){}
+}
+
+if (typeof document !== 'undefined'){
+  var durMs = 5*60000, endTs = 0, leftMs = durMs, running = false, tick = null, flash = null;
+  var disp = document.getElementById('tDisp'), ring = document.getElementById('tRing');
+  var CIRC = 2*Math.PI*84;
+  ring.style.strokeDasharray = CIRC;
+  function readInputs(){
+    var h = parseInt(document.getElementById('tH').value||'0',10)||0;
+    var m = parseInt(document.getElementById('tM').value||'0',10)||0;
+    var s = parseInt(document.getElementById('tS').value||'0',10)||0;
+    return ((h*3600)+(m*60)+s)*1000;
+  }
+  function render(){
+    disp.firstChild.nodeValue = fmtClockFixed(leftMs);
+    ring.style.strokeDashoffset = CIRC * (1 - timerFraction(leftMs, durMs));
+    document.getElementById('tState').textContent = running ? '執行中' : (leftMs===durMs ? '就緒' : (leftMs===0 ? '完成' : '已暫停'));
+  }
+  function stopFlash(){ if(flash){ clearInterval(flash); flash=null; } document.title = document.querySelector('title').getAttribute('data-orig') || document.title; }
+  function finish(){
+    running = false; leftMs = 0; clearInterval(tick); tick = null; render();
+    loonaBeep(4);
+    var orig = document.title, on = false;
+    stopFlash();
+    flash = setInterval(function(){ on = !on; document.title = on ? '⏰ 時間到！' : orig; }, 700);
+    setTimeout(stopFlash, 30000);
+  }
+  function step(){
+    leftMs = timerRemaining(endTs, Date.now());
+    if(leftMs <= 0){ finish(); return; }
+    render();
+  }
+  function start(){
+    if(running) return;
+    if(leftMs <= 0){ durMs = readInputs(); leftMs = durMs; }
+    if(durMs <= 0){ alert('請先設定時間 — 使用輸入框或預設。'); return; }
+    stopFlash();
+    endTs = Date.now() + leftMs;
+    running = true;
+    tick = setInterval(step, 100);
+    render();
+  }
+  function pause(){
+    if(!running) return;
+    leftMs = timerRemaining(endTs, Date.now());
+    running = false; clearInterval(tick); tick = null; render();
+  }
+  function reset(){
+    pause(); durMs = readInputs(); if(durMs<=0) durMs = 5*60000; leftMs = durMs; stopFlash(); render();
+  }
+  document.querySelector('title').setAttribute('data-orig', document.title);
+  document.getElementById('tStart').addEventListener('click', start);
+  document.getElementById('tPause').addEventListener('click', pause);
+  document.getElementById('tReset').addEventListener('click', reset);
+  ['tH','tM','tS'].forEach(function(id){ document.getElementById(id).addEventListener('change', function(){ if(!running){ pause(); durMs = readInputs(); leftMs = durMs; render(); } }); });
+  document.querySelectorAll('[data-preset]').forEach(function(b){
+    b.addEventListener('click', function(){
+      pause(); var mins = parseInt(b.getAttribute('data-preset'),10);
+      document.getElementById('tH').value = Math.floor(mins/60);
+      document.getElementById('tM').value = mins%60;
+      document.getElementById('tS').value = 0;
+      durMs = mins*60000; leftMs = durMs; stopFlash(); render();
+    });
+  });
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden && running) step(); });
+  render();
+}
+if (typeof module !== 'undefined' && module.exports){
+  module.exports = { fmtClockFixed: fmtClockFixed, timerRemaining: timerRemaining, timerFraction: timerFraction };
+}
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>

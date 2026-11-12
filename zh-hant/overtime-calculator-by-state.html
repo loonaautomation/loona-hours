@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>按州分類的加班計算器：全部 50 個州的規則，一個工具 | Loona Hours</title>
+<meta name="description" content="免費的按州分類加班計算器，適用於全部 50 個州：聯邦40小時規則，加上 CA、AK、CO、NV 和 OR 的每日加班，已根據官方來源核實。">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/overtime-calculator-by-state.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/overtime-calculator-by-state.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/overtime-calculator-by-state.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/overtime-calculator-by-state.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/overtime-calculator-by-state.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/overtime-calculator-by-state.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/overtime-calculator-by-state.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/overtime-calculator-by-state.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/overtime-calculator-by-state.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/overtime-calculator-by-state.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/overtime-calculator-by-state.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/overtime-calculator-by-state.html"><link rel="alternate" hreflang="zh-Hant" href="https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/overtime-calculator-by-state.html"><meta property="og:locale" content="zh_TW">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="按州分類的加班計算器：全部 50 個州的規則，一個工具 | Loona Hours">
+<meta property="og:description" content="免費的按州分類加班計算器，適用於全部 50 個州：聯邦40小時規則，加上 CA、AK、CO、NV 和 OR 的每日加班，已根據官方來源核實。">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="按州分類的加班計算器：全部 50 個州的規則，一個工具 | Loona Hours">
+<meta name="twitter:description" content="免費的按州分類加班計算器，適用於全部 50 個州：聯邦40小時規則，加上 CA、AK、CO、NV 和 OR 的每日加班，已根據官方來源核實。">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — 按州分類的加班計算器","url":"https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"哪些州有每日加班？","acceptedAnswer":{"@type":"Answer","text":"加利福尼亞州（一天超過 8 小時後，雙倍工資在超過 12 後），阿拉斯加州（一天超過 8 小時後，帶僱主規模和靈活計劃例外），科羅拉多州（一天超過 12 小時後或連續 12 小時後），內華達州（一天超過 8 小時後，僅當您的費率低於州最低工資的 1.5 倍時），以及俄勒岡州（在磨坊、工廠和製造業一天超過 10 小時後）。其他每個州對大多數私營僱主都依賴聯邦的每週規則。"}},{"@type":"Question","name":"為什麼內華達州的答案取決於我的工資水平？","acceptedAnswer":{"@type":"Answer","text":"內華達州的每日加班法規（NRS 608.018）只涵蓋收入低於州最低工資 1.5 倍的員工。最低工資為 $12.00 時，截止線是 $18.00/小時：低於它，您得到每日加班；達到或超過它，只適用每週加班。這就是為什麼本估算工具在選擇規則之前先詢問您的費率。"}},{"@type":"Question","name":"我在俄勒岡州工作，但不在工廠。我有每日加班嗎？","acceptedAnswer":{"@type":"Answer","text":"通常不 — 除了磨坊、工廠、製造業和少數特定行業，俄勒岡州的加班只有每週的（超過 40 小時後）。請使用“不是磨坊/工廠”設定，那是本估算工具的預設設定。"}},{"@type":"Question","name":"這些規則經過核實嗎？","acceptedAnswer":{"@type":"Answer","text":"五個每日規則摘要已根據本頁表格中連結的官方州勞工頁面（加利福尼亞州 DIR、阿拉斯加州 DOL、科羅拉多州 DLE、內華達州勞工專員、俄勒岡州 BOLI）核對，最後核實於十一月2026日。聯邦規則來自美國勞工部。規則很少變化，但您所在州的頁面是最終權威。"}},{"@type":"Question","name":"如果我所在的州對我的具體行業有規定怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"有些州有 — 醫療保健、公共安全和少數其他行業在幾個州有特殊規定，極小的僱主有時低於州的門檻。本估算工具涵蓋一般的私營部門規則；行業規則請檢視您所在州的勞工部。"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/zh-hant/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "按州分類的加班計算器：全部 50 個州的規則，一個工具",
+      "item": "https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>小時</span></a><nav><a href="time-card-calculator.html">工時卡</a><a href="overtime-calculator.html">加班</a><a href="california-overtime-calculator.html">加利福尼亞州</a><a href="overtime-calculator-by-state.html">按州</a><a href="./#tools">全部工具</a><a href="about.html">關於</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>按州分類的加班計算器 — 每個州的規則，彙集在一個估算工具中</h1><p>選擇您的州和您的工時：估算工具應用您所在州的實際加班規則 — 您州有每日加班就按每日加班，沒有就按聯邦規則。</p></header>
+<div class="wrap">
+<div class="inshort"><strong>簡而言之：</strong> 選擇您的州並輸入每天的工時；您會得到該州規則下的常規/加班拆分和總工資。五個州（CA、AK、CO、NV、OR）內建了每日加班邏輯；其他 45 個遵循聯邦 40 小時的一週，這裡的每條規則都註明了官方州或聯邦頁面的來源。</div>
+<div class="strip" aria-label="熱門工具"><a href="time-card-calculator.html">工時卡計算器</a><a href="hours-calculator.html">工時計算器</a><a href="overtime-calculator.html">加班計算器</a><a href="california-overtime-calculator.html">加利福尼亞州加班計算器</a><a href="time-and-a-half-calculator.html">一倍半工資計算器</a><a href="minutes-to-decimal-converter.html">分鐘轉小數小時換算器</a></div>
+<div class="calc">
+<h2>按州分類的加班計算器 — 選擇您的州，獲得其規則</h2>
+<div class="frow">
+<div class="field"><label for="stateSel">您工作的州</label><select id="stateSel"><option value="AL">阿拉巴馬州</option><option value="AK">阿拉斯加州</option><option value="AZ">亞利桑那州</option><option value="AR">阿肯色州</option><option value="CA" selected>加利福尼亞州</option><option value="CO">科羅拉多州</option><option value="CT">康涅狄格州</option><option value="DE">特拉華州</option><option value="DC">哥倫比亞特區</option><option value="FL">佛羅里達州</option><option value="GA">佐治亞州</option><option value="HI">夏威夷州</option><option value="ID">愛達荷州</option><option value="IL">伊利諾伊州</option><option value="IN">印第安納州</option><option value="IA">艾奧瓦州</option><option value="KS">堪薩斯州</option><option value="KY">肯塔基州</option><option value="LA">路易斯安那州</option><option value="ME">緬因州</option><option value="MD">馬里蘭州</option><option value="MA">馬薩諸塞州</option><option value="MI">密歇根州</option><option value="MN">明尼蘇達州</option><option value="MS">密西西比州</option><option value="MO">密蘇里州</option><option value="MT">蒙大拿州</option><option value="NE">內布拉斯加州</option><option value="NV">內華達州</option><option value="NH">新罕布什爾州</option><option value="NJ">新澤西州</option><option value="NM">新墨西哥州</option><option value="NY">紐約州</option><option value="NC">北卡羅來納州</option><option value="ND">北達科他州</option><option value="OH">俄亥俄州</option><option value="OK">俄克拉荷馬州</option><option value="OR">俄勒岡州</option><option value="PA">賓夕法尼亞州</option><option value="RI">羅得島州</option><option value="SC">南卡羅來納州</option><option value="SD">南達科他州</option><option value="TN">田納西州</option><option value="TX">得克薩斯州</option><option value="UT">猶他州</option><option value="VT">佛蒙特州</option><option value="VA">弗吉尼亞州</option><option value="WA">華盛頓州</option><option value="WV">西弗吉尼亞州</option><option value="WI">威斯康星州</option><option value="WY">懷俄明州</option></select></div><div class="field"><label for="rate">時薪 ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div><div class="field"><label for="indSel">僅限俄勒岡州：僱主型別</label><select id="indSel"><option value="no" selected>不是磨坊、工廠或製造商</option><option value="yes">磨坊 / 工廠 / 製造業</option></select></div>
+</div>
+<div class="frow"><div class="field"><label for="S0">週一（小時）</label><input type="number" id="S0" value="8" min="0" max="24" step="0.25"></div><div class="field"><label for="S1">週二（小時）</label><input type="number" id="S1" value="8" min="0" max="24" step="0.25"></div><div class="field"><label for="S2">週三（小時）</label><input type="number" id="S2" value="8" min="0" max="24" step="0.25"></div><div class="field"><label for="S3">週四（小時）</label><input type="number" id="S3" value="8" min="0" max="24" step="0.25"></div><div class="field"><label for="S4">週五（小時）</label><input type="number" id="S4" value="8" min="0" max="24" step="0.25"></div><div class="field"><label for="S5">週六（小時）</label><input type="number" id="S5" value="0" min="0" max="24" step="0.25"></div><div class="field"><label for="S6">週日（小時）</label><input type="number" id="S6" value="0" min="0" max="24" step="0.25"></div></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">按我所在州的規則計算</button></div>
+<div class="stats" id="stats"></div>
+<div id="ruleBox"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>使用方法 — 這個計算器背後的規則</h2><p>四十五個州（和 DC）簡單地遵循 <strong>聯邦規則</strong>: 按1.5×計算（工作周內超過 40 小時後），沒有每日加班。五個州在上面增加了每日規則 — 它們正是本頁存在的意義所在：</p>
+<table><tr><th>州</th><th>每日規則（摘要）</th><th>官方來源</th></tr>
+<tr><td><strong>加利福尼亞州</strong></td><td>1.5×（每天超過8小時後），2×（每天超過12小時後），第7天溢價</td><td><a href="https://www.dir.ca.gov/dlse/faq_overtime.htm" rel="noopener">CA DIR — 加班常見問題</a></td></tr>
+<tr><td><strong>阿拉斯加州</strong></td><td>1.5×（每天超過8小時後；擁有4+名員工的僱主；經批准的靈活計劃除外）</td><td><a href="https://labor.alaska.gov/lss/whact.htm" rel="noopener">阿拉斯加州 DOL — 工資 &amp; 工時</a></td></tr>
+<tr><td><strong>科羅拉多州</strong></td><td>每週 40 小時、每天 12 小時或連續 12 小時後的加班 — 取更有利的結果</td><td><a href="https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime" rel="noopener">科羅拉多州 DLE — 加班</a></td></tr>
+<tr><td><strong>內華達州</strong></td><td>每日 1.5×（每天超過 8 小時後）僅當您的費率低於州最低工資的 1.5× 時才適用（2026年為 $18.00）</td><td><a href="https://labor.nv.gov/Wages/Overtime/" rel="noopener">內華達州勞工專員 — 加班</a></td></tr>
+<tr><td><strong>俄勒岡州</strong></td><td>在磨坊/工廠/製造業，每日 1.5×適用於每天 10 小時後的部分（取每日與每週中較大者）；其他人都適用每週規則</td><td><a href="https://www.oregon.gov/boli/workers/Pages/overtime.aspx" rel="noopener">俄勒岡州 BOLI — 加班</a></td></tr>
+</table>
+<p>上面的每個摘要都已與連結的官方頁面核對。 <em>最後核實：十一月2026日。</em> 一些誠實的注意事項：有些州以通用估算工具無法捕捉的方式，為特定行業（醫療保健、公共僱主、罐頭廠）或按僱主規模設定加班規則，少數州對州法下的極小僱主使用 40 以外的門檻。您所在州的勞工部 — 上面為五個每日規則州連結了它，美國勞工部在以下位置列出了它 <a href="https://www.dol.gov/agencies/whd/state-contacts" rel="noopener">dol.gov</a> 其餘部分的 — 是最終決定。</p></div>
+<div class="sec"><h2>相關工時工具</h2><div class="grid"><a class="card" href="california-overtime-calculator.html"><h3>加利福尼亞州加班計算器</h3><p>加利福尼亞州的每日加班，做法正確：按1.5×計算（超過 8 小時後），雙倍工資在超過 12 小時後，第7天連續工作規則，且不重複計算。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="overtime-calculator.html"><h3>加班計算器</h3><p>一個框中的聯邦規則：輸入每週工時和您的費率，輸出常規工時、按1.5×計算的加班工時和總工資。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="time-and-a-half-calculator.html"><h3>一倍半工資計算器</h3><p>您的加班費率和加班費一步到位 — 再加上人們忘記的那部分：其中有多少是高於常規工時的額外溢價。</p><span class="badge">免費 — 試試看</span></a><a class="card" href="double-time-calculator.html"><h3>雙倍工資計算器</h3><p>雙倍工資是您費率的2× — 比加班更罕見，值得真金白銀。檢視費率、工資，以及法律或合同何時真正欠它。</p><span class="badge">免費 — 試試看</span></a></div></div>
+<div class="sec"><h2>常見問題</h2><details class="faq"><summary>哪些州有每日加班？</summary><p>加利福尼亞州（一天超過 8 小時後，雙倍工資在超過 12 後），阿拉斯加州（一天超過 8 小時後，帶僱主規模和靈活計劃例外），科羅拉多州（一天超過 12 小時後或連續 12 小時後），內華達州（一天超過 8 小時後，僅當您的費率低於州最低工資的 1.5 倍時），以及俄勒岡州（在磨坊、工廠和製造業一天超過 10 小時後）。其他每個州對大多數私營僱主都依賴聯邦的每週規則。</p></details><details class="faq"><summary>為什麼內華達州的答案取決於我的工資水平？</summary><p>內華達州的每日加班法規（NRS 608.018）只涵蓋收入低於州最低工資 1.5 倍的員工。最低工資為 $12.00 時，截止線是 $18.00/小時：低於它，您得到每日加班；達到或超過它，只適用每週加班。這就是為什麼本估算工具在選擇規則之前先詢問您的費率。</p></details><details class="faq"><summary>我在俄勒岡州工作，但不在工廠。我有每日加班嗎？</summary><p>通常不 — 除了磨坊、工廠、製造業和少數特定行業，俄勒岡州的加班只有每週的（超過 40 小時後）。請使用“不是磨坊/工廠”設定，那是本估算工具的預設設定。</p></details><details class="faq"><summary>這些規則經過核實嗎？</summary><p>五個每日規則摘要已根據本頁表格中連結的官方州勞工頁面（加利福尼亞州 DIR、阿拉斯加州 DOL、科羅拉多州 DLE、內華達州勞工專員、俄勒岡州 BOLI）核對，最後核實於十一月2026日。聯邦規則來自美國勞工部。規則很少變化，但您所在州的頁面是最終權威。</p></details><details class="faq"><summary>如果我所在的州對我的具體行業有規定怎麼辦？</summary><p>有些州有 — 醫療保健、公共安全和少數其他行業在幾個州有特殊規定，極小的僱主有時低於州的門檻。本估算工具涵蓋一般的私營部門規則；行業規則請檢視您所在州的勞工部。</p></details></div>
+<div class="sec"><h2>運作方式 — 公式</h2>
+<p>您輸入一週每天的工時和一個工資標準；本頁隨後應用您的州所屬的規則家族。大多數州使用聯邦模式（一週超過 40 後加班）。加利福尼亞州應用它的每日 8/12 拆分，帶第7天溢價；阿拉斯加州應用每日 8 小時門檻；科羅拉多州應用每日 12 小時門檻；內華達州只在費率低於州最低工資的 8 倍時應用每日 1.5 小時規則；俄勒岡州只在磨坊、工廠和製造業應用每日 10 小時規則，由行業開關控制。無論適用哪條每日規則，這一週隨後都被核對，使已經按每日溢價支付的工時不會再次計入每週加班。</p>
+<div class="inshort"><strong>公式：</strong> 聯邦：常規 = 本週前 40 小時，加班 = 其餘按 1.5&times;。每日規則州：每天在其門檻處拆分（CA 先 8 小時然後 12 小時為 2&times;；AK 8 小時；CO 12 小時；NV 8 小時，如果費率 &lt; 最低工資的 1.5 倍；OR 10 小時，在製造業），然後本週高於 40 的常規工時移入加班。總工資 = （常規 &times; 費率）+（加班 &times; 費率 &times; 1.5）+（雙倍工資 &times; 費率 &times; 2）。</div>
+<h3>計算示例</h3>
+<p>選擇 <strong>內華達州</strong> 以及時薪 <strong>$15/小時</strong>。因為 $15 低於內華達州的 $18.00 門檻（1.5 &times; $12.00 最低工資），所以每日規則適用。工作 <strong>週一至週四，每天10小時</strong>, 週五至週日休息：本週總計正好 40 小時，但它拆分為 <strong>32:00 常規 + 8:00 加班</strong> — 每個長工作日有 2 個每日加班小時。總工資是 <strong>$660.00</strong> （$480.00 + $180.00）。按聯邦規則，同一個40小時工作周將全部是常規時間，$600.00 — 在這裡，每日規則價值 $60.00。</p>
+<h3>常見問題</h3>
+<details class="faq"><summary>我在阿拉斯加州每週工作四個10小時的工作日。我有每日加班嗎？</summary><p>根據這裡所採用的阿拉斯加州規則，是的：每個10小時的工作日都有 2 小時超過 8 小時的每日門檻，所以這一週顯示 8 個加班小時，即使它總計只有 40。本頁的阿拉斯加州說明標記了例外 — 員工少於 4 人的僱主是豁免的，經批准的靈活工時計劃可以允許每天最多 10 小時的直時工時。</p></details>
+<details class="faq"><summary>行業切換會改變什麼？</summary><p>它隻影響俄勒岡州。把它設為是，俄勒岡州會按適用於磨坊、工廠和製造業的 10 小時每日規則計分；設為否，俄勒岡州按涵蓋大多數其他俄勒岡州僱主的每週 40 小時規則計分。對於其他每個州，這個開關沒有影響。</p></details>
+<details class="faq"><summary>我所在的州不是有每日規則的五個州之一。估算使用什麼？</summary><p>聯邦規則：在工作周內按 1.5&times; 計算加班（超過 40 小時後），沒有每日部分。四十五個州和 DC 在本頁經核實的表格中屬於那一組 — 如果您的州是其中之一，單個長工作日不會在這裡產生加班，除非這一週本身超過 40 小時。</p></details>
+<details class="faq"><summary>科羅拉多州的連續12小時規則會改變我的數字嗎？</summary><p>它可以，而本估算工具不為它建模：科羅拉多州的計算使用每天的工時（加上每週規則）。科羅拉多州在連續超過 12 小時後還欠加班，這在分段班次上可能重要 — 本頁的科羅拉多州說明標記了這一點，您的僱主的工資部門或科羅拉多州勞工部是決定性的來源。</p></details>
+<details class="faq"><summary>我的僱主可以支付比州規定更多的工資嗎？</summary><p>是的。計算器採用您所選州的法律規則估算；工會合同、公司政策或個人協議可以承諾更慷慨的溢價（例如聯邦規則州的每日加班），那些承諾與法律一起決定您的實際工資。</p></details>
+</div>
+<div class="disc"><strong>免責宣告：</strong> 僅為估算 — 不是工資或法律建議。您僱主的工資規則和州法決定您的實際工資。數字為顯示而取整；您的工資單和工資部門是官方記錄。</div>
+</div>
+<div class="sec"><h2>適用於每個州的加班計算器</h2><p>每個州和 DC 現在都有自己的頁面：用通俗的話寫出的規則、2026年最低工資、按該工資計算的示例，以及預設為該州規則的計算器。</p><div class="strip"><a href="alabama-overtime-calculator.html">阿拉巴馬州</a><a href="alaska-overtime-calculator.html">阿拉斯加州</a><a href="arizona-overtime-calculator.html">亞利桑那州</a><a href="arkansas-overtime-calculator.html">阿肯色州</a><a href="california-overtime-calculator.html">加利福尼亞州</a><a href="colorado-overtime-calculator.html">科羅拉多州</a><a href="connecticut-overtime-calculator.html">康涅狄格州</a><a href="delaware-overtime-calculator.html">特拉華州</a><a href="district-of-columbia-overtime-calculator.html">哥倫比亞特區</a><a href="florida-overtime-calculator.html">佛羅里達州</a><a href="georgia-overtime-calculator.html">佐治亞州</a><a href="hawaii-overtime-calculator.html">夏威夷州</a><a href="idaho-overtime-calculator.html">愛達荷州</a><a href="illinois-overtime-calculator.html">伊利諾伊州</a><a href="indiana-overtime-calculator.html">印第安納州</a><a href="iowa-overtime-calculator.html">艾奧瓦州</a><a href="kansas-overtime-calculator.html">堪薩斯州</a><a href="kentucky-overtime-calculator.html">肯塔基州</a><a href="louisiana-overtime-calculator.html">路易斯安那州</a><a href="maine-overtime-calculator.html">緬因州</a><a href="maryland-overtime-calculator.html">馬里蘭州</a><a href="massachusetts-overtime-calculator.html">馬薩諸塞州</a><a href="michigan-overtime-calculator.html">密歇根州</a><a href="minnesota-overtime-calculator.html">明尼蘇達州</a><a href="mississippi-overtime-calculator.html">密西西比州</a><a href="missouri-overtime-calculator.html">密蘇里州</a><a href="montana-overtime-calculator.html">蒙大拿州</a><a href="nebraska-overtime-calculator.html">內布拉斯加州</a><a href="nevada-overtime-calculator.html">內華達州</a><a href="new-hampshire-overtime-calculator.html">新罕布什爾州</a><a href="new-jersey-overtime-calculator.html">新澤西州</a><a href="new-mexico-overtime-calculator.html">新墨西哥州</a><a href="new-york-overtime-calculator.html">紐約州</a><a href="north-carolina-overtime-calculator.html">北卡羅來納州</a><a href="north-dakota-overtime-calculator.html">北達科他州</a><a href="ohio-overtime-calculator.html">俄亥俄州</a><a href="oklahoma-overtime-calculator.html">俄克拉荷馬州</a><a href="oregon-overtime-calculator.html">俄勒岡州</a><a href="pennsylvania-overtime-calculator.html">賓夕法尼亞州</a><a href="rhode-island-overtime-calculator.html">羅得島州</a><a href="south-carolina-overtime-calculator.html">南卡羅來納州</a><a href="south-dakota-overtime-calculator.html">南達科他州</a><a href="tennessee-overtime-calculator.html">田納西州</a><a href="texas-overtime-calculator.html">得克薩斯州</a><a href="utah-overtime-calculator.html">猶他州</a><a href="vermont-overtime-calculator.html">佛蒙特州</a><a href="virginia-overtime-calculator.html">弗吉尼亞州</a><a href="washington-overtime-calculator.html">華盛頓州</a><a href="west-virginia-overtime-calculator.html">西弗吉尼亞州</a><a href="wisconsin-overtime-calculator.html">威斯康星州</a><a href="wyoming-overtime-calculator.html">懷俄明州</a></div></div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">把這個計算器免費嵌入您的網站</h2>
+<p style="margin:0 0 12px;line-height:1.6">把本計算器新增到您自己的網站或部落格 — 它完全免費、無需註冊，並始終顯示最新版本。複製下面的程式碼，貼上到您希望計算器出現的頁面位置。在嵌入下方保留那行小的&ldquo;Powered by Loona Automation&rdquo;署名，有助於讓本工具保持免費 &mdash; 但您可以自由地設定樣式或刪除它；計算器無論如何都會工作。</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Overtime Calculator by State by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;由 &lt;a href="https://loonaautomation.github.io/loona-hours/zh-hant/overtime-calculator-by-state.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; 免費 按州分類的加班計算器&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">複製嵌入程式碼</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='已複製！';setTimeout(function(){b.textContent='複製嵌入程式碼';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours：為美國員工提供的免費工時表、工時和加班計算器。<br><a href="about.html">關於</a> · <a href="privacy.html">隱私政策</a> · <a href="terms.html">條款</a> · <a href="contact.html">聯絡</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>所有計算都在您的裝置上執行 — 不會上傳或儲存在伺服器上。</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'一天8小時後的每日加班。員工少於4人的僱主是豁免的，參加勞工部批准的自願靈活工時計劃的員工，可以以直時費率每天工作最多10小時。'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'每日加班：8小時後1.5倍，12小時後2倍，加上工作周第7個連續日的特殊規則。餐休和休息溢價是單獨的，不包括在本估算中。有效採用的替代工作周排班（經員工選舉，每天最多10小時）會改變每日規則。'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'一週40小時後、一天12小時後或連續12小時後加班 — 取給員工更大利益的一個。本估算工具使用每天的工時；連續12小時規則對分段班次可能不同。'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'夏威夷州',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'路易斯安那州',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'一個工作日8小時後的每日加班，僅當您的常規時薪低於內華達州最低工資的1.5倍時才適用（最低工資$12.00/小時時為$18.00/小時）。達到或超過該費率時，只適用40小時後的每週加班。內華達州把一個工作日算作從您開始工作起的一個滾動24小時時段，雙方同意的4天/10小時排班免於每日規則。'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'新澤西州',ruleType:'federal'},
+    NM:{name:'新墨西哥州',ruleType:'federal'}, NY:{name:'紐約州',ruleType:'federal'},
+    NC:{name:'北卡羅來納州',ruleType:'federal'}, ND:{name:'北達科他州',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'大多數俄勒岡州僱主只在一週40小時後才欠加班。一天10小時後的每日加班適用於磨坊、工廠和製造業（以及少數特定行業），在那裡員工按每日或每週加班中較大的一個獲得支付。'},
+    PA:{name:'賓夕法尼亞州',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'南卡羅來納州',ruleType:'federal'}, SD:{name:'南達科他州',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'西弗吉尼亞州',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "元旦"),
+      { date: nthWeekday(year, 0, 1, 3), name: '馬丁·路德·金紀念日' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: '陣亡將士紀念日' },
+      fixed(5, 19, '六月節國家獨立日'),
+      fixed(6, 4, '獨立日'),
+      { date: nthWeekday(year, 8, 1, 1), name: '勞動節' },
+      { date: nthWeekday(year, 9, 1, 2), name: '哥倫布日' },
+      fixed(10, 11, '退伍軍人節'),
+      { date: nthWeekday(year, 10, 4, 4), name: '感恩節' },
+      fixed(11, 25, '聖誕節')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">總工時（'+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">加班 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">雙倍工資 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">總工資</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工資行</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">金額</th></tr>'
+ +'<tr><td>常規工資</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>加班費 (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>雙倍工資 (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>班次差額溢價</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>總工資</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');
+var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='是'});
+var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
+statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
+var st=s.state;var ruleText='';
+if(st.ruleType==='federal'){ruleText='<strong>'+st.name+'</strong>僅遵循<strong>聯邦規則</strong>：一個工作周內40小時後按1.5倍加班，對大多數私營僱主沒有州每日加班要求。';}
+else if(st.ruleType==='california'){ruleText='<strong>加利福尼亞州</strong>有完整的每日加班：一天8小時後1.5倍，12小時後2倍，第7個連續日的溢價，以及在此之上的每週加班，不重複計算。';}
+else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong>要求一天8小時後按1.5倍支付每日加班，此外還有40小時後的每週加班（溢價小時從不重複計算）。';}
+else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong>要求一週40小時後、一天12小時後或連續12小時後支付加班 — 取對員工最有利的一個。';}
+else if(st.ruleType==='nevada'){ruleText='<strong>內華達州</strong>要求在一個工作日8小時後支付每日加班，<strong>僅當常規時薪低於州最低工資的1.5倍時</strong>（最低工資$12.00時為$18.00）。您的費率為 '+LH.money(rate)+' 意味著 '+(rate<1.5*st.minWage?'<strong>每日</strong>規則適用於本估算。':'<strong>僅每週</strong>規則適用於本估算。');}
+else if(st.ruleType==='oregon'){ruleText='<strong>俄勒岡州</strong>：大多數僱主只在一週40小時後才欠加班。一天10小時後的每日加班適用於磨坊、工廠和製造業，按每日或每週加班中較大的一個支付。本估算使用了 '+(document.getElementById('indSel').value==='是'?'<strong>製造業</strong>':'<strong>標準</strong>')+' 規則。';}
+var src=st.sourceUrl?'<br>官方來源：<a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>官方來源：US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
+document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">最後核實：2026年11月。特定行業和公共僱主的規則可能不同。</span></div>';
+payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
