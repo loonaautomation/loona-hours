@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เครื่องคำนวณส่วนต่างค่ากะ: อัตราแบบผสมและการทำงานล่วงเวลา | Loona Hours</title>
+<meta name="description" content="เครื่องคำนวณส่วนต่างค่ากะฟรี: ผสมส่วนเพิ่มกะกลางคืน/วันหยุดสุดสัปดาห์เข้ากับอัตราปกติของคุณ และคำนวณการทำงานล่วงเวลาจากอัตราที่ผสมแล้ว ซึ่งเป็นวิธีที่ถูกต้องตามกฎหมาย">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/shift-differential-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/shift-differential-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/shift-differential-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/shift-differential-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/shift-differential-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/shift-differential-calculator.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/shift-differential-calculator.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/shift-differential-calculator.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/shift-differential-calculator.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/shift-differential-calculator.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/shift-differential-calculator.html"><link rel="alternate" hreflang="id" href="https://loonaautomation.github.io/loona-hours/id/shift-differential-calculator.html"><link rel="alternate" hreflang="hi" href="https://loonaautomation.github.io/loona-hours/hi/shift-differential-calculator.html"><link rel="alternate" hreflang="bn" href="https://loonaautomation.github.io/loona-hours/bn/shift-differential-calculator.html"><link rel="alternate" hreflang="pl" href="https://loonaautomation.github.io/loona-hours/pl/shift-differential-calculator.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/shift-differential-calculator.html"><link rel="alternate" hreflang="th" href="https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/shift-differential-calculator.html"><meta property="og:locale" content="th_TH">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="เครื่องคำนวณส่วนต่างค่ากะ: อัตราแบบผสมและการทำงานล่วงเวลา | Loona Hours">
+<meta property="og:description" content="เครื่องคำนวณส่วนต่างค่ากะฟรี: ผสมส่วนเพิ่มกะกลางคืน/วันหยุดสุดสัปดาห์เข้ากับอัตราปกติของคุณ และคำนวณการทำงานล่วงเวลาจากอัตราที่ผสมแล้ว ซึ่งเป็นวิธีที่ถูกต้องตามกฎหมาย">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html">
+<meta property="og:locale" content="th_TH">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="เครื่องคำนวณส่วนต่างค่ากะ: อัตราแบบผสมและการทำงานล่วงเวลา | Loona Hours">
+<meta name="twitter:description" content="เครื่องคำนวณส่วนต่างค่ากะฟรี: ผสมส่วนเพิ่มกะกลางคืน/วันหยุดสุดสัปดาห์เข้ากับอัตราปกติของคุณ และคำนวณการทำงานล่วงเวลาจากอัตราที่ผสมแล้ว ซึ่งเป็นวิธีที่ถูกต้องตามกฎหมาย">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — เครื่องคำนวณส่วนต่างค่ากะ","url":"https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ส่วนต่างค่ากะคืออะไร","acceptedAnswer":{"@type":"Answer","text":"ค่าจ้างเพิ่มต่อชั่วโมงสำหรับการทำงานในกะที่เป็นที่ต้องการน้อยกว่า — กลางคืน หัวค่ำ วันหยุดสุดสัปดาห์ หรือวันหยุด มันมักเป็นจำนวนคงที่ (เช่น +$2/ชั่วโมง) หรือเปอร์เซ็นต์ของอัตราพื้นฐาน เครื่องคำนวณนี้ใช้รูปแบบจำนวนคงที่ สำหรับเปอร์เซ็นต์ ให้แปลงเป็นดอลลาร์ก่อน (10% ของ $20 = $2)"}},{"@type":"Question","name":"การทำงานล่วงเวลาต้องจ่ายบนส่วนต่างด้วยหรือไม่","acceptedAnswer":{"@type":"Answer","text":"ใช่ กฎหมายของรัฐบาลกลางกำหนดให้ 'อัตราปกติ' รวมถึงส่วนต่างค่ากะและส่วนเพิ่มอื่น ๆ ส่วนใหญ่ การทำงานล่วงเวลาจึงเป็น 1.5× ของอัตราที่ผสมแล้ว ไม่ใช่ 1.5× ของอัตราฐานเพียงอย่างเดียว"}},{"@type":"Question","name":"สลิปของฉันแสดงการทำงานล่วงเวลาที่ 1.5× ของอัตราฐานเท่านั้น นั่นผิดหรือไม่","acceptedAnswer":{"@type":"Answer","text":"หากคุณได้รับส่วนต่างในสัปดาห์นั้นด้วย เป็นไปได้มากว่าใช่ — ค่าพรีเมียมล่วงเวลาควรอยู่บนพื้นฐานของอัตราแบบผสม ยกประเด็นกับฝ่ายเงินเดือนโดยแสดงชั่วโมงของสัปดาห์และชั่วโมงส่วนต่างของคุณ รายการแยกของหน้านี้เป็นเอกสารพิมพ์ที่ดีที่จะนำไปด้วย"}},{"@type":"Question","name":"ส่วนต่างนับรวมในสัปดาห์ที่ไม่มีการทำงานล่วงเวลาหรือไม่","acceptedAnswer":{"@type":"Answer","text":"พวกเขายังคงบวกส่วนเพิ่มต่อชั่วโมงเข้ากับรายได้เวลาปกติ (ส่วนนั้นอยู่ในทุกสัปดาห์) พวกเขาเปลี่ยนเฉพาะคณิตศาสตร์การทำงานล่วงเวลาในสัปดาห์ที่เกิน 40 ชั่วโมงเท่านั้น"}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/th/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "เครื่องคำนวณส่วนต่างค่ากะ: อัตราแบบผสมและการทำงานล่วงเวลา",
+      "item": "https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>ชั่วโมง</span></a><nav><a href="time-card-calculator.html">บัตรลงเวลา</a><a href="overtime-calculator.html">การทำงานล่วงเวลา</a><a href="california-overtime-calculator.html">แคลิฟอร์เนีย</a><a href="overtime-calculator-by-state.html">แยกตามรัฐ</a><a href="./#tools">เครื่องมือทั้งหมด</a><a href="about.html">เกี่ยวกับ</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>เครื่องคำนวณส่วนต่างค่ากะ — อัตราจริงของคุณ รวมเบี้ยเพิ่ม</h1><p>เบี้ยเพิ่มกลางคืน $2 ไม่ได้เพิ่มแค่ $2 — มันเพิ่มอัตราที่การทำงานล่วงเวลาของคุณจ่าย ดูอัตราปกติแบบผสมของคุณและยอดรวมที่มันสร้าง</p></header>
+<div class="wrap">
+<div class="inshort"><strong>โดยสรุป:</strong> ป้อนชั่วโมงของสัปดาห์ของคุณ ทำเครื่องหมายชั่วโมงที่ได้รับค่าพรีเมียมส่วนต่าง และรับอัตราปกติแบบผสม (รายได้เวลาปกติรวม ÷ ชั่วโมงรวม) รายได้เวลาปกติ ค่าพรีเมียมล่วงเวลาที่ครึ่งหนึ่งของอัตราแบบผสม และค่าจ้างรวม</div>
+<div class="strip" aria-label="เครื่องมือยอดนิยม"><a href="time-card-calculator.html">เครื่องคำนวณบัตรลงเวลา</a><a href="hours-calculator.html">เครื่องคำนวณชั่วโมง</a><a href="overtime-calculator.html">เครื่องคำนวณการทำงานล่วงเวลา</a><a href="california-overtime-calculator.html">เครื่องคำนวณการทำงานล่วงเวลาแคลิฟอร์เนีย</a><a href="time-and-a-half-calculator.html">เครื่องคำนวณอัตราหนึ่งเท่าครึ่ง</a><a href="minutes-to-decimal-converter.html">ตัวแปลงนาทีเป็นชั่วโมงทศนิยม</a></div>
+<div class="calc">
+<h2>เครื่องคำนวณส่วนต่างค่ากะ — อัตราแบบผสมทำอย่างถูกกฎหมาย</h2>
+<div class="frow">
+<div class="field"><label for="rate">อัตรารายชั่วโมงพื้นฐาน ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div><div class="field"><label for="prem">เบี้ยเพิ่มส่วนต่าง ($ ต่อชั่วโมง)</label><input type="number" id="prem" value="2" step="0.25" min="0" ></div>
+</div>
+<p class="small">กรอกชั่วโมงรวมของแต่ละวัน และจำนวนชั่วโมงเหล่านั้นที่ได้รับส่วนต่าง (กลางคืน เย็น วันหยุดสุดสัปดาห์ — ตามที่สถานที่ทำงานของคุณนิยาม)</p>
+<div style="overflow-x:auto"><table><tr><th>วัน</th><th>ชั่วโมงรวม</th><th>ในจำนวนนี้: ชั่วโมงส่วนต่าง</th></tr>
+<tr><td>วันจันทร์</td><td><input type="number" id="D0T" value="8" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D0N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr><tr><td>วันอังคาร</td><td><input type="number" id="D1T" value="8" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D1N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr><tr><td>วันพุธ</td><td><input type="number" id="D2T" value="8" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D2N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr><tr><td>วันพฤหัสบดี</td><td><input type="number" id="D3T" value="8" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D3N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr><tr><td>วันศุกร์</td><td><input type="number" id="D4T" value="8" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D4N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr><tr><td>วันเสาร์</td><td><input type="number" id="D5T" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D5N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr><tr><td>วันอาทิตย์</td><td><input type="number" id="D6T" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงรวม"></td><td><input type="number" id="D6N" value="0" min="0" max="24" step="0.25" style="width:84px" aria-label="ชั่วโมงส่วนต่าง"></td></tr>
+</table></div>
+<div class="btnrow"><button class="go" id="calcBtn" type="button">คำนวณด้วยอัตราแบบผสม</button></div>
+<div class="stats" id="stats"></div>
+<div id="detail"></div>
+</div>
+<div class="sec"><h2>วิธีการทำงาน — กฎเบื้องหลังเครื่องคำนวณนี้</h2><p>ส่วนต่างค่ากะคือค่าจ้างพิเศษต่อชั่วโมงสำหรับกะกลางคืน เย็น หรือวันหยุดสุดสัปดาห์ กฎที่พนักงานส่วนใหญ่ (และการตั้งค่าบัญชีค่าจ้างบางแห่ง) พลาด: ภายใต้ FLSA การทำงานล่วงเวลาต้องจ่ายที่ 1.5× ของ <strong>อัตราปกติ</strong>, และอัตราปกติ <em>รวมถึง</em> ส่วนต่าง วิธีตามกฎหมายคือ:</p>
+<ul>
+<li><strong>รายได้เวลาปกติ</strong> = (ชั่วโมงทั้งหมด × อัตราฐาน) + (ชั่วโมงส่วนต่าง × เบี้ยเพิ่ม)</li>
+<li><strong>อัตราปกติ (แบบผสม)</strong> = รายได้เวลาปกติ ÷ ชั่วโมงรวม</li>
+<li><strong>เบี้ยเพิ่มการทำงานล่วงเวลา</strong> = ชั่วโมงการทำงานล่วงเวลา × 0.5 × อัตราแบบผสม บวกข้างบน (ส่วนเวลาปกติของชั่วโมงเหล่านั้นอยู่ภายในรายได้เวลาปกติแล้ว)</li>
+</ul>
+<p>ตัวอย่างที่ทำให้ดู: 40 ชั่วโมงที่ $20 โดยมีชั่วโมงกลางคืน 16 ชั่วโมงที่ +$2, บวกชั่วโมงล่วงเวลากลางวัน 5 ชั่วโมง รายได้เวลาปกติ = 45×$20 + 16×$2 = $932 อัตราแบบผสม = $932 ÷ 45 = $20.71 ค่าพรีเมียมล่วงเวลา = 5 × $10.36 = $51.78 ค่าจ้างรวม = $983.78 การจ่ายค่าล่วงเวลาบนฐาน $20 เปล่า ๆ แทนจะทำให้สัปดาห์ขาดไปประมาณ $3.55 — เล็กต่อสัปดาห์ เป็นเงินจริงต่อปี</p></div>
+<div class="sec"><h2>เครื่องมือชั่วโมงที่เกี่ยวข้อง</h2><div class="grid"><a class="card" href="overtime-calculator.html"><h3>เครื่องคำนวณการทำงานล่วงเวลา</h3><p>กฎของรัฐบาลกลางในกล่องเดียว: ชั่วโมงรายสัปดาห์และอัตราของคุณเข้า ชั่วโมงปกติ ชั่วโมงการทำงานล่วงเวลาที่ 1.5× และค่าจ้างรวมทั้งหมดออก</p><span class="badge">ฟรี — ลองใช้ดู</span></a><a class="card" href="weekly-pay-calculator.html"><h3>เครื่องคำนวณค่าจ้างรวมรายสัปดาห์</h3><p>จากชั่วโมงสู่ทุกรูปแบบเงินเดือน: ค่าจ้างรวมรายสัปดาห์แบ่งเป็นปกติ ล่วงเวลา และอัตราสองเท่า จากนั้นแปลงเป็นรายสองสัปดาห์ รายเดือน และรายปีเทียบเท่า</p><span class="badge">ฟรี — ลองใช้ดู</span></a><a class="card" href="12-hour-shift-calculator.html"><h3>เครื่องคำนวณกะงาน 12 ชั่วโมง</h3><p>สำหรับพยาบาลและทุกคนที่ทำงาน 12: ชั่วโมงที่ได้รับค่าจ้างต่อกะ ยอดรวมรายสัปดาห์ 3×12 และ 4×12 และการทำงานล่วงเวลาภายใต้กฎของรัฐบาลกลางหรือของแคลิฟอร์เนีย</p><span class="badge">ฟรี — ลองใช้ดู</span></a><a class="card" href="time-card-calculator.html"><h3>เครื่องคำนวณบัตรลงเวลา</h3><p>บัตรลงเวลารายสัปดาห์เรือธง: ตอกบัตรเข้า/ออกและพักครบ 7 วัน การแบ่งการทำงานล่วงเวลาที่ 40 ชั่วโมง ค่าจ้างรวม พิมพ์ และ CSV — บวก Save My Week บนอุปกรณ์ของคุณ</p><span class="badge">ฟรี — ลองใช้ดู</span></a></div></div>
+<div class="sec"><h2>คำถามที่พบบ่อย</h2><details class="faq"><summary>ส่วนต่างค่ากะคืออะไร</summary><p>ค่าจ้างเพิ่มต่อชั่วโมงสำหรับการทำงานในกะที่เป็นที่ต้องการน้อยกว่า — กลางคืน หัวค่ำ วันหยุดสุดสัปดาห์ หรือวันหยุด มันมักเป็นจำนวนคงที่ (เช่น +$2/ชั่วโมง) หรือเปอร์เซ็นต์ของอัตราพื้นฐาน เครื่องคำนวณนี้ใช้รูปแบบจำนวนคงที่ สำหรับเปอร์เซ็นต์ ให้แปลงเป็นดอลลาร์ก่อน (10% ของ $20 = $2)</p></details><details class="faq"><summary>การทำงานล่วงเวลาต้องจ่ายบนส่วนต่างด้วยหรือไม่</summary><p>ใช่ กฎหมายของรัฐบาลกลางกำหนดให้ 'อัตราปกติ' รวมถึงส่วนต่างค่ากะและส่วนเพิ่มอื่น ๆ ส่วนใหญ่ การทำงานล่วงเวลาจึงเป็น 1.5× ของอัตราที่ผสมแล้ว ไม่ใช่ 1.5× ของอัตราฐานเพียงอย่างเดียว</p></details><details class="faq"><summary>สลิปของฉันแสดงการทำงานล่วงเวลาที่ 1.5× ของอัตราฐานเท่านั้น นั่นผิดหรือไม่</summary><p>หากคุณได้รับส่วนต่างในสัปดาห์นั้นด้วย เป็นไปได้มากว่าใช่ — ค่าพรีเมียมล่วงเวลาควรอยู่บนพื้นฐานของอัตราแบบผสม ยกประเด็นกับฝ่ายเงินเดือนโดยแสดงชั่วโมงของสัปดาห์และชั่วโมงส่วนต่างของคุณ รายการแยกของหน้านี้เป็นเอกสารพิมพ์ที่ดีที่จะนำไปด้วย</p></details><details class="faq"><summary>ส่วนต่างนับรวมในสัปดาห์ที่ไม่มีการทำงานล่วงเวลาหรือไม่</summary><p>พวกเขายังคงบวกส่วนเพิ่มต่อชั่วโมงเข้ากับรายได้เวลาปกติ (ส่วนนั้นอยู่ในทุกสัปดาห์) พวกเขาเปลี่ยนเฉพาะคณิตศาสตร์การทำงานล่วงเวลาในสัปดาห์ที่เกิน 40 ชั่วโมงเท่านั้น</p></details></div>
+<div class="disc"><strong>ข้อจำกัดความรับผิดชอบ:</strong> ประมาณการเท่านั้น — ไม่ใช่คำแนะนำด้านบัญชีค่าจ้างหรือกฎหมาย กฎบัญชีค่าจ้างของนายจ้างและกฎหมายของรัฐควบคุมค่าจ้างจริงของคุณ ตัวเลขถูกปัดเศษเพื่อแสดง; สลิปเงินเดือนและแผนกบัญชีค่าจ้างของคุณคือบันทึกทางการ</div>
+<div class="sec"><h2>วิธีการทำงาน — สูตร</h2>
+<p>เมื่อส่วนหนึ่งของสัปดาห์จ่ายในอัตราที่สูงกว่า การทำงานล่วงเวลาจะไม่ได้คิดราคาจากอัตราพื้นฐานเพียงอย่างเดียว เครื่องคำนวณนี้รวมรายได้เวลาปกติของสัปดาห์ — ทุกชั่วโมงที่อัตราพื้นฐาน บวกค่าพรีเมียมบนชั่วโมงที่คุณทำเครื่องหมายเป็นชั่วโมงส่วนต่าง — และหารด้วยชั่วโมงรวมเพื่อให้ได้ <strong>อัตราปกติแบบผสม</strong>. การทำงานล่วงเวลาจึงเพิ่มครึ่งที่ขาด (0.5&times;) ของอัตราแบบผสมนั้นสำหรับแต่ละชั่วโมงที่เกิน 40</p>
+<div class="inshort"><strong>สูตร:</strong><br>
+รายได้เวลาปกติ = (ชั่วโมงรวม &times; อัตราฐาน) + (ชั่วโมงส่วนต่าง &times; เบี้ยเพิ่มต่อชั่วโมง)<br>
+อัตราปกติแบบผสม = รายได้เวลาปกติ &divide; ชั่วโมงรวม<br>
+เบี้ยเพิ่มการทำงานล่วงเวลา = ชั่วโมงที่เกิน 40 &times; อัตราแบบผสม &times; 0.5<br>
+ค่าจ้างรวม = รายได้เวลาปกติ + เบี้ยเพิ่มการทำงานล่วงเวลา</div>
+<h3>ตัวอย่างที่คำนวณไว้</h3>
+<p>อัตราฐานของคุณคือ <strong>$22/ชั่วโมง</strong> ด้วยอีก <strong>$3/ชั่วโมง</strong> ค่าพรีเมียมกลางคืน วันจันทร์ ถึง วันศุกร์ คุณทำงานวันละ 8 ชั่วโมง โดย 6 ชั่วโมงอยู่ในอัตราพรีเมียม และคุณเพิ่มกะกลางวัน 4 ชั่วโมงในวันวันเสาร์ สัปดาห์รวม 44 ชั่วโมง โดย 30 ชั่วโมงเป็นชั่วโมงส่วนต่าง รายได้เวลาปกติ: 44 &times; $22 + 30 &times; $3 = $968 + $90 = <strong>$1,058.00</strong>. อัตราปกติแบบผสม: $1,058 &divide; 44 = <strong>$24.05</strong>. เบี้ยเพิ่มการทำงานล่วงเวลา: 4 ชั่วโมง &times; $24.05 &times; 0.5 = <strong>$48.09</strong>. ค่าจ้างรวม: <strong>$1,106.09</strong> — ตรงกับที่เครื่องคำนวณแสดงสำหรับข้อมูลเหล่านี้พอดี</p>
+<h3>คำถามที่พบบ่อย</h3>
+<details class="faq"><summary>ทำไมการทำงานล่วงเวลาของฉันไม่ใช่แค่ 1.5 &times; ($22 + $3) = $37.50 ต่อชั่วโมง</summary><p>เพราะค่าพรีเมียมผูกกับเพียงบางชั่วโมงของสัปดาห์ อัตราปกติที่ใช้สำหรับการทำงานล่วงเวลาคือค่าเฉลี่ยถ่วงน้ำหนักของสัปดาห์ — รายได้เวลาปกติรวมหารด้วยชั่วโมงรวม — ซึ่งในตัวอย่างคือ $24.05 ไม่ใช่ $25.00 การใช้ $37.50 กับทุกชั่วโมงล่วงเวลาจะจ่ายค่าพรีเมียมกลางคืนบนชั่วโมงที่ไม่เคยได้รับมัน การใช้ 1.5&times; กับฐาน $22 เพียงอย่างเดียวจะจ่ายต่ำไป</p></details>
+<details class="faq"><summary>เบี้ยเพิ่มของฉันเป็นเปอร์เซ็นต์ของอัตราฐาน ไม่ใช่จำนวนคงที่ ฉันกรอกอย่างไร</summary><p>แปลงเป็นดอลลาร์ต่อชั่วโมงก่อน ส่วนเพิ่ม 10% บนอัตราฐาน $22 คือ $2.20 ต่อชั่วโมงส่วนต่าง — กรอก 2.20 ในกล่องส่วนเพิ่ม และเครื่องคำนวณจะถือว่ามันเหมือนกับส่วนเพิ่มแบบคงที่อื่น ๆ ทุกประการ</p></details>
+<details class="faq"><summary>ฉันทำงานด้วยอัตราฐานสองอัตราในสัปดาห์เดียวกัน หน้านี้จัดการได้หรือไม่</summary><p>เครื่องคำนวณนี้รับอัตราพื้นฐานหนึ่งอัตราบวกค่าพรีเมียมหนึ่งอย่าง แนวคิดอัตราแบบผสมเหมือนกันกับอัตราพื้นฐานสองอัตรา — รายได้เวลาปกติรวมหารด้วยชั่วโมงรวม — แต่คุณจะต้องรวมรายได้จากทั้งสองอัตราด้วยตัวเองก่อนจึงจะคิดราคาครึ่งค่าล่วงเวลาได้ เพื่อการตรวจคร่าว ๆ ตัวเลขแบบผสมตัวเดียวที่ป้อนที่นี่ทำให้คุณใกล้เคียง</p></details>
+<details class="faq"><summary>ลำดับกะของฉันสำคัญหรือไม่ — กลางคืนต้นสัปดาห์ กลางวันปลายสัปดาห์</summary><p>ไม่ใช่ การผสมสร้างจากยอดรวมของสัปดาห์: ชั่วโมงรวม ชั่วโมงส่วนต่างรวม รายได้เวลาปกติรวม การที่ชั่วโมงเฉพาะใดข้ามเส้น 40 ชั่วโมงไม่เปลี่ยนอัตราแบบผสมหรือค่าพรีเมียมล่วงเวลาในการคำนวณนี้</p></details>
+<details class="faq"><summary>เบี้ยเพิ่มส่วนต่างเสียภาษีต่างจากค่าจ้างปกติของฉันหรือไม่</summary><p>ไม่ใช่ — ส่วนต่างและค่าพรีเมียมล่วงเวลาเป็นค่าจ้างปกติ และตัวเลขที่หน้านี้แสดงคือค่าจ้างรวมก่อนภาษีหรือการหักใด ๆ สิ่งที่ถูกหักจริงเป็นเรื่องของฝ่ายเงินเดือนซึ่งอยู่ภายใต้กฎหมายภาษีและแบบฟอร์ม W-4 ของคุณ ไม่ใช่เครื่องคำนวณนี้</p></details>
+</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">ฝังเครื่องคำนวณนี้บนเว็บไซต์ของคุณ — ฟรี</h2>
+<p style="margin:0 0 12px;line-height:1.6">เพิ่มเครื่องคำนวณนี้ไปยังเว็บไซต์หรือบล็อกของคุณเอง — ฟรีทั้งหมด ไม่ต้องสมัคร และแสดงเวอร์ชันล่าสุดเสมอ คัดลอกโค้ดด้านล่างและวางลงในหน้าของคุณตรงตำแหน่งที่คุณต้องการให้เครื่องคำนวณปรากฏ การคงบรรทัดเครดิตเล็ก ๆ &ldquo;ขับเคลื่อนโดย Loona Automation&rdquo; ไว้ใต้ตัวฝังช่วยรักษาให้เครื่องคำนวณนี้ฟรี &mdash; แต่คุณมีอิสระที่จะจัดรูปแบบหรือลบมันออก เครื่องคำนวณทำงานได้ไม่ว่าอย่างไร</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Shift Differential Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;ขับเคลื่อนโดย &lt;a href="https://loonaautomation.github.io/loona-hours/th/shift-differential-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; ฟรี เครื่องคำนวณส่วนต่างค่ากะ&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">คัดลอกโค้ดฝัง</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='คัดลอกแล้ว!';setTimeout(function(){b.textContent='คัดลอกโค้ดฝัง';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: เครื่องคำนวณตารางลงเวลา ชั่วโมง และการทำงานล่วงเวลาฟรีสำหรับพนักงานสหรัฐฯ<br><a href="about.html">เกี่ยวกับ</a> · <a href="privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="terms.html">ข้อกำหนด</a> · <a href="contact.html">ติดต่อ</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>การคำนวณทั้งหมดทำงานบนอุปกรณ์ของคุณ — ไม่มีอะไรถูกอัปโหลดหรือเก็บบนเซิร์ฟเวอร์</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'การทำงานล่วงเวลารายวันหลังจาก 8 ชั่วโมงในหนึ่งวัน นายจ้างที่มีพนักงานน้อยกว่า 4 คนได้รับการยกเว้น และพนักงานที่อยู่ในแผนชั่วโมงทำงานยืดหยุ่นโดยสมัครใจที่ DOL อนุมัติสามารถทำงานได้ถึง 10 ชั่วโมงต่อวันที่อัตราปกติ'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'การทำงานล่วงเวลารายวัน: 1.5x หลังจาก 8 ชั่วโมง 2x หลังจาก 12 ชั่วโมง บวกกฎพิเศษในวันที่ 7 ติดต่อกันของสัปดาห์การทำงาน ค่าพรีเมียมช่วงพักทานอาหารและช่วงพักแยกต่างหากและไม่รวมอยู่ในการประมาณการนี้ ตารางสัปดาห์การทำงานทางเลือกที่รับรองอย่างถูกต้อง (สูงสุด 10 ชั่วโมงต่อวันโดยการเลือกของพนักงาน) จะเปลี่ยนกฎรายวัน'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'การทำงานล่วงเวลาหลังจาก 40 ชั่วโมงในหนึ่งสัปดาห์ 12 ชั่วโมงในหนึ่งวัน หรือ 12 ชั่วโมงติดต่อกัน — อย่างใดก็ตามที่ให้ประโยชน์แก่พนักงานมากกว่า เครื่องมือประมาณการนี้ใช้ชั่วโมงต่อวัน กฎ 12 ชั่วโมงติดต่อกันอาจต่างออกไปสำหรับกะแยก'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'ฮาวาย',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'ลุยเซียนา',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'การทำงานล่วงเวลารายวันหลังจาก 8 ชั่วโมงในหนึ่งวันทำงานใช้เฉพาะเมื่ออัตราปกติของคุณน้อยกว่า 1.5 เท่าของค่าจ้างขั้นต่ำเนวาดา ($18.00/ชั่วโมง ที่ค่าจ้างขั้นต่ำ $12.00) ที่หรือสูงกว่าอัตรานั้น ใช้เฉพาะค่าล่วงเวลารายสัปดาห์หลังจาก 40 ชั่วโมงเท่านั้น เนวาดานับวันทำงานเป็นระยะ 24 ชั่วโมงแบบหมุนจากเวลาที่คุณเริ่มงาน และตาราง 4 วัน/10 ชั่วโมงที่ตกลงร่วมกันได้รับการยกเว้นจากกฎรายวัน'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'นิวเจอร์ซีย์',ruleType:'federal'},
+    NM:{name:'นิวเม็กซิโก',ruleType:'federal'}, NY:{name:'นิวยอร์ก',ruleType:'federal'},
+    NC:{name:'นอร์ทแคโรไลนา',ruleType:'federal'}, ND:{name:'นอร์ทดาโคตา',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'นายจ้างในออริกอนส่วนใหญ่เป็นหนี้ค่าล่วงเวลาเฉพาะหลังจาก 40 ชั่วโมงในหนึ่งสัปดาห์เท่านั้น การทำงานล่วงเวลารายวันหลังจาก 10 ชั่วโมงในหนึ่งวันใช้ในโรงสี โรงงาน และการผลิต (และอีกไม่กี่ภาคส่วนเฉพาะ) ซึ่งพนักงานจะได้รับค่าจ้างตามอย่างใดก็ตามระหว่างรายวันหรือรายสัปดาห์ที่มากกว่า'},
+    PA:{name:'เพนซิลเวเนีย',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'เซาท์แคโรไลนา',ruleType:'federal'}, SD:{name:'เซาท์ดาโคตา',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'เวสต์เวอร์จิเนีย',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "วันขึ้นปีใหม่"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'วันมาร์ติน ลูเทอร์ คิง จูเนียร์' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'วันรำลึกทหารผ่านศึก' },
+      fixed(5, 19, 'วันประกาศอิสรภาพแห่งชาติ Juneteenth'),
+      fixed(6, 4, 'วันประกาศอิสรภาพ'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'วันแรงงาน' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'วันโคลัมบัส' },
+      fixed(10, 11, 'วันทหารผ่านศึก'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'วันขอบคุณพระเจ้า' },
+      fixed(11, 25, 'วันคริสต์มาส')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">ชั่วโมงรวม ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">การทำงานล่วงเวลา 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">เวลาสองเท่า 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">ค่าจ้างรวม</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>บรรทัดค่าจ้าง</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">จำนวนเงิน</th></tr>'
+ +'<tr><td>ค่าจ้างปกติ</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>ค่าล่วงเวลา (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>ค่าจ้างเวลาสองเท่า (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>ค่าพรีเมียมส่วนต่างกะ</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>ค่าจ้างรวม</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+function calc(){var rate=gv('rate'),prem=gv('prem');var totH=0,diffH=0;
+for(var i=0;i<7;i++){var t=Math.min(24,Math.max(0,gv('D'+i+'T')));var n=Math.min(t,Math.max(0,gv('D'+i+'N')));totH+=t;diffH+=n;}
+var straight=totH*rate+diffH*prem;var blended=totH>0?straight/totH:0;
+var otH=Math.max(0,totH-40);var otPrem=otH*blended*0.5;var gross=straight+otPrem;
+var el=document.getElementById('stats');
+el.innerHTML='<div class="stat"><div class="v">'+totH.toFixed(2)+'</div><div class="k">ชั่วโมงรวม</div></div>'
++'<div class="stat"><div class="v">'+LH.money(blended)+'</div><div class="k">อัตราปกติแบบผสม</div></div>'
++'<div class="stat"><div class="v">'+LH.money(straight)+'</div><div class="k">รายได้เวลาปกติ</div></div>'
++'<div class="stat"><div class="v">'+LH.money(otPrem)+'</div><div class="k">ค่าพรีเมียมล่วงเวลา (0.5x)</div></div>'
++'<div class="stat"><div class="v">'+LH.money(gross)+'</div><div class="k">ค่าจ้างรวม</div></div>';
+document.getElementById('detail').innerHTML='<p class="small">ชั่วโมงส่วนต่าง: '+diffH.toFixed(2)+' ของ '+totH.toFixed(2)+'. ชั่วโมงล่วงเวลาสัปดาห์นี้: '+otH.toFixed(2)+'. กฎหมายรัฐบาลกลางกำหนดให้การทำงานล่วงเวลาคำนวณบน <strong>อัตราปกติที่รวมส่วนต่าง</strong> \u2014 การจ่าย 1.5x บนอัตราพื้นฐานเพียงอย่างเดียวทำให้ชั่วโมงล่วงเวลาทุกชั่วโมงได้รับต่ำไปครึ่งหนึ่งของค่าพรีเมียม</p>';}
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
