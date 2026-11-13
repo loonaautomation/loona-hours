@@ -1,0 +1,821 @@
+[
+ {
+  "n": "שכר מינימום 2026",
+  "u": "https://loonaautomation.github.io/loona-hours/he/minimum-wage-2026.html",
+  "s": "Loona Hours",
+  "d": "כל שכר מינימום לשנת 2026 במקום אחד: כל 50 המדינות, DC ו-20 ערים — עם כללי שעות נוספות, שכר טיפים וכרטיס זמן טעון מראש בכל תעריף.",
+  "k": "minimum wage 2026 minimum wage 2026 every 2026 minimum wage in one place all 50 states dc and 20 cities with overtime rules tipped wages and a time card pre loaded at each rate שכר מינימום 2026 כל שכר מינימום לשנת 2026 במקום אחד: כל 50 המדינות, DC ו-20 ערים — עם כללי שעות נוספות, שכר טיפים וכרטיס זמן טעון מראש בכל תעריף."
+ },
+ {
+  "n": "מחשבון כרטיס זמן",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "כרטיס הזמן השבועי המרכזי: כניסה/יציאה והפסקות ל-7 ימים, חלוקת שעות נוספות ב-40 שעות, שכר ברוטו, הדפסה ו-CSV — בתוספת Save My Week במכשיר שלך.",
+  "k": "time card calculator time card calculator the flagship weekly time card clock in out and breaks for 7 days overtime split at 40 hours gross pay print and csv plus save my week on your device מחשבון כרטיס זמן כרטיס הזמן השבועי המרכזי: כניסה/יציאה והפסקות ל-7 ימים, חלוקת שעות נוספות ב-40 שעות, שכר ברוטו, הדפסה ו-CSV — בתוספת Save My Week במכשיר שלך."
+ },
+ {
+  "n": "מחשבון כרטיס זמן דו-שבועי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/biweekly-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "תקופת שכר מלאה של שבועיים על כרטיס אחד — אבל שעות נוספות עדיין מחושבות שבוע אחר שבוע, בדיוק כפי שה-FLSA מחייב. שכר ברוטו משולב כלול.",
+  "k": "biweekly time card calculator biweekly time card calculator a full two week pay period on one card but overtime is still scored week by week exactly as the flsa requires combined gross pay included מחשבון כרטיס זמן דו-שבועי תקופת שכר מלאה של שבועיים על כרטיס אחד — אבל שעות נוספות עדיין מחושבות שבוע אחר שבוע, בדיוק כפי שה-FLSA מחייב. שכר ברוטו משולב כלול."
+ },
+ {
+  "n": "מחשבון גיליון שעות חצי-חודשי וחודשי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/monthly-timesheet-calculator.html",
+  "s": "Loona Hours",
+  "d": "חודש שלם של משמרות על גיליון אחד, מסוכם עבור תקופות השכר החצי-חודשיות 1–15 ו-16–סוף, כשהשעות הנוספות עדיין מחושבות לפי שבוע עבודה.",
+  "k": "semi monthly monthly timesheet calculator monthly timesheet calculator a whole month of shifts on one sheet totalled for the 1st 15th and 16th end semi monthly pay periods with overtime still scored per workweek מחשבון גיליון שעות חצי-חודשי וחודשי חודש שלם של משמרות על גיליון אחד, מסוכם עבור תקופות השכר החצי-חודשיות 1–15 ו-16–סוף, כשהשעות הנוספות עדיין מחושבות לפי שבוע עבודה."
+ },
+ {
+  "n": "מחשבון גיליון נוכחות עם הפסקת צהריים",
+  "u": "https://loonaautomation.github.io/loona-hours/he/timesheet-calculator-with-lunch-break.html",
+  "s": "Loona Hours",
+  "d": "גיליון שעות שבועי עם חשבון צהריים כנה: הפסקות ידניות, בתוספת ניכוי צהריים אוטומטי כאשר למשמרת ארוכה לא הוזנה הפסקה.",
+  "k": "timesheet calculator with lunch break timesheet calculator with lunch break a weekly timesheet with honest lunch maths manual breaks plus an automatic lunch deduction when a long shift has no break entered מחשבון גיליון נוכחות עם הפסקת צהריים גיליון שעות שבועי עם חשבון צהריים כנה: הפסקות ידניות, בתוספת ניכוי צהריים אוטומטי כאשר למשמרת ארוכה לא הוזנה הפסקה."
+ },
+ {
+  "n": "מחשבון שעות",
+  "u": "https://loonaautomation.github.io/loona-hours/he/hours-calculator.html",
+  "s": "Loona Hours",
+  "d": "משמרת אחת פנימה, תשובה מדויקת אחת החוצה: שעות ודקות, שעות עשרוניות, טיפול בהפסקה, עיגול והשכר ברוטו לאותה משמרת.",
+  "k": "hours calculator hours calculator one shift in one exact answer out hours and minutes decimal hours break handling rounding and the gross pay for that shift מחשבון שעות משמרת אחת פנימה, תשובה מדויקת אחת החוצה: שעות ודקות, שעות עשרוניות, טיפול בהפסקה, עיגול והשכר ברוטו לאותה משמרת."
+ },
+ {
+  "n": "מחשבון שעון זמן",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-clock-calculator.html",
+  "s": "Loona Hours",
+  "d": "בנוי לשעוני החתמה אמיתיים: עד ארבעה זוגות כניסה/יציאה ביום — פערי צהריים לא כלולים אוטומטית — מסוכם לזמן בתשלום ושעות עשרוניות.",
+  "k": "time clock calculator time clock calculator built for real punch clocks up to four in out pairs in a day lunch gaps excluded automatically totalled into paid time and decimal hours מחשבון שעון זמן בנוי לשעוני החתמה אמיתיים: עד ארבעה זוגות כניסה/יציאה ביום — פערי צהריים לא כלולים אוטומטית — מסוכם לזמן בתשלום ושעות עשרוניות."
+ },
+ {
+  "n": "מחשבון שעות נוספות",
+  "u": "https://loonaautomation.github.io/loona-hours/he/overtime-calculator.html",
+  "s": "Loona Hours",
+  "d": "הכלל הפדרלי בתיבה אחת: שעות שבועיות והתעריף שלך נכנסים, שעות רגילות, שעות נוספות בתעריף 1.5× ושכר ברוטו כולל יוצאים.",
+  "k": "overtime calculator overtime calculator the federal rule in one box weekly hours and your rate in regular hours overtime hours at 1 5 and total gross pay out מחשבון שעות נוספות הכלל הפדרלי בתיבה אחת: שעות שבועיות והתעריף שלך נכנסים, שעות רגילות, שעות נוספות בתעריף 1.5× ושכר ברוטו כולל יוצאים."
+ },
+ {
+  "n": "מחשבון שעות נוספות של קליפורניה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/california-overtime-calculator.html",
+  "s": "Loona Hours",
+  "d": "שעות נוספות יומיות של קליפורניה נעשות כמו שצריך: 1.5× אחרי 8 שעות, שכר כפול אחרי 12, כלל היום הרצוף ה-7, וללא ספירה כפולה.",
+  "k": "california overtime calculator california overtime calculator california s daily overtime done properly 1 5 after 8 hours double time after 12 the 7th consecutive day rule and no double counting מחשבון שעות נוספות של קליפורניה שעות נוספות יומיות של קליפורניה נעשות כמו שצריך: 1.5× אחרי 8 שעות, שכר כפול אחרי 12, כלל היום הרצוף ה-7, וללא ספירה כפולה."
+ },
+ {
+  "n": "מחשבון שעות נוספות לפי מדינה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/overtime-calculator-by-state.html",
+  "s": "Loona Hours",
+  "d": "אומדן אחד לכל 50 המדינות: הכלל הפדרלי היכן שהוא חל, והלוגיקה האמיתית של שעות נוספות יומיות ל-קליפורניה, אלסקה, קולורדו, נבדה ו-אורגון.",
+  "k": "overtime calculator by state overtime calculator by state one estimator for all 50 states the federal rule where it applies and the real daily overtime logic for california alaska colorado nevada and oregon מחשבון שעות נוספות לפי מדינה אומדן אחד לכל 50 המדינות: הכלל הפדרלי היכן שהוא חל, והלוגיקה האמיתית של שעות נוספות יומיות ל-קליפורניה, אלסקה, קולורדו, נבדה ו-אורגון."
+ },
+ {
+  "n": "מחשבון שעה וחצי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-calculator.html",
+  "s": "Loona Hours",
+  "d": "תעריף השעות הנוספות ושכר השעות הנוספות שלך בצעד אחד — בתוספת החלק שאנשים שוכחים: כמה ממנו הוא התוספת הנוספת מעל זמן רגיל.",
+  "k": "time and a half calculator time and a half calculator your overtime rate and overtime pay in one step plus the part people forget how much of it is the extra premium over straight time מחשבון שעה וחצי תעריף השעות הנוספות ושכר השעות הנוספות שלך בצעד אחד — בתוספת החלק שאנשים שוכחים: כמה ממנו הוא התוספת הנוספת מעל זמן רגיל."
+ },
+ {
+  "n": "מחשבון שכר כפול",
+  "u": "https://loonaautomation.github.io/loona-hours/he/double-time-calculator.html",
+  "s": "Loona Hours",
+  "d": "שכר כפול הוא 2× מהתעריף שלך — נדיר יותר משעות נוספות ושווה כסף אמיתי. ראה את התעריף, את השכר, ומתי החוק או חוזה באמת חבים אותו.",
+  "k": "double time calculator double time calculator double time is 2 your rate rarer than overtime and worth real money see the rate the pay and when the law or a contract actually owes it מחשבון שכר כפול שכר כפול הוא 2× מהתעריף שלך — נדיר יותר משעות נוספות ושווה כסף אמיתי. ראה את התעריף, את השכר, ומתי החוק או חוזה באמת חבים אותו."
+ },
+ {
+  "n": "מחשבון שעות נוספות עם מיסים",
+  "u": "https://loonaautomation.github.io/loona-hours/he/overtime-calculator-with-taxes.html",
+  "s": "Loona Hours",
+  "d": "אומדן מתוארך ומוגבל בזמן לניכוי השעות הנוספות הפדרלי הזמני (שנות מס 2025–2028): הפרמיה המזכה, התקרות, ההפחתה ההדרגתית, החיסכון.",
+  "k": "overtime calculator with taxes overtime calculator with taxes a dated time limited estimator for the temporary federal overtime deduction tax years 2025 2028 the qualified premium the caps the phase out the saving מחשבון שעות נוספות עם מיסים אומדן מתוארך ומוגבל בזמן לניכוי השעות הנוספות הפדרלי הזמני (שנות מס 2025–2028): הפרמיה המזכה, התקרות, ההפחתה ההדרגתית, החיסכון."
+ },
+ {
+  "n": "ממיר דקות לשעות עשרוניות",
+  "u": "https://loonaautomation.github.io/loona-hours/he/minutes-to-decimal-converter.html",
+  "s": "Loona Hours",
+  "d": "טבלת המרת השכר הקלאסית, 1–60 דקות, בתוספת ממיר דו-כיווני: דקות לשעות עשרוניות ושעות עשרוניות בחזרה ל-h:mm.",
+  "k": "minutes to decimal hours converter minutes to decimal converter the classic payroll conversion chart 1 60 minutes plus a two way converter minutes to decimal hours and decimal hours back to h mm ממיר דקות לשעות עשרוניות טבלת המרת השכר הקלאסית, 1–60 דקות, בתוספת ממיר דו-כיווני: דקות לשעות עשרוניות ושעות עשרוניות בחזרה ל-h:mm."
+ },
+ {
+  "n": "מחשבון ניכוי הפסקה / צהריים",
+  "u": "https://loonaautomation.github.io/loona-hours/he/lunch-break-calculator.html",
+  "s": "Loona Hours",
+  "d": "משמרת אחת, שתי הפסקות, אפס בלבול: אילו דקות הפסקה בתשלום, אילו יורדות, והזמן בתשלום המדויק שנשאר.",
+  "k": "break lunch deduction calculator lunch break calculator one shift two breaks zero confusion which break minutes are paid which come off and the exact paid time that remains מחשבון ניכוי הפסקה / צהריים משמרת אחת, שתי הפסקות, אפס בלבול: אילו דקות הפסקה בתשלום, אילו יורדות, והזמן בתשלום המדויק שנשאר."
+ },
+ {
+  "n": "מחשבון תוספת משמרת",
+  "u": "https://loonaautomation.github.io/loona-hours/he/shift-differential-calculator.html",
+  "s": "Loona Hours",
+  "d": "פרמיות לילה וסוף שבוע משנות את התעריף האמיתי שלך. מחשבון זה משלב את התוספת בתעריף הרגיל — כולל לשעות נוספות, כפי שהחוק מחייב.",
+  "k": "shift differential calculator shift differential calculator night and weekend premiums change your real rate this calculator blends the differential into the regular rate including for overtime as the law requires מחשבון תוספת משמרת פרמיות לילה וסוף שבוע משנות את התעריף האמיתי שלך. מחשבון זה משלב את התוספת בתעריף הרגיל — כולל לשעות נוספות, כפי שהחוק מחייב."
+ },
+ {
+  "n": "מחשבון עיגול זמן",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-rounding-calculator.html",
+  "s": "Loona Hours",
+  "d": "מעסיקים מעגלים את ההחתמות שלך — ראה בדיוק איך. החל את כלל ה-7 דקות, רבע שעה, עיגול 5 דקות או עשירית שעה והשווה עם הזמן המדויק שלך.",
+  "k": "time rounding calculator time rounding calculator employers round your punches see exactly how apply the 7 minute rule quarter hour 5 minute or tenth of an hour rounding and compare with your exact time מחשבון עיגול זמן מעסיקים מעגלים את ההחתמות שלך — ראה בדיוק איך. החל את כלל ה-7 דקות, רבע שעה, עיגול 5 דקות או עשירית שעה והשווה עם הזמן המדויק שלך."
+ },
+ {
+  "n": "מחשבון משמרת 12 שעות",
+  "u": "https://loonaautomation.github.io/loona-hours/he/12-hour-shift-calculator.html",
+  "s": "Loona Hours",
+  "d": "עבור אחים וכל מי שעובד ב-12: שעות בתשלום למשמרת, סכומים שבועיים של 3×12 ו-4×12, ושעות נוספות לפי כללים פדרליים או של קליפורניה.",
+  "k": "12 hour shift calculator 12 hour shift calculator for nurses and everyone on 12s per shift paid hours 3 12 and 4 12 weekly totals and overtime under federal or california rules מחשבון משמרת 12 שעות עבור אחים וכל מי שעובד ב-12: שעות בתשלום למשמרת, סכומים שבועיים של 3×12 ו-4×12, ושעות נוספות לפי כללים פדרליים או של קליפורניה."
+ },
+ {
+  "n": "מחשבון שעות עבודה בין שני תאריכים",
+  "u": "https://loonaautomation.github.io/loona-hours/he/work-hours-between-dates-calculator.html",
+  "s": "Loona Hours",
+  "d": "ספור את זמן העבודה האמיתי בכל טווח תאריכים: ימי עבודה לפי התבנית שלך, חגים פדרליים של ארה\"ב לא כלולים, סך שעות מתוכננות.",
+  "k": "work hours between two dates calculator work hours between dates calculator count the real working time in any date range workdays by your pattern us federal holidays excluded total scheduled hours מחשבון שעות עבודה בין שני תאריכים ספור את זמן העבודה האמיתי בכל טווח תאריכים: ימי עבודה לפי התבנית שלך, חגים פדרליים של ארה\"ב לא כלולים, סך שעות מתוכננות."
+ },
+ {
+  "n": "מחשבון גיליון שעות מרובה עובדים",
+  "u": "https://loonaautomation.github.io/loona-hours/he/multiple-employee-timesheet-calculator.html",
+  "s": "Loona Hours",
+  "d": "שכר צוות בלי הגיליון האלקטרוני: עד 10 עובדים עם תעריפים אישיים ושעות נוספות לפי אדם, מסוכם לנתון שכר ברוטו אחד עם CSV.",
+  "k": "multiple employee timesheet calculator multiple employee timesheet calculator crew payroll without the spreadsheet up to 10 employees with individual rates and per person overtime totalled into one gross payroll figure with csv מחשבון גיליון שעות מרובה עובדים שכר צוות בלי הגיליון האלקטרוני: עד 10 עובדים עם תעריפים אישיים ושעות נוספות לפי אדם, מסוכם לנתון שכר ברוטו אחד עם CSV."
+ },
+ {
+  "n": "מחשבון שכר ברוטו שבועי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/weekly-pay-calculator.html",
+  "s": "Loona Hours",
+  "d": "משעות לכל צורת תלוש: ברוטו שבועי מחולק לרגיל, נוספות ושכר כפול, ואז מומר לשווי דו-שבועי, חודשי ושנתי.",
+  "k": "weekly gross pay calculator weekly pay calculator from hours to every paycheque shape weekly gross split into regular overtime and double time then converted to biweekly monthly and annual equivalents מחשבון שכר ברוטו שבועי משעות לכל צורת תלוש: ברוטו שבועי מחולק לרגיל, נוספות ושכר כפול, ואז מומר לשווי דו-שבועי, חודשי ושנתי."
+ },
+ {
+  "n": "טיימר מקוון עם הגדרות מראש",
+  "u": "https://loonaautomation.github.io/loona-hours/he/online-timer.html",
+  "s": "Loona Hours",
+  "d": "טיימרי 1, 5, 10, 15, 30 ו-60 דקות בלחיצה אחת עם טבעת התקדמות, שעות/דקות/שניות מותאמות ואזעקה חזקה באפס.",
+  "k": "online timer with presets online timer one tap 1 5 10 15 30 and 60 minute timers with a progress ring custom hours minutes seconds and a loud alarm at zero טיימר מקוון עם הגדרות מראש טיימרי 1, 5, 10, 15, 30 ו-60 דקות בלחיצה אחת עם טבעת התקדמות, שעות/דקות/שניות מותאמות ואזעקה חזקה באפס."
+ },
+ {
+  "n": "סטופר מקוון עם הקפות",
+  "u": "https://loonaautomation.github.io/loona-hours/he/stopwatch.html",
+  "s": "Loona Hours",
+  "d": "סטופר אלפיות שניה עם זמני הקפה וחלקים, טבלת הקפות והדגשת ההקפה המהירה/האיטית ביותר.",
+  "k": "online stopwatch with laps stopwatch millisecond stopwatch with lap and split times a lap table and fastest slowest lap highlighting סטופר מקוון עם הקפות סטופר אלפיות שניה עם זמני הקפה וחלקים, טבלת הקפות והדגשת ההקפה המהירה/האיטית ביותר."
+ },
+ {
+  "n": "טיימר פומודורו",
+  "u": "https://loonaautomation.github.io/loona-hours/he/pomodoro-timer.html",
+  "s": "Loona Hours",
+  "d": "מפגשי מיקוד של 25 דקות עם הפסקות אוטומטיות של 5 דקות, הפסקה ארוכה כל 4 מפגשים ומונה מפגשים.",
+  "k": "pomodoro timer pomodoro timer 25 minute focus sessions with automatic 5 minute breaks a long break every 4 sessions and a session counter טיימר פומודורו מפגשי מיקוד של 25 דקות עם הפסקות אוטומטיות של 5 דקות, הפסקה ארוכה כל 4 מפגשים ומונה מפגשים."
+ },
+ {
+  "n": "טיימר אינטרוולים — HIIT",
+  "u": "https://loonaautomation.github.io/loona-hours/he/interval-timer.html",
+  "s": "Loona Hours",
+  "d": "סבבי עבודה/מנוחה לטבאטה, אגרוף ומעגלים: ספירת הכנה לאחור, תוויות שלב וצפצופים בכל שינוי.",
+  "k": "interval timer hiit interval timer work rest rounds for tabata boxing and circuits prepare countdown phase labels and beeps at every change טיימר אינטרוולים — HIIT סבבי עבודה/מנוחה לטבאטה, אגרוף ומעגלים: ספירת הכנה לאחור, תוויות שלב וצפצופים בכל שינוי."
+ },
+ {
+  "n": "ספירה לאחור לכל תאריך",
+  "u": "https://loonaautomation.github.io/loona-hours/he/countdown-timer.html",
+  "s": "Loona Hours",
+  "d": "שם אירוע וספור את הימים, השעות, הדקות והשניות החיים אליו — ואז צפה בו סופר קדימה אחר כך.",
+  "k": "countdown to any date countdown timer name an event and count the live days hours minutes and seconds to it then watch it count up afterwards ספירה לאחור לכל תאריך שם אירוע וספור את הימים, השעות, הדקות והשניות החיים אליו — ואז צפה בו סופר קדימה אחר כך."
+ },
+ {
+  "n": "ממיר אזורי זמן",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-zone-converter.html",
+  "s": "Loona Hours",
+  "d": "המר כל רגע בין 44 אזורי זמן בעולם עם שעונים חיים, היסטי UTC ושעון קיץ המטופלים על ידי מסד הנתונים IANA.",
+  "k": "time zone converter time zone converter convert any moment between 44 world time zones with live clocks utc offsets and daylight saving handled by the iana database ממיר אזורי זמן המר כל רגע בין 44 אזורי זמן בעולם עם שעונים חיים, היסטי UTC ושעון קיץ המטופלים על ידי מסד הנתונים IANA."
+ },
+ {
+  "n": "שעת ניו יורק לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to london time new york to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לוס אנג'לס לשעת ניו יורק",
+  "u": "https://loonaautomation.github.io/loona-hours/he/los-angeles-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "los angeles to new york time los angeles to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לוס אנג'לס לשעת ניו יורק שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to dubai time london to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דובאי לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/dubai-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "dubai to london time dubai to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דובאי לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to dubai time new york to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת קראצ'י",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-karachi-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to karachi time london to karachi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת קראצ'י שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת קראצ'י לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/karachi-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "karachi to dubai time karachi to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת קראצ'י לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת טורונטו לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/toronto-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "toronto to london time toronto to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת טורונטו לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת סידני לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/sydney-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "sydney to london time sydney to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת סידני לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת סידני",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-sydney-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to sydney time london to sydney time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת סידני שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת שיקגו לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/chicago-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "chicago to london time chicago to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת שיקגו לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת טורונטו",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-toronto-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to toronto time new york to toronto time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת טורונטו שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת ניו יורק",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to new york time london to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת ניו יורק שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת ברלין",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-berlin-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to berlin time new york to berlin time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת ברלין שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת פריז",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-paris-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to paris time new york to paris time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת פריז שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לוס אנג'לס לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/los-angeles-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "los angeles to london time los angeles to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לוס אנג'לס לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לוס אנג'לס לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/los-angeles-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "los angeles to dubai time los angeles to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לוס אנג'לס לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת דלהי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-delhi-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to delhi time london to delhi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת דלהי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דלהי לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/delhi-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "delhi to london time delhi to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דלהי לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת סינגפור",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to singapore time london to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת סינגפור שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת סינגפור לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/singapore-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "singapore to london time singapore to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת סינגפור לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת טוקיו",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-tokyo-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to tokyo time london to tokyo time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת טוקיו שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת טוקיו",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-tokyo-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to tokyo time new york to tokyo time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת טוקיו שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דובאי לשעת קראצ'י",
+  "u": "https://loonaautomation.github.io/loona-hours/he/dubai-to-karachi-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "dubai to karachi time dubai to karachi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דובאי לשעת קראצ'י שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת קראצ'י לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/karachi-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "karachi to london time karachi to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת קראצ'י לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דובאי לשעת דלהי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/dubai-to-delhi-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "dubai to delhi time dubai to delhi time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דובאי לשעת דלהי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דלהי לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/delhi-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "delhi to dubai time delhi to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דלהי לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת טורונטו לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/toronto-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "toronto to dubai time toronto to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת טורונטו לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת סידני לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/sydney-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "sydney to dubai time sydney to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת סידני לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דובאי לשעת סידני",
+  "u": "https://loonaautomation.github.io/loona-hours/he/dubai-to-sydney-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "dubai to sydney time dubai to sydney time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דובאי לשעת סידני שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת סינגפור",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to singapore time new york to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת סינגפור שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת שיקגו לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/chicago-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "chicago to dubai time chicago to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת שיקגו לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת יוסטון לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/houston-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "houston to london time houston to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת יוסטון לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת מיאמי לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/miami-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "miami to london time miami to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת מיאמי לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת בוסטון לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/boston-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "boston to london time boston to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת בוסטון לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת סן פרנסיסקו לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/san-francisco-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "san francisco to london time san francisco to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת סן פרנסיסקו לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ונקובר לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/vancouver-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "vancouver to london time vancouver to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ונקובר לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת מומבאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-mumbai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to mumbai time london to mumbai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת מומבאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת מומבאי לשעת לונדון",
+  "u": "https://loonaautomation.github.io/loona-hours/he/mumbai-to-london-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "mumbai to london time mumbai to london time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת מומבאי לשעת לונדון שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת הונג קונג",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-hong-kong-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to hong kong time london to hong kong time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת הונג קונג שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ניו יורק לשעת הונג קונג",
+  "u": "https://loonaautomation.github.io/loona-hours/he/new-york-to-hong-kong-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "new york to hong kong time new york to hong kong time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ניו יורק לשעת הונג קונג שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לוס אנג'לס לשעת טוקיו",
+  "u": "https://loonaautomation.github.io/loona-hours/he/los-angeles-to-tokyo-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "los angeles to tokyo time los angeles to tokyo time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לוס אנג'לס לשעת טוקיו שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לוס אנג'לס לשעת סידני",
+  "u": "https://loonaautomation.github.io/loona-hours/he/los-angeles-to-sydney-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "los angeles to sydney time los angeles to sydney time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לוס אנג'לס לשעת סידני שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת סידני לשעת סינגפור",
+  "u": "https://loonaautomation.github.io/loona-hours/he/sydney-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "sydney to singapore time sydney to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת סידני לשעת סינגפור שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת סינגפור לשעת דובאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/singapore-to-dubai-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "singapore to dubai time singapore to dubai time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת סינגפור לשעת דובאי שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת דובאי לשעת סינגפור",
+  "u": "https://loonaautomation.github.io/loona-hours/he/dubai-to-singapore-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "dubai to singapore time dubai to singapore time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת דובאי לשעת סינגפור שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת פריז לשעת ניו יורק",
+  "u": "https://loonaautomation.github.io/loona-hours/he/paris-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "paris to new york time paris to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת פריז לשעת ניו יורק שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת ברלין לשעת ניו יורק",
+  "u": "https://loonaautomation.github.io/loona-hours/he/berlin-to-new-york-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "berlin to new york time berlin to new york time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת ברלין לשעת ניו יורק שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת לונדון לשעת לוס אנג'לס",
+  "u": "https://loonaautomation.github.io/loona-hours/he/london-to-los-angeles-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "london to los angeles time london to los angeles time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת לונדון לשעת לוס אנג'לס שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "שעת קראצ'י לשעת טורונטו",
+  "u": "https://loonaautomation.github.io/loona-hours/he/karachi-to-toronto-time.html",
+  "s": "Loona Hours",
+  "d": "שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה.",
+  "k": "karachi to toronto time karachi to toronto time live clocks for both cities the exact difference today a preset converter and the full 24 hour comparison table שעת קראצ'י לשעת טורונטו שעונים חיים לשתי הערים, ההפרש המדויק היום, ממיר מוגדר מראש וטבלת השוואת 24 שעות מלאה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של חשמלאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/electrician-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור חשמלאים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "electrician time card calculator electrician time card calculator free time card calculator for electricians weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של חשמלאי מחשבון כרטיס זמן חינמי עבור חשמלאים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של אינסטלטור",
+  "u": "https://loonaautomation.github.io/loona-hours/he/plumber-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור אינסטלטורים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "plumber time card calculator plumber time card calculator free time card calculator for plumbers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של אינסטלטור מחשבון כרטיס זמן חינמי עבור אינסטלטורים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של שף",
+  "u": "https://loonaautomation.github.io/loona-hours/he/chef-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור שפים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "chef time card calculator chef time card calculator free time card calculator for chefs weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של שף מחשבון כרטיס זמן חינמי עבור שפים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של נהג משלוחים",
+  "u": "https://loonaautomation.github.io/loona-hours/he/delivery-driver-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור נהגי משלוחים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "delivery driver time card calculator delivery driver time card calculator free time card calculator for delivery drivers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של נהג משלוחים מחשבון כרטיס זמן חינמי עבור נהגי משלוחים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של עובד מפעל",
+  "u": "https://loonaautomation.github.io/loona-hours/he/factory-worker-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור עובדי מפעל: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "factory worker time card calculator factory worker time card calculator free time card calculator for factory workers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של עובד מפעל מחשבון כרטיס זמן חינמי עבור עובדי מפעל: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של מנקה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/cleaner-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור מנקים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "cleaner time card calculator cleaner time card calculator free time card calculator for cleaners weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של מנקה מחשבון כרטיס זמן חינמי עבור מנקים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של מטפל",
+  "u": "https://loonaautomation.github.io/loona-hours/he/caregiver-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור מטפלים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "caregiver time card calculator caregiver time card calculator free time card calculator for caregivers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של מטפל מחשבון כרטיס זמן חינמי עבור מטפלים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של ברמן",
+  "u": "https://loonaautomation.github.io/loona-hours/he/bartender-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור ברמנים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "bartender time card calculator bartender time card calculator free time card calculator for bartenders weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של ברמן מחשבון כרטיס זמן חינמי עבור ברמנים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של פקיד קבלה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/receptionist-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור פקידי קבלה: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "receptionist time card calculator receptionist time card calculator free time card calculator for receptionists weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של פקיד קבלה מחשבון כרטיס זמן חינמי עבור פקידי קבלה: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של נציג שירות לקוחות",
+  "u": "https://loonaautomation.github.io/loona-hours/he/customer-service-representative-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור נציגי שירות לקוחות: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "customer service representative time card calculator customer service representative time card calculator free time card calculator for customer service representatives weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של נציג שירות לקוחות מחשבון כרטיס זמן חינמי עבור נציגי שירות לקוחות: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של עובד חווה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/farm-worker-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור עובדי חווה: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "farm worker time card calculator farm worker time card calculator free time card calculator for farm workers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של עובד חווה מחשבון כרטיס זמן חינמי עבור עובדי חווה: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של מכונאי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/mechanic-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור מכונאים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "mechanic time card calculator mechanic time card calculator free time card calculator for mechanics weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של מכונאי מחשבון כרטיס זמן חינמי עבור מכונאים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של מעצב שיער",
+  "u": "https://loonaautomation.github.io/loona-hours/he/hairdresser-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור מעצבי שיער: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "hairdresser time card calculator hairdresser time card calculator free time card calculator for hairdressers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של מעצב שיער מחשבון כרטיס זמן חינמי עבור מעצבי שיער: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של בריסטה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/barista-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור בריסטות: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "barista time card calculator barista time card calculator free time card calculator for baristas weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של בריסטה מחשבון כרטיס זמן חינמי עבור בריסטות: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של שרת",
+  "u": "https://loonaautomation.github.io/loona-hours/he/janitor-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור שרתים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "janitor time card calculator janitor time card calculator free time card calculator for janitors weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של שרת מחשבון כרטיס זמן חינמי עבור שרתים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של מפעיל מלגזה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/forklift-operator-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור מפעילי מלגזות: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "forklift operator time card calculator forklift operator time card calculator free time card calculator for forklift operators weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של מפעיל מלגזה מחשבון כרטיס זמן חינמי עבור מפעילי מלגזות: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של עובד משק בית",
+  "u": "https://loonaautomation.github.io/loona-hours/he/housekeeper-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור עובדי משק בית: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "housekeeper time card calculator housekeeper time card calculator free time card calculator for housekeepers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של עובד משק בית מחשבון כרטיס זמן חינמי עבור עובדי משק בית: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של גנן נוי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/landscaper-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור גנני נוי: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "landscaper time card calculator landscaper time card calculator free time card calculator for landscapers weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של גנן נוי מחשבון כרטיס זמן חינמי עבור גנני נוי: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של צבעי",
+  "u": "https://loonaautomation.github.io/loona-hours/he/painter-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור צבעים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "painter time card calculator painter time card calculator free time card calculator for painters weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של צבעי מחשבון כרטיס זמן חינמי עבור צבעים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "מחשבון כרטיס נוכחות של רתך",
+  "u": "https://loonaautomation.github.io/loona-hours/he/welder-time-card-calculator.html",
+  "s": "Loona Hours",
+  "d": "מחשבון כרטיס זמן חינמי עבור רתכים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה.",
+  "k": "welder time card calculator welder time card calculator free time card calculator for welders weekly timesheet overtime split gross pay print and csv pre set to a typical schedule no sign up מחשבון כרטיס נוכחות של רתך מחשבון כרטיס זמן חינמי עבור רתכים: גיליון שעות שבועי, חלוקת שעות נוספות, שכר ברוטו, הדפסה ו-CSV. מוגדר מראש ללוח טיפוסי — ללא הרשמה."
+ },
+ {
+  "n": "שעה וחצי עבור $41 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-41-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $41 לשעה היא $61.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 41 an hour time and a half for 41 an hour time and a half for 41 an hour is 61 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $41 לשעה שעה וחצי עבור $41 לשעה היא $61.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $42 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-42-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $42 לשעה היא $63.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 42 an hour time and a half for 42 an hour time and a half for 42 an hour is 63 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $42 לשעה שעה וחצי עבור $42 לשעה היא $63.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $43 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-43-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $43 לשעה היא $64.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 43 an hour time and a half for 43 an hour time and a half for 43 an hour is 64 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $43 לשעה שעה וחצי עבור $43 לשעה היא $64.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $44 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-44-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $44 לשעה היא $66.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 44 an hour time and a half for 44 an hour time and a half for 44 an hour is 66 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $44 לשעה שעה וחצי עבור $44 לשעה היא $66.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $45 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-45-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $45 לשעה היא $67.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 45 an hour time and a half for 45 an hour time and a half for 45 an hour is 67 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $45 לשעה שעה וחצי עבור $45 לשעה היא $67.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $46 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-46-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $46 לשעה היא $69.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 46 an hour time and a half for 46 an hour time and a half for 46 an hour is 69 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $46 לשעה שעה וחצי עבור $46 לשעה היא $69.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $47 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-47-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $47 לשעה היא $70.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 47 an hour time and a half for 47 an hour time and a half for 47 an hour is 70 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $47 לשעה שעה וחצי עבור $47 לשעה היא $70.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $48 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-48-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $48 לשעה היא $72.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 48 an hour time and a half for 48 an hour time and a half for 48 an hour is 72 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $48 לשעה שעה וחצי עבור $48 לשעה היא $72.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $49 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-49-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $49 לשעה היא $73.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 49 an hour time and a half for 49 an hour time and a half for 49 an hour is 73 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $49 לשעה שעה וחצי עבור $49 לשעה היא $73.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $50 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-50-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $50 לשעה היא $75.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 50 an hour time and a half for 50 an hour time and a half for 50 an hour is 75 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $50 לשעה שעה וחצי עבור $50 לשעה היא $75.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $51 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-51-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $51 לשעה היא $76.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 51 an hour time and a half for 51 an hour time and a half for 51 an hour is 76 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $51 לשעה שעה וחצי עבור $51 לשעה היא $76.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $52 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-52-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $52 לשעה היא $78.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 52 an hour time and a half for 52 an hour time and a half for 52 an hour is 78 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $52 לשעה שעה וחצי עבור $52 לשעה היא $78.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $53 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-53-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $53 לשעה היא $79.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 53 an hour time and a half for 53 an hour time and a half for 53 an hour is 79 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $53 לשעה שעה וחצי עבור $53 לשעה היא $79.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $54 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-54-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $54 לשעה היא $81.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 54 an hour time and a half for 54 an hour time and a half for 54 an hour is 81 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $54 לשעה שעה וחצי עבור $54 לשעה היא $81.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $55 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-55-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $55 לשעה היא $82.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 55 an hour time and a half for 55 an hour time and a half for 55 an hour is 82 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $55 לשעה שעה וחצי עבור $55 לשעה היא $82.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $56 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-56-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $56 לשעה היא $84.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 56 an hour time and a half for 56 an hour time and a half for 56 an hour is 84 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $56 לשעה שעה וחצי עבור $56 לשעה היא $84.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $57 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-57-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $57 לשעה היא $85.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 57 an hour time and a half for 57 an hour time and a half for 57 an hour is 85 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $57 לשעה שעה וחצי עבור $57 לשעה היא $85.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $58 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-58-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $58 לשעה היא $87.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 58 an hour time and a half for 58 an hour time and a half for 58 an hour is 87 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $58 לשעה שעה וחצי עבור $58 לשעה היא $87.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $59 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-59-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $59 לשעה היא $88.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 59 an hour time and a half for 59 an hour time and a half for 59 an hour is 88 50 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $59 לשעה שעה וחצי עבור $59 לשעה היא $88.50 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ },
+ {
+  "n": "שעה וחצי עבור $60 לשעה",
+  "u": "https://loonaautomation.github.io/loona-hours/he/time-and-a-half-for-60-an-hour.html",
+  "s": "Loona Hours",
+  "d": "שעה וחצי עבור $60 לשעה היא $90.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם.",
+  "k": "time and a half for 60 an hour time and a half for 60 an hour time and a half for 60 an hour is 90 00 per overtime hour full pay tables for 1 20 overtime hours and 40 60 hour weeks plus a mini calculator free שעה וחצי עבור $60 לשעה שעה וחצי עבור $60 לשעה היא $90.00 לשעת עבודה נוספת. טבלאות שכר מלאות עבור 1–20 שעות נוספות ושבועות של 40–60 שעות, בתוספת מיני-מחשבון. בחינם."
+ }
+]
