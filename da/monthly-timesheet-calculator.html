@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Månedlig timeseddelberegner: Halvmånedlige lønperioder + overtid | Loona Hours</title>
+<meta name="description" content="Gratis månedlig timeseddelberegner med totaler for lønperioder på en halv måned (1.–15., 16.–slutningen). Overtid beregnes pr. arbejdsuge, sådan som loven kræver. CSV inkluderet.">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="en" href="https://loonaautomation.github.io/loona-hours/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="es" href="https://loonaautomation.github.io/loona-hours/es/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="de" href="https://loonaautomation.github.io/loona-hours/de/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="fr" href="https://loonaautomation.github.io/loona-hours/fr/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="pt" href="https://loonaautomation.github.io/loona-hours/pt/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="it" href="https://loonaautomation.github.io/loona-hours/it/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="nl" href="https://loonaautomation.github.io/loona-hours/nl/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ar" href="https://loonaautomation.github.io/loona-hours/ar/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ur" href="https://loonaautomation.github.io/loona-hours/ur/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="tr" href="https://loonaautomation.github.io/loona-hours/tr/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ru" href="https://loonaautomation.github.io/loona-hours/ru/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="id" href="https://loonaautomation.github.io/loona-hours/id/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="hi" href="https://loonaautomation.github.io/loona-hours/hi/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="bn" href="https://loonaautomation.github.io/loona-hours/bn/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ja" href="https://loonaautomation.github.io/loona-hours/ja/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ko" href="https://loonaautomation.github.io/loona-hours/ko/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="zh" href="https://loonaautomation.github.io/loona-hours/zh/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="pl" href="https://loonaautomation.github.io/loona-hours/pl/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="vi" href="https://loonaautomation.github.io/loona-hours/vi/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="th" href="https://loonaautomation.github.io/loona-hours/th/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ms" href="https://loonaautomation.github.io/loona-hours/ms/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="ro" href="https://loonaautomation.github.io/loona-hours/ro/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="cs" href="https://loonaautomation.github.io/loona-hours/cs/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="sv" href="https://loonaautomation.github.io/loona-hours/sv/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="nb" href="https://loonaautomation.github.io/loona-hours/nb/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="en-us" href="https://loonaautomation.github.io/loona-hours/en-us/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="en-gb" href="https://loonaautomation.github.io/loona-hours/en-gb/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="pt-br" href="https://loonaautomation.github.io/loona-hours/pt-br/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="pt-pt" href="https://loonaautomation.github.io/loona-hours/pt-pt/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="zh-hant" href="https://loonaautomation.github.io/loona-hours/zh-hant/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="he" href="https://loonaautomation.github.io/loona-hours/he/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="uk" href="https://loonaautomation.github.io/loona-hours/uk/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="sk" href="https://loonaautomation.github.io/loona-hours/sk/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="fi" href="https://loonaautomation.github.io/loona-hours/fi/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="bg" href="https://loonaautomation.github.io/loona-hours/bg/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="hr" href="https://loonaautomation.github.io/loona-hours/hr/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="el" href="https://loonaautomation.github.io/loona-hours/el/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="sw" href="https://loonaautomation.github.io/loona-hours/sw/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="da" href="https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html"><link rel="alternate" hreflang="x-default" href="https://loonaautomation.github.io/loona-hours/monthly-timesheet-calculator.html"><meta property="og:locale" content="da_DK">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Månedlig timeseddelberegner: Halvmånedlige lønperioder + overtid | Loona Hours">
+<meta property="og:description" content="Gratis månedlig timeseddelberegner med totaler for lønperioder på en halv måned (1.–15., 16.–slutningen). Overtid beregnes pr. arbejdsuge, sådan som loven kræver. CSV inkluderet.">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html">
+<meta property="og:locale" content="da_DK">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<meta property="og:site_name" content="Loona Hours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Månedlig timeseddelberegner: Halvmånedlige lønperioder + overtid | Loona Hours">
+<meta name="twitter:description" content="Gratis månedlig timeseddelberegner med totaler for lønperioder på en halv måned (1.–15., 16.–slutningen). Overtid beregnes pr. arbejdsuge, sådan som loven kræver. CSV inkluderet.">
+<meta name="twitter:image" content="https://loonaautomation.github.io/loona-hours/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5L43M13ZYT');</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z599jkwoy9");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Hours — Timeseddelberegner for halvmånedlig og månedlig","url":"https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Loona Automation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hvad er forskellen mellem halvmånedlig og to-ugentlig løn?","acceptedAnswer":{"@type":"Answer","text":"Halvmånedlig betyder 24 løndage om året (for eksempel den 15. og den sidste dag). Hver anden uge betyder 26 løndage om året (hver anden fredag). Lønperiodernes længder er forskellige, men overtid beregnes altid pr. arbejdsuge i begge systemer."}},{"@type":"Question","name":"Hvorfor beregnes ikke overtid på hele måneden?","acceptedAnswer":{"@type":"Answer","text":"FLSA definerer overtid strengt ud fra arbejdsugen — timer over 40 i én arbejdsuge. En måned indeholder altid dele af fire eller fem arbejdsuger, så månedstotalerne bygges op fra de ugentlige opdelinger, aldrig omvendt."}},{"@type":"Question","name":"Hvilke dage er afkrydset på forhånd?","acceptedAnswer":{"@type":"Answer","text":"mandag til fredag. Fjern markeringen for weekender, du ikke arbejdede, eller markér dem, hvis du gjorde — timerne for hver dato kommer kun fra rækker, der stadig er markeret."}},{"@type":"Question","name":"Kan jeg bruge dette for én enkelt halvmånedlig periode?","acceptedAnswer":{"@type":"Answer","text":"Ja — læs rækken for den periode, du har brug for (1.–15. eller 16.–månedens udgang) i resultattabellen. Rækken for hele måneden er der til månedligt betalt personale."}}]}</script>
+<style>
+:root{--teal:#062e2a;--teal2:#0b4f47;--gold:#c9a227;--gold2:#e8c95a;--bg:#f6f3ea;--card:#fff;--ink:#1c2422;--mut:#5a6a66;--line:#e4ddc8;--soft:#e7f2ee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:var(--teal2)}
+.topbar{background:var(--teal);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 16px;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+.topbar .logo{font-weight:800;color:#fff;text-decoration:none;font-size:1.05rem;letter-spacing:.4px}
+.topbar .logo span{color:var(--gold2)}
+.topbar nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.topbar nav a{color:#d9e8e4;text-decoration:none;font-size:.88rem}
+.topbar nav a:hover{color:var(--gold2)}
+header.hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:30px 18px 24px;text-align:center}
+header.hero .brand{color:var(--gold2);font-weight:700;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+header.hero h1{font-size:1.65rem;margin:8px auto;max-width:820px;line-height:1.25}
+header.hero p{color:#d9e8e4;max-width:720px;margin:0 auto;font-size:.97rem}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 40px}
+.inshort{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.95rem;margin-bottom:18px}
+.strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.strip a{background:var(--teal);color:#fff;text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:20px}
+.strip a:hover{background:var(--teal2)}
+.calc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(6,46,42,.07)}
+.calc h2{color:var(--teal);font-size:1.15rem;margin-bottom:10px}
+.frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:130px;flex:1}
+.field label{font-size:.82rem;font-weight:600;color:var(--teal)}
+.field input,.field select{padding:9px 10px;border:1px solid #c9d4d1;border-radius:8px;font-size:1rem;background:#fff;width:100%}
+.tsel{display:flex;gap:6px}
+.tsel select{flex:1}
+button.go{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+button.go:hover{background:var(--teal2)}
+button.alt{background:#fff;color:var(--teal);border:1.5px solid var(--teal);border-radius:8px;padding:9px 16px;font-size:.92rem;font-weight:600;cursor:pointer}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 9px;font-size:.92rem;text-align:left;vertical-align:top}
+th{background:var(--soft);color:var(--teal)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--soft);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:1.25rem;font-weight:800;color:var(--teal)}
+.stat .k{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.sec{margin-top:28px}
+.sec h2{color:var(--teal);font-size:1.25rem;margin-bottom:8px}
+.sec p{margin-bottom:10px}
+.sec ul{margin:0 0 10px 20px}
+.sec li{margin-bottom:5px}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:9px}
+details.faq summary{font-weight:700;color:var(--teal);cursor:pointer}
+details.faq p{margin-top:7px;font-size:.94rem}
+.disc{background:#fdf6dd;border:1px solid #eadfae;border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:16px;display:block;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(6,46,42,.06)}
+a.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(6,46,42,.12)}
+.card h3{font-size:1.0rem;color:var(--teal);margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--mut)}
+.badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--soft);color:var(--teal2)}
+footer{background:var(--teal);color:#cfe0db;text-align:center;padding:22px 16px;font-size:.85rem;margin-top:36px}
+footer a{color:var(--gold2);text-decoration:none}
+.small{font-size:.86rem;color:var(--mut)}
+.chk{display:flex;align-items:center;gap:7px;font-size:.9rem}
+.chk input{width:18px;height:18px}
+@media print{.topbar,.strip,.btnrow,button.go{display:none!important}body{background:#fff}.calc{box-shadow:none}}
+@media (max-width:560px){header.hero h1{font-size:1.35rem}.field{min-width:108px}}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Loona Automation",
+      "item": "https://loonaautomation.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loona Hours",
+      "item": "https://loonaautomation.github.io/loona-hours/da/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Månedlig timeseddelberegner: Halvmånedlige lønperioder + overtid",
+      "item": "https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="topbar"><a class="logo" href="./">Loona <span>Timer</span></a><nav><a href="time-card-calculator.html">Timeseddel</a><a href="overtime-calculator.html">Overtid</a><a href="california-overtime-calculator.html">California</a><a href="overtime-calculator-by-state.html">Efter delstat</a><a href="./#tools">Alle værktøj</a><a href="about.html">Om os</a></nav></div>
+<header class="hero"><div class="brand">Loona Automation</div>
+<h1>Timeseddelberegner for halvmånedlig og månedlig</h1><p>Betalt to gange om måneden? Indtast hele måneden én gang, og se begge halvmånedlige lønperioder side om side — med overtid beregnet på den lovlige måde, uge for uge.</p></header>
+<div class="wrap">
+<div class="inshort"><strong>Kort sagt:</strong> byg en hel måned med vagter, og få totaler for lønperioderne 1.–15. og 16.–månedens udgang plus hele måneden. Overtid beregnes stadig inde i hver arbejdsuge fra søndag–lørdag, fordi det er sådan, loven tæller den.</div>
+<div class="strip" aria-label="Populære værktøjer"><a href="time-card-calculator.html">Timeseddelberegner</a><a href="hours-calculator.html">Timeberegner</a><a href="overtime-calculator.html">Overtidsberegner</a><a href="california-overtime-calculator.html">Overtidsberegner for California</a><a href="time-and-a-half-calculator.html">Beregner for halvanden gang</a><a href="minutes-to-decimal-converter.html">Omregner fra minutter til decimaltimer</a></div>
+<div class="calc">
+<h2>Timeseddelberegner for halvmånedlig &amp; månedlig</h2>
+<div class="frow">
+<div class="field"><label for="rate">Timesats ($)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div><div class="field"><label for="monthSel">Måned</label><select id="monthSel"><option value="1">januar</option><option value="2">februar</option><option value="3">marts</option><option value="4">april</option><option value="5">maj</option><option value="6">juni</option><option value="7">juli</option><option value="8">august</option><option value="9">september</option><option value="10">oktober</option><option value="11" selected>november</option><option value="12">desember</option></select></div><div class="field"><label for="yearIn">År</label><input type="number" id="yearIn" value="2026" step="1" min="2000" ></div><div class="field"><label for="breakPaid">Pauser er</label><select id="breakPaid"><option value="no" selected>Ubetalt (trukket fra)</option><option value="yes">Betalt (ikke trukket fra)</option></select></div>
+</div>
+<p class="small">Én række pr. dato. Mandag–fredag starter markeret; fjern markeringen for dage, du ikke arbejdede. Overtid opgøres pr. arbejdsuge (søndag–lørdag), derefter lægges måneden sammen for lønperioderne 1.–15. og 16.–slutningen.</p>
+<div id="monthGrid"></div>
+<div class="btnrow">
+<button class="go" id="calcBtn" type="button">Beregn måneden</button>
+<button class="alt" id="csvBtn" type="button">Download CSV</button>
+<button class="alt" id="printBtn" type="button">Udskriv</button>
+</div>
+<div class="stats" id="stats"></div>
+<div id="periodTable"></div>
+<div id="payTable"></div>
+</div>
+<div class="sec"><h2>Sådan fungerer det — Reglen bag denne beregner</h2><p>Halvmånedlig løn (24 løndage om året) deler måneden i 1.–15. og 16.–slutningen. Den deling handler kun om <em>når</em> du betales. Overtidslovgivningen anerkender slet ikke lønperioder — den tæller timer inde i en <strong>arbejdsuge</strong>. Denne beregner udfører derfor begge opgaver ærligt: den henfører hver time til dens arbejdsuge fra søndag til lørdag for at finde overtiden og præsenterer derefter totalerne i de to halvmånedlige perioder, dit lønsystem bruger.</p>
+<p>Én ærlig begrænsning: hvis din arbejdsgivers officielle arbejdsuge ikke starter om søndagen, kan din overtidstildeling ved en periodes grænse afvige med nogle få timer. De månedlige samlede timer og den løn, der vises her, forbliver i de fleste tilfælde de samme uanset hvad; din arbejdsgivers definition af arbejdsugen er den officielle.</p></div>
+<div class="sec"><h2>Relaterede timeværktøjer</h2><div class="grid"><a class="card" href="biweekly-time-card-calculator.html"><h3>Timeseddelberegner for fjortendagsperiode</h3><p>En hel lønperiode på to uger på ét kort — men overtid beregnes stadig uge for uge, præcis som FLSA kræver. Kombineret bruttoløn medregnet.</p><span class="badge">Gratis — prøv det</span></a><a class="card" href="time-card-calculator.html"><h3>Timeseddelberegner</h3><p>Flagskibet blandt ugentlige timesedler: ind-/udstempling og pauser i 7 dage, overtidsopdeling ved 40 timer, bruttoløn, udskrift og CSV — plus Gem min uge på din enhed.</p><span class="badge">Gratis — prøv det</span></a><a class="card" href="weekly-pay-calculator.html"><h3>Beregner for ugentlig bruttoløn</h3><p>Fra timer til enhver form for lønseddel: ugentlig bruttoløn opdelt i ordinær tid, overtid og dobbelt sats, derefter omregnet til tilsvarende beløb pr. to uger, pr. måned og pr. år.</p><span class="badge">Gratis — prøv det</span></a><a class="card" href="work-hours-between-dates-calculator.html"><h3>Beregner for arbejdstimer mellem to datoer</h3><p>Tæl den virkelige arbejdstid i ethvert datointerval: arbejdsdage efter dit mønster, amerikanske føderale helligdage udeladt, samlede planlagte timer.</p><span class="badge">Gratis — prøv det</span></a></div></div>
+<div class="sec"><h2>Ofte stillede spørgsmål</h2><details class="faq"><summary>Hvad er forskellen mellem halvmånedlig og to-ugentlig løn?</summary><p>Halvmånedlig betyder 24 løndage om året (for eksempel den 15. og den sidste dag). Hver anden uge betyder 26 løndage om året (hver anden fredag). Lønperiodernes længder er forskellige, men overtid beregnes altid pr. arbejdsuge i begge systemer.</p></details><details class="faq"><summary>Hvorfor beregnes ikke overtid på hele måneden?</summary><p>FLSA definerer overtid strengt ud fra arbejdsugen — timer over 40 i én arbejdsuge. En måned indeholder altid dele af fire eller fem arbejdsuger, så månedstotalerne bygges op fra de ugentlige opdelinger, aldrig omvendt.</p></details><details class="faq"><summary>Hvilke dage er afkrydset på forhånd?</summary><p>mandag til fredag. Fjern markeringen for weekender, du ikke arbejdede, eller markér dem, hvis du gjorde — timerne for hver dato kommer kun fra rækker, der stadig er markeret.</p></details><details class="faq"><summary>Kan jeg bruge dette for én enkelt halvmånedlig periode?</summary><p>Ja — læs rækken for den periode, du har brug for (1.–15. eller 16.–månedens udgang) i resultattabellen. Rækken for hele måneden er der til månedligt betalt personale.</p></details></div>
+<div class="sec"><h2>Sådan fungerer det — formelen</h2>
+<p>En måned indeholder dele af fem eller seks forskellige arbejdsuger, og overtidsretten anerkender kun arbejdsugen — så denne beregner opgør måneden uge for uge og viser den først derefter som en måned. Hver arbejdsdag måles, dagene grupperes i arbejdsuger fra søndag&ndash;lørdag, og hver uge opdeles for sig: de første 40 timer er ordinære, resten er overtid. Månedens totaler er summen af de ugentlige fordelinger, og den samme dag-for-dag-fordeling lægges igen ind i de to halvmånedlige perioder (1.&ndash;15. og 16.&ndash;slutningen), så du kan se bruttolønnen pr. periode.</p>
+<div class="inshort"><strong>Formlen:</strong> Pr. dag: betalte minutter = (udstempling &minus; indstempling, +24t hvis natten over) &minus; pause (medmindre pauser er betalte). Pr. uge fra søndag&ndash;lørdag: almindelig = de første 40 timer, overtid = timer over 40. Månedens brutto = (almindelige timer &times; sats) + (overtidstimer &times; sats &times; 1.5), summeret over alle ugerne i måneden.</div>
+<h3>Gennemregnet eksempel</h3>
+<p>Tage <strong>februar 2026</strong>: du arbejder <strong>mandag til fredag, 9:00 AM til 6:00 PM</strong>, med en <strong>Ubetalt pause på 30 minutter</strong>, ved <strong>$20/time</strong> — 8.5 betalte timer pr. dag. Hver uge fra søndag–lørdag indeholder fem sådanne dage, 42.5 timer, så hver uge opdeles i 40 ordinær tid + 2.5 overtid. Over de fire fulde uger i måneden er det <strong>170:00 timer — 160:00 ordinær tid og 10:00 overtid</strong> — og en bruttoløn på <strong>$3,500.00</strong> ($3,200.00 + $300.00). Hver halvmånedlig periode viser 85:00 timer og <strong>$1,750.00</strong> af bruttolønnen.</p>
+<h3>Ofte stillede spørgsmål</h3>
+<details class="faq"><summary>Hvilken arbejdsuge bruger denne side?</summary><p>Uger grupperes fra søndag til lørdag, og overtid tælles inden i de uger. Hvis din arbejdsgivers officielle arbejdsuge starter på en anden dag, kan en måneds grænseuger tilskrive overtid lidt anderledes — metoden er identisk, men din arbejdsgivers definition af arbejdsugen styrer din faktiske løn.</p></details>
+<details class="faq"><summary>Hvad er gitterets standardtider?</summary><p>Hver dato begynder klokken 9:00 AM ind og 5:30 PM ud med en pause på 30 minutter, og datoer fra mandag til fredag begynder afkrydset som arbejdet. Ændr en hvilken som helst dag enkeltvis — en halv dag, en fridag, en længere fredag — og de ugentlige fordelinger, periodens totaler og bruttolønnen genberegnes alle ud fra skemaet, som det er indtastet.</p></details>
+<details class="faq"><summary>Kan jeg fjerne avkryssingen af en helligdag eller lægge til en lørdag?</summary><p>Ja. At fjerne krydset for en ugedag fjerner dens timer helt (den almindelige måde at håndtere helligdage, sygedage og ferie på), og at sætte kryds ved en lørdag eller søndag lægger den dag til dens arbejdsuge — hvilket ofte er det, der skubber den uge over 40 timer til overtid.</p></details>
+<details class="faq"><summary>Hvorfor viser en måned med de samme daglige timer forskellig overtid i forskellige måneder?</summary><p>Fordi overtid følger søndag&ndash;lørdag-ugerne, ikke kalenderen. En måned, hvis ugedage fordeler sig som 5-5-5-5 over fire uger, opfører sig anderledes end en, der er delt 3-5-5-5-2 over fem deluger, selv med identiske daglige timer — kantugerne når måske ikke op på 40 timer, eller en arbejdet weekend kan lande i en uge, der gør.</p></details>
+<details class="faq"><summary>Fungerer en vagt som krydser midnat her?</summary><p>Ja. En udstempling på eller før indstemplingen tælles ind i næste dag, så en vagt fra 10:00 PM til 6:00 AM måler 8 timer (før pauser) på den dato, den starter — den samme nattehåndtering, der bruges på tværs af Loona Hours-værktøjerne.</p></details>
+</div>
+<div class="disc"><strong>Ansvarsfraskrivelse:</strong> Kun skøn — ikke løn- eller juridisk rådgivning. Din arbejdsgivers lønregler og delstatens lov styrer din faktiske løn. Tal afrundes til visning; din lønseddel og lønafdelingen er den officielle registrering.</div>
+</div>
+<div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
+<h2 style="margin:0 0 10px;color:#062e2a;font-size:1.35rem;line-height:1.3">Indlejr denne beregner på dit websted — gratis</h2>
+<p style="margin:0 0 12px;line-height:1.6">Tilføj denne beregner på dit eget websted eller din blog — den er helt gratis, kræver ingen tilmelding og viser altid den nyeste version. Kopiér koden nedenfor, og sæt den ind på din side, hvor du vil have beregneren vist. At beholde den lille kreditlinje «Powered by Loona Automation» under indlejringen hjælper med at holde dette værktøj gratis &mdash; men du kan frit style eller fjerne den; værktøjet virker uanset hvad.</p>
+<textarea id="loonaEmbedCode" readonly rows="4" style="width:100%;box-sizing:border-box;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.45;padding:12px;border:1px solid #e4ddc8;border-radius:10px;background:#fff;color:#1c2422;resize:vertical">&lt;iframe src="https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html" width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy" title="Monthly Timesheet Calculator by Loona"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;font-family:Arial,sans-serif"&gt;Drevet af &lt;a href="https://loonaautomation.github.io/loona-hours/da/monthly-timesheet-calculator.html" target="_blank" rel="noopener"&gt;Loona Automation&lt;/a&gt; &mdash; gratis Monthly Timesheet Calculator&lt;/p&gt;</textarea>
+<p style="margin:10px 0 0"><button type="button" id="loonaEmbedBtn" style="background:#062e2a;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:.95rem;font-weight:700;cursor:pointer">Kopier innebyggingskode</button></p>
+</div>
+<script>
+(function(){var b=document.getElementById('loonaEmbedBtn'),t=document.getElementById('loonaEmbedCode');if(!b||!t)return;b.addEventListener('click',function(){var done=function(){b.textContent='Kopieret!';setTimeout(function(){b.textContent='Kopiér indlejringskode';},2000);};var fallback=function(){t.removeAttribute('readonly');t.select();try{document.execCommand('copy');}catch(e){}t.setAttribute('readonly','');done();};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(done,fallback);}else{fallback();}});})();
+</script>
+<footer>© 2026 Loona Automation — Loona Hours: gratis timeseddel-, time- og overtidsberegnere for arbejdstagere i USA.<br><a href="about.html">Om os</a> · <a href="privacy.html">Privatlivspolitik</a> · <a href="terms.html">Vilkår</a> · <a href="contact.html">Kontakt</a> · <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>Alle beregninger kører på din enhed — intet uploades eller gemmes på en server.</footer>
+<script>
+/* ==== LH CORE ==== */
+/* Loona Hours shared calculation engine. Pure functions, no DOM access.
+   Time is handled in minutes. Pay splits are {regMin, otMin, dtMin}. */
+var LH = (function () {
+  'use strict';
+
+  /* ---------- time helpers ---------- */
+  // 12-hour clock parts -> minutes since midnight. h:1-12, m:0-59, ap:'AM'|'PM'
+  function toMinutes(h, m, ap) {
+    var hh = parseInt(h, 10) % 12;
+    if (String(ap).toUpperCase() === 'PM') hh += 12;
+    return hh * 60 + parseInt(m, 10);
+  }
+  // Accepts {h,m,ap} or a number of minutes.
+  function parseTime(t) {
+    if (typeof t === 'number') return t;
+    return toMinutes(t.h, t.m, t.ap);
+  }
+  // Net worked minutes for one shift. Overnight-aware: out <= in means the
+  // shift ends the next day. breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+    var raw = parseTime(outT) - parseTime(inT);
+    if (raw <= 0) raw += 1440;
+    var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
+    return Math.max(0, net);
+  }
+  // Rounding modes: 'none' | 'quarter' (nearest 15) | 'seven' (7-minute rule:
+  // 0-7 minutes past a quarter rounds down, 8-14 rounds up).
+  function roundMinutes(mins, mode) {
+    if (mode !== 'quarter' && mode !== 'seven') return mins;
+    var q = Math.floor(mins / 15) * 15, rem = mins - q;
+    return rem <= 7 ? q : q + 15;
+  }
+  // Round a whole shift's in/out punches, then return net minutes.
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+    var i = roundMinutes(parseTime(inT), mode);
+    var o = roundMinutes(parseTime(outT), mode);
+    return shiftMinutes(i, o, breakMins, breakPaid);
+  }
+
+  /* ---------- formatting ---------- */
+  function fmtHM(mins) {
+    mins = Math.round(mins);
+    var neg = mins < 0; if (neg) mins = -mins;
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return (neg ? '-' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+  }
+  function decimal(mins) { return Math.round(mins / 60 * 100) / 100; }
+  function minToDec(m) { return Math.round(m / 60 * 100) / 100; } // 0..60 chart
+  function money(x) {
+    return '$' + Number(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function toCSV(rows) {
+    return rows.map(function (r) {
+      return r.map(function (c) {
+        c = String(c == null ? '' : c);
+        return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+      }).join(',');
+    }).join('\n');
+  }
+
+  /* ---------- pay ---------- */
+  // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
+  // shift-differential premium paid on every worked hour, shown as its own line.
+  function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    var regPay = regMin / 60 * rate;
+    var otPay = otMin / 60 * rate * 1.5;
+    var dtPay = dtMin / 60 * rate * 2;
+    var diffPay = (regMin + otMin + dtMin) / 60 * (diffPerHour || 0);
+    return { regPay: regPay, otPay: otPay, dtPay: dtPay, diffPay: diffPay,
+             total: regPay + otPay + dtPay + diffPay };
+  }
+  function emptySplit() { return { regMin: 0, otMin: 0, dtMin: 0 }; }
+  function addSplit(a, b) {
+    return { regMin: a.regMin + b.regMin, otMin: a.otMin + b.otMin, dtMin: a.dtMin + b.dtMin };
+  }
+  function totalOf(s) { return s.regMin + s.otMin + s.dtMin; }
+  // Weekly reconciliation: regular minutes above the 40-hour line move into
+  // overtime. Hours already paid at a daily premium are not counted twice
+  // (no pyramiding), so this equals the greater of daily vs weekly overtime.
+  function reconcileWeek(days) {
+    var tot = days.reduce(addSplit, emptySplit());
+    if (tot.regMin > 2400) {
+      var excess = tot.regMin - 2400;
+      tot.regMin -= excess; tot.otMin += excess;
+    }
+    return tot;
+  }
+
+  /* ---------- federal (FLSA) ---------- */
+  // Overtime only after 40 hours in the workweek; weeks are never averaged.
+  function splitFederalWeek(dayMins) {
+    var days = [], acc = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0, reg = 0, ot = 0;
+      if (acc >= 2400) { ot = m; }
+      else if (acc + m > 2400) { reg = 2400 - acc; ot = m - reg; }
+      else { reg = m; }
+      acc += m;
+      days.push({ regMin: reg, otMin: ot, dtMin: 0 });
+    }
+    var tot = days.reduce(addSplit, emptySplit());
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- California ---------- */
+  // Daily: 1.5x after 8h up to 12h, 2x after 12h. On the 7th consecutive day
+  // of a workweek: 1.5x for the first 8h, 2x after that.
+  function splitCaliforniaDay(mins, isSeventh) {
+    mins = mins || 0;
+    if (mins <= 0) return emptySplit();
+    if (isSeventh) {
+      var ot = Math.min(mins, 480);
+      return { regMin: 0, otMin: ot, dtMin: mins - ot };
+    }
+    var reg = Math.min(mins, 480);
+    var ot2 = Math.min(Math.max(mins - 480, 0), 240);
+    var dt = Math.max(mins - 720, 0);
+    return { regMin: reg, otMin: ot2, dtMin: dt };
+  }
+  function splitCaliforniaWeek(dayMins) {
+    var days = [], run = 0;
+    for (var i = 0; i < dayMins.length; i++) {
+      var m = dayMins[i] || 0;
+      run = m > 0 ? run + 1 : 0;
+      days.push(splitCaliforniaDay(m, run === 7));
+    }
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- generic daily-threshold states (AK 8h, CO 12h, OR-industry 10h) */
+  function splitDailyDay(mins, thresholdMin) {
+    mins = mins || 0;
+    var reg = Math.min(mins, thresholdMin);
+    return { regMin: reg, otMin: mins - reg, dtMin: 0 };
+  }
+  function splitDailyWeek(dayMins, thresholdMin) {
+    var days = dayMins.map(function (m) { return splitDailyDay(m, thresholdMin); });
+    var tot = reconcileWeek(days);
+    tot.days = days; tot.totalMin = totalOf(tot);
+    return tot;
+  }
+
+  /* ---------- state rules table ----------
+     ruleType: 'federal' | 'california' | 'daily8' | 'daily12' | 'nevada' | 'oregon'
+     Non-federal entries verified against official state labour sources,
+     November 2026 (see overtime-calculator-by-state.html for printed sources). */
+  var STATES = {
+    AL:{name:'Alabama',ruleType:'federal'}, AK:{name:'Alaska',ruleType:'daily8',dailyThreshold:480,minWage:14.00,sourceUrl:'https://labor.alaska.gov/lss/whact.htm',notes:'Daglig overtid efter 8 timer på én dag. Arbejdsgivere med færre end 4 ansatte er undtaget, og ansatte på en frivillig fleksibel arbejdstidsplan godkendt af DOL kan arbejde op til 10 timer om dagen til ordinær sats.'},
+    AZ:{name:'Arizona',ruleType:'federal'}, AR:{name:'Arkansas',ruleType:'federal'},
+    CA:{name:'California',ruleType:'california',dailyThreshold:480,minWage:16.90,sourceUrl:'https://www.dir.ca.gov/dlse/faq_overtime.htm',notes:'Daglig overtid: 1.5x efter 8 timer, 2x efter 12 timer plus særlige regler på den 7. dag i træk i en arbejdsuge. Tillæg for måltids- og hvilepauser er separate og er ikke medtaget i dette estimat. En gyldigt vedtaget alternativ arbejdsugeplan (op til 10 timer om dagen ved valg blandt de ansatte) ændrer den daglige regel.'},
+    CO:{name:'Colorado',ruleType:'daily12',dailyThreshold:720,minWage:15.16,sourceUrl:'https://cdle.colorado.gov/wage-claim-act-and-minimum-wage/overtime',notes:'Overtid efter 40 timer i en uge, 12 timer på én dag eller 12 timer i træk — det, der giver den ansatte den største fordel. Denne estimator bruger timer pr. dag; reglen om 12 timer i træk kan afvige for delte vagter.'},
+    CT:{name:'Connecticut',ruleType:'federal'}, DE:{name:'Delaware',ruleType:'federal'},
+    DC:{name:'District of Columbia',ruleType:'federal'}, FL:{name:'Florida',ruleType:'federal'},
+    GA:{name:'Georgia',ruleType:'federal'}, HI:{name:'Hawaii',ruleType:'federal'},
+    ID:{name:'Idaho',ruleType:'federal'}, IL:{name:'Illinois',ruleType:'federal'},
+    IN:{name:'Indiana',ruleType:'federal'}, IA:{name:'Iowa',ruleType:'federal'},
+    KS:{name:'Kansas',ruleType:'federal'}, KY:{name:'Kentucky',ruleType:'federal'},
+    LA:{name:'Louisiana',ruleType:'federal'}, ME:{name:'Maine',ruleType:'federal'},
+    MD:{name:'Maryland',ruleType:'federal'}, MA:{name:'Massachusetts',ruleType:'federal'},
+    MI:{name:'Michigan',ruleType:'federal'}, MN:{name:'Minnesota',ruleType:'federal'},
+    MS:{name:'Mississippi',ruleType:'federal'}, MO:{name:'Missouri',ruleType:'federal'},
+    MT:{name:'Montana',ruleType:'federal'}, NE:{name:'Nebraska',ruleType:'federal'},
+    NV:{name:'Nevada',ruleType:'nevada',dailyThreshold:480,minWage:12.00,sourceUrl:'https://labor.nv.gov/Wages/Overtime/',notes:'Daglig overtid efter 8 timer på en arbejdsdag gælder kun, hvis din ordinære sats er mindre end 1.5 gange mindstelønnen i Nevada ($18.00/time ved mindstelønnen på $12.00). Ved eller over den sats gælder kun ugentlig overtid efter 40 timer. Nevada tæller en arbejdsdag som en rullende periode på 24 timer fra det tidspunkt, du starter arbejdet, og en indbyrdes aftalt plan på 4 dage/10 timer er undtaget fra den daglige regel.'},
+    NH:{name:'New Hampshire',ruleType:'federal'}, NJ:{name:'New Jersey',ruleType:'federal'},
+    NM:{name:'New Mexico',ruleType:'federal'}, NY:{name:'New York',ruleType:'federal'},
+    NC:{name:'North Carolina',ruleType:'federal'}, ND:{name:'North Dakota',ruleType:'federal'},
+    OH:{name:'Ohio',ruleType:'federal'}, OK:{name:'Oklahoma',ruleType:'federal'},
+    OR:{name:'Oregon',ruleType:'oregon',dailyThreshold:600,minWage:15.55,sourceUrl:'https://www.oregon.gov/boli/workers/Pages/overtime.aspx',notes:'De fleste arbejdsgivere i Oregon skylder kun overtid efter 40 timer i en uge. Daglig overtid efter 10 timer på én dag gælder på savværker, fabrikker og i produktion (og nogle få specifikke sektorer), hvor den ansatte betales det største af daglig eller ugentlig overtid.'},
+    PA:{name:'Pennsylvania',ruleType:'federal'}, RI:{name:'Rhode Island',ruleType:'federal'},
+    SC:{name:'South Carolina',ruleType:'federal'}, SD:{name:'South Dakota',ruleType:'federal'},
+    TN:{name:'Tennessee',ruleType:'federal'}, TX:{name:'Texas',ruleType:'federal'},
+    UT:{name:'Utah',ruleType:'federal'}, VT:{name:'Vermont',ruleType:'federal'},
+    VA:{name:'Virginia',ruleType:'federal'}, WA:{name:'Washington',ruleType:'federal'},
+    WV:{name:'West Virginia',ruleType:'federal'}, WI:{name:'Wisconsin',ruleType:'federal'},
+    WY:{name:'Wyoming',ruleType:'federal'}
+  };
+  // opts: { rate:Number (for Nevada), industry:Boolean (for Oregon) }
+  function splitStateWeek(dayMins, code, opts) {
+    opts = opts || {};
+    var st = STATES[code] || { ruleType: 'federal' };
+    var out;
+    switch (st.ruleType) {
+      case 'california': out = splitCaliforniaWeek(dayMins); break;
+      case 'daily8': out = splitDailyWeek(dayMins, 480); break;
+      case 'daily12': out = splitDailyWeek(dayMins, 720); break;
+      case 'nevada':
+        out = (opts.rate && opts.rate < 1.5 * st.minWage)
+          ? splitDailyWeek(dayMins, 480) : splitFederalWeek(dayMins);
+        break;
+      case 'oregon':
+        out = opts.industry ? splitDailyWeek(dayMins, 600) : splitFederalWeek(dayMins);
+        break;
+      default: out = splitFederalWeek(dayMins);
+    }
+    out.state = st; out.totalMin = totalOf(out);
+    return out;
+  }
+
+  /* ---------- US federal holidays (OPM schedule) ---------- */
+  function nthWeekday(year, month, weekday, n) { // month 0-11, weekday 0=Sun
+    var d = new Date(Date.UTC(year, month, 1));
+    var add = (weekday - d.getUTCDay() + 7) % 7 + (n - 1) * 7;
+    return new Date(Date.UTC(year, month, 1 + add));
+  }
+  function lastWeekday(year, month, weekday) {
+    var d = new Date(Date.UTC(year, month + 1, 0));
+    var sub = (d.getUTCDay() - weekday + 7) % 7;
+    return new Date(Date.UTC(year, month, d.getUTCDate() - sub));
+  }
+  function federalHolidays(year) {
+    function fixed(m, d, name) { return { date: new Date(Date.UTC(year, m, d)), name: name }; }
+    return [
+      fixed(0, 1, "New Year's Day"),
+      { date: nthWeekday(year, 0, 1, 3), name: 'Martin Luther King Jr. Day' },
+      { date: nthWeekday(year, 1, 1, 3), name: "Washington's Birthday (Presidents Day)" },
+      { date: lastWeekday(year, 4, 1), name: 'Memorial Day' },
+      fixed(5, 19, 'Juneteenth National Independence Day'),
+      fixed(6, 4, 'Independence Day'),
+      { date: nthWeekday(year, 8, 1, 1), name: 'Labor Day' },
+      { date: nthWeekday(year, 9, 1, 2), name: 'Columbus Day' },
+      fixed(10, 11, 'Veterans Day'),
+      { date: nthWeekday(year, 10, 4, 4), name: 'Thanksgiving Day' },
+      fixed(11, 25, 'Christmas Day')
+    ];
+  }
+
+  return {
+    toMinutes: toMinutes, parseTime: parseTime, shiftMinutes: shiftMinutes,
+    roundMinutes: roundMinutes, roundedShiftMinutes: roundedShiftMinutes,
+    fmtHM: fmtHM, decimal: decimal, minToDec: minToDec, money: money, toCSV: toCSV,
+    grossPay: grossPay, splitFederalWeek: splitFederalWeek,
+    splitCaliforniaDay: splitCaliforniaDay, splitCaliforniaWeek: splitCaliforniaWeek,
+    splitDailyWeek: splitDailyWeek, splitStateWeek: splitStateWeek,
+    STATES: STATES, federalHolidays: federalHolidays
+  };
+})();
+/* ==== END LH CORE ==== */
+
+function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
+function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
+function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
+ '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">Timer i alt ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
+ +'<div class="stat"><div class="v">'+LH.fmtHM(ot)+'</div><div class="k">Overtid 1.5x</div></div>'
+ +(dt>0?'<div class="stat"><div class="v">'+LH.fmtHM(dt)+'</div><div class="k">dobbelt sats 2x</div></div>':'')
+ +'<div class="stat"><div class="v">'+LH.money(pay)+'</div><div class="k">Bruttoløn</div></div>';}
+function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Lønlinje</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Beløb</th></tr>'
+ +'<tr><td>Ordinær løn</td><td class="num">'+LH.decimal(reg).toFixed(2)+'</td><td class="num">'+LH.money(rate)+'</td><td class="num">'+LH.money(pay.regPay)+'</td></tr>';
+ if(ot>0)h+='<tr><td>Overtidsløn (1.5x)</td><td class="num">'+LH.decimal(ot).toFixed(2)+'</td><td class="num">'+LH.money(rate*1.5)+'</td><td class="num">'+LH.money(pay.otPay)+'</td></tr>';
+ if(dt>0)h+='<tr><td>Løn med dobbelt sats (2x)</td><td class="num">'+LH.decimal(dt).toFixed(2)+'</td><td class="num">'+LH.money(rate*2)+'</td><td class="num">'+LH.money(pay.dtPay)+'</td></tr>';
+ if(pay.diffPay>0)h+='<tr><td>Vagtdifferentialetillæg</td><td class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</td><td class="num"></td><td class="num">'+LH.money(pay.diffPay)+'</td></tr>';
+ h+='<tr><th>Bruttoløn</th><th class="num">'+LH.decimal(reg+ot+dt).toFixed(2)+'</th><th></th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+ el.innerHTML=h;}
+function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
+
+var curDates=[];
+function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
+var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Arbejdede</th><th>Indstempling</th><th>Udstempling</th><th>Pause (min)</th></tr>';
+var dn=['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
+for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' afkrydset':'';
+rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Arbejdede"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Pauseminutter"></td></tr>';}
+rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
+document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}
+function tselHTML(p){function opts(n,sel,fmt){var s='';for(var i=0;i<n;i++){var v=fmt?fmt(i):i;s+='<option value="'+v+'"'+(String(v)===String(sel)?' valgt':'')+'>'+(fmt?fmt(i):i)+'</option>';}return s;}
+return '<span class="tsel"><select id="'+p+'H" aria-label="Time">'+opts(12,'9',function(i){return i+1;})+'</select><select id="'+p+'M" aria-label="Minut">'+(function(){var s='';for(var i=0;i<60;i++){s+='<option value="'+i+'"'+(i===0?' valgt':'')+'>'+(i<10?'0':'')+i+'</option>';}return s;})()+'</select><select id="'+p+'AP" aria-label="AM or PM"><option selected>AM</option><option>PM</option></select></span>';}
+function fixOutDefaults(){curDates.forEach(function(dt,i){var d=i+1;var outH=document.getElementById('M'+d+'OutH');if(!outH)return;outH.value='5';document.getElementById('M'+d+'OutM').value='30';document.getElementById('M'+d+'OutAP').value='PM';});}
+function calc(){var paid=document.getElementById('breakPaid').value==='ja';var rate=gv('rate');
+var dayMin=curDates.map(function(dt,i){var d=i+1;if(!document.getElementById('M'+d+'W').checked)return 0;return LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid);});
+// group into Sunday-start workweeks
+var weeks=[],cur=null;
+curDates.forEach(function(dt,i){if(dt.getDay()===0||cur===null){cur=[];weeks.push(cur);}cur.push(dayMin[i]);});
+while(cur&&cur.length<7)cur.push(0);
+var reg=0,ot=0;weeks.forEach(function(w){var s=LH.splitFederalWeek(w);reg+=s.regMin;ot+=s.otMin;});
+var pay=LH.grossPay(reg,ot,0,rate);var tot=reg+ot;
+statBoxes(document.getElementById('stats'),reg,ot,0,pay.total);
+// pay periods: 1-15 and 16-end share of gross by hours proportion of premium split — compute per-period splits by re-running weeks clipped per period is complex; instead split each day using running weekly logic:
+var per=[{reg:0,ot:0},{reg:0,ot:0}];var weekStartIdx=0;
+// recompute per-day reg/ot attribution with workweek accumulation
+var acc=0;curDates.forEach(function(dt,i){if(dt.getDay()===0)acc=0;var m=dayMin[i];var r=0,o=0;if(acc>=2400)o=m;else if(acc+m>2400){r=2400-acc;o=m-r;}else r=m;acc+=m;var p=(dt.getDate()<=15)?0:1;per[p].reg+=r;per[p].ot+=o;});
+var h='<table><tr><th>Lønperiode</th><th class="num">Hours</th><th class="num">Regular</th><th class="num">Overtime</th><th class="num">Bruttoløn</th></tr>';
+per.forEach(function(p,i){var pp=LH.grossPay(p.reg,p.ot,0,rate);h+='<tr><td>'+(i===0?'1. \u2013 15.':'16. \u2013 slutningen af måneden')+'</td><td class="num">'+LH.fmtHM(p.reg+p.ot)+'</td><td class="num">'+LH.fmtHM(p.reg)+'</td><td class="num">'+LH.fmtHM(p.ot)+'</td><td class="num">'+LH.money(pp.total)+'</td></tr>';});
+h+='<tr><th>Hele måneden</th><th class="num">'+LH.fmtHM(tot)+'</th><th class="num">'+LH.fmtHM(reg)+'</th><th class="num">'+LH.fmtHM(ot)+'</th><th class="num">'+LH.money(pay.total)+'</th></tr></table>';
+document.getElementById('periodTable').innerHTML=h;
+payTable(document.getElementById('payTable'),reg,ot,0,rate,pay);}
+document.getElementById('monthSel').addEventListener('change',function(){buildGrid();fixOutDefaults();calc();});
+document.getElementById('yearIn').addEventListener('change',function(){buildGrid();fixOutDefaults();calc();});
+document.getElementById('calcBtn').addEventListener('click',calc);
+document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Dato','Timer (t:mm)','Decimaltimer']];curDates.forEach(function(dt,i){var d=i+1;var paid=document.getElementById('breakPaid').value==='ja';var m=document.getElementById('M'+d+'W').checked?LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid):0;rows.push([(dt.getMonth()+1)+'/'+d+'/'+dt.getFullYear(),LH.fmtHM(m),LH.decimal(m).toFixed(2)]);});
+var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-monthly-timesheet.csv';a.click();URL.revokeObjectURL(a.href);});
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+buildGrid();fixOutDefaults();calc();
+
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
