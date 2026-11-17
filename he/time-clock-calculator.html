@@ -418,7 +418,7 @@ var LH = (function () {
 
 function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
 function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
-function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'ב-'),tv(p+i+'יציאה'),gv(p+i+'Br'),paid));}return out;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
 function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
  '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">סך שעות ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
  +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
