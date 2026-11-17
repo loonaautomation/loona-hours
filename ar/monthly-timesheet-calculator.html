@@ -438,7 +438,7 @@ var curDates=[];
 function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
 var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>تم العمل</th><th>الحضور</th><th>الانصراف</th><th>وردية ليلية</th><th>الاستراحة (دقيقة)</th></tr>';
 var dn=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' محدّد':'';
+for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' checked':'';
 rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="تم العمل"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><label class="chk"><input type="checkbox" id="M'+d+'On"> تنتهي في اليوم التالي</label></td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="دقائق الاستراحة"></td></tr>';}
 rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
 document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}

@@ -438,7 +438,7 @@ var curDates=[];
 function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
 var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Arbejdede</th><th>Indstempling</th><th>Udstempling</th><th>Natvagt</th><th>Pause (min)</th></tr>';
 var dn=['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
-for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' afkrydset':'';
+for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' checked':'';
 rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Arbejdede"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><label class="chk"><input type="checkbox" id="M'+d+'On"> Slutter næste dag</label></td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Pauseminutter"></td></tr>';}
 rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
 document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}

@@ -438,7 +438,7 @@ var curDates=[];
 function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
 var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>일함</th><th>출근</th><th>퇴근</th><th>야간 근무</th><th>휴게 (분)</th></tr>';
 var dn=['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
-for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' 체크됨':'';
+for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' checked':'';
 rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="일함"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><label class="chk"><input type="checkbox" id="M'+d+'On"> 다음 날 종료</label></td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="휴게 분"></td></tr>';}
 rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
 document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}
