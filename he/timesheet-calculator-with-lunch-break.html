@@ -421,7 +421,7 @@ var LH = (function () {
 
 function tv(p){return {h:+document.getElementById(p+'H').value,m:+document.getElementById(p+'M').value,ap:document.getElementById(p+'AP').value};}
 function gv(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
-function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'ב-'),tv(p+i+'יציאה'),gv(p+i+'Br'),paid));}return out;}
+function readGrid(p,n,paid){var out=[];for(var i=0;i<n;i++){if(!document.getElementById(p+i+'W').checked){out.push(0);continue;}out.push(LH.shiftMinutes(tv(p+i+'In'),tv(p+i+'Out'),gv(p+i+'Br'),paid));}return out;}
 function statBoxes(el,reg,ot,dt,pay){el.innerHTML=
  '<div class="stat"><div class="v">'+LH.fmtHM(reg+ot+dt)+'</div><div class="k">סך שעות ('+LH.decimal(reg+ot+dt).toFixed(2)+')</div></div>'
  +'<div class="stat"><div class="v">'+LH.fmtHM(reg)+'</div><div class="k">Regular</div></div>'
@@ -440,7 +440,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("השכר לשעה אינו יכול להיות שלילי, ולכן הוא טופל כ-$0.00. הזינו שכר של $0 או יותר.");rate=0;}var dn=["יום שני", "יום שלישי", "יום רביעי", "יום חמישי", "יום שישי", "יום שבת", "יום ראשון"];var auto=document.getElementById('autoLunch').value==='כן';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
 for(var i=0;i<7;i++){var dedEl=document.getElementById('L'+i+'Ded'),netEl=document.getElementById('L'+i+'Net');
 if(!document.getElementById('L'+i+'W').checked){days.push(0);dedEl.textContent='\u2014';netEl.textContent='\u2014';continue;}
-var onEl=document.getElementById('L'+i+'On');var overnight=!!(onEl&&onEl.checked);var inM=LH.parseTime(tv('L'+i+'ב-'));var outM=LH.parseTime(tv('L'+i+'יציאה'));if(inM===outM){msgs.push("{D}: שעת הכניסה ושעת היציאה זהות, ולכן יום זה נספר כ-0 דקות.".replace('{D}',dn[i]));}else if(outM<inM&&!overnight){msgs.push("{D}: שעת היציאה מוקדמת משעת הכניסה. סמנו את תיבת משמרת הלילה של אותו יום אם המשמרת מסתיימת למחרת; עד אז יום זה נספר כ-0 דקות.".replace('{D}',dn[i]));}var raw=LH.shiftMinutes(tv('L'+i+'ב-'),tv('L'+i+'יציאה'),0,true,overnight);var manual=gv('L'+i+'Br');var ded=manual;
+var onEl=document.getElementById('L'+i+'On');var overnight=!!(onEl&&onEl.checked);var inM=LH.parseTime(tv('L'+i+'In'));var outM=LH.parseTime(tv('L'+i+'Out'));if(inM===outM){msgs.push("{D}: שעת הכניסה ושעת היציאה זהות, ולכן יום זה נספר כ-0 דקות.".replace('{D}',dn[i]));}else if(outM<inM&&!overnight){msgs.push("{D}: שעת היציאה מוקדמת משעת הכניסה. סמנו את תיבת משמרת הלילה של אותו יום אם המשמרת מסתיימת למחרת; עד אז יום זה נספר כ-0 דקות.".replace('{D}',dn[i]));}var raw=LH.shiftMinutes(tv('L'+i+'In'),tv('L'+i+'Out'),0,true,overnight);var manual=gv('L'+i+'Br');var ded=manual;
 if(manual===0&&auto&&raw>=autoAfterMin)ded=autoMin;
 var net=Math.max(0,raw-ded);days.push(net);
 dedEl.textContent=ded>0?LH.fmtHM(ded):'0:00';netEl.textContent=LH.fmtHM(net);}
