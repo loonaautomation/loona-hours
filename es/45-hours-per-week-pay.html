@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calcular mi salario</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Acerca de esta página</h2><p>45 horas a la semana es una semana completa más 5 horas extra. Pasadas las 40 horas, las 5 horas adicionales son horas extra a 1.5× la tarifa regular según la regla federal.</p><p>La calculadora de abajo toma tu propia tarifa por hora y tus horas y calcula el salario bruto, el desglose de horas extra y los equivalentes mensuales y anuales. Cambia la tarifa por el salario mínimo de tu estado (las tarifas de 2026 están en la página Salario mínimo 2026) y las cifras se ajustan.</p></div><div class="sec"><h2>Cuánto paga: bruto, antes de impuestos</h2><table class="freq"><tr><th>Horario</th><th>Pago bruto</th></tr><tr><td>45 horas/semana a $15.00/h</td><td>$712.50</td></tr><tr><td>45 horas/semana a la tarifa federal de $7.25/h</td><td>$344.38</td></tr><tr><td>Mensual (a $15.00/h)</td><td>$3,087.50</td></tr><tr><td>Anual (a $15.00/h)</td><td>$37,050.00</td></tr><tr><td>Horas extra en la semana</td><td>5</td></tr></table><p>Solo el pago bruto: no se incluyen impuestos, Seguro Social, Medicare ni deducciones. Las horas extra se pagan a 1.5× la tarifa regular por las horas que superen las 40 en una semana laboral (y según las reglas diarias donde el estado las tenga).</p></div><div class="sec"><h2>Preguntas frecuentes</h2><details class="faq"><summary>¿Cuánto pagan 45 horas a la semana a $15 la hora?</summary><p>$712.50 brutos por semana, antes de impuestos.</p></details><details class="faq"><summary>¿45 horas a la semana incluyen horas extra?</summary><p>Sí — 5 horas son horas extra a 1.5×.</p></details><details class="faq"><summary>¿Es esto pago bruto o neto?</summary><p>Bruto — antes del impuesto sobre la renta, el Seguro Social y Medicare. El pago neto suele ser el 75–85% del bruto, según el estado y la situación fiscal del trabajador.</p></details></div><div class="sec"><h2>Herramientas de horas relacionadas</h2><div class="grid"><a class="card" href="45-hours-per-week-pay.html"><strong>Calculadora de pago semanal</strong><span>Pago bruto para cualquier número de horas y tarifa.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Salario mínimo 2026 — Todos los estados</strong><span>Cada estado y 20 ciudades, en una sola tabla.</span></a><a class="card" href="overtime-calculator.html"><strong>Calculadora de horas extra</strong><span>Pago de horas extra según la regla federal.</span></a><a class="card" href="hours-calculator.html"><strong>Calculadora de horas</strong><span>Suma horas entre días y semanas.</span></a><a class="card" href="time-card-calculator.html"><strong>Calculadora de tarjeta de tiempo</strong><span>Una hoja de horas semanal que se guarda en tu dispositivo.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Línea de pago</t
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("La tarifa por hora no puede ser negativa, por lo que se ha tratado como $0.00. Ingrese una tarifa de $0 o más.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Bruto semanal</div></div>'

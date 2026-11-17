@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">मेरे वेतन की गणना करें</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>इस पृष्ठ के बारे में</h2><p>सप्ताह में 25 घंटे नियमित दिनचर्या के साथ अंशकालिक है। 40 घंटे या उससे कम पर, यह सब सामान्य समय है — संघीय नियम के तहत कोई ओवरटाइम देय नहीं है।</p><p>नीचे दिया गया कैलकुलेटर आपकी अपनी प्रति-घंटा दर और घंटे लेता है और सकल वेतन, ओवरटाइम विभाजन और मासिक व वार्षिक समकक्ष निकालता है। दर को अपने राज्य की न्यूनतम मजदूरी में बदलें — 2026 की दरें न्यूनतम मजदूरी 2026 पृष्ठ पर हैं — और आंकड़े अनुसरण करते हैं।</p></div><div class="sec"><h2>यह क्या देता है — सकल, करों से पहले</h2><table class="freq"><tr><th>कार्यक्रम</th><th>सकल वेतन</th></tr><tr><td>25 घंटे/सप्ताह, $15.00/घंटा पर</td><td>$375.00</td></tr><tr><td>25 घंटे/सप्ताह, संघीय $7.25/घंटा पर</td><td>$181.25</td></tr><tr><td>मासिक ($15.00/घंटा पर)</td><td>$1,625.00</td></tr><tr><td>वार्षिक ($15.00/घंटा पर)</td><td>$19,500.00</td></tr><tr><td>सप्ताह में ओवरटाइम घंटे</td><td>0</td></tr></table><p>केवल सकल वेतन — कर, सामाजिक सुरक्षा, मेडिकेयर और कटौतियां शामिल नहीं हैं। ओवरटाइम का भुगतान कार्य सप्ताह में 40 से अधिक घंटों के लिए नियमित दर के 1.5× पर होता है (और दैनिक नियमों के तहत जहां राज्य में वे हैं)।</p></div><div class="sec"><h2>अक्सर पूछे जाने वाले प्रश्न</h2><details class="faq"><summary>$15 प्रति घंटा पर सप्ताह में 25 घंटे कितने के पड़ते हैं?</summary><p>$375.00 सकल प्रति सप्ताह, करों से पहले।</p></details><details class="faq"><summary>क्या सप्ताह में 25 घंटों में ओवरटाइम शामिल होता है?</summary><p>हां — नहीं, यह सब संघीय 40-घंटे नियम के तहत सामान्य समय है।</p></details><details class="faq"><summary>क्या यह सकल वेतन है या घर ले जाने वाला वेतन?</summary><p>सकल — आयकर, सामाजिक सुरक्षा और मेडिकेयर से पहले। घर ले जाने वाला वेतन आमतौर पर सकल का 75–85% होता है, राज्य और श्रमिक की कर स्थिति पर निर्भर करता है।</p></details></div><div class="sec"><h2>संबंधित घंटे टूल</h2><div class="grid"><a class="card" href="25-hours-per-week-pay.html"><strong>साप्ताहिक वेतन कैलकुलेटर</strong><span>किसी भी घंटों और दर के लिए सकल वेतन।</span></a><a class="card" href="minimum-wage-2026.html"><strong>न्यूनतम मजदूरी 2026 — सभी राज्य</strong><span>प्रत्येक राज्य और 20 शहर, एक तालिका में।</span></a><a class="card" href="overtime-calculator.html"><strong>ओवरटाइम कैलकुलेटर</strong><span>संघीय नियम के तहत ओवरटाइम वेतन।</span></a><a class="card" href="hours-calculator.html"><strong>घंटे कैलकुलेटर</strong><span>दिनों और सप्ताहों में घंटे जोड़ें।</span></a><a class="card" href="time-card-calculator.html"><strong>टाइम कार्ड कैलकुलेटर</strong><span>एक साप्ताहिक टाइमशीट जो आपके डिवाइस पर सहेजी जाती है।</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>वेतन प�
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("प्रति घंटा दर नकारात्मक नहीं हो सकती, इसलिए इसे $0.00 माना गया है। $0 या अधिक की दर दर्ज करें।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">साप्ताहिक सकल</div></div>'

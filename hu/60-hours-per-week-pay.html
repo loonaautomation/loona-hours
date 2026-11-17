@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Bérem kiszámítása</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Erről az oldalról</h2><p>Heti 60 óra az 60 órás munkahét — 20 túlóra. 40 óra felett a plusz 20 óra túlóra, a rendes díj 1.5-szeresével, a szövetségi szabály szerint.</p><p>Az alábbi kalkulátor az Ön saját óradíját és óráit veszi, és kiszámítja a bruttó bért, a túlóra-felosztást és a havi és éves megfelelőket. Váltson a díjon az állama minimálbérére — a 2026-os díjak a Minimálbér 2026 oldalon vannak —, és a számok követik.</p></div><div class="sec"><h2>Amit fizet — bruttó, adózás előtt</h2><table class="freq"><tr><th>Beosztás</th><th>Bruttó bér</th></tr><tr><td>60 óra hetente $15.00/óra mellett</td><td>$1,050.00</td></tr><tr><td>60 óra hetente a szövetségi $7.25/óra mellett</td><td>$507.50</td></tr><tr><td>Havi ($15.00/óra mellett)</td><td>$4,550.00</td></tr><tr><td>Éves ($15.00/óra mellett)</td><td>$54,600.00</td></tr><tr><td>Túlórák a héten</td><td>20</td></tr></table><p>Csak bruttó bér — az adók, a Social Security, a Medicare és a levonások nincsenek benne. A túlórát a rendes díj 1.5-szeresével fizetik a munkahét 40 feletti óráiért (és a napi szabályok szerint ott, ahol az államnak vannak ilyenjei).</p></div><div class="sec"><h2>Gyakran ismételt kérdések</h2><details class="faq"><summary>Mennyit fizet heti 60 óra $15 óránkénti bér mellett?</summary><p>$1,050.00 bruttó hetente, adózás előtt.</p></details><details class="faq"><summary>Tartalmaz-e a heti 60 óra túlórát?</summary><p>Igen — 20 óra túlóra 1.5× díjjal.</p></details><details class="faq"><summary>Ez bruttó vagy nettó bér?</summary><p>Bruttó — jövedelemadó, Social Security és Medicare előtt. A nettó bér jellemzően a bruttó 75–85%-a, az államtól és a dolgozó adózási helyzetétől függően.</p></details></div><div class="sec"><h2>Kapcsolódó óraeszközök</h2><div class="grid"><a class="card" href="60-hours-per-week-pay.html"><strong>Heti bérkalkulátor</strong><span>Bruttó bér bármilyen órákra és díjra.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Minimálbér 2026 — minden állam</strong><span>Minden állam és 20 város, egyetlen táblázatban.</span></a><a class="card" href="overtime-calculator.html"><strong>Túlórakalkulátor</strong><span>Túlórabér a szövetségi szabály szerint.</span></a><a class="card" href="hours-calculator.html"><strong>Órakalkulátor</strong><span>Adja össze az órákat a napokon és heteken át.</span></a><a class="card" href="time-card-calculator.html"><strong>Munkaidő-kalkulátor</strong><span>Heti munkaidő-nyilvántartás, amely az eszközére ment.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Bértétel</th><t
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Az órabér nem lehet negatív, ezért $0,00-ként lett kezelve. Adjon meg $0 vagy annál nagyobb bért.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Heti bruttó</div></div>'

@@ -109,6 +109,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calculate my pay</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>About this page</h2><p>40 hours a week is the standard full-time week. At 40 hours or fewer, all of it is straight time — no overtime is due under the federal rule.</p><p>The calculator below takes your own hourly rate and hours and works out the gross pay, the overtime split and the monthly and annual equivalents. Change the rate to your state’s minimum wage — the 2026 rates are on the Minimum Wage 2026 page — and the figures follow.</p></div><div class="sec"><h2>What it pays — gross, before taxes</h2><table class="freq"><tr><th>Schedule</th><th>Gross pay</th></tr><tr><td>40 hours/week at $15.00/hr</td><td>$600.00</td></tr><tr><td>40 hours/week at the federal $7.25/hr</td><td>$290.00</td></tr><tr><td>Monthly (at $15.00/hr)</td><td>$2,600.00</td></tr><tr><td>Annual (at $15.00/hr)</td><td>$31,200.00</td></tr><tr><td>Overtime hours in the week</td><td>0</td></tr></table><p>Gross pay only — taxes, Social Security, Medicare and deductions are not included. Overtime is paid at 1.5× the regular rate for hours over 40 in a workweek (and under the daily rules where the state has them).</p></div><div class="sec"><h2>Frequently asked questions</h2><details class="faq"><summary>How much is 40 hours a week at $15 an hour?</summary><p>$600.00 gross per week, before taxes.</p></details><details class="faq"><summary>Does 40 hours a week include overtime?</summary><p>Yes — no, all of it is straight time under the federal 40-hour rule.</p></details><details class="faq"><summary>Is this gross or take-home pay?</summary><p>Gross — before income tax, Social Security and Medicare. Take-home pay is typically 75–85% of gross, depending on the state and the worker’s tax situation.</p></details></div><div class="sec"><h2>Related Hours Tools</h2><div class="grid"><a class="card" href="40-hours-per-week-pay.html"><strong>Weekly Pay Calculator</strong><span>Gross pay for any hours and rate.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Minimum Wage 2026 — All States</strong><span>Every state and 20 cities, in one table.</span></a><a class="card" href="overtime-calculator.html"><strong>Overtime Calculator</strong><span>Overtime pay under the federal rule.</span></a><a class="card" href="hours-calculator.html"><strong>Hours Calculator</strong><span>Add up hours across days and weeks.</span></a><a class="card" href="time-card-calculator.html"><strong>Time Card Calculator</strong><span>A weekly timesheet that saves on your device.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -141,11 +142,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -157,10 +160,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -188,6 +191,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -383,7 +388,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th 
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Weekly gross</div></div>'
