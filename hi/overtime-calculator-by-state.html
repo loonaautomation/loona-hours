@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("प्रति घंटा दर नकारात्मक नहीं हो सकती, इसलिए इसे $0.00 माना गया है। $0 या अधिक की दर दर्ज करें।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='हां'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>कैलिफ़ोर�
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> में एक दिन में 8 घंटे के बाद 1.5x पर दैनिक ओवरटाइम आवश्यक है, 40 घंटे के बाद के साप्ताहिक ओवरटाइम के अतिरिक्त (प्रीमियम घंटे कभी दो बार नहीं गिने जाते)।';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> में एक सप्ताह में 40 घंटे, एक दिन में 12 घंटे, या लगातार 12 घंटे के बाद ओवरटाइम आवश्यक है — जो भी कर्मचारी के लिए सबसे अधिक लाभदायक हो।';}
 else if(st.ruleType==='nevada'){ruleText='<strong>नेवादा</strong> में कार्यदिवस में 8 घंटे के बाद दैनिक ओवरटाइम आवश्यक है <strong>केवल तब जब नियमित दर राज्य की न्यूनतम मजदूरी के 1.5x से कम हो</strong> ($12.00 न्यूनतम पर $18.00)। आपकी दर '+LH.money(rate)+' का अर्थ है '+(rate<1.5*st.minWage?'<strong>दैनिक</strong> नियम इस अनुमान पर लागू होता है।':'<strong>केवल साप्ताहिक</strong> नियम इस अनुमान पर लागू होता है।');}
-else if(st.ruleType==='oregon'){ruleText='<strong>ओरेगन</strong>: अधिकांश नियोक्ता सप्ताह में 40 घंटे के बाद ही ओवरटाइम के देनदार होते हैं। एक दिन में 10 घंटे के बाद दैनिक ओवरटाइम मिलों, कारखानों और विनिर्माण में लागू होता है, जिसका भुगतान दैनिक या साप्ताहिक ओवरटाइम में से जो अधिक हो उसके अनुसार किया जाता है। इस अनुमान में उपयोग किया गया '+(document.getElementById('indSel').value==='हां'?'<strong>विनिर्माण</strong>':'<strong>मानक</strong>')+' नियम।';}
+else if(st.ruleType==='oregon'){ruleText='<strong>ओरेगन</strong>: अधिकांश नियोक्ता सप्ताह में 40 घंटे के बाद ही ओवरटाइम के देनदार होते हैं। एक दिन में 10 घंटे के बाद दैनिक ओवरटाइम मिलों, कारखानों और विनिर्माण में लागू होता है, जिसका भुगतान दैनिक या साप्ताहिक ओवरटाइम में से जो अधिक हो उसके अनुसार किया जाता है। इस अनुमान में उपयोग किया गया '+(document.getElementById('indSel').value==='yes'?'<strong>विनिर्माण</strong>':'<strong>मानक</strong>')+' नियम।';}
 var src=st.sourceUrl?'<br>आधिकारिक स्रोत: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>आधिकारिक स्रोत: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">अंतिम सत्यापन: नवंबर 2026। क्षेत्र-विशिष्ट और सार्वजनिक नियोक्ता नियम अलग हो सकते हैं।</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

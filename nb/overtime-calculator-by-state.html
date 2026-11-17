@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Timelønnen kan ikke være negativ, så den er behandlet som $0,00. Skriv inn en lønn på $0 eller mer.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='ja'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>California</strong> har fu
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> krever daglig overtid med 1.5x etter 8 timer på én dag, i tillegg til ukentlig overtid etter 40 (tilleggstimer telles aldri to ganger).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> krever overtid etter 40 timer i en uke, 12 timer på én dag, eller 12 timer på rad — det som gagner den ansatte mest.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> krever daglig overtid etter 8 timer på en arbeidsdag <strong>kun når den ordinære satsen er under 1.5x av delstatens minstelønn</strong> ($18.00 ved minimumen på $12.00). Satsen din på '+LH.money(rate)+' betyr '+(rate<1.5*st.minWage?'<strong>daglige</strong> regelen gjelder for dette estimatet.':'<strong>kun-ukentlige</strong> regelen gjelder for dette estimatet.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: de fleste arbeidsgivere skylder overtid kun etter 40 timer i en uke. Daglig overtid etter 10 timer gjelder i møller, fabrikker og produksjon, betalt som det største av daglig eller ukentlig overtid. Dette estimatet brukte '+(document.getElementById('indSel').value==='ja'?'<strong>produksjon</strong>':'<strong>standard</strong>')+' regel.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: de fleste arbeidsgivere skylder overtid kun etter 40 timer i en uke. Daglig overtid etter 10 timer gjelder i møller, fabrikker og produksjon, betalt som det største av daglig eller ukentlig overtid. Dette estimatet brukte '+(document.getElementById('indSel').value==='yes'?'<strong>produksjon</strong>':'<strong>standard</strong>')+' regel.';}
 var src=st.sourceUrl?'<br>Offisiell kilde: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Offisiell kilde: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Sist verifisert: november 2026. Sektorspesifikke regler og regler for offentlige arbeidsgivere kan avvike.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

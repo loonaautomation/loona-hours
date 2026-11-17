@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push("Príchod: čas príchodu a odchodu je rovnaký, takže sa tento deň počíta ako 0 minút.");}else if(outM<inM&&!overnight){msgs.push("Príchod: čas odchodu je pred časom príchodu. Začiarknite pri tomto dni políčko nočnej zmeny, ak zmena končí nasledujúci deň; dovtedy sa tento deň počíta ako 0 minút.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
-var paidB=(document.getElementById('b1p').value==='áno'?gv('b1'):0)+(document.getElementById('b2p').value==='áno'?gv('b2'):0);
+var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
 var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push("Hodinová sadzba nemôže byť záporná, preto bola považovaná za $0,00. Zadajte sadzbu $0 alebo vyššiu.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">Čas na pracovisku</div></div>'

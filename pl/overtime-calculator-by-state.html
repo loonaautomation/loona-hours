@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Stawka godzinowa nie może być ujemna, więc została potraktowana jako $0,00. Wpisz stawkę $0 lub wyższą.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='tak'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Kalifornia</strong> ma pe�
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> wymaga dziennych nadgodzin 1.5x po 8 godzinach w dniu, oprócz tygodniowych nadgodzin po 40 (godziny premiowane nigdy nie są liczone podwójnie).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> wymaga nadgodzin po 40 godzinach w tygodniu, 12 godzinach w dniu lub 12 kolejnych godzinach — w zależności od tego, co jest najkorzystniejsze dla pracownika.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> wymaga dziennych nadgodzin po 8 godzinach w dniu roboczym <strong>tylko wtedy, gdy stawka podstawowa jest niższa niż 1.5x stanowej płacy minimalnej</strong> ($18.00 przy minimum $12.00). Twoja stawka '+LH.money(rate)+' oznacza '+(rate<1.5*st.minWage?'<strong>dzienna</strong> zasada ma zastosowanie do tego oszacowania.':'<strong>tylko tygodniowa</strong> zasada ma zastosowanie do tego oszacowania.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: większość pracodawców jest winna nadgodziny dopiero po 40 godzinach tygodniowo. Dzienne nadgodziny po 10 godzinach obowiązują w młynach, fabrykach i przemyśle, płatne jako większa z kwot: dzienne lub tygodniowe nadgodziny. To oszacowanie użyło '+(document.getElementById('indSel').value==='tak'?'<strong>przemysł</strong>':'<strong>standardowa</strong>')+' zasada.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: większość pracodawców jest winna nadgodziny dopiero po 40 godzinach tygodniowo. Dzienne nadgodziny po 10 godzinach obowiązują w młynach, fabrykach i przemyśle, płatne jako większa z kwot: dzienne lub tygodniowe nadgodziny. To oszacowanie użyło '+(document.getElementById('indSel').value==='yes'?'<strong>przemysł</strong>':'<strong>standardowa</strong>')+' zasada.';}
 var src=st.sourceUrl?'<br>Oficjalne źródło: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Oficjalne źródło: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Ostatnia weryfikacja: listopad 2026. Zasady sektorowe i dotyczące pracodawców publicznych mogą się różnić.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

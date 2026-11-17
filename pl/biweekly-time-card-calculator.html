@@ -438,7 +438,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pozycja płacowa<
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
 var lastData=null;
-function weekBlock(p,label){gridLabel=label;var days=readGrid(p,7,document.getElementById('breakPaid').value==='tak');var split=LH.splitFederalWeek(days);return {label:label,days:days,split:split,msgs:gridMsgs.slice()};}
+function weekBlock(p,label){gridLabel=label;var days=readGrid(p,7,document.getElementById('breakPaid').value==='yes');var split=LH.splitFederalWeek(days);return {label:label,days:days,split:split,msgs:gridMsgs.slice()};}
 function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Stawka godzinowa nie może być ujemna, więc została potraktowana jako $0,00. Wpisz stawkę $0 lub wyższą.");rate=0;}var w1=weekBlock('A','Tydzień 1'),w2=weekBlock('B','Tydzień 2');lastData=[w1,w2];msgs=msgs.concat(w1.msgs);msgs=msgs.concat(w2.msgs);var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var reg=w1.split.regMin+w2.split.regMin,ot=w1.split.otMin+w2.split.otMin;
 var pay=LH.grossPay(reg,ot,0,rate);

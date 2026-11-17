@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Погодинна ставка не може бути від'ємною, тому її прийнято як $0,00. Введіть ставку $0 або вище.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='так'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Каліфорнія</stro
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> вимагає щоденних понаднормових за 1.5x після 8 годин на день, на додаток до тижневих понаднормових після 40 (преміальні години ніколи не рахуються двічі).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> вимагає понаднормових після 40 годин на тиждень, 12 годин на день або 12 годин поспіль — що вигідніше працівникові.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Невада</strong> вимагає щоденних понаднормових після 8 годин у робочий день <strong>лише коли звичайна ставка нижче 1.5x від мінімальної заробітної плати штату</strong> ($18.00 за мінімуму $12.00). Ваша ставка '+LH.money(rate)+' означає '+(rate<1.5*st.minWage?'<strong>щоденне</strong> правило застосовується до цієї оцінки.':'<strong>лише тижневе</strong> правило застосовується до цієї оцінки.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Орегон</strong>: більшість роботодавців зобов’язані понаднормові лише після 40 годин на тиждень. Щоденні понаднормові після 10 годин застосовуються на млинах, заводах і виробництві, оплачені як більше зі щоденних або тижневих понаднормових. Ця оцінка використала '+(document.getElementById('indSel').value==='так'?'<strong>виробництво</strong>':'<strong>стандартне</strong>')+'правило.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Орегон</strong>: більшість роботодавців зобов’язані понаднормові лише після 40 годин на тиждень. Щоденні понаднормові після 10 годин застосовуються на млинах, заводах і виробництві, оплачені як більше зі щоденних або тижневих понаднормових. Ця оцінка використала '+(document.getElementById('indSel').value==='yes'?'<strong>виробництво</strong>':'<strong>стандартне</strong>')+'правило.';}
 var src=st.sourceUrl?'<br>Офіційне джерело: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Офіційне джерело: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Востаннє перевірено: листопад 2026. Правила за секторами та для державних роботодавців можуть відрізнятися.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

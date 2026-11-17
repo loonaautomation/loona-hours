@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push("ক্লক ইন: আসা ও যাওয়ার সময় একই, তাই এই দিনটি 0 মিনিট হিসাবে গণনা করা হবে।");}else if(outM<inM&&!overnight){msgs.push("ক্লক ইন: যাওয়ার সময় আসার সময়ের আগে। শিফট পরের দিন শেষ হলে সেই দিনের রাতের শিফট বাক্সে টিক দিন; ততক্ষণ পর্যন্ত এই দিনটি 0 মিনিট হিসাবে গণনা করা হবে।");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
-var paidB=(document.getElementById('b1p').value==='হ্যাঁ'?gv('b1'):0)+(document.getElementById('b2p').value==='হ্যাঁ'?gv('b2'):0);
+var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
 var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push("ঘণ্টার হার ঋণাত্মক হতে পারে না, তাই এটি $0.00 হিসাবে ধরা হয়েছে। $0 বা তার বেশি হার লিখুন।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">ঘড়িতে সময়</div></div>'

@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("השכר לשעה אינו יכול להיות שלילי, ולכן הוא טופל כ-$0.00. הזינו שכר של $0 או יותר.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='כן'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>קליפורניה</strong
 else if(st.ruleType==='יומי8'){ruleText='<strong>'+st.name+'</strong> דורשת שעות נוספות יומיות ב-1.5x אחרי 8 שעות ביום, בנוסף לשעות נוספות שבועיות אחרי 40 (שעות תוספת לעולם אינן נספרות פעמיים).';}
 else if(st.ruleType==='יומי12'){ruleText='<strong>'+st.name+'</strong> דורשת שעות נוספות אחרי 40 שעות בשבוע, 12 שעות ביום, או 12 שעות רצופות — מי שמועיל לעובד ביותר.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>נבדה</strong> דורשת שעות נוספות יומיות אחרי 8 שעות ביום עבודה <strong>רק כאשר התעריף הרגיל מתחת ל-1.5x שכר המינימום של המדינה</strong> ($18.00 במינימום של $12.00). התעריף שלך '+LH.money(rate)+' פירושו ה-'+(rate<1.5*st.minWage?'כלל <strong>יומי</strong> חל על אומדן זה.':'כלל <strong>שבועי-בלבד</strong> חל על אומדן זה.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>אורגון</strong>: רוב המעסיקים חייבים שעות נוספות רק אחרי 40 שעות בשבוע. שעות נוספות יומיות אחרי 10 שעות חלות בטחנות, מפעלים וייצור, משולמות כהגדול מבין היומי או השבועי. אומדן זה השתמש ב-'+(document.getElementById('indSel').value==='כן'?'<strong>ייצור</strong>':'<strong>סטנדרטי</strong>')+' כלל.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>אורגון</strong>: רוב המעסיקים חייבים שעות נוספות רק אחרי 40 שעות בשבוע. שעות נוספות יומיות אחרי 10 שעות חלות בטחנות, מפעלים וייצור, משולמות כהגדול מבין היומי או השבועי. אומדן זה השתמש ב-'+(document.getElementById('indSel').value==='yes'?'<strong>ייצור</strong>':'<strong>סטנדרטי</strong>')+' כלל.';}
 var src=st.sourceUrl?'<br>מקור רשמי: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>מקור רשמי: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">אומת לאחרונה: נובמבר 2026. כללים ספציפיים למגזר ולמעסיקים ציבוריים יכולים להיות שונים.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

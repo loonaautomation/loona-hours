@@ -431,7 +431,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Stavka plaće</th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('paid').value==='da';var mode=document.getElementById('roundMode').value;
+function calc(){var paid=document.getElementById('paid').value==='yes';var mode=document.getElementById('roundMode').value;
 var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.roundMinutes(LH.parseTime(tv('inT')),mode);var outM=LH.roundMinutes(LH.parseTime(tv('outT')),mode);var msgs=[];if(inM===outM){msgs.push("Prijava: vrijeme dolaska i odlaska je isto, pa se ovaj dan računa kao 0 minuta.");}else if(outM<inM&&!overnight){msgs.push("Prijava: vrijeme odlaska je prije vremena dolaska. Označite okvir za noćnu smjenu za taj dan ako smjena završava sljedeći dan; do tada se ovaj dan računa kao 0 minuta.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var net=LH.roundedShiftMinutes(tv('inT'),tv('outT'),gv('brk'),paid,mode,overnight);
 var rate=gv('rate2');if(rate<0){msgs.push("Satnica ne može biti negativna, pa je tretirana kao $0,00. Unesite satnicu od $0 ili više.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var pay=LH.grossPay(net,0,0,rate);

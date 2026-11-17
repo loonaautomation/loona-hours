@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Часовата ставка не може да бъде отрицателна, затова е приета като $0,00. Въведете ставка от $0 или повече.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='да'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Калифорния</stro
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> изисква дневен извънреден труд при 1.5x след 8 часа на ден, в допълнение към седмичния извънреден труд след 40 (часовете с надбавка никога не се броят два пъти).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> изисква извънреден труд след 40 часа седмично, 12 часа на ден или 12 последователни часа — което облагодетелства служителя най-много.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Невада</strong> изисква дневен извънреден труд след 8 часа в работен ден <strong>само когато редовната ставка е под 1.5x щатската минимална заплата</strong> ($18.00 при минимална от $12.00). Вашата ставка от '+LH.money(rate)+' означава '+(rate<1.5*st.minWage?'Прилага се <strong>дневното</strong> правило за тази оценка.':'Прилага се правилото <strong>само седмично</strong> за тази оценка.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Орегон</strong>: повечето работодатели дължат извънреден труд само след 40 часа седмично. Дневният извънреден труд след 10 часа се прилага в мелници, фабрики и производство, платен като по-голямото от дневния или седмичния извънреден труд. Тази оценка използва '+(document.getElementById('indSel').value==='да'?'<strong>производство</strong>':'<strong>стандартно</strong>')+' правило.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Орегон</strong>: повечето работодатели дължат извънреден труд само след 40 часа седмично. Дневният извънреден труд след 10 часа се прилага в мелници, фабрики и производство, платен като по-голямото от дневния или седмичния извънреден труд. Тази оценка използва '+(document.getElementById('indSel').value==='yes'?'<strong>производство</strong>':'<strong>стандартно</strong>')+' правило.';}
 var src=st.sourceUrl?'<br>Официален източник: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Официален източник: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Последна проверка: ноември 2026. Правилата за конкретни сектори и публични работодатели могат да се различават.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

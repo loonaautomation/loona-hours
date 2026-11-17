@@ -431,7 +431,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Baris gaji</th><t
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('paid').value==='Ya';var mode=document.getElementById('roundMode').value;
+function calc(){var paid=document.getElementById('paid').value==='yes';var mode=document.getElementById('roundMode').value;
 var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.roundMinutes(LH.parseTime(tv('inT')),mode);var outM=LH.roundMinutes(LH.parseTime(tv('outT')),mode);var msgs=[];if(inM===outM){msgs.push("Masa Masuk: masa masuk dan keluar adalah sama, jadi hari ini dikira sebagai 0 minit.");}else if(outM<inM&&!overnight){msgs.push("Masa Masuk: masa keluar lebih awal daripada masa masuk. Tandakan kotak syif malam untuk hari itu jika syif berakhir keesokan harinya; sehingga itu, hari ini dikira sebagai 0 minit.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var net=LH.roundedShiftMinutes(tv('inT'),tv('outT'),gv('brk'),paid,mode,overnight);
 var rate=gv('rate2');if(rate<0){msgs.push("Kadar sejam tidak boleh negatif, jadi ia dianggap sebagai $0.00. Masukkan kadar $0 atau lebih.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var pay=LH.grossPay(net,0,0,rate);

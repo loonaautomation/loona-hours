@@ -431,7 +431,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Línea de pago</t
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('paid').value==='sí';var mode=document.getElementById('roundMode').value;
+function calc(){var paid=document.getElementById('paid').value==='yes';var mode=document.getElementById('roundMode').value;
 var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.roundMinutes(LH.parseTime(tv('inT')),mode);var outM=LH.roundMinutes(LH.parseTime(tv('outT')),mode);var msgs=[];if(inM===outM){msgs.push("Entrada: la hora de entrada y de salida son iguales, por lo que este día cuenta como 0 minutos.");}else if(outM<inM&&!overnight){msgs.push("Entrada: la hora de salida es anterior a la de entrada. Marque la casilla de turno nocturno de ese día si el turno termina al día siguiente; hasta entonces, este día cuenta como 0 minutos.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var net=LH.roundedShiftMinutes(tv('inT'),tv('outT'),gv('brk'),paid,mode,overnight);
 var rate=gv('rate2');if(rate<0){msgs.push("La tarifa por hora no puede ser negativa, por lo que se ha tratado como $0.00. Ingrese una tarifa de $0 o más.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var pay=LH.grossPay(net,0,0,rate);

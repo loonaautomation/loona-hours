@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Hodinová sazba nemůže být záporná, proto byla považována za $0,00. Zadejte sazbu $0 nebo vyšší.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='ano'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Kalifornie</strong> má pl
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> vyžaduje denní přesčasy 1.5x po 8 hodinách za den, navíc k týdenním přesčasům po 40 (prémiové hodiny se nikdy nepočítají dvakrát).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> vyžaduje přesčasy po 40 hodinách v týdnu, 12 hodinách za den nebo 12 po sobě jdoucích hodinách — podle toho, co zaměstnanci nejvíce prospívá.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> vyžaduje denní přesčasy po 8 hodinách v pracovním dni <strong>pouze tehdy, když je běžná sazba nižší než 1.5x státní minimální mzda</strong> ($18.00 při minimu $12.00). Vaše sazba '+LH.money(rate)+' znamená '+(rate<1.5*st.minWage?'<strong>denní</strong> pravidlo platí pro tento odhad.':'<strong>pouze týdenní</strong> pravidlo platí pro tento odhad.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: většina zaměstnavatelů dluží přesčasy pouze po 40 hodinách týdně. Denní přesčasy po 10 hodinách platí v mlýnech, továrnách a výrobě, placené jako větší z denních nebo týdenních přesčasů. Tento odhad použil '+(document.getElementById('indSel').value==='ano'?'<strong>výroba</strong>':'<strong>standardní</strong>')+' pravidlo.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: většina zaměstnavatelů dluží přesčasy pouze po 40 hodinách týdně. Denní přesčasy po 10 hodinách platí v mlýnech, továrnách a výrobě, placené jako větší z denních nebo týdenních přesčasů. Tento odhad použil '+(document.getElementById('indSel').value==='yes'?'<strong>výroba</strong>':'<strong>standardní</strong>')+' pravidlo.';}
 var src=st.sourceUrl?'<br>Oficiální zdroj: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Oficiální zdroj: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Poslední ověření: listopad 2026. Pravidla pro konkrétní odvětví a veřejné zaměstnavatele se mohou lišit.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

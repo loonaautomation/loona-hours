@@ -438,7 +438,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Рядок опл
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('breakPaid').value==='так';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("Погодинна ставка не може бути від'ємною, тому її прийнято як $0,00. Введіть ставку $0 або вище.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
+function calc(){var paid=document.getElementById('breakPaid').value==='yes';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("Погодинна ставка не може бути від'ємною, тому її прийнято як $0,00. Введіть ставку $0 або вище.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var split=LH.splitCaliforniaWeek(days);var pay=LH.grossPay(split.regMin,split.otMin,split.dtMin,rate);
 statBoxes(document.getElementById('stats'),split.regMin,split.otMin,split.dtMin,pay.total);
 var dn=['Понеділок','Вівторок','Середа','Четвер','П’ятниця','Субота','Неділя'];

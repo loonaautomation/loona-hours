@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("ঘণ্টার হার ঋণাত্মক হতে পারে না, তাই এটি $0.00 হিসাবে ধরা হয়েছে। $0 বা তার বেশি হার লিখুন।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='হ্যাঁ'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>California</strong>-তে
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> দিনে 8 ঘণ্টার পর 1.5x হারে দৈনিক ওভারটাইম বাধ্যতামূলক করে, 40-এর পর সাপ্তাহিক ওভারটাইমের পাশাপাশি (প্রিমিয়াম ঘণ্টা কখনো দুবার গণনা হয় না)।';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> সপ্তাহে 40 ঘণ্টা, দিনে 12 ঘণ্টা, অথবা টানা 12 ঘণ্টার পর ওভারটাইম বাধ্যতামূলক করে — যেটি কর্মচারীর জন্য সবচেয়ে সুবিধাজনক।';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> কর্মদিবসে 8 ঘণ্টার পর দৈনিক ওভারটাইম বাধ্যতামূলক করে <strong>শুধু যখন নিয়মিত হার রাজ্যের ন্যূনতম মজুরির 1.5x-এর নিচে থাকে</strong> ($12.00 ন্যূনতমে $18.00)। আপনার হার '+LH.money(rate)+' মানে '+(rate<1.5*st.minWage?'<strong>দৈনিক</strong> নিয়ম এই হিসাবে প্রযোজ্য।':'<strong>শুধু-সাপ্তাহিক</strong> নিয়ম এই হিসাবে প্রযোজ্য।');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: বেশিরভাগ নিয়োগকর্তা শুধু সপ্তাহে 40 ঘণ্টার পরই ওভারটাইম দেন। দিনে 10 ঘণ্টার পর দৈনিক ওভারটাইম মিল, কারখানা ও উৎপাদনে প্রযোজ্য, দৈনিক বা সাপ্তাহিক ওভারটাইমের মধ্যে বড়টি হিসাবে পরিশোধ হয়। এই হিসাবটি ব্যবহার করেছে '+(document.getElementById('indSel').value==='হ্যাঁ'?'<strong>উৎপাদন</strong>':'<strong>মানক</strong>')+' নিয়ম।';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: বেশিরভাগ নিয়োগকর্তা শুধু সপ্তাহে 40 ঘণ্টার পরই ওভারটাইম দেন। দিনে 10 ঘণ্টার পর দৈনিক ওভারটাইম মিল, কারখানা ও উৎপাদনে প্রযোজ্য, দৈনিক বা সাপ্তাহিক ওভারটাইমের মধ্যে বড়টি হিসাবে পরিশোধ হয়। এই হিসাবটি ব্যবহার করেছে '+(document.getElementById('indSel').value==='yes'?'<strong>উৎপাদন</strong>':'<strong>মানক</strong>')+' নিয়ম।';}
 var src=st.sourceUrl?'<br>সরকারি উৎস: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>সরকারি উৎস: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">সর্বশেষ যাচাই: নভেম্বর 2026। খাত-নির্দিষ্ট ও সরকারি-নিয়োগকর্তার নিয়ম ভিন্ন হতে পারে।</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

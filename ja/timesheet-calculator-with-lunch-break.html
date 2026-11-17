@@ -437,7 +437,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>給与明細行</
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("時給はマイナスにできないため、$0.00として扱われました。$0以上の時給を入力してください。");rate=0;}var dn=["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日"];var auto=document.getElementById('autoLunch').value==='はい';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
+function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("時給はマイナスにできないため、$0.00として扱われました。$0以上の時給を入力してください。");rate=0;}var dn=["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日"];var auto=document.getElementById('autoLunch').value==='yes';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
 for(var i=0;i<7;i++){var dedEl=document.getElementById('L'+i+'Ded'),netEl=document.getElementById('L'+i+'Net');
 if(!document.getElementById('L'+i+'W').checked){days.push(0);dedEl.textContent='\u2014';netEl.textContent='\u2014';continue;}
 var onEl=document.getElementById('L'+i+'On');var overnight=!!(onEl&&onEl.checked);var inM=LH.parseTime(tv('L'+i+'In'));var outM=LH.parseTime(tv('L'+i+'Out'));if(inM===outM){msgs.push("{D}: 出勤時刻と退勤時刻が同じため、この日は0分として計算されます。".replace('{D}',dn[i]));}else if(outM<inM&&!overnight){msgs.push("{D}: 退勤時刻が出勤時刻より前になっています。シフトが翌日に終了する場合は、その日の夜勤ボックスにチェックを入れてください。それまでは、この日は0分として計算されます。".replace('{D}',dn[i]));}var raw=LH.shiftMinutes(tv('L'+i+'In'),tv('L'+i+'Out'),0,true,overnight);var manual=gv('L'+i+'Br');var ded=manual;

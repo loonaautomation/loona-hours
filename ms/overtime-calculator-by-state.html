@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Kadar sejam tidak boleh negatif, jadi ia dianggap sebagai $0.00. Masukkan kadar $0 atau lebih.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='Ya'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>California</strong> memili
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> mewajibkan lebih masa harian pada kadar 1.5x setelah 8 jam dalam sehari, di samping lebih masa mingguan setelah 40 (jam premium tidak pernah dikira dua kali).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> mewajibkan lebih masa setelah 40 jam dalam seminggu, 12 jam dalam sehari, atau 12 jam berturut-turut — mana pun yang paling menguntungkan pekerja.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> mewajibkan lebih masa harian setelah 8 jam dalam sehari kerja <strong>hanya ketika kadar biasa di bawah 1.5x gaji minimum negeri</strong> ($18.00 pada gaji minimum $12.00). Kadar anda sebanyak '+LH.money(rate)+' bermaksud '+(rate<1.5*st.minWage?'peraturan <strong>harian</strong> berlaku untuk anggaran ini.':'peraturan <strong>khusus mingguan</strong> berlaku untuk anggaran ini.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: sebahagian besar majikan hanya mewajibkan lebih masa setelah 40 jam seminggu. Lebih masa harian setelah 10 jam berlaku di kilang penggilingan, kilang, dan pembuatan, dibayar sebagai yang lebih besar daripada lebih masa harian atau mingguan. Anggaran ini menggunakan '+(document.getElementById('indSel').value==='Ya'?'<strong>pembuatan</strong>':'<strong>standard</strong>')+' peraturan.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: sebahagian besar majikan hanya mewajibkan lebih masa setelah 40 jam seminggu. Lebih masa harian setelah 10 jam berlaku di kilang penggilingan, kilang, dan pembuatan, dibayar sebagai yang lebih besar daripada lebih masa harian atau mingguan. Anggaran ini menggunakan '+(document.getElementById('indSel').value==='yes'?'<strong>pembuatan</strong>':'<strong>standard</strong>')+' peraturan.';}
 var src=st.sourceUrl?'<br>Sumber rasmi: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Sumber rasmi: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Kali terakhir disahkan: November 2026. Peraturan spesifik sektor dan majikan awam dapat berbeza.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

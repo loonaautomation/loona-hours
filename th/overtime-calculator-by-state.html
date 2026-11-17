@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("อัตราค่าจ้างรายชั่วโมงติดลบไม่ได้ จึงถือว่าเป็น $0.00 โปรดป้อนอัตราตั้งแต่ $0 ขึ้นไป");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='ใช่'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>แคลิฟอร์�
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> กำหนดการทำงานล่วงเวลารายวันที่ 1.5x หลังจาก 8 ชั่วโมงในหนึ่งวัน เพิ่มเติมจากการทำงานล่วงเวลารายสัปดาห์หลังจาก 40 ชั่วโมง (ชั่วโมงพรีเมียมไม่มีวันถูกนับซ้ำ)';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> กำหนดการทำงานล่วงเวลาหลังจาก 40 ชั่วโมงในหนึ่งสัปดาห์ 12 ชั่วโมงในหนึ่งวัน หรือ 12 ชั่วโมงติดต่อกัน — อย่างใดก็ตามที่เป็นประโยชน์ต่อพนักงานมากที่สุด';}
 else if(st.ruleType==='nevada'){ruleText='<strong>เนวาดา</strong> กำหนดการทำงานล่วงเวลารายวันหลังจาก 8 ชั่วโมงในหนึ่งวันทำงาน <strong>เฉพาะเมื่ออัตราปกติต่ำกว่า 1.5x ของค่าจ้างขั้นต่ำรัฐ</strong> ($18.00 ที่ค่าจ้างขั้นต่ำ $12.00) อัตราของคุณคือ '+LH.money(rate)+' หมายความว่า '+(rate<1.5*st.minWage?'กฎ <strong>รายวัน</strong> ใช้กับการประมาณการนี้':'กฎ <strong>รายสัปดาห์เท่านั้น</strong> ใช้กับการประมาณการนี้');}
-else if(st.ruleType==='oregon'){ruleText='<strong>ออริกอน</strong>: นายจ้างส่วนใหญ่เป็นหนี้ค่าล่วงเวลาเฉพาะหลังจาก 40 ชั่วโมงต่อสัปดาห์เท่านั้น การทำงานล่วงเวลารายวันหลังจาก 10 ชั่วโมงใช้ในโรงสี โรงงาน และการผลิต จ่ายตามอย่างใดก็ตามระหว่างรายวันหรือรายสัปดาห์ที่มากกว่า การประมาณการนี้ใช้ '+(document.getElementById('indSel').value==='ใช่'?'<strong>การผลิต</strong>':'<strong>มาตรฐาน</strong>')+' กฎ';}
+else if(st.ruleType==='oregon'){ruleText='<strong>ออริกอน</strong>: นายจ้างส่วนใหญ่เป็นหนี้ค่าล่วงเวลาเฉพาะหลังจาก 40 ชั่วโมงต่อสัปดาห์เท่านั้น การทำงานล่วงเวลารายวันหลังจาก 10 ชั่วโมงใช้ในโรงสี โรงงาน และการผลิต จ่ายตามอย่างใดก็ตามระหว่างรายวันหรือรายสัปดาห์ที่มากกว่า การประมาณการนี้ใช้ '+(document.getElementById('indSel').value==='yes'?'<strong>การผลิต</strong>':'<strong>มาตรฐาน</strong>')+' กฎ';}
 var src=st.sourceUrl?'<br>แหล่งข้อมูลอย่างเป็นทางการ: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>แหล่งข้อมูลอย่างเป็นทางการ: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">ยืนยันล่าสุด: พฤศจิกายน 2026 กฎเฉพาะภาคส่วนและนายจ้างภาครัฐอาจต่างออกไป</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

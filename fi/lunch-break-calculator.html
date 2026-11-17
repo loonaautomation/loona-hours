@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push("Leimaa sisään: sisään- ja uloskirjautuminen ovat samat, joten tämä päivä lasketaan 0 minuutiksi.");}else if(outM<inM&&!overnight){msgs.push("Leimaa sisään: uloskirjautuminen on ennen sisäänkirjautumista. Valitse kyseisen päivän yövuororuutu, jos vuoro päättyy seuraavana päivänä; siihen asti tämä päivä lasketaan 0 minuutiksi.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
-var paidB=(document.getElementById('b1p').value==='kyllä'?gv('b1'):0)+(document.getElementById('b2p').value==='kyllä'?gv('b2'):0);
+var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
 var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push("Tuntipalkka ei voi olla negatiivinen, joten sitä on käsitelty arvona $0,00. Anna palkaksi $0 tai enemmän.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">Kirjattu työaika</div></div>'

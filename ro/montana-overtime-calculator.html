@@ -428,7 +428,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Tariful orar nu poate fi negativ, așa că a fost tratat ca $0,00. Introduceți un tarif de $0 sau mai mare.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,'MT',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='da':false});
+var s=LH.splitStateWeek(days,'MT',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='yes':false});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

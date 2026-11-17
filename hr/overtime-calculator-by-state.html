@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Satnica ne može biti negativna, pa je tretirana kao $0,00. Unesite satnicu od $0 ili više.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='da'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Kalifornija</strong> ima p
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> zahtijeva dnevni prekovremeni rad uz 1.5x nakon 8 sati u danu, uz tjedni prekovremeni rad nakon 40 (sati s dodatkom nikada se ne broje dvaput).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> zahtijeva prekovremeni rad nakon 40 sati u tjednu, 12 sati u danu ili 12 uzastopnih sati — što god zaposleniku najviše koristi.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> zahtijeva dnevni prekovremeni rad nakon 8 sati u radnom danu <strong>samo kada je redovita satnica ispod 1.5x minimalne plaće države</strong> ($18.00 pri minimalnoj plaći od $12.00). Vaša satnica od '+LH.money(rate)+' znači '+(rate<1.5*st.minWage?'<strong>dnevno</strong> pravilo primjenjuje se na ovu procjenu.':'<strong>samo tjedno</strong> pravilo primjenjuje se na ovu procjenu.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: većina poslodavaca duguje prekovremeni rad tek nakon 40 sati tjedno. Dnevni prekovremeni rad nakon 10 sati primjenjuje se u mlinovima, tvornicama i proizvodnji, a plaća se veći od dnevnog ili tjednog prekovremenog rada. Ova procjena koristila je '+(document.getElementById('indSel').value==='da'?'<strong>proizvodnja</strong>':'<strong>standardno</strong>')+' pravilo.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: većina poslodavaca duguje prekovremeni rad tek nakon 40 sati tjedno. Dnevni prekovremeni rad nakon 10 sati primjenjuje se u mlinovima, tvornicama i proizvodnji, a plaća se veći od dnevnog ili tjednog prekovremenog rada. Ova procjena koristila je '+(document.getElementById('indSel').value==='yes'?'<strong>proizvodnja</strong>':'<strong>standardno</strong>')+' pravilo.';}
 var src=st.sourceUrl?'<br>Službeni izvor: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Službeni izvor: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Zadnja provjera: studeni 2026. Pravila za pojedine sektore i javne poslodavce mogu se razlikovati.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

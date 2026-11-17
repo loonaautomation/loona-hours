@@ -431,7 +431,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Mstari wa malipo<
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('paid').value==='ndiyo';var mode=document.getElementById('roundMode').value;
+function calc(){var paid=document.getElementById('paid').value==='yes';var mode=document.getElementById('roundMode').value;
 var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.roundMinutes(LH.parseTime(tv('inT')),mode);var outM=LH.roundMinutes(LH.parseTime(tv('outT')),mode);var msgs=[];if(inM===outM){msgs.push("Kuingia kazini: muda wa kuingia na kutoka ni sawa, kwa hiyo siku hii inahesabika kama dakika 0.");}else if(outM<inM&&!overnight){msgs.push("Kuingia kazini: muda wa kutoka ni kabla ya muda wa kuingia. Weka alama kwenye kisanduku cha zamu ya usiku kwa siku hiyo ikiwa zamu inaisha siku inayofuata; hadi wakati huo, siku hii inahesabika kama dakika 0.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var net=LH.roundedShiftMinutes(tv('inT'),tv('outT'),gv('brk'),paid,mode,overnight);
 var rate=gv('rate2');if(rate<0){msgs.push("Kiwango cha saa hakiwezi kuwa hasi, kwa hiyo kimechukuliwa kama $0.00. Weka kiwango cha $0 au zaidi.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var pay=LH.grossPay(net,0,0,rate);

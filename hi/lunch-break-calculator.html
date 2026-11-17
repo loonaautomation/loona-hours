@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push("क्लॉक इन: आने और जाने का समय एक समान है, इसलिए यह दिन 0 मिनट गिना जाएगा।");}else if(outM<inM&&!overnight){msgs.push("क्लॉक इन: जाने का समय आने के समय से पहले है। यदि पाली अगले दिन समाप्त होती है तो उस दिन के रात्रि पाली बॉक्स को चुनें; तब तक यह दिन 0 मिनट गिना जाएगा।");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
-var paidB=(document.getElementById('b1p').value==='हां'?gv('b1'):0)+(document.getElementById('b2p').value==='हां'?gv('b2'):0);
+var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
 var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push("प्रति घंटा दर नकारात्मक नहीं हो सकती, इसलिए इसे $0.00 माना गया है। $0 या अधिक की दर दर्ज करें।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">घड़ी पर समय</div></div>'

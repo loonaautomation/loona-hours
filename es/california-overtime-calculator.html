@@ -438,7 +438,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Línea de pago</t
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('breakPaid').value==='sí';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("La tarifa por hora no puede ser negativa, por lo que se ha tratado como $0.00. Ingrese una tarifa de $0 o más.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
+function calc(){var paid=document.getElementById('breakPaid').value==='yes';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("La tarifa por hora no puede ser negativa, por lo que se ha tratado como $0.00. Ingrese una tarifa de $0 o más.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var split=LH.splitCaliforniaWeek(days);var pay=LH.grossPay(split.regMin,split.otMin,split.dtMin,rate);
 statBoxes(document.getElementById('stats'),split.regMin,split.otMin,split.dtMin,pay.total);
 var dn=['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];

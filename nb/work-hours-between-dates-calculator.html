@@ -442,7 +442,7 @@ if(!f||!t){el.innerHTML='';hl.innerHTML='<p class="small">Velg begge datoene.</p
 var start=new Date(f+'T00:00:00Z'),end=new Date(t+'T00:00:00Z');if(end<start){var tmp=start;start=end;end=tmp;}
 var pat=[];for(var i=0;i<7;i++)pat.push(document.getElementById('wd'+i).checked);
 var hol={};var holNames={};for(var y=start.getUTCFullYear();y<=end.getUTCFullYear();y++){LH.federalHolidays(y).forEach(function(h){hol[iso(h.date)]=true;holNames[iso(h.date)]=h.name;});}
-var excl=document.getElementById('exHol').value==='ja';
+var excl=document.getElementById('exHol').value==='yes';
 var days=0,work=0,usedHol=[];
 for(var d=new Date(start);d<=end;d.setUTCDate(d.getUTCDate()+1)){days++;var key=iso(d);
 if(pat[d.getUTCDay()]){if(excl&&hol[key]){usedHol.push(holNames[key]+' ('+key+')');continue;}work++;}}

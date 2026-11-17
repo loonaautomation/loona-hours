@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Az órabér nem lehet negatív, ezért $0,00-ként lett kezelve. Adjon meg $0 vagy annál nagyobb bért.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='igen'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Kalifornia</strong> teljes
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> napi túlórát ír elő 1.5x szorzóval egy napon 8 óra után, a 40 óra utáni heti túlóra mellett (a pótlékos órákat soha nem számolják kétszer).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> túlórát ír elő heti 40 óra, napi 12 óra vagy 12 egymást követő óra után — amelyik a munkavállaló számára a legkedvezőbb.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> napi túlórát ír elő egy munkanapon 8 óra után, <strong>csak ha a rendes órabér alacsonyabb az állami minimálbér 1.5x értékénél</strong> ($18.00 a $12.00 minimálbér mellett). Az Ön órabére: '+LH.money(rate)+' jelentése: '+(rate<1.5*st.minWage?'a <strong>napi</strong> szabály érvényes erre a becslésre.':'a <strong>csak heti</strong> szabály érvényes erre a becslésre.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: a legtöbb munkáltató csak heti 40 óra után tartozik túlórával. A napi túlóra 10 óra után a malmokban, gyárakban és a feldolgozóiparban érvényes, a napi vagy a heti túlóra közül a nagyobbat fizetve. Ez a becslés ezt használta: '+(document.getElementById('indSel').value==='igen'?'<strong>feldolgozóipar</strong>':'<strong>standard</strong>')+' szabály.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: a legtöbb munkáltató csak heti 40 óra után tartozik túlórával. A napi túlóra 10 óra után a malmokban, gyárakban és a feldolgozóiparban érvényes, a napi vagy a heti túlóra közül a nagyobbat fizetve. Ez a becslés ezt használta: '+(document.getElementById('indSel').value==='yes'?'<strong>feldolgozóipar</strong>':'<strong>standard</strong>')+' szabály.';}
 var src=st.sourceUrl?'<br>Hivatalos forrás: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Hivatalos forrás: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Utolsó ellenőrzés: November 2026. Az ágazatspecifikus és a közszférás szabályok eltérhetnek.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

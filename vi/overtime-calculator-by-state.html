@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Mức lương theo giờ không thể âm, nên đã được tính là $0,00. Hãy nhập mức lương $0 trở lên.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='có'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>California</strong> có l�
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> yêu cầu làm thêm giờ theo ngày ở mức 1.5x sau 8 giờ trong một ngày, ngoài làm thêm giờ hàng tuần sau 40 (các giờ phụ trội không bao giờ bị tính hai lần).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> yêu cầu làm thêm giờ sau 40 giờ trong một tuần, 12 giờ trong một ngày, hoặc 12 giờ liên tiếp — tùy điều nào có lợi nhất cho nhân viên.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> yêu cầu làm thêm giờ theo ngày sau 8 giờ trong một ngày làm việc <strong>chỉ khi mức lương thường dưới 1.5x lương tối thiểu của bang</strong> ($18.00 ở mức tối thiểu $12.00). Mức lương của bạn là '+LH.money(rate)+' có nghĩa là '+(rate<1.5*st.minWage?'quy tắc <strong>theo ngày</strong> áp dụng cho ước tính này.':'quy tắc <strong>chỉ theo tuần</strong> áp dụng cho ước tính này.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: hầu hết các người sử dụng lao động chỉ nợ làm thêm giờ sau 40 giờ một tuần. Làm thêm giờ theo ngày sau 10 giờ áp dụng trong các xưởng cối xay, nhà máy và cơ sở sản xuất, được trả theo giá trị lớn hơn giữa làm thêm giờ theo ngày hoặc theo tuần. Ước tính này đã dùng '+(document.getElementById('indSel').value==='có'?'<strong>sản xuất</strong>':'<strong>tiêu chuẩn</strong>')+' quy tắc.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: hầu hết các người sử dụng lao động chỉ nợ làm thêm giờ sau 40 giờ một tuần. Làm thêm giờ theo ngày sau 10 giờ áp dụng trong các xưởng cối xay, nhà máy và cơ sở sản xuất, được trả theo giá trị lớn hơn giữa làm thêm giờ theo ngày hoặc theo tuần. Ước tính này đã dùng '+(document.getElementById('indSel').value==='yes'?'<strong>sản xuất</strong>':'<strong>tiêu chuẩn</strong>')+' quy tắc.';}
 var src=st.sourceUrl?'<br>Nguồn chính thức: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Nguồn chính thức: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Lần kiểm chứng cuối: tháng 11 năm 2026. Các quy tắc theo lĩnh vực cụ thể và cho người sử dụng lao động công có thể khác.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

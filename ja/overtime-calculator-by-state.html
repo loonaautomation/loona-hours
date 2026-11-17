@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("時給はマイナスにできないため、$0.00として扱われました。$0以上の時給を入力してください。");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='はい'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>カリフォルニア</str
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> は、週単位の40時間を超える時間外労働に加えて、一日の8時間を超えると1.5xの一日単位の時間外労働を義務付けています（割増時間は決して二重に数えられません）。';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> は、一週間の40時間、一日の12時間、または連続12時間を超える時間外労働を義務付けています — 従業員に最も利益をもたらすもの。';}
 else if(st.ruleType==='nevada'){ruleText='<strong>ネバダ</strong> は、<strong>通常時給が州の最低賃金の1.5x未満である場合にのみ</strong>、勤務日の8時間を超える一日単位の時間外労働を義務付けています（最低賃金$12.00では$18.00）。あなたの賃金は '+LH.money(rate)+' の意味は '+(rate<1.5*st.minWage?'<strong>一日単位</strong>ルールがこの試算に適用されます。':'<strong>週単位のみ</strong>ルールがこの試算に適用されます。');}
-else if(st.ruleType==='oregon'){ruleText='<strong>オレゴン</strong>：ほとんどの雇用主は、一週間の40時間を超えて初めて時間外労働を支払います。一日10時間を超える一日単位の時間外労働は、製粉所、工場、製造業に適用され、一日単位または週単位の時間外労働のうち大きい方として支払われます。この試算は次を使いました： '+(document.getElementById('indSel').value==='はい'?'<strong>製造業</strong>':'<strong>標準</strong>')+' ルール。';}
+else if(st.ruleType==='oregon'){ruleText='<strong>オレゴン</strong>：ほとんどの雇用主は、一週間の40時間を超えて初めて時間外労働を支払います。一日10時間を超える一日単位の時間外労働は、製粉所、工場、製造業に適用され、一日単位または週単位の時間外労働のうち大きい方として支払われます。この試算は次を使いました： '+(document.getElementById('indSel').value==='yes'?'<strong>製造業</strong>':'<strong>標準</strong>')+' ルール。';}
 var src=st.sourceUrl?'<br>公式出典： <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>公式出典： US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">最終確認：2026年十一月。セクター固有および公的雇用主のルールは異なる場合があります。</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

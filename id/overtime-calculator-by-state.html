@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Tarif per jam tidak boleh negatif, jadi diperlakukan sebagai $0,00. Masukkan tarif $0 atau lebih.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='ya'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>California</strong> memili
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> mewajibkan lembur harian sebesar 1.5x setelah 8 jam dalam sehari, di samping lembur mingguan setelah 40 (jam premi tidak pernah dihitung dua kali).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> mewajibkan lembur setelah 40 jam dalam seminggu, 12 jam dalam sehari, atau 12 jam berturut-turut — mana pun yang paling menguntungkan karyawan.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> mewajibkan lembur harian setelah 8 jam dalam sehari kerja <strong>hanya ketika tarif reguler di bawah 1.5x upah minimum negara bagian</strong> ($18.00 pada upah minimum $12.00). Tarif Anda sebesar '+LH.money(rate)+' berarti '+(rate<1.5*st.minWage?'aturan <strong>harian</strong> berlaku untuk perkiraan ini.':'aturan <strong>khusus mingguan</strong> berlaku untuk perkiraan ini.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: sebagian besar pemberi kerja hanya mewajibkan lembur setelah 40 jam seminggu. Lembur harian setelah 10 jam berlaku di pabrik penggilingan, pabrik, dan manufaktur, dibayar sebagai yang lebih besar dari lembur harian atau mingguan. Perkiraan ini menggunakan '+(document.getElementById('indSel').value==='ya'?'<strong>manufaktur</strong>':'<strong>standar</strong>')+' aturan.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: sebagian besar pemberi kerja hanya mewajibkan lembur setelah 40 jam seminggu. Lembur harian setelah 10 jam berlaku di pabrik penggilingan, pabrik, dan manufaktur, dibayar sebagai yang lebih besar dari lembur harian atau mingguan. Perkiraan ini menggunakan '+(document.getElementById('indSel').value==='yes'?'<strong>manufaktur</strong>':'<strong>standar</strong>')+' aturan.';}
 var src=st.sourceUrl?'<br>Sumber resmi: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Sumber resmi: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Terakhir diverifikasi: November 2026. Aturan spesifik sektor dan pemberi kerja publik dapat berbeda.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Hodinová sadzba nemôže byť záporná, preto bola považovaná za $0,00. Zadajte sadzbu $0 alebo vyššiu.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='áno'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>Kalifornia</strong> má pl
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong> vyžaduje denné nadčasy 1.5x po 8 hodinách za deň, navyše k týždenným nadčasom po 40 (prémiové hodiny sa nikdy nepočítajú dvakrát).';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong> vyžaduje nadčasy po 40 hodinách v týždni, 12 hodinách za deň alebo 12 po sebe idúcich hodinách — podľa toho, čo zamestnancovi najviac prospieva.';}
 else if(st.ruleType==='nevada'){ruleText='<strong>Nevada</strong> vyžaduje denné nadčasy po 8 hodinách v pracovnom dni <strong>len vtedy, keď je bežná sadzba nižšia než 1.5x štátnej minimálnej mzdy</strong> ($18.00 pri minime $12.00). Vaša sadzba '+LH.money(rate)+' znamená '+(rate<1.5*st.minWage?'<strong>denné</strong> pravidlo platí pre tento odhad.':'<strong>len týždenné</strong> pravidlo platí pre tento odhad.');}
-else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: väčšina zamestnávateľov dlží nadčasy len po 40 hodinách týždenne. Denné nadčasy po 10 hodinách platia v mlynoch, továrňach a vo výrobe, platené ako väčšie z denných alebo týždenných nadčasov. Tento odhad použil '+(document.getElementById('indSel').value==='áno'?'<strong>výroba</strong>':'<strong>štandardné</strong>')+' pravidlo.';}
+else if(st.ruleType==='oregon'){ruleText='<strong>Oregon</strong>: väčšina zamestnávateľov dlží nadčasy len po 40 hodinách týždenne. Denné nadčasy po 10 hodinách platia v mlynoch, továrňach a vo výrobe, platené ako väčšie z denných alebo týždenných nadčasov. Tento odhad použil '+(document.getElementById('indSel').value==='yes'?'<strong>výroba</strong>':'<strong>štandardné</strong>')+' pravidlo.';}
 var src=st.sourceUrl?'<br>Oficiálny zdroj: <a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>Oficiálny zdroj: US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">Naposledy overené: november 2026. Pravidlá pre konkrétne odvetvia a verejných zamestnávateľov sa môžu líšiť.</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}
