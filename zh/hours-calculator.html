@@ -431,7 +431,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工资行</th><th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('paid').value==='是';var mode=document.getElementById('roundMode').value;
+function calc(){var paid=document.getElementById('paid').value==='yes';var mode=document.getElementById('roundMode').value;
 var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.roundMinutes(LH.parseTime(tv('inT')),mode);var outM=LH.roundMinutes(LH.parseTime(tv('outT')),mode);var msgs=[];if(inM===outM){msgs.push("上班打卡：上班和下班时间相同，因此这一天按0分钟计算。");}else if(outM<inM&&!overnight){msgs.push("上班打卡：下班时间早于上班时间。如果班次在次日结束，请勾选当天的夜班框；在此之前，这一天按0分钟计算。");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var net=LH.roundedShiftMinutes(tv('inT'),tv('outT'),gv('brk'),paid,mode,overnight);
 var rate=gv('rate2');if(rate<0){msgs.push("时薪不能为负数，因此已按$0.00处理。请输入$0或更高的时薪。");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var pay=LH.grossPay(net,0,0,rate);

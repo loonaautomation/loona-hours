@@ -428,7 +428,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,'ND',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='예':false});
+var s=LH.splitStateWeek(days,'ND',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='yes':false});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

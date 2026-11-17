@@ -438,7 +438,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工資行</th><th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('breakPaid').value==='是';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("時薪不能為負數，因此已按$0.00處理。請輸入$0或更高的時薪。");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
+function calc(){var paid=document.getElementById('breakPaid').value==='yes';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("時薪不能為負數，因此已按$0.00處理。請輸入$0或更高的時薪。");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var split=LH.splitCaliforniaWeek(days);var pay=LH.grossPay(split.regMin,split.otMin,split.dtMin,rate);
 statBoxes(document.getElementById('stats'),split.regMin,split.otMin,split.dtMin,pay.total);
 var dn=['週一','週二','週三','週四','週五','週六','週日'];

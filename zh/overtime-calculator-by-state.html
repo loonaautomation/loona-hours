@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var code=document.getElementById('stateSel').value;var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("时薪不能为负数，因此已按$0.00处理。请输入$0或更高的时薪。");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
-var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='是'});
+var s=LH.splitStateWeek(days,code,{rate:rate,industry:document.getElementById('indSel').value==='yes'});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);
 statBoxes(document.getElementById('stats'),s.regMin,s.otMin,s.dtMin,pay.total);
 var st=s.state;var ruleText='';
@@ -448,7 +448,7 @@ else if(st.ruleType==='california'){ruleText='<strong>加利福尼亚州</strong
 else if(st.ruleType==='daily8'){ruleText='<strong>'+st.name+'</strong>要求一天8小时后按1.5倍支付每日加班，此外还有40小时后的每周加班（溢价小时从不重复计算）。';}
 else if(st.ruleType==='daily12'){ruleText='<strong>'+st.name+'</strong>要求一周40小时后、一天12小时后或连续12小时后支付加班 — 取对员工最有利的一个。';}
 else if(st.ruleType==='nevada'){ruleText='<strong>内华达州</strong>要求在一个工作日8小时后支付每日加班，<strong>仅当常规时薪低于州最低工资的1.5倍时</strong>（最低工资$12.00时为$18.00）。您的费率为 '+LH.money(rate)+' 意味着 '+(rate<1.5*st.minWage?'<strong>每日</strong>规则适用于本估算。':'<strong>仅每周</strong>规则适用于本估算。');}
-else if(st.ruleType==='oregon'){ruleText='<strong>俄勒冈州</strong>：大多数雇主只在一周40小时后才欠加班。一天10小时后的每日加班适用于磨坊、工厂和制造业，按每日或每周加班中较大的一个支付。本估算使用了 '+(document.getElementById('indSel').value==='是'?'<strong>制造业</strong>':'<strong>标准</strong>')+' 规则。';}
+else if(st.ruleType==='oregon'){ruleText='<strong>俄勒冈州</strong>：大多数雇主只在一周40小时后才欠加班。一天10小时后的每日加班适用于磨坊、工厂和制造业，按每日或每周加班中较大的一个支付。本估算使用了 '+(document.getElementById('indSel').value==='yes'?'<strong>制造业</strong>':'<strong>标准</strong>')+' 规则。';}
 var src=st.sourceUrl?'<br>官方来源：<a href="'+st.sourceUrl+'" rel="noopener">'+st.sourceUrl+'</a>':'<br>官方来源：US Department of Labor, Wage and Hour Division — <a href="https://www.dol.gov/agencies/whd/overtime" rel="noopener">dol.gov/agencies/whd/overtime</a>';
 document.getElementById('ruleBox').innerHTML='<div class="inshort" style="margin-top:14px">'+ruleText+(st.notes?'<br><span class="small">'+st.notes+'</span>':'')+src+'<br><span class="small">最后核实：2026年11月。特定行业和公共雇主的规则可能不同。</span></div>';
 payTable(document.getElementById('payTable'),s.regMin,s.otMin,s.dtMin,rate,pay);}

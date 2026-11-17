@@ -438,7 +438,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>급여 항목</th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var paid=document.getElementById('breakPaid').value==='예';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
+function calc(){var paid=document.getElementById('breakPaid').value==='yes';gridLabel='';var days=readGrid('C',7,paid);var msgs=gridMsgs.slice();var rate=gv('rate');if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var split=LH.splitCaliforniaWeek(days);var pay=LH.grossPay(split.regMin,split.otMin,split.dtMin,rate);
 statBoxes(document.getElementById('stats'),split.regMin,split.otMin,split.dtMin,pay.total);
 var dn=['월요일','화요일','수요일','목요일','금요일','토요일','일요일'];

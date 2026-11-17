@@ -437,7 +437,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>급여 항목</th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var dn=["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"];var auto=document.getElementById('autoLunch').value==='예';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
+function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var dn=["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"];var auto=document.getElementById('autoLunch').value==='yes';var autoMin=gv('autoMin');var autoAfterMin=gv('autoAfter')*60;var days=[];
 for(var i=0;i<7;i++){var dedEl=document.getElementById('L'+i+'Ded'),netEl=document.getElementById('L'+i+'Net');
 if(!document.getElementById('L'+i+'W').checked){days.push(0);dedEl.textContent='\u2014';netEl.textContent='\u2014';continue;}
 var onEl=document.getElementById('L'+i+'On');var overnight=!!(onEl&&onEl.checked);var inM=LH.parseTime(tv('L'+i+'In'));var outM=LH.parseTime(tv('L'+i+'Out'));if(inM===outM){msgs.push("{D}: 출근 시간과 퇴근 시간이 같으므로 이 날은 0분으로 계산됩니다.".replace('{D}',dn[i]));}else if(outM<inM&&!overnight){msgs.push("{D}: 퇴근 시간이 출근 시간보다 빠릅니다. 근무가 다음 날 끝나는 경우 해당 날짜의 야간 근무 상자를 선택하세요. 그때까지 이 날은 0분으로 계산됩니다.".replace('{D}',dn[i]));}var raw=LH.shiftMinutes(tv('L'+i+'In'),tv('L'+i+'Out'),0,true,overnight);var manual=gv('L'+i+'Br');var ded=manual;

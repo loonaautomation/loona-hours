@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push("출근: 출근 시간과 퇴근 시간이 같으므로 이 날은 0분으로 계산됩니다.");}else if(outM<inM&&!overnight){msgs.push("출근: 퇴근 시간이 출근 시간보다 빠릅니다. 근무가 다음 날 끝나는 경우 해당 날짜의 야간 근무 상자를 선택하세요. 그때까지 이 날은 0분으로 계산됩니다.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
-var paidB=(document.getElementById('b1p').value==='예'?gv('b1'):0)+(document.getElementById('b2p').value==='예'?gv('b2'):0);
+var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
 var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">시계 기준 시간</div></div>'

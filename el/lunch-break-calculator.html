@@ -439,7 +439,7 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push("Άφιξη: η ώρα άφιξης και αναχώρησης είναι ίδιες, επομένως αυτή η ημέρα μετρά ως 0 λεπτά.");}else if(outM<inM&&!overnight){msgs.push("Άφιξη: η ώρα αναχώρησης είναι πριν από την ώρα άφιξης. Επιλέξτε το πλαίσιο νυχτερινής βάρδιας για εκείνη την ημέρα, εάν η βάρδια τελειώνει την επόμενη ημέρα· μέχρι τότε, αυτή η ημέρα μετρά ως 0 λεπτά.");}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
-var paidB=(document.getElementById('b1p').value==='ναι'?gv('b1'):0)+(document.getElementById('b2p').value==='ναι'?gv('b2'):0);
+var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
 var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push("Η ωριαία αμοιβή δεν μπορεί να είναι αρνητική, επομένως αντιμετωπίστηκε ως $0,00. Εισαγάγετε αμοιβή $0 ή μεγαλύτερη.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">Χρόνος στο ρολόι</div></div>'
