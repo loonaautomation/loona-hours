@@ -131,13 +131,14 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="field"><label>Clock out</label><span class="tsel"><select id="outTH" aria-label="Hour"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="outTM" aria-label="Minute"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="outTAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></div>
 </div>
 <div class="frow">
-<div class="field"><label for="b1">Break 1 (minutes)</label><input type="number" id="b1" value="30" step="1" min="0" ></div><div class="field"><label for="b1p">Break 1 is</label><select id="b1p"><option value="no" selected>Unpaid</option><option value="yes">Paid</option></select></div><div class="field"><label for="b2">Break 2 (minutes)</label><input type="number" id="b2" value="0" step="1" min="0" ></div><div class="field"><label for="b2p">Break 2 is</label><select id="b2p"><option value="yes" selected>Paid</option><option value="no">Unpaid</option></select></div>
+<div class="field"><label>Overnight</label><label class="chk"><input type="checkbox" id="overnight"> Ends next day</label><p class="small">Tick Overnight if the shift ends after midnight (clock-out is next day).</p></div><div class="field"><label for="b1">Break 1 (minutes)</label><input type="number" id="b1" value="30" step="1" min="0" ></div><div class="field"><label for="b1p">Break 1 is</label><select id="b1p"><option value="no" selected>Unpaid</option><option value="yes">Paid</option></select></div><div class="field"><label for="b2">Break 2 (minutes)</label><input type="number" id="b2" value="0" step="1" min="0" ></div><div class="field"><label for="b2p">Break 2 is</label><select id="b2p"><option value="yes" selected>Paid</option><option value="no">Unpaid</option></select></div>
 </div>
 <div class="frow">
 <div class="field"><label for="rate">Hourly rate ($, optional)</label><input type="number" id="rate" value="20" step="0.01" min="0" ></div>
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calculate paid time</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 </div>
 <div class="sec"><h2>How It Works — The Rule Behind This Calculator</h2><p>The federal regulation behind this page (29 CFR §785.19) draws one bright line:</p>
 <ul>
@@ -148,15 +149,15 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="sec"><h2>Related Hours Tools</h2><div class="grid"><a class="card" href="timesheet-calculator-with-lunch-break.html"><h3>Timesheet Calculator with Lunch Break</h3><p>A weekly timesheet with honest lunch maths: manual breaks, plus an automatic lunch deduction when a long shift has no break entered.</p><span class="badge">Free — try it</span></a><a class="card" href="hours-calculator.html"><h3>Hours Calculator</h3><p>One shift in, one exact answer out: hours and minutes, decimal hours, break handling, rounding and the gross pay for that shift.</p><span class="badge">Free — try it</span></a><a class="card" href="time-clock-calculator.html"><h3>Time Clock Calculator</h3><p>Built for real punch clocks: up to four in/out pairs in a day — lunch gaps excluded automatically — totalled into paid time and decimal hours.</p><span class="badge">Free — try it</span></a><a class="card" href="time-card-calculator.html"><h3>Time Card Calculator</h3><p>The flagship weekly time card: clock in/out and breaks for 7 days, overtime split at 40 hours, gross pay, print and CSV — plus Save My Week on your device.</p><span class="badge">Free — try it</span></a></div></div>
 <div class="sec"><h2>Frequently Asked Questions</h2><details class="faq"><summary>Can my employer deduct a 15-minute break?</summary><p>No. Under federal rules, short breaks of about 5–20 minutes are paid time and cannot be deducted from your hours, even if you leave your workstation.</p></details><details class="faq"><summary>My lunch is 30 minutes but I have to stay at my desk. Is it unpaid?</summary><p>If you are not completely relieved of duty — for example you must answer the phone or watch the counter — the meal period counts as work time under federal law and should be paid, whatever it is called.</p></details><details class="faq"><summary>What about two 10-minute smoke breaks?</summary><p>Each is a short rest break under the federal rule and must be paid. They would be entered here as paid breaks, deducting nothing.</p></details><details class="faq"><summary>Does every state follow this rule?</summary><p>The paid/unpaid line above is the federal floor. Some states (California, Washington, Oregon and others) additionally require that meal and rest breaks be provided and add premium pay when they are not — a separate entitlement from the deduction maths here.</p></details></div>
 <div class="sec"><h2>How it works — the formula</h2>
-<p>This calculator separates the three things a shift contains: time on the clock, breaks that come off, and breaks that stay on. It takes the full span from clock-in to clock-out (rolling into the next day for overnight shifts), subtracts only the breaks you mark as unpaid, and reports the paid time that remains — with the paid-break minutes shown separately so you can see they were kept.</p>
-<div class="inshort"><strong>The formula:</strong> Time on the clock = clock-out &minus; clock-in (+24h if overnight). Paid time = time on the clock &minus; unpaid break minutes (never below zero). Paid breaks are not subtracted. Gross pay = paid time in decimal hours &times; hourly rate, shown when a rate is entered.</div>
+<p>This calculator separates the three things a shift contains: time on the clock, breaks that come off, and breaks that stay on. It takes the full span from clock-in to clock-out (rolling into the next day for overnight shifts when you tick the Overnight box), subtracts only the breaks you mark as unpaid, and reports the paid time that remains — with the paid-break minutes shown separately so you can see they were kept.</p>
+<div class="inshort"><strong>The formula:</strong> Time on the clock = clock-out &minus; clock-in (+24h if the Overnight box is ticked). Paid time = time on the clock &minus; unpaid break minutes (never below zero). Paid breaks are not subtracted. Gross pay = paid time in decimal hours &times; hourly rate, shown when a rate is entered.</div>
 <h3>Worked example</h3>
 <p>You work <strong>9:00 AM to 5:30 PM</strong> at <strong>$20/hour</strong>, with a <strong>30-minute unpaid lunch</strong> (Break 1) and a <strong>15-minute paid rest break</strong> (Break 2). The calculator shows <strong>8:30 on the clock</strong>, <strong>0:30 of unpaid break deducted</strong>, <strong>0:15 of paid break kept</strong>, and <strong>paid time of 8:00 (8.00 hours)</strong> — a gross of <strong>$160.00</strong> for the shift. If the rest break were wrongly marked unpaid, paid time would drop to 7:45 and the gross to $155.00.</p>
 <h3>Frequently asked questions</h3>
 <details class="faq"><summary>How does the calculator decide which breaks to deduct?</summary><p>It follows your switches, not its own judgement: a break marked &ldquo;unpaid&rdquo; is subtracted and a break marked &ldquo;paid&rdquo; is kept, whichever way round you set them. Whether a break should legally be paid depends on its length and whether you were relieved of duty — this tool does the arithmetic for the treatment you choose.</p></details>
 <details class="faq"><summary>What if my breaks add up to more than my shift?</summary><p>Paid time is floored at zero — the calculator never reports negative time. If the unpaid breaks meet or exceed the time on the clock, the result is 0:00 paid time, which usually means a break length or a clock time was entered wrong.</p></details>
 <details class="faq"><summary>Can I model three breaks in one shift?</summary><p>The page has two break slots, but you can combine breaks of the same type: add a second unpaid break's minutes into the first unpaid slot, or a second paid break into the paid slot. Only the totals matter to the result, not how the breaks were spaced through the day.</p></details>
-<details class="faq"><summary>Does this work for overnight shifts?</summary><p>Yes. A clock-out at or before the clock-in is treated as the next day, so a 10:00 PM to 6:00 AM shift measures 8 hours on the clock before breaks are applied — the same engine the other Loona Hours tools use.</p></details>
+<details class="faq"><summary>Does this work for overnight shifts?</summary><p>Yes. Tick the Overnight box and a clock-out before the clock-in is treated as the next day, so a 10:00 PM to 6:00 AM shift measures 8 hours on the clock before breaks are applied. Without the tick it counts as 0 minutes and a warning is shown.</p></details>
 <details class="faq"><summary>Why does the gross pay only appear sometimes?</summary><p>The gross line is shown only when an hourly rate is entered. Leave the rate at 0 (or empty) and the page reports time only — on the clock, deducted, kept, and paid — which is all you need if you are checking hours rather than money.</p></details>
 </div>
 <div class="disc"><strong>Disclaimer:</strong> Estimates only — not payroll or legal advice. Your employer's payroll rules and state law control your actual pay. Figures are rounded for display; your pay stub and payroll department are the official record.</div>
@@ -192,11 +193,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -208,10 +211,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -239,6 +242,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -434,10 +439,10 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th 
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true);
+function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push('This shift: clock-in and clock-out are the same, so the shift counts as 0 minutes.');}else if(outM<inM&&!overnight){msgs.push('This shift: clock-out is before clock-in. Tick the Overnight box if the shift ends the next day; until then the shift counts as 0 minutes.');}var raw=LH.shiftMinutes(tv('inT'),tv('outT'),0,true,overnight);
 var unpaid=(document.getElementById('b1p').value==='no'?gv('b1'):0)+(document.getElementById('b2p').value==='no'?gv('b2'):0);
 var paidB=(document.getElementById('b1p').value==='yes'?gv('b1'):0)+(document.getElementById('b2p').value==='yes'?gv('b2'):0);
-var net=Math.max(0,raw-unpaid);var rate=gv('rate');
+var net=Math.max(0,raw-unpaid);var rate=gv('rate');if(rate<0){msgs.push('Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.');rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.fmtHM(raw)+'</div><div class="k">Time on the clock</div></div>'
 +'<div class="stat"><div class="v">'+LH.fmtHM(unpaid)+'</div><div class="k">Unpaid break deducted</div></div>'

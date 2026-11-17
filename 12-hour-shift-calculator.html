@@ -131,10 +131,11 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="field"><label>Shift ends</label><span class="tsel"><select id="outTH" aria-label="Hour"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7" selected>7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="outTM" aria-label="Minute"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="outTAP" aria-label="AM or PM"><option>AM</option><option selected>PM</option></select></span></div>
 </div>
 <div class="frow">
-<div class="field"><label for="daysN">Shifts worked this week</label><input type="number" id="daysN" value="3" step="1" min="0" ></div><div class="field"><label for="brk">Unpaid break per shift (minutes)</label><input type="number" id="brk" value="30" step="1" min="0" ></div><div class="field"><label for="rate">Hourly rate ($)</label><input type="number" id="rate" value="25" step="0.01" min="0" ></div><div class="field"><label for="rules">Overtime rules</label><select id="rules"><option value="fed" selected>Federal (weekly 40)</option><option value="ca">California (daily 8/12)</option></select></div>
+<div class="field"><label for="daysN">Shifts worked this week</label><input type="number" id="daysN" value="3" step="1" min="0" ></div><div class="field"><label>Overnight</label><label class="chk"><input type="checkbox" id="overnight"> Ends next day</label><p class="small">Tick Overnight if the shift ends after midnight (clock-out is next day).</p></div><div class="field"><label for="brk">Unpaid break per shift (minutes)</label><input type="number" id="brk" value="30" step="1" min="0" ></div><div class="field"><label for="rate">Hourly rate ($)</label><input type="number" id="rate" value="25" step="0.01" min="0" ></div><div class="field"><label for="rules">Overtime rules</label><select id="rules"><option value="fed" selected>Federal (weekly 40)</option><option value="ca">California (daily 8/12)</option></select></div>
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calculate my rotation week</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="payTable"></div>
 <div id="detail"></div>
 </div>
@@ -144,7 +145,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="sec"><h2>Frequently Asked Questions</h2><details class="faq"><summary>Is a 3x12 schedule full time with overtime?</summary><p>Three 12-hour shifts are about 36 paid hours a week — full-time for scheduling at most facilities, but under the federal rule there is no overtime until a week passes 40 hours. In California, each 12-hour shift itself contains 4 daily overtime hours.</p></details><details class="faq"><summary>How much overtime is in a 4x12 week?</summary><p>About 48 paid hours means roughly 8 federal overtime hours. In California the same week has 16 daily overtime hours (4 per shift) before the weekly reconciliation, so the premium total is higher.</p></details><details class="faq"><summary>What is the '8 and 80' rule?</summary><p>A federal option for hospitals and residential care facilities: overtime after 8 hours in a workday or 80 hours in a 14-day period, whichever gives the employee more. It requires an agreement or understanding with employees before work is performed.</p></details><details class="faq"><summary>Are 12-hour shift breaks paid?</summary><p>The usual pattern is a 30-minute unpaid meal break plus paid short rest breaks. Enter only the unpaid meal minutes as the break here; paid rest breaks stay in your paid time.</p></details></div>
 <div class="sec"><h2>How it works — the formula</h2>
 <p>This tool models one repeating shift: it takes the paid length of a single shift, lays it across the number of shifts per week you choose, and then splits the week under the rule you pick. Under federal rules the split is purely weekly — the first 40 hours are regular and everything past 40 is overtime. Under California rules each day is split first (regular up to 8 hours, 1.5&times; up to 12, 2&times; beyond 12, with the 7th-consecutive-day rule on top), and any regular hours left above 40 are then moved into overtime so no hour is ever paid at two premiums.</p>
-<div class="inshort"><strong>The formula:</strong> Paid minutes per shift = (clock-out &minus; clock-in, +24h if overnight) &minus; break minutes. Federal week: regular = first 40 hours of the week, overtime = the rest. California day: regular = first 8 hours, overtime = hours 8&ndash;12 at 1.5&times;, double time = hours past 12 at 2&times;. Gross pay = (regular hours &times; rate) + (overtime hours &times; rate &times; 1.5) + (double-time hours &times; rate &times; 2).</div>
+<div class="inshort"><strong>The formula:</strong> Paid minutes per shift = (clock-out &minus; clock-in, +24h if the Overnight box is ticked) &minus; break minutes. Federal week: regular = first 40 hours of the week, overtime = the rest. California day: regular = first 8 hours, overtime = hours 8&ndash;12 at 1.5&times;, double time = hours past 12 at 2&times;. Gross pay = (regular hours &times; rate) + (overtime hours &times; rate &times; 1.5) + (double-time hours &times; rate &times; 2).</div>
 <h3>Worked example</h3>
 <p>A nurse works <strong>7:00 AM to 7:00 PM</strong> with a <strong>30-minute unpaid break</strong>, <strong>4 shifts a week</strong>, at <strong>$25/hour</strong>, under <strong>California rules</strong>. Each shift is 11:30 paid, and every shift already contains 3:30 of daily overtime (hours 9 to 11.5 at 1.5&times;). The week totals <strong>46:00 hours: 32:00 regular and 14:00 overtime</strong>, for a gross of <strong>$1,325.00</strong> — $800.00 regular pay plus $525.00 overtime pay. Under federal rules the same week would split as 40 regular + 6 overtime, because only the weekly total matters there.</p>
 <h3>Frequently asked questions</h3>
@@ -187,11 +188,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -203,10 +206,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -234,6 +237,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -429,7 +434,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th 
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var per=LH.shiftMinutes(tv('inT'),tv('outT'),gv('brk'),false);var n=Math.max(0,Math.min(7,Math.round(gv('daysN'))));var rate=gv('rate');var ca=document.getElementById('rules').value==='ca';
+function calc(){var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var inM=LH.parseTime(tv('inT'));var outM=LH.parseTime(tv('outT'));var msgs=[];if(inM===outM){msgs.push('This shift: clock-in and clock-out are the same, so the shift counts as 0 minutes.');}else if(outM<inM&&!overnight){msgs.push('This shift: clock-out is before clock-in. Tick the Overnight box if the shift ends the next day; until then the shift counts as 0 minutes.');}var per=LH.shiftMinutes(tv('inT'),tv('outT'),gv('brk'),false,overnight);var n=Math.max(0,Math.min(7,Math.round(gv('daysN'))));var rate=gv('rate');if(rate<0){msgs.push('Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.');rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var ca=document.getElementById('rules').value==='ca';
 var days=[];for(var i=0;i<7;i++)days.push(i<n?per:0);
 var split=ca?LH.splitCaliforniaWeek(days):LH.splitFederalWeek(days);
 var pay=LH.grossPay(split.regMin,split.otMin,split.dtMin,rate);

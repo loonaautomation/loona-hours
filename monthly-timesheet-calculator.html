@@ -137,6 +137,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <button class="alt" id="printBtn" type="button">Print</button>
 </div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 <div id="payTable"></div>
 </div>
@@ -146,7 +147,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="sec"><h2>Frequently Asked Questions</h2><details class="faq"><summary>What is the difference between semi-monthly and biweekly pay?</summary><p>Semi-monthly means 24 paydays a year (for example the 15th and the last day). Biweekly means 26 paydays a year (every second Friday). The pay-period lengths differ, but overtime is always calculated per workweek in both systems.</p></details><details class="faq"><summary>Why is overtime not calculated on the whole month?</summary><p>The FLSA defines overtime strictly by the workweek — hours over 40 in one workweek. A month always contains parts of four or five workweeks, so monthly totals are built up from the weekly splits, never the other way round.</p></details><details class="faq"><summary>Which days are pre-ticked?</summary><p>Monday to Friday. Untick weekends you did not work, or tick them if you did — every date's hours come only from rows left ticked.</p></details><details class="faq"><summary>Can I use this for a single semi-monthly period?</summary><p>Yes — read the row for the period you need (1st–15th or 16th–end) in the results table. The whole-month row is there for monthly-paid staff.</p></details></div>
 <div class="sec"><h2>How it works — the formula</h2>
 <p>A month contains pieces of five or six different workweeks, and overtime law only recognises the workweek — so this calculator scores the month week by week and only then presents it as a month. Every worked day is measured, the days are grouped into Sunday&ndash;Saturday workweeks, and each week is split on its own: first 40 hours regular, the rest overtime. The month's totals are the sum of those weekly splits, and the same day-by-day split is re-added into the two semi-monthly periods (1st&ndash;15th and 16th&ndash;end) so you can see gross pay per period.</p>
-<div class="inshort"><strong>The formula:</strong> Per day: paid minutes = (clock-out &minus; clock-in, +24h if overnight) &minus; break (unless breaks are paid). Per Sunday&ndash;Saturday week: regular = first 40 hours, overtime = hours past 40. Month gross = (regular hours &times; rate) + (overtime hours &times; rate &times; 1.5), summed over all weeks in the month.</div>
+<div class="inshort"><strong>The formula:</strong> Per day: paid minutes = (clock-out &minus; clock-in, +24h if that day's Overnight box is ticked) &minus; break (unless breaks are paid). Per Sunday&ndash;Saturday week: regular = first 40 hours, overtime = hours past 40. Month gross = (regular hours &times; rate) + (overtime hours &times; rate &times; 1.5), summed over all weeks in the month.</div>
 <h3>Worked example</h3>
 <p>Take <strong>February 2026</strong>: you work <strong>Monday to Friday, 9:00 AM to 6:00 PM</strong>, with a <strong>30-minute unpaid break</strong>, at <strong>$20/hour</strong> — 8.5 paid hours a day. Each Sunday&ndash;Saturday week contains five such days, 42.5 hours, so every week splits into 40 regular + 2.5 overtime. Across the month's four full weeks that is <strong>170:00 hours — 160:00 regular and 10:00 overtime</strong> — and a gross of <strong>$3,500.00</strong> ($3,200.00 + $300.00). Each semi-monthly period shows 85:00 hours and <strong>$1,750.00</strong> of gross pay.</p>
 <h3>Frequently asked questions</h3>
@@ -154,7 +155,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <details class="faq"><summary>What are the grid's default times?</summary><p>Every date starts at 9:00 AM in and 5:30 PM out with a 30-minute break, and Monday to Friday dates start ticked as worked. Change any day individually — a half day, a day off, a longer Friday — and the weekly splits, period totals and gross all recalculate from the grid as entered.</p></details>
 <details class="faq"><summary>Can I untick a holiday or add a Saturday?</summary><p>Yes. Unticking a weekday removes its hours entirely (the standard way to handle holidays, sick days and vacation), and ticking a Saturday or Sunday adds that day to its workweek — which is often what pushes that week past 40 hours into overtime.</p></details>
 <details class="faq"><summary>Why does a month with the same daily hours show different overtime in different months?</summary><p>Because overtime follows the Sunday&ndash;Saturday weeks, not the calendar. A month whose weekdays split as 5-5-5-5 across four weeks behaves differently from one split 3-5-5-5-2 across five partial weeks, even with identical daily hours — the edge weeks may not reach 40 hours, or a worked weekend may land in a week that does.</p></details>
-<details class="faq"><summary>Does a shift that crosses midnight work here?</summary><p>Yes. A clock-out at or before the clock-in is counted into the next day, so a 10:00 PM to 6:00 AM shift measures 8 hours (before break) on the date it starts — the same overnight handling used across the Loona Hours tools.</p></details>
+<details class="faq"><summary>Does a shift that crosses midnight work here?</summary><p>Yes. Tick that day's Overnight box and a clock-out before the clock-in is counted into the next day, so a 10:00 PM to 6:00 AM shift measures 8 hours (before break) on the date it starts. Without the tick it counts as 0 minutes and a warning is shown.</p></details>
 </div>
 <div class="disc"><strong>Disclaimer:</strong> Estimates only — not payroll or legal advice. Your employer's payroll rules and state law control your actual pay. Figures are rounded for display; your pay stub and payroll department are the official record.</div>
 </div>
@@ -189,11 +190,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -205,10 +208,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -236,6 +239,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -433,17 +438,17 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 var curDates=[];
 function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
-var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Worked</th><th>Clock in</th><th>Clock out</th><th>Break (min)</th></tr>';
+var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Worked</th><th>Clock in</th><th>Clock out</th><th>Overnight</th><th>Break (min)</th></tr>';
 var dn=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' checked':'';
-rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Worked"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Break minutes"></td></tr>';}
+rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Worked"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><label class="chk"><input type="checkbox" id="M'+d+'On"> Ends next day</label></td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Break minutes"></td></tr>';}
 rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
 document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}
 function tselHTML(p){function opts(n,sel,fmt){var s='';for(var i=0;i<n;i++){var v=fmt?fmt(i):i;s+='<option value="'+v+'"'+(String(v)===String(sel)?' selected':'')+'>'+(fmt?fmt(i):i)+'</option>';}return s;}
 return '<span class="tsel"><select id="'+p+'H" aria-label="Hour">'+opts(12,'9',function(i){return i+1;})+'</select><select id="'+p+'M" aria-label="Minute">'+(function(){var s='';for(var i=0;i<60;i++){s+='<option value="'+i+'"'+(i===0?' selected':'')+'>'+(i<10?'0':'')+i+'</option>';}return s;})()+'</select><select id="'+p+'AP" aria-label="AM or PM"><option selected>AM</option><option>PM</option></select></span>';}
 function fixOutDefaults(){curDates.forEach(function(dt,i){var d=i+1;var outH=document.getElementById('M'+d+'OutH');if(!outH)return;outH.value='5';document.getElementById('M'+d+'OutM').value='30';document.getElementById('M'+d+'OutAP').value='PM';});}
-function calc(){var paid=document.getElementById('breakPaid').value==='yes';var rate=gv('rate');
-var dayMin=curDates.map(function(dt,i){var d=i+1;if(!document.getElementById('M'+d+'W').checked)return 0;return LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid);});
+function calc(){var paid=document.getElementById('breakPaid').value==='yes';var rate=gv('rate');var msgs=[];if(rate<0){msgs.push('Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.');rate=0;}
+var dnm=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];var dayMin=curDates.map(function(dt,i){var d=i+1;if(!document.getElementById('M'+d+'W').checked)return 0;var onEl=document.getElementById('M'+d+'On');var overnight=!!(onEl&&onEl.checked);var inM=LH.parseTime(tv('M'+d+'In'));var outM=LH.parseTime(tv('M'+d+'Out'));var subj=dnm[dt.getDay()]+', '+(dt.getMonth()+1)+'/'+d;if(inM===outM){msgs.push(subj+': clock-in and clock-out are the same, so this day counts as 0 minutes.');}else if(outM<inM&&!overnight){msgs.push(subj+': clock-out is before clock-in. Tick that day\'s Overnight box if the shift ends the next day; until then this day counts as 0 minutes.');}return LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid,overnight);});var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 // group into Sunday-start workweeks
 var weeks=[],cur=null;
 curDates.forEach(function(dt,i){if(dt.getDay()===0||cur===null){cur=[];weeks.push(cur);}cur.push(dayMin[i]);});
@@ -464,7 +469,7 @@ document.getElementById('monthSel').addEventListener('change',function(){buildGr
 document.getElementById('yearIn').addEventListener('change',function(){buildGrid();fixOutDefaults();calc();});
 document.getElementById('calcBtn').addEventListener('click',calc);
 document.getElementById('printBtn').addEventListener('click',function(){window.print();});
-document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Date','Hours (h:mm)','Decimal hours']];curDates.forEach(function(dt,i){var d=i+1;var paid=document.getElementById('breakPaid').value==='yes';var m=document.getElementById('M'+d+'W').checked?LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid):0;rows.push([(dt.getMonth()+1)+'/'+d+'/'+dt.getFullYear(),LH.fmtHM(m),LH.decimal(m).toFixed(2)]);});
+document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Date','Hours (h:mm)','Decimal hours']];curDates.forEach(function(dt,i){var d=i+1;var paid=document.getElementById('breakPaid').value==='yes';var m=document.getElementById('M'+d+'W').checked?LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid,!!(document.getElementById('M'+d+'On')&&document.getElementById('M'+d+'On').checked)):0;rows.push([(dt.getMonth()+1)+'/'+d+'/'+dt.getFullYear(),LH.fmtHM(m),LH.decimal(m).toFixed(2)]);});
 var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-monthly-timesheet.csv';a.click();URL.revokeObjectURL(a.href);});
 document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
 buildGrid();fixOutDefaults();calc();
