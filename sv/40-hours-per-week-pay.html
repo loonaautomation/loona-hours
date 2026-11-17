@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Beräkna min lön</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Om den här sidan</h2><p>40 timmar i veckan är standard heltidsvecka. Vid 40 timmar eller färre är allt ordinarie tid — ingen övertid ska betalas enligt den federala regeln.</p><p>Kalkylatorn nedan tar din egen timlön och timmar och räknar ut bruttolönen, övertidsuppdelningen och månads- och årsmotsvarigheterna. Ändra lönen till din delstats minimilön — 2026 års löner finns på sidan Minimilön 2026 — och siffrorna följer.</p></div><div class="sec"><h2>Vad det betalar — brutto, före skatt</h2><table class="freq"><tr><th>Schema</th><th>Bruttolön</th></tr><tr><td>40 timmar/vecka med $15.00/timme</td><td>$600.00</td></tr><tr><td>40 timmar/vecka med den federala $7.25/timme</td><td>$290.00</td></tr><tr><td>Månadsvis (med $15.00/timme)</td><td>$2,600.00</td></tr><tr><td>Årligen (med $15.00/timme)</td><td>$31,200.00</td></tr><tr><td>Övertidstimmar i veckan</td><td>0</td></tr></table><p>Endast bruttolön — skatter, Social Security, Medicare och avdrag ingår inte. Övertid betalas med 1.5× den ordinarie timlönen för timmar över 40 under en arbetsvecka (och enligt de dagliga reglerna där delstaten har dem).</p></div><div class="sec"><h2>Vanliga frågor</h2><details class="faq"><summary>Hur mycket ger 40 timmar i veckan med $15 i timmen?</summary><p>$600.00 brutto per vecka, före skatt.</p></details><details class="faq"><summary>Inkluderar 40 timmar i veckan övertid?</summary><p>Ja — nej, allt är ordinarie tid enligt den federala 40-timmarsregeln.</p></details><details class="faq"><summary>Är detta brutto- eller nettolön?</summary><p>Brutto — före inkomstskatt, Social Security och Medicare. Nettolönen är vanligtvis 75–85% av bruttolönen, beroende på delstaten och arbetarens skattesituation.</p></details></div><div class="sec"><h2>Relaterade timverktyg</h2><div class="grid"><a class="card" href="40-hours-per-week-pay.html"><strong>Veckolönskalkylator</strong><span>Bruttolön för valfria timmar och valfri lön.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Minimilön 2026 — Alla delstater</strong><span>Varje delstat och 20 städer, i en tabell.</span></a><a class="card" href="overtime-calculator.html"><strong>Övertidskalkylator</strong><span>Övertidsersättning enligt den federala regeln.</span></a><a class="card" href="hours-calculator.html"><strong>Timkalkylator</strong><span>Lägg ihop timmar över dagar och veckor.</span></a><a class="card" href="time-card-calculator.html"><strong>Tidkortskalkylator</strong><span>En veckotidrapport som sparas på din enhet.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Lönerad</th><th 
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Timlönen kan inte vara negativ, så den har behandlats som $0,00. Ange en lön på $0 eller mer.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Veckobrutto</div></div>'

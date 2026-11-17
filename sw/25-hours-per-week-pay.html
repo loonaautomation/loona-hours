@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Kokotoa malipo yangu</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Kuhusu ukurasa huu</h2><p>Masaa 25 kwa wiki ni ya muda wa sehemu yenye utaratibu wa kawaida. Kwa masaa 40 au chini, yote ni muda wa kawaida — hakuna muda wa ziada unaopaswa kulipwa chini ya kanuni ya shirikisho.</p><p>Kikokotoo kilicho hapa chini huchukua kiwango chako mwenyewe cha saa na masaa yako na hukokotoa malipo ya jumla, mgawanyo wa muda wa ziada na kiasi sawa cha mwezi na cha mwaka. Badilisha kiwango kuwa kiwango cha chini cha mshahara cha jimbo lako — viwango vya mwaka 2026 viko kwenye ukurasa wa Kiwango cha Chini cha Mshahara 2026 — na takwimu hufuata.</p></div><div class="sec"><h2>Kile kinacholipwa — jumla, kabla ya kodi</h2><table class="freq"><tr><th>Ratiba</th><th>Malipo ya jumla</th></tr><tr><td>masaa 25/wiki kwa $15.00/hr</td><td>$375.00</td></tr><tr><td>masaa 25/wiki kwa kiwango cha shirikisho cha $7.25/saa</td><td>$181.25</td></tr><tr><td>Ya mwezi (kwa $15.00/hr)</td><td>$1,625.00</td></tr><tr><td>Ya mwaka (kwa $15.00/hr)</td><td>$19,500.00</td></tr><tr><td>Masaa ya muda wa ziada katika wiki</td><td>0</td></tr></table><p>Malipo ya jumla tu — kodi, Usalama wa Jamii, Medicare na makato hayajumuishwi. Muda wa ziada hulipwa kwa 1.5× ya kiwango cha kawaida kwa masaa yanayozidi 40 katika wiki ya kazi (na chini ya kanuni za kila siku pale jimbo linapokuwa nazo).</p></div><div class="sec"><h2>Maswali Yanayoulizwa Mara kwa Mara</h2><details class="faq"><summary>Masaa 25 kwa wiki kwa $15 kwa saa ni kiasi gani?</summary><p>$375.00 jumla kwa wiki, kabla ya kodi.</p></details><details class="faq"><summary>Je, masaa 25 kwa wiki yanajumuisha muda wa ziada?</summary><p>Hapana, yote ni muda wa kawaida chini ya kanuni ya shirikisho ya masaa 40.</p></details><details class="faq"><summary>Je, hii ni malipo ya jumla au ya kuchukua nyumbani?</summary><p>Jumla — kabla ya kodi ya mapato, Usalama wa Jamii na Medicare. Malipo ya kupeleka nyumbani ni kawaida 75–85% ya jumla, kulingana na jimbo na hali ya kodi ya mfanyakazi.</p></details></div><div class="sec"><h2>Zana za Masaa Zinazohusiana</h2><div class="grid"><a class="card" href="25-hours-per-week-pay.html"><strong>Kikokotoo cha Malipo ya Wiki</strong><span>Malipo ya jumla kwa masaa yoyote na kiwango chochote.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Kiwango cha chini cha mshahara 2026 — Majimbo Yote</strong><span>Kila jimbo na miji 20, katika jedwali moja.</span></a><a class="card" href="overtime-calculator.html"><strong>Kikokotoo cha Muda wa Ziada</strong><span>Malipo ya muda wa ziada chini ya kanuni za shirikisho.</span></a><a class="card" href="hours-calculator.html"><strong>Kikokotoo cha Masaa</strong><span>Jumlisha masaa kote katika siku na wiki.</span></a><a class="card" href="time-card-calculator.html"><strong>Kikokotoo cha Kadi ya Muda</strong><span> Karatasi ya muda ya kila wiki inayohifadhiwa kwenye kifaa chako.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Mstari wa malipo<
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Kiwango cha saa hakiwezi kuwa hasi, kwa hiyo kimechukuliwa kama $0.00. Weka kiwango cha $0 au zaidi.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Jumla ya wiki</div></div>'

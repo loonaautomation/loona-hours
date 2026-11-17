@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Vypočítať moju mzdu</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>O tejto stránke</h2><p>50 hodín týždenne je týždeň s 50 hodinami — 10 nadčasových hodín. Nad 40 hodín sú ďalšie 10 hodiny nadčasy pri 1.5× bežnej sadzby podľa federálneho pravidla.</p><p>Kalkulačka nižšie berie vašu vlastnú hodinovú sadzbu a hodiny a vypočíta hrubú mzdu, rozdelenie nadčasov a mesačné a ročné ekvivalenty. Zmeňte sadzbu na minimálnu mzdu svojho štátu — sadzby 2026 sú na stránke Minimálna mzda 2026 — a čísla sa prispôsobia.</p></div><div class="sec"><h2>Koľko to vynesie — v hrubom, pred zdanením</h2><table class="freq"><tr><th>Rozvrh</th><th>Hrubá mzda</th></tr><tr><td>50 hod./týždeň pri $15.00/hod.</td><td>$825.00</td></tr><tr><td>50 hod./týždeň pri federálnej sadzbe $7.25/hod.</td><td>$398.75</td></tr><tr><td>Mesačne (pri $15.00/hod.)</td><td>$3,575.00</td></tr><tr><td>Ročne (pri $15.00/hod.)</td><td>$42,900.00</td></tr><tr><td>Nadčasových hodín v týždni</td><td>10</td></tr></table><p>Iba hrubá mzda — dane, Social Security, Medicare a zrážky nie sú zahrnuté. Nadčasy sa platia vo výške 1.5× bežnej sadzby za hodiny nad 40 v pracovnom týždni (a podľa denných pravidiel, kde ich štát má).</p></div><div class="sec"><h2>Časté otázky</h2><details class="faq"><summary>Koľko je 50 hodín týždenne pri $15 za hodinu?</summary><p>$825.00 v hrubom týždenne, pred zdanením.</p></details><details class="faq"><summary>Zahŕňa 50 hodín týždenne nadčasy?</summary><p>Áno — 10 hodín sú nadčasy pri 1.5×.</p></details><details class="faq"><summary>Je to hrubá, alebo čistá mzda?</summary><p>Hrubé — pred daňou z príjmu, Social Security a Medicare. Mzda domov je typicky 75–85 % hrubého, v závislosti od štátu a daňovej situácie pracovníka.</p></details></div><div class="sec"><h2>Súvisiace nástroje pre hodiny</h2><div class="grid"><a class="card" href="50-hours-per-week-pay.html"><strong>Kalkulačka týždennej mzdy</strong><span>Hrubá mzda za ľubovoľné hodiny a sadzbu.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Minimálna mzda 2026 — všetky štáty</strong><span>Každý štát a 20 miest, v jednej tabuľke.</span></a><a class="card" href="overtime-calculator.html"><strong>Kalkulačka nadčasov</strong><span>Mzda za nadčasy podľa federálneho pravidla.</span></a><a class="card" href="hours-calculator.html"><strong>Kalkulačka hodín</strong><span>Spočítajte hodiny naprieč dni a týždne.</span></a><a class="card" href="time-card-calculator.html"><strong>Kalkulačka výkazu pracovného času</strong><span>Týždenný výkaz, ktorý sa ukladá na vašom zariadení.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Mzdová položka<
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Hodinová sadzba nemôže byť záporná, preto bola považovaná za $0,00. Zadajte sadzbu $0 alebo vyššiu.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Týždenná hrubá</div></div>'
