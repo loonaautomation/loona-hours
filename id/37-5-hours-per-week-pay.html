@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Hitung upah saya</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Tentang halaman ini</h2><p>37.5 jam seminggu adalah minggu kantor standar dengan hari 7.5 jam. Pada 40 jam atau kurang, semuanya adalah tarif biasa — tidak ada lembur yang wajib menurut aturan federal.</p><p>Kalkulator di bawah mengambil tarif per jam dan jam Anda sendiri dan menghitung upah kotor, pembagian lembur, serta setara bulanan dan tahunan. Ubah tarif menjadi upah minimum negara bagian Anda — tarif 2026 ada di halaman Upah Minimum 2026 — dan angka mengikuti.</p></div><div class="sec"><h2>Berapa bayarannya — kotor, sebelum pajak</h2><table class="freq"><tr><th>Jadwal</th><th>Upah kotor</th></tr><tr><td>37.5 jam/minggu dengan tarif $15.00/jam</td><td>$562.50</td></tr><tr><td>37.5 jam/minggu dengan tarif federal $7.25/jam</td><td>$271.88</td></tr><tr><td>Bulanan (dengan tarif $15.00/jam)</td><td>$2,437.50</td></tr><tr><td>Tahunan (dengan tarif $15.00/jam)</td><td>$29,250.00</td></tr><tr><td>Jam lembur dalam seminggu</td><td>0</td></tr></table><p>Upah kotor saja — pajak, Jaminan Sosial, Medicare, dan potongan tidak termasuk. Lembur dibayar 1.5× tarif reguler untuk jam melewati 40 dalam seminggu kerja (dan menurut aturan harian di tempat negara bagian memilikinya).</p></div><div class="sec"><h2>Pertanyaan yang sering diajukan</h2><details class="faq"><summary>Berapa penghasilan 37.5 jam seminggu dengan tarif $15 per jam?</summary><p>$562.50 kotor per minggu, sebelum pajak.</p></details><details class="faq"><summary>Apakah 37.5 jam seminggu termasuk lembur?</summary><p>Ya — tidak, semuanya adalah tarif biasa menurut aturan federal 40 jam.</p></details><details class="faq"><summary>Apakah ini upah kotor atau upah bersih yang dibawa pulang?</summary><p>Kotor — sebelum pajak penghasilan, Jaminan Sosial, dan Medicare. Upah bersih biasanya 75–85% dari upah kotor, bergantung pada negara bagian dan situasi pajak pekerja.</p></details></div><div class="sec"><h2>Alat Jam Terkait</h2><div class="grid"><a class="card" href="37-5-hours-per-week-pay.html"><strong>Kalkulator Upah Mingguan</strong><span>Upah kotor untuk jam dan tarif berapa pun.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Upah Minimum 2026 — Semua Negara Bagian</strong><span>Setiap negara bagian dan 20 kota, dalam satu tabel.</span></a><a class="card" href="overtime-calculator.html"><strong>Kalkulator Lembur</strong><span>Upah lembur menurut aturan federal.</span></a><a class="card" href="hours-calculator.html"><strong>Kalkulator Jam</strong><span>Jumlahkan jam lintas hari dan minggu.</span></a><a class="card" href="time-card-calculator.html"><strong>Kalkulator Kartu Waktu</strong><span>Lembar waktu mingguan yang tersimpan di perangkat Anda.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Baris upah</th><t
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Tarif per jam tidak boleh negatif, jadi diperlakukan sebagai $0,00. Masukkan tarif $0 atau lebih.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Upah kotor mingguan</div></div>'

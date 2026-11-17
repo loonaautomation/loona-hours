@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">내 급여 계산하기</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>이 페이지 소개</h2><p>주 35시간은 거의 풀타임에 가까운 한 주예요. 40시간 이하에서는 전부 통상 근무예요 — 연방 규칙상 초과근무가 해당하지 않아요.</p><p>아래 계산기는 본인의 시간당 요율과 시간을 받아 총급여, 초과근무 구분, 월간·연간 환산을 계산해요. 요율을 주의 최저임금으로 바꾸세요 — 2026년 요율은 최저임금 2026 페이지에 있어요 — 수치가 따라와요.</p></div><div class="sec"><h2>급여 내역 — 세전 총급여</h2><table class="freq"><tr><th>일정</th><th>총급여</th></tr><tr><td>주 35시간, 시간당 $15.00</td><td>$525.00</td></tr><tr><td>주 35시간, 연방 요율 시간당 $7.25</td><td>$253.75</td></tr><tr><td>월간 (시간당 $15.00 기준)</td><td>$2,275.00</td></tr><tr><td>연간 (시간당 $15.00 기준)</td><td>$27,300.00</td></tr><tr><td>그 주의 초과근무 시간</td><td>0</td></tr></table><p>세전 총급여만요 — 세금, 사회보장세, 메디케어, 공제는 포함되지 않아요. 초과근무는 통상 요율의 1.5배로 지급돼요 — 근무 주 40시간 초과분에요 (그리고 주에 일일 규칙이 있는 곳에서는 그 규칙으로도요).</p></div><div class="sec"><h2>자주 묻는 질문</h2><details class="faq"><summary>시간당 $15으로 주 35시간 일하면 얼마예요?</summary><p>세전 주 총급여 $525.00예요.</p></details><details class="faq"><summary>주 35시간 근무에는 초과근무가 포함돼요?</summary><p>네 — 아니요, 연방 40시간 규칙에서는 전부 통상 근무예요.</p></details><details class="faq"><summary>이것은 세전인가요, 실수령액인가요?</summary><p>세전 — 소득세, 사회보장세, 메디케어 차감 전. 실수령액은 보통 총급여의 75–85%예요. 주와 근로자의 세무 상황에 따라 달라요.</p></details></div><div class="sec"><h2>관련 시간 도구</h2><div class="grid"><a class="card" href="35-hours-per-week-pay.html"><strong>주간 급여 계산기</strong><span>어떤 시간과 요율로도 총급여를 계산해요.</span></a><a class="card" href="minimum-wage-2026.html"><strong>최저임금 2026 — 모든 주</strong><span>모든 주와 20개 도시, 하나의 표에.</span></a><a class="card" href="overtime-calculator.html"><strong>초과근무 계산기</strong><span>연방 규칙에 따른 초과근무 수당.</span></a><a class="card" href="hours-calculator.html"><strong>시간 계산기</strong><span>여러 날과 여러 주에 걸쳐 시간을 합산해요.</span></a><a class="card" href="time-card-calculator.html"><strong>타임카드 계산기</strong><span>기기에 저장되는 주간 근무 기록표예요.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>급여 항목</th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("시급은 음수가 될 수 없으므로 $0.00로 처리되었습니다. $0 이상의 시급을 입력하세요.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">주간 총급여</div></div>'

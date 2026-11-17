@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calcolare la mia paga</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Informazioni su questa pagina</h2><p>30 ore a settimana sono la linea abituale tra part-time e tempo pieno. A 40 ore o meno, è tutto a tariffa ordinaria — nessuno straordinario è dovuto secondo la regola federale.</p><p>Il calcolatore qui sotto prende la propria tariffa oraria e le ore e calcola la retribuzione lorda, la ripartizione degli straordinari e gli equivalenti mensili e annuali. Cambiare la tariffa con il salario minimo del proprio Stato — le tariffe del 2026 sono nella pagina Salario minimo 2026 — e le cifre seguono.</p></div><div class="sec"><h2>Quanto paga — lordo, al lordo delle imposte</h2><table class="freq"><tr><th>Orario</th><th>Paga lorda</th></tr><tr><td>30 ore/settimana a $15.00/ora</td><td>$450.00</td></tr><tr><td>30 ore/settimana al salario federale di $7.25/ora</td><td>$217.50</td></tr><tr><td>Mensile (a $15.00/ora)</td><td>$1,950.00</td></tr><tr><td>Annuale (a $15.00/ora)</td><td>$23,400.00</td></tr><tr><td>Ore di straordinario nella settimana</td><td>0</td></tr></table><p>Solo paga lorda — tasse, Social Security, Medicare e detrazioni non sono inclusi. Lo straordinario è pagato a 1.5× la tariffa ordinaria per le ore oltre 40 in una settimana lavorativa (e secondo le regole giornaliere dove lo Stato le prevede).</p></div><div class="sec"><h2>Domande frequenti</h2><details class="faq"><summary>Quanto valgono 30 ore a settimana a $15 all'ora?</summary><p>$450.00 lordi a settimana, al lordo delle imposte.</p></details><details class="faq"><summary>30 ore a settimana includono lo straordinario?</summary><p>Sì — no, è tutto orario ordinario secondo la regola federale delle 40 ore.</p></details><details class="faq"><summary>Questa è paga lorda o netta?</summary><p>Lordo — prima di imposta sul reddito, Social Security e Medicare. La retribuzione netta è in genere il 75–85% del lordo, a seconda dello stato e della situazione fiscale del lavoratore.</p></details></div><div class="sec"><h2>Strumenti Hours correlati</h2><div class="grid"><a class="card" href="30-hours-per-week-pay.html"><strong>Calcolatore della retribuzione settimanale</strong><span>Retribuzione lorda per qualsiasi ore e tariffa.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Salario minimo 2026 — Tutti gli Stati</strong><span>Ogni Stato e 20 città, in una tabella.</span></a><a class="card" href="overtime-calculator.html"><strong>Calcolatore degli straordinari</strong><span>Paga per straordinario secondo la regola federale.</span></a><a class="card" href="hours-calculator.html"><strong>Calcolatore delle ore</strong><span>Somma le ore tra giorni e settimane.</span></a><a class="card" href="time-card-calculator.html"><strong>Calcolatore di scheda presenze</strong><span>Un foglio presenze settimanale che si salva sul dispositivo.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Voce di paga</th>
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("La tariffa oraria non può essere negativa, quindi è stata trattata come $0,00. Inserisci una tariffa di $0 o superiore.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Lordo settimanale</div></div>'

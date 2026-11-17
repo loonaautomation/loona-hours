@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Mijn loon berekenen</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Over deze pagina</h2><p>30 uur per week is de gebruikelijke grens tussen deeltijds en voltijds. Bij 40 uur of minder is alles gewone tijd — er is geen overwerk verschuldigd onder de federale regel.</p><p>De calculator hieronder neemt je eigen uurloon en uren en werkt het brutoloon, de overwerksplitsing en de maandelijkse en jaarlijkse equivalenten uit. Verander het tarief naar het minimumloon van je staat — de tarieven van 2026 staan op de pagina Minimumloon 2026 — en de cijfers volgen.</p></div><div class="sec"><h2>Wat het betaalt — bruto, vóór belastingen</h2><table class="freq"><tr><th>Rooster</th><th>Brutoloon</th></tr><tr><td>30 uur/week tegen $15.00/uur</td><td>$450.00</td></tr><tr><td>30 uur/week tegen het federale tarief van $7.25/uur</td><td>$217.50</td></tr><tr><td>Maandelijks (tegen $15.00/uur)</td><td>$1,950.00</td></tr><tr><td>Jaarlijks (tegen $15.00/uur)</td><td>$23,400.00</td></tr><tr><td>Overwerkuren in de week</td><td>0</td></tr></table><p>Alleen brutoloon — belastingen, Social Security, Medicare en aftrek zijn niet inbegrepen. Overwerk wordt betaald tegen 1.5× het gewone tarief voor uren boven de 40 in een werkweek (en onder de dagregels waar de staat die heeft).</p></div><div class="sec"><h2>Veelgestelde vragen</h2><details class="faq"><summary>Hoeveel is 30 uur per week tegen $15 per uur?</summary><p>$450.00 bruto per week, vóór belastingen.</p></details><details class="faq"><summary>Bevat 30 uur per week overwerk?</summary><p>Ja — nee, alles is gewone tijd onder de federale regel van 40 uur.</p></details><details class="faq"><summary>Is dit bruto- of nettoloon?</summary><p>Bruto — vóór inkomstenbelasting, Social Security en Medicare. Het nettoloon is doorgaans 75–85% van het bruto, afhankelijk van de staat en de belastingsituatie van de werknemer.</p></details></div><div class="sec"><h2>Gerelateerde urentools</h2><div class="grid"><a class="card" href="30-hours-per-week-pay.html"><strong>Weeklooncalculator</strong><span>Brutoloon voor elk aantal uren en elk tarief.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Minimumloon 2026 — Alle staten</strong><span>Elke staat en 20 steden, in één tabel.</span></a><a class="card" href="overtime-calculator.html"><strong>Overwerkcalculator</strong><span>Overwerkbetaling volgens de federale regel.</span></a><a class="card" href="hours-calculator.html"><strong>Urencalculator</strong><span>Tel uren op over dagen en weken.</span></a><a class="card" href="time-card-calculator.html"><strong>Urenkaartcalculator</strong><span>Een wekelijkse urenstaat die op je apparaat opslaat.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Loonregel</th><th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Het uurloon kan niet negatief zijn en is daarom behandeld als $0,00. Voer een loon van $0 of meer in.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Weekbruto</div></div>'
