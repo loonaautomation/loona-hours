@@ -433,7 +433,7 @@ var lastRows=[];
 function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];var msgs=[];
 for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('Munkavállaló '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');if(rate<0){if(!msgs.length)msgs.push("Az órabér nem lehet negatív, ezért $0,00-ként lett kezelve. Adjon meg $0 vagy annál nagyobb bért.");rate=0;}
 var reg=Math.min(hrs,40),ot=Math.max(0,hrs-40);var pay=LH.grossPay(Math.round(reg*60),Math.round(ot*60),0,rate);
-document.getElementById('E'+i+'Túlóra').textContent=hrs>0?ot.toFixed(2):'\u2014';
+document.getElementById('E'+i+'OT').textContent=hrs>0?ot.toFixed(2):'\u2014';
 document.getElementById('E'+i+'P').textContent=hrs>0?LH.money(pay.total):'\u2014';
 if(hrs>0){lastRows.push([name,hrs.toFixed(2),rate.toFixed(2),ot.toFixed(2),pay.total.toFixed(2)]);tReg+=reg;tOt+=ot;tPay+=pay.total;tHours+=hrs;}}
 var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}var el=document.getElementById('stats');
