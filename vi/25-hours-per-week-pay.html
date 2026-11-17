@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Tính lương của tôi</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Về trang này</h2><p>25 giờ một tuần là bán thời gian với lịch trình đều đặn. Ở mức 40 giờ trở xuống, tất cả đều là giờ thường — không phải trả làm thêm giờ theo quy tắc liên bang.</p><p>Máy tính dưới đây lấy mức lương giờ và số giờ của chính bạn và tính ra lương gộp, phần tách làm thêm giờ và các giá trị tương đương hàng tháng và hàng năm. Hãy đổi mức lương thành lương tối thiểu của bang bạn — các mức năm 2026 có trên trang Lương tối thiểu 2026 — và các con số sẽ theo sau.</p></div><div class="sec"><h2>Nó trả bao nhiêu — lương gộp, trước thuế</h2><table class="freq"><tr><th>Lịch</th><th>Lương gộp</th></tr><tr><td>25 giờ/tuần ở mức $15.00/giờ</td><td>$375.00</td></tr><tr><td>25 giờ/tuần ở mức liên bang $7.25/giờ</td><td>$181.25</td></tr><tr><td>Hàng tháng (ở mức $15.00/giờ)</td><td>$1,625.00</td></tr><tr><td>Hàng năm (ở mức $15.00/giờ)</td><td>$19,500.00</td></tr><tr><td>Số giờ làm thêm trong tuần</td><td>0</td></tr></table><p>Chỉ lương gộp — thuế, An sinh xã hội, Medicare và các khoản khấu trừ không được bao gồm. Làm thêm giờ được trả ở mức 1.5× mức lương thường cho số giờ trên 40 trong một tuần làm việc (và theo các quy tắc theo ngày ở nơi bang có chúng).</p></div><div class="sec"><h2>Các câu hỏi thường gặp</h2><details class="faq"><summary>25 giờ một tuần ở mức $15 mỗi giờ được bao nhiêu?</summary><p>$375.00 lương gộp mỗi tuần, trước thuế.</p></details><details class="faq"><summary>25 giờ một tuần có bao gồm làm thêm giờ không?</summary><p>Có — không, tất cả nó là giờ thường theo quy tắc 40 giờ liên bang.</p></details><details class="faq"><summary>Đây là lương gộp hay lương thực lĩnh?</summary><p>Gộp — trước thuế thu nhập, An sinh xã hội và Medicare. Lương thực lĩnh thường là 75–85% của lương gộp, tùy thuộc vào bang và tình hình thuế của người lao động.</p></details></div><div class="sec"><h2>Các công cụ giờ liên quan</h2><div class="grid"><a class="card" href="25-hours-per-week-pay.html"><strong>Máy tính lương hàng tuần</strong><span>Lương gộp cho bất kỳ số giờ và mức lương nào.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Lương tối thiểu 2026 — Tất cả các bang</strong><span>Mọi bang và 20 thành phố, trong một bảng.</span></a><a class="card" href="overtime-calculator.html"><strong>Máy tính làm thêm giờ</strong><span>Lương làm thêm giờ theo quy tắc liên bang.</span></a><a class="card" href="hours-calculator.html"><strong>Máy tính giờ</strong><span>Cộng dồn số giờ qua các ngày và các tuần.</span></a><a class="card" href="time-card-calculator.html"><strong>Máy tính thẻ chấm công</strong><span>Một bảng chấm công hàng tuần lưu trên thiết bị của bạn.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Dòng lương</th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Mức lương theo giờ không thể âm, nên đã được tính là $0,00. Hãy nhập mức lương $0 trở lên.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Lương gộp hàng tuần</div></div>'

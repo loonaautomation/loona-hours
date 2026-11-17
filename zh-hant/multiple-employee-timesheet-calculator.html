@@ -133,6 +133,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <button class="alt" id="csvBtn" type="button">下載 CSV</button>
 <button class="alt" id="printBtn" type="button">列印</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 </div>
 <div class="sec"><h2>使用方法 — 這個計算器背後的規則</h2><p>小僱主通常在同樣兩個地方算錯工資：把加班應用於 <em>團隊的</em> 合併的工時，而不是每個人的工時，並忘記一個員工安靜的一週不能抵消另一個員工的加班。聯邦法律是按每位員工、按每個工作周的：每個工人本週超過 40 的工時賺到1.5× <em>他們的</em> 費率，與任何其他人的排班無關。本計算器正是這樣執行的 — 每人一行，溢價在行內計算。</p>
 <p>兩個誠實的限制：這是一個總工資估算工具，不是工資服務 — 它不預扣稅款、不應用州每日加班規則（請使用以下工具） <a href="overtime-calculator-by-state.html">按州估算工具</a> 對於那五個州），或處理領薪員工。而且您輸入的員工姓名只留在這臺裝置上的本頁中；您關閉頁面時，什麼都不儲存、不傳送到任何地方，所以如果您需要記錄，請下載 CSV。</p></div>
@@ -182,11 +183,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -198,10 +201,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -229,6 +232,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -425,13 +430,13 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工資行</th><th
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
 var lastRows=[];
-function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];
-for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('員工 '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');
+function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];var msgs=[];
+for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('員工 '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');if(rate<0){if(!msgs.length)msgs.push("時薪不能為負數，因此已按$0.00處理。請輸入$0或更高的時薪。");rate=0;}
 var reg=Math.min(hrs,40),ot=Math.max(0,hrs-40);var pay=LH.grossPay(Math.round(reg*60),Math.round(ot*60),0,rate);
 document.getElementById('E'+i+'加班').textContent=hrs>0?ot.toFixed(2):'\u2014';
 document.getElementById('E'+i+'P').textContent=hrs>0?LH.money(pay.total):'\u2014';
 if(hrs>0){lastRows.push([name,hrs.toFixed(2),rate.toFixed(2),ot.toFixed(2),pay.total.toFixed(2)]);tReg+=reg;tOt+=ot;tPay+=pay.total;tHours+=hrs;}}
-var el=document.getElementById('stats');
+var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+lastRows.length+'</div><div class="k">已支付員工</div></div>'
 +'<div class="stat"><div class="v">'+tHours.toFixed(2)+'</div><div class="k">團隊工時</div></div>'
 +'<div class="stat"><div class="v">'+tOt.toFixed(2)+'</div><div class="k">團隊加班工時</div></div>'

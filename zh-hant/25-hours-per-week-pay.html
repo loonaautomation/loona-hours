@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">計算我的工資</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>關於本頁</h2><p>每週 25 小時是帶固定日常的兼職。40 小時或更少時，全部是常規工時 — 按聯邦規則不欠加班費。</p><p>下面的計算器採用您自己的時薪和工時，計算出總工資、加班拆分，以及每月和每年的等值。把費率改為您的州的最低工資 — 2026 年的標準在最低工資 2026 頁面上 — 數字會跟隨。</p></div><div class="sec"><h2>它支付多少 — 稅前總工資</h2><table class="freq"><tr><th>排班表</th><th>總工資</th></tr><tr><td>每週 25 小時按 $15.00/小時</td><td>$375.00</td></tr><tr><td>每週 25 小時按聯邦 $7.25/小時</td><td>$181.25</td></tr><tr><td>每月（按 $15.00/小時）</td><td>$1,625.00</td></tr><tr><td>每年（按 $15.00/小時）</td><td>$19,500.00</td></tr><tr><td>本週的加班小時</td><td>0</td></tr></table><p>僅為總工資 — 不包括稅款、社會安全、醫療保險和扣除。加班按常規時薪的1.5×支付，適用於工作周內超過 40 的工時（以及州有每日規則時的每日規則）。</p></div><div class="sec"><h2>常見問題</h2><details class="faq"><summary>按每小時 $15 計算，每週 25 小時是多少錢？</summary><p>每週總工資 $375.00，稅前。</p></details><details class="faq"><summary>每週 25 小時包括加班嗎？</summary><p>是的 — 不，按聯邦40小時規則，這全部是常規工時。</p></details><details class="faq"><summary>這是稅前還是實發工資？</summary><p>稅前總工資 — 在所得稅、社會保障稅和醫療保險稅之前。實發工資通常是總工資的 75–85%，取決於州和員工的稅務情況。</p></details></div><div class="sec"><h2>相關工時工具</h2><div class="grid"><a class="card" href="25-hours-per-week-pay.html"><strong>每週工資計算器</strong><span>任意工時和時薪的總工資。</span></a><a class="card" href="minimum-wage-2026.html"><strong>2026年最低工資 — 全部州</strong><span>每個州和 20 座城市，彙集在一張表中。</span></a><a class="card" href="overtime-calculator.html"><strong>加班計算器</strong><span>按聯邦規則計算的加班費。</span></a><a class="card" href="hours-calculator.html"><strong>工時計算器</strong><span>跨天、跨周累計工時。</span></a><a class="card" href="time-card-calculator.html"><strong>工時卡計算器</strong><span>一份儲存在您裝置上的每週工時表。</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>工資行</th><th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("時薪不能為負數，因此已按$0.00處理。請輸入$0或更高的時薪。");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">每週總工資</div></div>'

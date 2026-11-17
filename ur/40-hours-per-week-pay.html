@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">میری تنخواہ کا حساب لگائیں</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>اس صفحے کے بارے میں</h2><p>ہفتے میں 40 گھنٹے معیاری کل وقتی ہفتہ ہے۔ 40 گھنٹے یا اس سے کم پر، یہ سب سیدھا وقت ہے — وفاقی اصول کے تحت کوئی اوور ٹائم واجب نہیں۔</p><p>نیچے والا کیلکولیٹر آپ کی اپنی فی گھنٹہ شرح اور گھنٹے لیتا ہے اور مجموعی تنخواہ، اوور ٹائم تقسیم اور ماہانہ و سالانہ مساوی گنتا ہے۔ شرح کو اپنی ریاست کی کم از کم اجرت میں بدلیں — 2026 شرحیں کم از کم اجرت 2026 صفحے پر ہیں — اور اعداد پیروی کرتے ہیں۔</p></div><div class="sec"><h2>یہ کیا ادا کرتا ہے — مجموعی، ٹیکسوں سے پہلے</h2><table class="freq"><tr><th>شیڈول</th><th>مجموعی تنخواہ</th></tr><tr><td>40 گھنٹے/ہفتہ، $15.00/گھنٹہ پر</td><td>$600.00</td></tr><tr><td>40 گھنٹے/ہفتہ، وفاقی $7.25/گھنٹہ پر</td><td>$290.00</td></tr><tr><td>ماہانہ ($15.00/گھنٹہ پر)</td><td>$2,600.00</td></tr><tr><td>سالانہ ($15.00/گھنٹہ پر)</td><td>$31,200.00</td></tr><tr><td>ہفتے میں اوور ٹائم گھنٹے</td><td>0</td></tr></table><p>صرف مجموعی تنخواہ — ٹیکس، سوشل سیکیورٹی، میڈیکیئر اور کٹوتیاں شامل نہیں۔ اوور ٹائم کام کے ہفتے میں 40 سے اوپر گھنٹوں کے لیے باقاعدہ شرح کے 1.5× پر ادا ہوتا ہے (اور یومیہ اصولوں کے تحت جہاں ریاست کے پاس ہیں)۔</p></div><div class="sec"><h2>اکثر پوچھے گئے سوالات</h2><details class="faq"><summary>$15 فی گھنٹہ پر ہفتے میں 40 گھنٹے کتنے کے پڑتے ہیں؟</summary><p>$600.00 مجموعی فی ہفتہ، ٹیکسوں سے پہلے۔</p></details><details class="faq"><summary>کیا ہفتے میں 40 گھنٹوں میں اوور ٹائم شامل ہوتا ہے؟</summary><p>جی ہاں — نہیں، یہ سب وفاقی 40 گھنٹے کے قاعدے کے تحت سیدھا وقت ہے۔</p></details><details class="faq"><summary>کیا یہ مجموعی ہے یا گھر لے جانے والی تنخواہ؟</summary><p>مجموعی — آمدن ٹیکس، سوشل سیکیورٹی اور میڈیکیئر سے پہلے۔ گھر لے جانے والی تنخواہ عموماً مجموعی کا 75–85% ہوتی ہے، ریاست اور کارکن کی ٹیکس صورتحال پر منحصر۔</p></details></div><div class="sec"><h2>متعلقہ گھنٹوں کے آلات</h2><div class="grid"><a class="card" href="40-hours-per-week-pay.html"><strong>ہفتہ وار تنخواہ کیلکولیٹر</strong><span>کسی بھی گھنٹوں اور شرح کے لیے مجموعی تنخواہ۔</span></a><a class="card" href="minimum-wage-2026.html"><strong>کم از کم اجرت 2026 — تمام ریاستیں</strong><span>ہر ریاست اور 20 شہر، ایک جدول میں۔</span></a><a class="card" href="overtime-calculator.html"><strong>اوور ٹائم کیلکولیٹر</strong><span>وفاقی اصول کے تحت اوور ٹائم تنخواہ۔</span></a><a class="card" href="hours-calculator.html"><strong>گھنٹوں کا کیلکولیٹر</strong><span>دنوں اور ہفتوں میں گھنٹے جمع کریں۔</span></a><a class="card" href="time-card-calculator.html"><strong>ٹائم کارڈ کیلکولیٹر</strong><span>ہفتہ وار ٹائم شیٹ جو آپ کے آلے پر محفوظ ہوتی ہے۔</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>تنخواہ سط
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("فی گھنٹہ اجرت منفی نہیں ہو سکتی، اس لیے اسے $0.00 سمجھا گیا ہے۔ $0 یا اس سے زیادہ اجرت درج کریں۔");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">ہفتہ وار مجموعی</div></div>'

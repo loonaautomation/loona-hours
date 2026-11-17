@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">คำนวณค่าจ้างของฉัน</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>เกี่ยวกับหน้านี้</h2><p>40 ชั่วโมงต่อสัปดาห์เป็นสัปดาห์เต็มเวลามาตรฐาน ที่ 40 ชั่วโมงหรือน้อยกว่า ทั้งหมดเป็นเวลาปกติ — ไม่มีการทำงานล่วงเวลาที่ต้องจ่ายภายใต้กฎของรัฐบาลกลาง</p><p>เครื่องคำนวณด้านล่างใช้อัตรารายชั่วโมงและชั่วโมงของคุณเองและคำนวณค่าจ้างรวม การแยกค่าล่วงเวลา และค่าเทียบเท่ารายเดือนและรายปี เปลี่ยนอัตราเป็นค่าจ้างขั้นต่ำของรัฐของคุณ — อัตรา 2026 อยู่ในหน้าค่าจ้างขั้นต่ำ 2026 — และตัวเลขจะตามไป</p></div><div class="sec"><h2>จ่ายเท่าไร — รวม ก่อนหักภาษี</h2><table class="freq"><tr><th>ตารางเวลา</th><th>ค่าจ้างรวม</th></tr><tr><td>40 ชั่วโมง/สัปดาห์ ที่ $15.00/ชม.</td><td>$600.00</td></tr><tr><td>40 ชั่วโมง/สัปดาห์ ที่อัตรารัฐบาลกลาง $7.25/ชม.</td><td>$290.00</td></tr><tr><td>รายเดือน (ที่ $15.00/ชม.)</td><td>$2,600.00</td></tr><tr><td>รายปี (ที่ $15.00/ชม.)</td><td>$31,200.00</td></tr><tr><td>ชั่วโมงการทำงานล่วงเวลาในสัปดาห์</td><td>0</td></tr></table><p>ค่าจ้างรวมเท่านั้น — ไม่รวมภาษี ประกันสังคม Medicare และการหักเงิน การทำงานล่วงเวลาจ่ายที่ 1.5× ของอัตราปกติสำหรับชั่วโมงที่เกิน 40 ในหนึ่งสัปดาห์การทำงาน (และภายใต้กฎรายวันในรัฐที่มี)</p></div><div class="sec"><h2>คำถามที่พบบ่อย</h2><details class="faq"><summary>40 ชั่วโมงต่อสัปดาห์ที่ $15 ต่อชั่วโมงได้เท่าไร</summary><p>$600.00 รวมต่อสัปดาห์ ก่อนหักภาษี</p></details><details class="faq"><summary>40 ชั่วโมงต่อสัปดาห์รวมการทำงานล่วงเวลาหรือไม่</summary><p>ใช่ — ไม่ ทั้งหมดเป็นเวลาปกติภายใต้กฎ 40 ชั่วโมงของรัฐบาลกลาง</p></details><details class="faq"><summary>นี่คือค่าจ้างรวมหรือค่าจ้างสุทธิ</summary><p>ค่าจ้างรวม — ก่อนหักภาษีเงินได้ ประกันสังคม และ Medicare ค่าจ้างสุทธิโดยทั่วไปคือ 75–85% ของค่าจ้างรวม ขึ้นอยู่กับรัฐและสถานการณ์ภาษีของพนักงาน</p></details></div><div class="sec"><h2>เครื่องมือชั่วโมงที่เกี่ยวข้อง</h2><div class="grid"><a class="card" href="40-hours-per-week-pay.html"><strong>เครื่องคำนวณค่าจ้างรายสัปดาห์</strong><span>ค่าจ้างรวมสำหรับชั่วโมงและอัตราใดก็ได้</span></a><a class="card" href="minimum-wage-2026.html"><strong>ค่าจ้างขั้นต่ำ 2026 — ทุกรัฐ</strong><span>ทุกรัฐและ 20 เมือง ในตารางเดียว</span></a><a class="card" href="overtime-calculator.html"><strong>เครื่องคำนวณการทำงานล่วงเวลา</strong><span>ค่าตอบแทนการทำงานล่วงเวลาภายใต้กฎของรัฐบาลกลาง</span></a><a class="card" href="hours-calculator.html"><strong>เครื่องคำนวณชั่วโมง</strong><span>รวมชั่วโมงข้ามวันและข้ามสัปดาห์</span></a><a class="card" href="time-card-calculator.html"><strong>เครื่องคำนวณบัตรลงเวลา</strong><span>ตารางลงเวลารายสัปดาห์ที่บันทึกบนอุปกรณ์ของคุณ</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>บรรทั�
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("อัตราค่าจ้างรายชั่วโมงติดลบไม่ได้ จึงถือว่าเป็น $0.00 โปรดป้อนอัตราตั้งแต่ $0 ขึ้นไป");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">ค่าจ้างรวมรายสัปดาห์</div></div>'
