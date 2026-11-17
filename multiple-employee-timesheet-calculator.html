@@ -134,6 +134,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <button class="alt" id="csvBtn" type="button">Download CSV</button>
 <button class="alt" id="printBtn" type="button">Print</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 </div>
 <div class="sec"><h2>How It Works — The Rule Behind This Calculator</h2><p>Small employers usually fail payroll in the same two places: applying overtime to the <em>crew's</em> combined hours instead of each person's, and forgetting that one employee's quiet week cannot offset another's overtime. Federal law is per-employee and per-workweek: each worker's hours over 40 in the week earn 1.5× <em>their</em> rate, regardless of anyone else's schedule. This calculator enforces exactly that — one row per person, premium computed inside the row.</p>
 <p>Two honest limits: this is a gross-pay estimator, not a payroll service — it does not withhold taxes, apply state daily-overtime rules (use the <a href="overtime-calculator-by-state.html">By State estimator</a> for those five states), or handle salaried staff. And employee names you type stay in this page on your device; nothing is stored or sent anywhere when you close it, so download the CSV if you need the record.</p></div>
@@ -431,13 +432,13 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th 
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
 var lastRows=[];
-function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];
-for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('Employee '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');
+function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];var msgs=[];
+for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('Employee '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');if(rate<0){if(!msgs.length)msgs.push('Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.');rate=0;}
 var reg=Math.min(hrs,40),ot=Math.max(0,hrs-40);var pay=LH.grossPay(Math.round(reg*60),Math.round(ot*60),0,rate);
 document.getElementById('E'+i+'OT').textContent=hrs>0?ot.toFixed(2):'\u2014';
 document.getElementById('E'+i+'P').textContent=hrs>0?LH.money(pay.total):'\u2014';
 if(hrs>0){lastRows.push([name,hrs.toFixed(2),rate.toFixed(2),ot.toFixed(2),pay.total.toFixed(2)]);tReg+=reg;tOt+=ot;tPay+=pay.total;tHours+=hrs;}}
-var el=document.getElementById('stats');
+var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+lastRows.length+'</div><div class="k">Employees paid</div></div>'
 +'<div class="stat"><div class="v">'+tHours.toFixed(2)+'</div><div class="k">Crew hours</div></div>'
 +'<div class="stat"><div class="v">'+tOt.toFixed(2)+'</div><div class="k">Crew overtime hours</div></div>'

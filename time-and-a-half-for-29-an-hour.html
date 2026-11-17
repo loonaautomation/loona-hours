@@ -133,6 +133,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calculate</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="payTable"></div>
 </div>
 <div class="sec"><h2>What $29 an Hour Looks Like With Overtime</h2>
@@ -425,7 +426,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th 
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var rate=gv('rRate');var regH=gv('rReg');var otH=gv('rOT');
+function calc(){var rate=gv('rRate');var msgs=[];if(rate<0){msgs.push('Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.');rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}var regH=gv('rReg');var otH=gv('rOT');
 var regMin=Math.round(regH*60), otMin=Math.round(otH*60);
 var pay=LH.grossPay(regMin,otMin,0,rate);
 statBoxes(document.getElementById('stats'),regMin,otMin,0,pay.total);

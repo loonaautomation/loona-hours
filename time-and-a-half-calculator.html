@@ -132,6 +132,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Calculate time and a half</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="payTable"></div>
 <div id="quickLine"></div>
 </div>
@@ -434,7 +435,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Pay line</th><th 
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var rate=gv('rate');var otMin=Math.round(gv('otH')*60);var full=document.getElementById('incl').value==='full';var reg=full?2400:0;
+function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push('Hourly rate cannot be negative, so it has been treated as $0.00. Enter a rate of $0 or more.');rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}var otMin=Math.round(gv('otH')*60);var full=document.getElementById('incl').value==='full';var reg=full?2400:0;
 var pay=LH.grossPay(reg,otMin,0,rate);
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(rate*1.5)+'</div><div class="k">Time-and-a-half rate</div></div>'
