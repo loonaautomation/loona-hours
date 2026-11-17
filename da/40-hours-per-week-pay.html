@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Beregn min løn</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Om denne side</h2><p>40 timer i ugen er standard fulltidsuge. Med 40 timer eller færre er alt ordinær tid — ingen overtid skyldes efter den føderale regel.</p><p>Beregneren nedenfor tager din egen timesats og dine timer og regner bruttolønnen, overtidsopdelingen og de månedlige og årlige ækvivalenter ud. Skift satsen til din delstats mindsteløn — satserne for 2026 står på siden Mindsteløn 2026 — og tallene følger med.</p></div><div class="sec"><h2>Hvad det giver — brutto, før skat</h2><table class="freq"><tr><th>Vagtplan</th><th>Bruttoløn</th></tr><tr><td>40 timer/uge til $15.00/time</td><td>$600.00</td></tr><tr><td>40 timer/uge til den føderale sats på $7.25/time</td><td>$290.00</td></tr><tr><td>Månedlig (til $15.00/time)</td><td>$2,600.00</td></tr><tr><td>Årlig (til $15.00/time)</td><td>$31,200.00</td></tr><tr><td>Overtidstimer i ugen</td><td>0</td></tr></table><p>Kun bruttoløn — skatter, Social Security, Medicare og fradrag er ikke inkluderet. Overtid betales med 1.5× af den ordinære sats for timer over 40 i en arbejdsuge (og efter de daglige regler, hvor delstaten har dem).</p></div><div class="sec"><h2>Ofte stillede spørgsmål</h2><details class="faq"><summary>Hvor meget bliver 40 timer i ugen til $15 i timen?</summary><p>$600.00 brutto per uge, før skat.</p></details><details class="faq"><summary>Inkluderer 40 timer i ugen overtid?</summary><p>Ja — nej, det hele er ordinær tid efter den føderale 40-timers regel.</p></details><details class="faq"><summary>Er dette brutto- eller nettoløn?</summary><p>Brutto — før indkomstsskat, Social Security og Medicare. Hjemmetaksløn er sædvanligvis 75–85% af brutto, afhængig af delstaten og arbejdstakerens skattesituation.</p></details></div><div class="sec"><h2>Relaterede timeværktøjer</h2><div class="grid"><a class="card" href="40-hours-per-week-pay.html"><strong>Ugentlig lønberegner</strong><span>Bruttoløn for alle timer og enhver sats.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Mindsteløn 2026 — Alle delstater</strong><span>Alle delstater og 20 byer, i én tabel.</span></a><a class="card" href="overtime-calculator.html"><strong>Overtidsberegner</strong><span>Overtidsbetaling efter den føderale regel.</span></a><a class="card" href="hours-calculator.html"><strong>Timeberegner</strong><span>Læg timer sammen på tværs af dage og uger.</span></a><a class="card" href="time-card-calculator.html"><strong>Timeseddelberegner</strong><span>en ugentlig timeseddel som lagres på din enhed.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Lønlinje</th><th
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Timelønnen kan ikke være negativ, så den er behandlet som $0,00. Indtast en løn på $0 eller mere.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Ugebrutto</div></div>'

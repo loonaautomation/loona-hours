@@ -131,6 +131,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="frow"><div class="field"><label for="S0">সোমবার (ঘণ্টা)</label><input type="number" id="S0" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S1">মঙ্গলবার (ঘণ্টা)</label><input type="number" id="S1" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S2">বুধবার (ঘণ্টা)</label><input type="number" id="S2" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S3">বৃহস্পতিবার (ঘণ্টা)</label><input type="number" id="S3" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S4">শুক্রবার (ঘণ্টা)</label><input type="number" id="S4" value="9" min="0" max="24" step="0.25"></div><div class="field"><label for="S5">শনিবার (ঘণ্টা)</label><input type="number" id="S5" value="0" min="0" max="24" step="0.25"></div><div class="field"><label for="S6">রবিবার (ঘণ্টা)</label><input type="number" id="S6" value="0" min="0" max="24" step="0.25"></div></div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">মিসৌরি বেতন হিসাব করুন</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="payTable"></div>
 </div>
 <div class="sec"><h2>কীভাবে কাজ করে — মিসৌরি-এর নিয়ম</h2>
@@ -178,11 +179,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -194,10 +197,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -225,6 +228,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -421,7 +426,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>বেতনে�
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var rate=gv('rate');
+function calc(){var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("ঘণ্টার হার ঋণাত্মক হতে পারে না, তাই এটি $0.00 হিসাবে ধরা হয়েছে। $0 বা তার বেশি হার লিখুন।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var days=[];for(var i=0;i<7;i++){days.push(Math.round(Math.min(24,Math.max(0,gv('S'+i)))*60));}
 var s=LH.splitStateWeek(days,'MO',{rate:rate,industry:document.getElementById('indSel')?document.getElementById('indSel').value==='হ্যাঁ':false});
 var pay=LH.grossPay(s.regMin,s.otMin,s.dtMin,rate);

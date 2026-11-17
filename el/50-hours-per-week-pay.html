@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Υπολογίστε την αμοιβή μου</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>Σχετικά με αυτή τη σελίδα</h2><p>Οι 50 ώρες την εβδομάδα είναι μια εβδομάδα 50 ωρών — 10 ώρες υπερωρίας. Πέραν των 40 ωρών, οι επιπλέον 10 ώρες είναι υπερωρίες με 1.5× την κανονική αμοιβή βάσει του ομοσπονδιακού κανόνα.</p><p>Ο παρακάτω υπολογιστής παίρνει το δικό σας ωριαίο ποσοστό και τις ώρες σας και υπολογίζει τη μικτή αμοιβή, τον διαχωρισμό υπερωρίας και τα μηνιαία και ετήσια ισοδύναμα. Αλλάξτε το ποσοστό στον κατώτατο μισθό της πολιτείας σας — οι τιμές του 2026 βρίσκονται στη σελίδα Κατώτατος Μισθός 2026 — και τα ποσά ακολουθούν.</p></div><div class="sec"><h2>Τι πληρώνει — μικτά, πριν από τους φόρους</h2><table class="freq"><tr><th>Πρόγραμμα</th><th>Μικτή αμοιβή</th></tr><tr><td>50 ώρες/εβδομάδα με $15.00/ώρα</td><td>$825.00</td></tr><tr><td>50 ώρες/εβδομάδα με τα ομοσπονδιακά $7.25/ώρα</td><td>$398.75</td></tr><tr><td>Μηνιαία (με $15.00/ώρα)</td><td>$3,575.00</td></tr><tr><td>Ετήσια (με $15.00/ώρα)</td><td>$42,900.00</td></tr><tr><td>Ώρες υπερωρίας στην εβδομάδα</td><td>10</td></tr></table><p>Μόνο μικτή αμοιβή — φόροι, Κοινωνική Ασφάλιση, Medicare και εκπτώσεις δεν περιλαμβάνονται. Η υπερωρία πληρώνεται με 1.5× την κανονική αμοιβή για ώρες πάνω από 40 σε μια εβδομάδα εργασίας (και βάσει των ημερήσιων κανόνων όπου η πολιτεία τους έχει).</p></div><div class="sec"><h2>Συχνές ερωτήσεις</h2><details class="faq"><summary>Πόσο είναι 50 ώρες την εβδομάδα με $15 την ώρα;</summary><p>$825.00 μικτά ανά εβδομάδα, προ φόρων.</p></details><details class="faq"><summary>Περιλαμβάνουν οι 50 ώρες την εβδομάδα υπερωρία;</summary><p>Ναι — 10 ώρες είναι υπερωρία με 1.5×.</p></details><details class="faq"><summary>Αυτή είναι μικτή ή καθαρή αμοιβή;</summary><p>Μικτά — πριν τον φόρο εισοδήματος, την Κοινωνική Ασφάλιση και το Medicare. Η αμοιβή που παίρνετε σπίτι είναι συνήθως 75–85% των μικτών, ανάλογα με την πολιτεία και τη φορολογική κατάσταση του εργαζόμενου.</p></details></div><div class="sec"><h2>Σχετικά Εργαλεία Ωρών</h2><div class="grid"><a class="card" href="50-hours-per-week-pay.html"><strong>Υπολογιστής Εβδομαδιαίας Αμοιβής</strong><span>Μικτή αμοιβή για οποιεσδήποτε ώρες και αμοιβή.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Κατώτατος Μισθός 2026 — Όλες οι Πολιτείες</strong><span>Κάθε πολιτεία και 20 πόλεις, σε έναν πίνακα.</span></a><a class="card" href="overtime-calculator.html"><strong>Υπολογιστής Υπερωριών</strong><span>Αμοιβή υπερωρίας βάσει του ομοσπονδιακού κανόνα.</span></a><a class="card" href="hours-calculator.html"><strong>Υπολογιστής Ωρών</strong><span>Αθροίστε ώρες σε ημέρες και εβδομάδες.</span></a><a class="card" href="time-card-calculator.html"><strong>Υπολογιστής Κάρτας Χρόνου</strong><span>Ένα εβδομαδιαίο φύλλο εργασίας που αποθηκεύεται στη συσκευή σας.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Γραμμή πλ
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Η ωριαία αμοιβή δεν μπορεί να είναι αρνητική, επομένως αντιμετωπίστηκε ως $0,00. Εισαγάγετε αμοιβή $0 ή μεγαλύτερη.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Εβδομαδιαία μικτή</div></div>'

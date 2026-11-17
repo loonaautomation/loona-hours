@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">আমার বেতন হিসাব করুন</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>এই পেজ সম্পর্কে</h2><p>সপ্তাহে 37.5 ঘণ্টা হলো মানক 7.5-ঘণ্টার-দিনের অফিস সপ্তাহ। 40 ঘণ্টা বা তার কম হলে পুরোটাই সরল সময় — ফেডারেল নিয়মে কোনো ওভারটাইম প্রাপ্য নয়।</p><p>নিচের ক্যালকুলেটরটি আপনার নিজের ঘণ্টার হার ও ঘণ্টা নেয় এবং মোট বেতন, ওভারটাইম ভাগ ও মাসিক ও বার্ষিক সমতুল্য হিসাব করে। হারটি আপনার রাজ্যের ন্যূনতম মজুরিতে বদলান — 2026-এর হার Minimum Wage 2026 পেজে আছে — এবং সংখ্যাগুলো সেই অনুযায়ী আসে।</p></div><div class="sec"><h2>তা কত দেয় — মোট, করের আগে</h2><table class="freq"><tr><th>সময়সূচি</th><th>মোট বেতন</th></tr><tr><td>সপ্তাহে 37.5 ঘণ্টা, $15.00/ঘণ্টা হারে</td><td>$562.50</td></tr><tr><td>সপ্তাহে 37.5 ঘণ্টা, ফেডারেল $7.25/ঘণ্টা হারে</td><td>$271.88</td></tr><tr><td>মাসিক ($15.00/ঘণ্টা হারে)</td><td>$2,437.50</td></tr><tr><td>বার্ষিক ($15.00/ঘণ্টা হারে)</td><td>$29,250.00</td></tr><tr><td>সপ্তাহে ওভারটাইম ঘণ্টা</td><td>0</td></tr></table><p>শুধু মোট বেতন — কর, Social Security, Medicare ও কর্তন অন্তর্ভুক্ত নয়। কর্মসপ্তাহে 40 ঘণ্টার বেশি ঘণ্টার জন্য ওভারটাইম নিয়মিত হারের 1.5× হারে দেওয়া হয় (এবং রাজ্যের দৈনিক নিয়ম থাকলে সেগুলোর অধীনে)।</p></div><div class="sec"><h2>সচরাচর জিজ্ঞাসিত প্রশ্ন</h2><details class="faq"><summary>ঘণ্টায় $15 হারে সপ্তাহে 37.5 ঘণ্টার বেতন কত?</summary><p>করের আগে সপ্তাহে মোট $562.50।</p></details><details class="faq"><summary>সপ্তাহে 37.5 ঘণ্টার মধ্যে কি ওভারটাইম অন্তর্ভুক্ত?</summary><p>হ্যাঁ — না, ফেডারেল 40 ঘণ্টার নিয়মে তার সবটাই সাধারণ সময়।</p></details><details class="faq"><summary>এটি কি মোট নাকি ঘরে-নেওয়া বেতন?</summary><p>মোট — আয়কর, Social Security ও Medicare-এর আগে। ঘরে নেওয়া বেতন সাধারণত মোটের 75–85%, রাজ্য ও কর্মীর কর পরিস্থিতির ওপর নির্ভর করে।</p></details></div><div class="sec"><h2>সম্পর্কিত Hours টুল</h2><div class="grid"><a class="card" href="37-5-hours-per-week-pay.html"><strong>সাপ্তাহিক বেতন ক্যালকুলেটর</strong><span>যেকোনো ঘণ্টা ও হারের জন্য মোট বেতন।</span></a><a class="card" href="minimum-wage-2026.html"><strong>ন্যূনতম মজুরি 2026 — সব রাজ্য</strong><span>প্রতিটি রাজ্য ও 20টি শহর, একটি তালিকায়।</span></a><a class="card" href="overtime-calculator.html"><strong>ওভারটাইম ক্যালকুলেটর</strong><span>ফেডারেল নিয়মে ওভারটাইম বেতন।</span></a><a class="card" href="hours-calculator.html"><strong>ঘণ্টা ক্যালকুলেটর</strong><span>দিন ও সপ্তাহ জুড়ে ঘণ্টা যোগ করুন।</span></a><a class="card" href="time-card-calculator.html"><strong>টাইম কার্ড ক্যালকুলেটর</strong><span>একটি সাপ্তাহিক টাইমশিট যা আপনার ডিভাইসে সংরক্ষিত হয়।</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>বেতনে�
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("ঘণ্টার হার ঋণাত্মক হতে পারে না, তাই এটি $0.00 হিসাবে ধরা হয়েছে। $0 বা তার বেশি হার লিখুন।");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">সাপ্তাহিক মোট</div></div>'

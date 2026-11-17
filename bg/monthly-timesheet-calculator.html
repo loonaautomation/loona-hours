@@ -136,6 +136,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <button class="alt" id="printBtn" type="button">Печат</button>
 </div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 <div id="payTable"></div>
 </div>
@@ -187,11 +188,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -203,10 +206,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -234,6 +237,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -431,17 +436,17 @@ function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(i
 
 var curDates=[];
 function buildGrid(){var y=gv('yearIn')||2026;var m=+document.getElementById('monthSel').value;var dim=new Date(y,m,0).getDate();curDates=[];
-var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Изработено</th><th>Начало на работа</th><th>Край на работа</th><th>Почивка (мин)</th></tr>';
+var rows='<div style="overflow-x:auto;max-height:480px;overflow-y:auto"><table><tr><th>Date</th><th>Изработено</th><th>Начало на работа</th><th>Край на работа</th><th>Нощна смяна</th><th>Почивка (мин)</th></tr>';
 var dn=['неделя','понеделник','вторник','сряда','четвъртък','петък','събота'];
 for(var d=1;d<=dim;d++){var dt=new Date(y,m-1,d);curDates.push(dt);var wd=dt.getDay();var tick=(wd>=1&&wd<=5)?' маркирано':'';
-rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Изработено"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Минути за почивка"></td></tr>';}
+rows+='<tr><td>'+dn[wd]+', '+m+'/'+d+'</td><td><input type="checkbox" id="M'+d+'W"'+tick+' aria-label="Изработено"></td><td>'+tselHTML('M'+d+'In')+'</td><td>'+tselHTML('M'+d+'Out')+'</td><td><label class="chk"><input type="checkbox" id="M'+d+'On"> Завършва на следващия ден</label></td><td><input type="number" id="M'+d+'Br" value="30" min="0" style="width:76px" aria-label="Минути за почивка"></td></tr>';}
 rows+='</table></div>';document.getElementById('monthGrid').innerHTML=rows;
 document.querySelectorAll('#monthGrid input,#monthGrid select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});}
 function tselHTML(p){function opts(n,sel,fmt){var s='';for(var i=0;i<n;i++){var v=fmt?fmt(i):i;s+='<option value="'+v+'"'+(String(v)===String(sel)?' избрано':'')+'>'+(fmt?fmt(i):i)+'</option>';}return s;}
 return '<span class="tsel"><select id="'+p+'H" aria-label="Час">'+opts(12,'9',function(i){return i+1;})+'</select><select id="'+p+'M" aria-label="Минута">'+(function(){var s='';for(var i=0;i<60;i++){s+='<option value="'+i+'"'+(i===0?' избрано':'')+'>'+(i<10?'0':'')+i+'</option>';}return s;})()+'</select><select id="'+p+'AP" aria-label="AM or PM"><option selected>AM</option><option>PM</option></select></span>';}
 function fixOutDefaults(){curDates.forEach(function(dt,i){var d=i+1;var outH=document.getElementById('M'+d+'OutH');if(!outH)return;outH.value='5';document.getElementById('M'+d+'OutM').value='30';document.getElementById('M'+d+'OutAP').value='PM';});}
-function calc(){var paid=document.getElementById('breakPaid').value==='да';var rate=gv('rate');
-var dayMin=curDates.map(function(dt,i){var d=i+1;if(!document.getElementById('M'+d+'W').checked)return 0;return LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid);});
+function calc(){var paid=document.getElementById('breakPaid').value==='да';var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Часовата ставка не може да бъде отрицателна, затова е приета като $0,00. Въведете ставка от $0 или повече.");rate=0;}
+var dnm=["неделя", "понеделник", "вторник", "сряда", "четвъртък", "петък", "събота"];var dayMin=curDates.map(function(dt,i){var d=i+1;if(!document.getElementById('M'+d+'W').checked)return 0;var onEl=document.getElementById('M'+d+'On');var overnight=!!(onEl&&onEl.checked);var inM=LH.parseTime(tv('M'+d+'In'));var outM=LH.parseTime(tv('M'+d+'Out'));var subj=dnm[dt.getDay()]+', '+(dt.getMonth()+1)+'/'+d;if(inM===outM){msgs.push("{D}: часовете на влизане и излизане са еднакви, затова този ден се брои за 0 минути.".replace('{D}',subj));}else if(outM<inM&&!overnight){msgs.push("{D}: часът на излизане е преди часа на влизане. Отметнете квадратчето за нощна смяна за този ден, ако смяната завършва на следващия ден; дотогава този ден се брои за 0 минути.".replace('{D}',subj));}return LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid,overnight);});var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};
 // group into Sunday-start workweeks
 var weeks=[],cur=null;
 curDates.forEach(function(dt,i){if(dt.getDay()===0||cur===null){cur=[];weeks.push(cur);}cur.push(dayMin[i]);});
@@ -462,7 +467,7 @@ document.getElementById('monthSel').addEventListener('change',function(){buildGr
 document.getElementById('yearIn').addEventListener('change',function(){buildGrid();fixOutDefaults();calc();});
 document.getElementById('calcBtn').addEventListener('click',calc);
 document.getElementById('printBtn').addEventListener('click',function(){window.print();});
-document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Дата','Часове (ч:мм)','Десетични часове']];curDates.forEach(function(dt,i){var d=i+1;var paid=document.getElementById('breakPaid').value==='да';var m=document.getElementById('M'+d+'W').checked?LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid):0;rows.push([(dt.getMonth()+1)+'/'+d+'/'+dt.getFullYear(),LH.fmtHM(m),LH.decimal(m).toFixed(2)]);});
+document.getElementById('csvBtn').addEventListener('click',function(){var rows=[['Дата','Часове (ч:мм)','Десетични часове']];curDates.forEach(function(dt,i){var d=i+1;var paid=document.getElementById('breakPaid').value==='да';var m=document.getElementById('M'+d+'W').checked?LH.shiftMinutes(tv('M'+d+'In'),tv('M'+d+'Out'),gv('M'+d+'Br'),paid,!!(document.getElementById('M'+d+'On')&&document.getElementById('M'+d+'On').checked)):0;rows.push([(dt.getMonth()+1)+'/'+d+'/'+dt.getFullYear(),LH.fmtHM(m),LH.decimal(m).toFixed(2)]);});
 var blob=new Blob([LH.toCSV(rows)],{type:'text/csv'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loona-hours-monthly-timesheet.csv';a.click();URL.revokeObjectURL(a.href);});
 document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
 buildGrid();fixOutDefaults();calc();

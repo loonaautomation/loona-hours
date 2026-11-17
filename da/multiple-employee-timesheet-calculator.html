@@ -133,6 +133,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <button class="alt" id="csvBtn" type="button">Download CSV</button>
 <button class="alt" id="printBtn" type="button">Udskriv</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 </div>
 <div class="sec"><h2>Sådan fungerer det — Reglen bag denne beregner</h2><p>Små arbejdsgivere fejler som regel ved lønnen på de samme to steder: at anvende overtid på <em>mandskabets</em> kombinerede timer i stedet for hver persons, og at glemme, at én ansats rolige uge ikke kan opveje en andens overtid. Føderal lov gælder pr. ansat og pr. arbejdsuge: hver arbejdstagers timer over 40 i ugen tjener 1.5× <em>deres</em> sats, uafhængigt af alle andres vagtplan. Denne beregner håndhæver netop det — én række pr. person, tillæg beregnet inde i rækken.</p>
 <p>To ærlige grænser: dette er et estimeringsværktøj til bruttoløn, ikke en løntjeneste — det holder ikke skat tilbage, anvender ikke delstaters regler for daglig overtid (brug <a href="overtime-calculator-by-state.html">Estimeringsværktøj efter delstat</a> for de fem delstater), eller håndtere fastlønnet personale. Og navne på ansatte, du skriver, bliver på denne side på din enhed; intet gemmes eller sendes nogen steder, når du lukker den, så download CSV-filen, hvis du har brug for registreringen.</p></div>
@@ -182,11 +183,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -198,10 +201,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -229,6 +232,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -425,13 +430,13 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Lønlinje</th><th
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
 var lastRows=[];
-function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];
-for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('Ansat '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');
+function calc(){var tReg=0,tOt=0,tPay=0,tHours=0;lastRows=[];var msgs=[];
+for(var i=0;i<10;i++){var name=document.getElementById('E'+i+'N').value||('Ansat '+(i+1));var hrs=Math.max(0,gv('E'+i+'H'));var rate=gv('E'+i+'R');if(rate<0){if(!msgs.length)msgs.push("Timelønnen kan ikke være negativ, så den er behandlet som $0,00. Indtast en løn på $0 eller mere.");rate=0;}
 var reg=Math.min(hrs,40),ot=Math.max(0,hrs-40);var pay=LH.grossPay(Math.round(reg*60),Math.round(ot*60),0,rate);
 document.getElementById('E'+i+'OT').textContent=hrs>0?ot.toFixed(2):'\u2014';
 document.getElementById('E'+i+'P').textContent=hrs>0?LH.money(pay.total):'\u2014';
 if(hrs>0){lastRows.push([name,hrs.toFixed(2),rate.toFixed(2),ot.toFixed(2),pay.total.toFixed(2)]);tReg+=reg;tOt+=ot;tPay+=pay.total;tHours+=hrs;}}
-var el=document.getElementById('stats');
+var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+lastRows.length+'</div><div class="k">Betalte ansatte</div></div>'
 +'<div class="stat"><div class="v">'+tHours.toFixed(2)+'</div><div class="k">Mandskabstimer</div></div>'
 +'<div class="stat"><div class="v">'+tOt.toFixed(2)+'</div><div class="k">Mandskabets overtidstimer</div></div>'

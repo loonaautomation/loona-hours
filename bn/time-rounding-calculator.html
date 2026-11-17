@@ -130,10 +130,11 @@ footer a{color:var(--gold2);text-decoration:none}
 <div class="field"><label>আসল ক্লক আউট</label><span class="tsel"><select id="outTH" aria-label="ঘণ্টা"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select><select id="outTM" aria-label="মিনিট"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8" selected>08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><select id="outTAP" aria-label="AM বা PM"><option>AM</option><option selected>PM</option></select></span></div>
 </div>
 <div class="frow">
-<div class="field"><label for="mode">রাউন্ডিং পদ্ধতি</label><select id="mode"><option value="seven" selected>7 মিনিটের নিয়ম (কোয়ার্টার ঘণ্টা)</option><option value="quarter">নিকটতম পনেরো মিনিট</option><option value="five">নিকটতম 5 মিনিট</option><option value="tenth">নিকটতম ঘণ্টার দশমাংশ (6 মিনিট)</option><option value="none">কোনো গোলকরণ নয়</option></select></div><div class="field"><label for="brk">বিনা বেতনের বিরতি (মিনিট)</label><input type="number" id="brk" value="30" step="1" min="0" ></div>
+<div class="field"><label>রাতের শিফট</label><label class="chk"><input type="checkbox" id="overnight"> পরের দিন শেষ হয়</label></div><div class="field"><label for="mode">রাউন্ডিং পদ্ধতি</label><select id="mode"><option value="seven" selected>7 মিনিটের নিয়ম (কোয়ার্টার ঘণ্টা)</option><option value="quarter">নিকটতম পনেরো মিনিট</option><option value="five">নিকটতম 5 মিনিট</option><option value="tenth">নিকটতম ঘণ্টার দশমাংশ (6 মিনিট)</option><option value="none">কোনো গোলকরণ নয়</option></select></div><div class="field"><label for="brk">বিনা বেতনের বিরতি (মিনিট)</label><input type="number" id="brk" value="30" step="1" min="0" ></div>
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">আমার পাঞ্চগুলো রাউন্ড করুন</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="detail"></div>
 </div>
 <div class="sec"><h2>কীভাবে কাজ করে — এই ক্যালকুলেটরের পেছনের নিয়ম</h2><p>ফেডারেল নিয়ম (29 CFR §785.48) নিয়োগকর্তাদের পাঞ্চের সময় নিকটতমে গোল করতে দেয় <strong>5 মিনিট, এক ঘণ্টার দশমাংশ (6 মিনিট), অথবা কোয়ার্টার ঘণ্টা (15 মিনিট)</strong> — তবে শর্ত হলো গোলকরণ সময়ের সঙ্গে নিরপেক্ষ থাকে, কখনো কর্মচারীর অনুকূলে কখনো নিয়োগকর্তার অনুকূলে। বিখ্যাত <strong>7 মিনিটের নিয়ম</strong> কোয়ার্টার-ঘণ্টা গোলকরণেরই আরেক নাম: প্রতিটি কোয়ার্টারের ভিতরে 0–7 মিনিট নিচে গোল হয় এবং 8–14 মিনিট উপরে গোল হয় (তাই সকাল 8:07 AM হয় 8:00, এবং সকাল 8:08 AM হয় 8:15)।</p>
@@ -189,11 +190,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -205,10 +208,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -236,6 +239,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -436,8 +441,8 @@ function fmtClock(mins){mins=((mins%1440)+1440)%1440;var h24=Math.floor(mins/60)
 function calc(){var mode=document.getElementById('mode').value;var inM=LH.toMinutes(tv('inT').h,tv('inT').m,tv('inT').ap);var outM=LH.toMinutes(tv('outT').h,tv('outT').m,tv('outT').ap);
 function R(x){if(mode==='seven')return LH.roundMinutes(x,'seven');if(mode==='quarter')return LH.roundMinutes(x,'quarter');if(mode==='five')return roundTo(x,5,2);if(mode==='tenth')return roundTo(x,6,3);return x;}
 var rin=R(inM),rout=R(outM);if(rout<=rin)rout+=0; // keep same-day comparison on rounded values for display
-var exactNet=LH.shiftMinutes(inM,outM,gv('brk'),false);
-var roundedNet=LH.shiftMinutes(rin,rout,gv('brk'),false);
+var overnight=!!(document.getElementById('overnight')&&document.getElementById('overnight').checked);var msgs=[];if(rin===rout){msgs.push("আসল ক্লক ইন: আসা ও যাওয়ার সময় একই, তাই এই দিনটি 0 মিনিট হিসাবে গণনা করা হবে।");}else if(rout<rin&&!overnight){msgs.push("আসল ক্লক ইন: যাওয়ার সময় আসার সময়ের আগে। শিফট পরের দিন শেষ হলে সেই দিনের রাতের শিফট বাক্সে টিক দিন; ততক্ষণ পর্যন্ত এই দিনটি 0 মিনিট হিসাবে গণনা করা হবে।");}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}};var exactNet=LH.shiftMinutes(inM,outM,gv('brk'),false,overnight);
+var roundedNet=LH.shiftMinutes(rin,rout,gv('brk'),false,overnight);
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+fmtClock(rin)+'</div><div class="k">গোল করা ক্লক ইন</div></div>'
 +'<div class="stat"><div class="v">'+fmtClock(rout)+'</div><div class="k">গোল করা ক্লক আউট</div></div>'

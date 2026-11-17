@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">Изчисли заплащането ми</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>За тази страница</h2><p>25 часа седмично е работа на непълно работно време с редовен режим. При 40 часа или по-малко всичко е обикновено време — не се дължи извънреден труд по федералното правило.</p><p>Калкулаторът по-долу взема вашата собствена почасова ставка и часове и изчислява брутното заплащане, разделянето на извънредния труд и месечните и годишните еквиваленти. Променете ставката на минималната заплата на вашия щат — ставките за 2026 г. са на страницата „Минимална заплата 2026" — и числата следват.</p></div><div class="sec"><h2>Какво плаща — бруто, преди данъци</h2><table class="freq"><tr><th>График</th><th>Брутно заплащане</th></tr><tr><td>25 часа/седмица при $15.00/час</td><td>$375.00</td></tr><tr><td>25 часа/седмица при федералната ставка от $7.25/час</td><td>$181.25</td></tr><tr><td>Месечно (при $15.00/час)</td><td>$1,625.00</td></tr><tr><td>Годишно (при $15.00/час)</td><td>$19,500.00</td></tr><tr><td>Часове извънреден труд в седмицата</td><td>0</td></tr></table><p>Само брутно заплащане — данъци, социално осигуряване, Medicare и приспадания не са включени. Извънредният труд се плаща при 1.5× от редовната ставка за часове над 40 в рамките на една работна седмица (и по дневните правила, където щатът ги има).</p></div><div class="sec"><h2>Често задавани въпроси</h2><details class="faq"><summary>Колко са 25 часа седмично при $15 на час?</summary><p>$375.00 бруто седмично, преди данъци.</p></details><details class="faq"><summary>Включват ли 25 часа седмично извънреден труд?</summary><p>Да — не, всичко е обикновено време по федералното правило за 40 часа.</p></details><details class="faq"><summary>Това бруто или заплащане за вкъщи е?</summary><p>Бруто — преди данък върху дохода, социално осигуряване и Medicare. Заплащането за вкъщи обикновено е 75–85% от брутото, в зависимост от щата и данъчната ситуация на работника.</p></details></div><div class="sec"><h2>Свързани инструменти за часове</h2><div class="grid"><a class="card" href="25-hours-per-week-pay.html"><strong>Калкулатор за седмично заплащане</strong><span>Брутно заплащане за всеки часове и ставка.</span></a><a class="card" href="minimum-wage-2026.html"><strong>Минимална заплата 2026 — всички щати</strong><span>Всеки щат и 20 града, в една таблица.</span></a><a class="card" href="overtime-calculator.html"><strong>Калкулатор за извънреден труд</strong><span>Заплащане за извънреден труд по федералното правило.</span></a><a class="card" href="hours-calculator.html"><strong>Калкулатор за часове</strong><span>Събирайте часове през дни и седмици.</span></a><a class="card" href="time-card-calculator.html"><strong>Калкулатор за карта на работното време</strong><span>Седмична таблица на работното време, която се запазва на устройството ви.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>Ред за за�
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("Часовата ставка не може да бъде отрицателна, затова е приета като $0,00. Въведете ставка от $0 или повече.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">Седмично бруто</div></div>'

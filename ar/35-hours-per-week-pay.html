@@ -110,6 +110,7 @@ footer a{color:var(--gold2);text-decoration:none}
 </div>
 <div class="btnrow"><button class="go" id="calcBtn" type="button">احسب أجري</button></div>
 <div class="stats" id="stats"></div>
+<div id="calcMsg" role="alert" style="display:none;margin:10px 0;padding:10px 12px;border:1px solid #b3261e;border-radius:8px;background:#fdecea;color:#7a1a14;font-weight:600"></div>
 <div id="periodTable"></div>
 </div>
 <div class="sec"><h2>حول هذه الصفحة</h2><p>35 ساعة في أسبوع هي أسبوع شبه كامل. عند 40 ساعة أو أقل، كلها وقت عادي — لا عمل إضافي يُستحق تحت القاعدة الاتحادية.</p><p>تأخذ الحاسبة أدناه معدل ساعتك وساعاتك الخاصين وتحسب الأجر الإجمالي وتقسيم العمل الإضافي والمعادلات الشهرية والسنوية. غيّر المعدل إلى الحد الأدنى لأجور ولايتك — معدلات 2026 على صفحة الحد الأدنى للأجور 2026 — والأرقام تتبع.</p></div><div class="sec"><h2>ما تدفعه — الإجمالي، قبل الضرائب</h2><table class="freq"><tr><th>الجدول</th><th>الأجر الإجمالي</th></tr><tr><td>35 ساعة/أسبوع عند $15.00/الساعة</td><td>$525.00</td></tr><tr><td>35 ساعة/أسبوع عند المعدل الاتحادي $7.25/الساعة</td><td>$253.75</td></tr><tr><td>شهري (عند $15.00/ساعة)</td><td>$2,275.00</td></tr><tr><td>سنوي (عند $15.00/ساعة)</td><td>$27,300.00</td></tr><tr><td>ساعات العمل الإضافي في الأسبوع</td><td>0</td></tr></table><p>الأجر الإجمالي فقط — الضرائب والضمان الاجتماعي والرعاية الطبية والخصومات غير مشمولة. يُدفع العمل الإضافي عند 1.5× المعدل العادي للساعات التي تتجاوز 40 في أسبوع العمل (وبموجب القواعد اليومية حيث توجد لدى الولاية).</p></div><div class="sec"><h2>أسئلة شائعة</h2><details class="faq"><summary>كم يبلغ أجر 35 ساعة في الأسبوع عند $15 في الساعة؟</summary><p>$525.00 إجمالي في الأسبوع، قبل الضرائب.</p></details><details class="faq"><summary>هل تشمل 35 ساعة في الأسبوع العمل الإضافي؟</summary><p>نعم — لا، كله وقت عادي تحت قاعدة الـ 40 ساعة الاتحادية.</p></details><details class="faq"><summary>هل هذا أجر إجمالي أم أجر استلام؟</summary><p>الإجمالي — قبل ضريبة الدخل والضمان الاجتماعي والرعاية الطبية. أجر الاستلام عادة 75– 85% من الإجمالي، اعتمادًا على الولاية ووضع العامل الضريبي.</p></details></div><div class="sec"><h2>أدوات ساعات ذات صلة</h2><div class="grid"><a class="card" href="35-hours-per-week-pay.html"><strong>حاسبة الأجر الأسبوعي</strong><span>أجر إجمالي لأي ساعات ومعدل.</span></a><a class="card" href="minimum-wage-2026.html"><strong>الحد الأدنى للأجور 2026 — كل الولايات</strong><span>كل ولاية و20 مدينة، في جدول واحد.</span></a><a class="card" href="overtime-calculator.html"><strong>حاسبة العمل الإضافي</strong><span>أجر العمل الإضافي بموجب القاعدة الاتحادية.</span></a><a class="card" href="hours-calculator.html"><strong>حاسبة الساعات</strong><span>اجمع الساعات عبر الأيام والأسابيع.</span></a><a class="card" href="time-card-calculator.html"><strong>حاسبة بطاقة الوقت</strong><span>كشف ساعات أسبوعي يُحفظ على جهازك.</span></a></div></div><div id="loona-embed" style="max-width:780px;margin:30px auto;padding:24px;background:#fdfaf1;border:1px solid #d9c98a;border-radius:14px;text-align:left">
@@ -142,11 +143,13 @@ var LH = (function () {
     if (typeof t === 'number') return t;
     return toMinutes(t.h, t.m, t.ap);
   }
-  // Net worked minutes for one shift. Overnight-aware: out <= in means the
-  // shift ends the next day. breakMins deducted unless breakPaid is true.
-  function shiftMinutes(inT, outT, breakMins, breakPaid) {
+  // Net worked minutes for one shift. Equal in/out punches count as 0.
+  // An out-before-in shift counts as overnight (ends the next day) only
+  // when overnight is explicitly true; otherwise it counts as 0.
+  // breakMins deducted unless breakPaid is true.
+  function shiftMinutes(inT, outT, breakMins, breakPaid, overnight) {
     var raw = parseTime(outT) - parseTime(inT);
-    if (raw <= 0) raw += 1440;
+    if (raw < 0) raw = overnight ? raw + 1440 : 0;
     var net = raw - (breakPaid ? 0 : (parseInt(breakMins, 10) || 0));
     return Math.max(0, net);
   }
@@ -158,10 +161,10 @@ var LH = (function () {
     return rem <= 7 ? q : q + 15;
   }
   // Round a whole shift's in/out punches, then return net minutes.
-  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode) {
+  function roundedShiftMinutes(inT, outT, breakMins, breakPaid, mode, overnight) {
     var i = roundMinutes(parseTime(inT), mode);
     var o = roundMinutes(parseTime(outT), mode);
-    return shiftMinutes(i, o, breakMins, breakPaid);
+    return shiftMinutes(i, o, breakMins, breakPaid, overnight);
   }
 
   /* ---------- formatting ---------- */
@@ -189,6 +192,8 @@ var LH = (function () {
   // regMin at rate, otMin at 1.5x, dtMin at 2x; diffPerHour (optional) is a
   // shift-differential premium paid on every worked hour, shown as its own line.
   function grossPay(regMin, otMin, dtMin, rate, diffPerHour) {
+    rate = Math.max(0, Number(rate) || 0);
+    diffPerHour = Math.max(0, Number(diffPerHour) || 0);
     var regPay = regMin / 60 * rate;
     var otPay = otMin / 60 * rate * 1.5;
     var dtPay = dtMin / 60 * rate * 2;
@@ -384,7 +389,7 @@ function payTable(el,reg,ot,dt,rate,pay){var h='<table><tr><th>بند الأجر
  el.innerHTML=h;}
 function listen(ids,fn){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.addEventListener('input',fn);e.addEventListener('change',fn);}});}
 
-function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');
+function calc(){var reg=Math.round(gv('regH')*60),ot=Math.round(gv('otH')*60),dt=Math.round(gv('dtH')*60);var rate=gv('rate');var msgs=[];if(rate<0){msgs.push("لا يمكن أن يكون الأجر بالساعة سالبًا، لذا تم التعامل معه على أنه $0.00. أدخل أجرًا قدره $0 أو أكثر.");rate=0;}var msgEl=document.getElementById('calcMsg');if(msgEl){if(msgs.length){msgEl.textContent=msgs.join(' ');msgEl.style.display='block';}else{msgEl.textContent='';msgEl.style.display='none';}}
 var pay=LH.grossPay(reg,ot,dt,rate);var wk=pay.total;
 var el=document.getElementById('stats');
 el.innerHTML='<div class="stat"><div class="v">'+LH.money(wk)+'</div><div class="k">الإجمالي الأسبوعي</div></div>'
