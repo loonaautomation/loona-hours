@@ -4,96 +4,96 @@
 
 ## Calculators
 
-- [Time Card Calculator](https://loonaautomation.github.io/loona-hours/time-card-calculator.html): Enter clock-in, clock-out and breaks for each day of the week and get total hours, overtime and gross pay. Also the hub for the per-state time card family (51 pages, one per state plus DC, e.g. California and Texas time card pages).
-- [Biweekly Time Card Calculator](https://loonaautomation.github.io/loona-hours/biweekly-time-card-calculator.html): A two-week time card where overtime is calculated per workweek, never averaged, with hours, pay and CSV export.
-- [Monthly Timesheet Calculator](https://loonaautomation.github.io/loona-hours/monthly-timesheet-calculator.html): Monthly timesheet with semi-monthly (1st–15th, 16th–end) pay-period totals and overtime scored per workweek, with CSV export.
-- [Timesheet Calculator with Lunch Break](https://loonaautomation.github.io/loona-hours/timesheet-calculator-with-lunch-break.html): Timesheet with manual breaks plus an automatic lunch deduction rule for long shifts, weekly overtime and gross pay.
-- [Hours Calculator](https://loonaautomation.github.io/loona-hours/hours-calculator.html): Turn one shift's clock-in and clock-out into paid time shown as h:mm, decimal hours and total minutes, with unpaid-break deduction, punch rounding and an optional gross-pay figure.
-- [Time Clock Calculator](https://loonaautomation.github.io/loona-hours/time-clock-calculator.html): Add up a day with several punches — up to four clock-in/clock-out pairs — excluding the gaps, for total paid time plus decimal hours.
-- [Overtime Calculator](https://loonaautomation.github.io/loona-hours/overtime-calculator.html): Federal FLSA overtime — hours over 40 in a week at 1.5 times the rate — with regular pay, overtime pay and total gross.
-- [California Overtime Calculator](https://loonaautomation.github.io/loona-hours/california-overtime-calculator.html): California daily rules — time and a half after 8 hours, double time after 12, seventh-day rules and weekly reconciliation.
-- [Overtime Calculator by State](https://loonaautomation.github.io/loona-hours/overtime-calculator-by-state.html): All 50 states' overtime rules in one tool — the federal 40-hour rule plus daily overtime for CA, AK, CO, NV and OR. Also the hub for the per-state overtime family (50 pages, one per state).
-- [Time and a Half Calculator](https://loonaautomation.github.io/loona-hours/time-and-a-half-calculator.html): Enter a rate and overtime hours to get the 1.5x overtime rate, overtime pay, the extra premium and full-week gross pay. Also the hub for the time-and-a-half-by-rate family (46 pages, $15–$60 an hour).
-- [Double Time Calculator](https://loonaautomation.github.io/loona-hours/double-time-calculator.html): The 2x rate and double-time pay for any hours and rate, plus a plain-English guide to when double time applies.
-- [Overtime Calculator with Taxes](https://loonaautomation.github.io/loona-hours/overtime-calculator-with-taxes.html): Estimates the temporary federal 'No Tax on Overtime' deduction (2025–2028) — the qualified 0.5x premium, the $12,500/$25,000 caps, income phase-out and estimated tax saved.
-- [Minutes to Decimal Converter](https://loonaautomation.github.io/loona-hours/minutes-to-decimal-converter.html): Converts minutes to decimal hours with the complete printable 1–60 conversion chart used by payroll (15 min = 0.25, 30 = 0.50, 45 = 0.75).
-- [Lunch Break Calculator](https://loonaautomation.github.io/loona-hours/lunch-break-calculator.html): For one shift, enter clock times and up to two breaks, mark each paid or unpaid, and get exact paid time and pay.
-- [Shift Differential Calculator](https://loonaautomation.github.io/loona-hours/shift-differential-calculator.html): Blends night and weekend premiums into the regular rate and calculates overtime on the blended rate.
-- [Time Rounding Calculator](https://loonaautomation.github.io/loona-hours/time-rounding-calculator.html): Applies the 7-minute rule, quarter-hour, 5-minute or tenth-hour rounding to punches and shows rounded versus exact time.
-- [12-Hour Shift Calculator](https://loonaautomation.github.io/loona-hours/12-hour-shift-calculator.html): Paid hours per 12-hour shift, weekly totals for 3x12 and 4x12 patterns, overtime and gross pay.
-- [Work Hours Between Dates Calculator](https://loonaautomation.github.io/loona-hours/work-hours-between-dates-calculator.html): Counts workdays and scheduled hours between two dates for a chosen work pattern, with US federal holidays excluded automatically.
-- [Multiple Employee Timesheet Calculator](https://loonaautomation.github.io/loona-hours/multiple-employee-timesheet-calculator.html): Timesheets for small teams — up to 10 staff with individual rates, overtime per employee over 40 hours, total gross payroll and CSV export.
-- [Weekly Pay Calculator](https://loonaautomation.github.io/loona-hours/weekly-pay-calculator.html): Weekly gross pay from regular, overtime and double-time hours, converted into biweekly, semi-monthly, monthly and annual gross pay. Also the hub for the weekly-pay-by-hours family (9 pages, 20–60 hours per week).
-- [Salary to Hourly Converter](https://loonaautomation.github.io/loona-hours/salary-to-hourly-converter.html): Converts pay between hourly, daily, weekly, biweekly, semi-monthly, monthly and annual equivalents.
+- [Time Card Calculator](https://hours.loonaautomation.com/time-card-calculator.html): Enter clock-in, clock-out and breaks for each day of the week and get total hours, overtime and gross pay. Also the hub for the per-state time card family (51 pages, one per state plus DC, e.g. California and Texas time card pages).
+- [Biweekly Time Card Calculator](https://hours.loonaautomation.com/biweekly-time-card-calculator.html): A two-week time card where overtime is calculated per workweek, never averaged, with hours, pay and CSV export.
+- [Monthly Timesheet Calculator](https://hours.loonaautomation.com/monthly-timesheet-calculator.html): Monthly timesheet with semi-monthly (1st–15th, 16th–end) pay-period totals and overtime scored per workweek, with CSV export.
+- [Timesheet Calculator with Lunch Break](https://hours.loonaautomation.com/timesheet-calculator-with-lunch-break.html): Timesheet with manual breaks plus an automatic lunch deduction rule for long shifts, weekly overtime and gross pay.
+- [Hours Calculator](https://hours.loonaautomation.com/hours-calculator.html): Turn one shift's clock-in and clock-out into paid time shown as h:mm, decimal hours and total minutes, with unpaid-break deduction, punch rounding and an optional gross-pay figure.
+- [Time Clock Calculator](https://hours.loonaautomation.com/time-clock-calculator.html): Add up a day with several punches — up to four clock-in/clock-out pairs — excluding the gaps, for total paid time plus decimal hours.
+- [Overtime Calculator](https://hours.loonaautomation.com/overtime-calculator.html): Federal FLSA overtime — hours over 40 in a week at 1.5 times the rate — with regular pay, overtime pay and total gross.
+- [California Overtime Calculator](https://hours.loonaautomation.com/california-overtime-calculator.html): California daily rules — time and a half after 8 hours, double time after 12, seventh-day rules and weekly reconciliation.
+- [Overtime Calculator by State](https://hours.loonaautomation.com/overtime-calculator-by-state.html): All 50 states' overtime rules in one tool — the federal 40-hour rule plus daily overtime for CA, AK, CO, NV and OR. Also the hub for the per-state overtime family (50 pages, one per state).
+- [Time and a Half Calculator](https://hours.loonaautomation.com/time-and-a-half-calculator.html): Enter a rate and overtime hours to get the 1.5x overtime rate, overtime pay, the extra premium and full-week gross pay. Also the hub for the time-and-a-half-by-rate family (46 pages, $15–$60 an hour).
+- [Double Time Calculator](https://hours.loonaautomation.com/double-time-calculator.html): The 2x rate and double-time pay for any hours and rate, plus a plain-English guide to when double time applies.
+- [Overtime Calculator with Taxes](https://hours.loonaautomation.com/overtime-calculator-with-taxes.html): Estimates the temporary federal 'No Tax on Overtime' deduction (2025–2028) — the qualified 0.5x premium, the $12,500/$25,000 caps, income phase-out and estimated tax saved.
+- [Minutes to Decimal Converter](https://hours.loonaautomation.com/minutes-to-decimal-converter.html): Converts minutes to decimal hours with the complete printable 1–60 conversion chart used by payroll (15 min = 0.25, 30 = 0.50, 45 = 0.75).
+- [Lunch Break Calculator](https://hours.loonaautomation.com/lunch-break-calculator.html): For one shift, enter clock times and up to two breaks, mark each paid or unpaid, and get exact paid time and pay.
+- [Shift Differential Calculator](https://hours.loonaautomation.com/shift-differential-calculator.html): Blends night and weekend premiums into the regular rate and calculates overtime on the blended rate.
+- [Time Rounding Calculator](https://hours.loonaautomation.com/time-rounding-calculator.html): Applies the 7-minute rule, quarter-hour, 5-minute or tenth-hour rounding to punches and shows rounded versus exact time.
+- [12-Hour Shift Calculator](https://hours.loonaautomation.com/12-hour-shift-calculator.html): Paid hours per 12-hour shift, weekly totals for 3x12 and 4x12 patterns, overtime and gross pay.
+- [Work Hours Between Dates Calculator](https://hours.loonaautomation.com/work-hours-between-dates-calculator.html): Counts workdays and scheduled hours between two dates for a chosen work pattern, with US federal holidays excluded automatically.
+- [Multiple Employee Timesheet Calculator](https://hours.loonaautomation.com/multiple-employee-timesheet-calculator.html): Timesheets for small teams — up to 10 staff with individual rates, overtime per employee over 40 hours, total gross payroll and CSV export.
+- [Weekly Pay Calculator](https://hours.loonaautomation.com/weekly-pay-calculator.html): Weekly gross pay from regular, overtime and double-time hours, converted into biweekly, semi-monthly, monthly and annual gross pay. Also the hub for the weekly-pay-by-hours family (9 pages, 20–60 hours per week).
+- [Salary to Hourly Converter](https://hours.loonaautomation.com/salary-to-hourly-converter.html): Converts pay between hourly, daily, weekly, biweekly, semi-monthly, monthly and annual equivalents.
 
 ## Timers and time tools
 
-- [Online Timer](https://loonaautomation.github.io/loona-hours/online-timer.html): Online timer with one-tap presets (1, 5, 10, 15, 20, 30, 45, 60 minutes), a progress ring, pause and reset, and an end alarm.
-- [Stopwatch](https://loonaautomation.github.io/loona-hours/stopwatch.html): Online stopwatch with millisecond precision, lap and split times, and fastest/slowest lap highlighting.
-- [Pomodoro Timer](https://loonaautomation.github.io/loona-hours/pomodoro-timer.html): 25-minute focus sessions, 5-minute breaks and a 15-minute long break every 4 sessions, with adjustable lengths and a session counter.
-- [Interval Timer](https://loonaautomation.github.io/loona-hours/interval-timer.html): Interval timer for HIIT and workouts — set work seconds, rest seconds and rounds, with a get-ready countdown and beeps at every change.
-- [Countdown Timer](https://loonaautomation.github.io/loona-hours/countdown-timer.html): Countdown to any date — name an event and see the live days, hours, minutes and seconds remaining.
-- [Time Zone Converter](https://loonaautomation.github.io/loona-hours/time-zone-converter.html): Converts any time between 44 world time zones with live clocks, UTC offsets and daylight-saving handled automatically. Also the hub for the city-pair time family (50 pages, e.g. New York to London, London to Dubai).
+- [Online Timer](https://hours.loonaautomation.com/online-timer.html): Online timer with one-tap presets (1, 5, 10, 15, 20, 30, 45, 60 minutes), a progress ring, pause and reset, and an end alarm.
+- [Stopwatch](https://hours.loonaautomation.com/stopwatch.html): Online stopwatch with millisecond precision, lap and split times, and fastest/slowest lap highlighting.
+- [Pomodoro Timer](https://hours.loonaautomation.com/pomodoro-timer.html): 25-minute focus sessions, 5-minute breaks and a 15-minute long break every 4 sessions, with adjustable lengths and a session counter.
+- [Interval Timer](https://hours.loonaautomation.com/interval-timer.html): Interval timer for HIIT and workouts — set work seconds, rest seconds and rounds, with a get-ready countdown and beeps at every change.
+- [Countdown Timer](https://hours.loonaautomation.com/countdown-timer.html): Countdown to any date — name an event and see the live days, hours, minutes and seconds remaining.
+- [Time Zone Converter](https://hours.loonaautomation.com/time-zone-converter.html): Converts any time between 44 world time zones with live clocks, UTC offsets and daylight-saving handled automatically. Also the hub for the city-pair time family (50 pages, e.g. New York to London, London to Dubai).
 
 ## Time card calculators by occupation
 
-- [Nurse Time Card Calculator](https://loonaautomation.github.io/loona-hours/nurse-time-card-calculator.html): Weekly timesheet and overtime calculator set up for nurses.
-- [Truck Driver Time Card Calculator](https://loonaautomation.github.io/loona-hours/truck-driver-time-card-calculator.html): Weekly timesheet and overtime calculator set up for truck drivers.
-- [Server Time Card Calculator](https://loonaautomation.github.io/loona-hours/server-time-card-calculator.html): Weekly timesheet and overtime calculator set up for servers.
-- [Teacher Time Card Calculator](https://loonaautomation.github.io/loona-hours/teacher-time-card-calculator.html): Weekly timesheet and overtime calculator set up for teachers.
-- [Warehouse Worker Time Card Calculator](https://loonaautomation.github.io/loona-hours/warehouse-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for warehouse workers.
-- [Security Guard Time Card Calculator](https://loonaautomation.github.io/loona-hours/security-guard-time-card-calculator.html): Weekly timesheet and overtime calculator set up for security guards.
-- [Construction Worker Time Card Calculator](https://loonaautomation.github.io/loona-hours/construction-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for construction workers.
-- [Retail Worker Time Card Calculator](https://loonaautomation.github.io/loona-hours/retail-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for retail workers.
-- [Healthcare Aide Time Card Calculator](https://loonaautomation.github.io/loona-hours/healthcare-aide-time-card-calculator.html): Weekly timesheet and overtime calculator set up for healthcare aides.
-- [Restaurant Worker Time Card Calculator](https://loonaautomation.github.io/loona-hours/restaurant-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for restaurant workers.
-- [Electrician Time Card Calculator](https://loonaautomation.github.io/loona-hours/electrician-time-card-calculator.html): Weekly timesheet and overtime calculator set up for electricians.
-- [Plumber Time Card Calculator](https://loonaautomation.github.io/loona-hours/plumber-time-card-calculator.html): Weekly timesheet and overtime calculator set up for plumbers.
-- [Chef Time Card Calculator](https://loonaautomation.github.io/loona-hours/chef-time-card-calculator.html): Weekly timesheet and overtime calculator set up for chefs.
-- [Delivery Driver Time Card Calculator](https://loonaautomation.github.io/loona-hours/delivery-driver-time-card-calculator.html): Weekly timesheet and overtime calculator set up for delivery drivers.
-- [Factory Worker Time Card Calculator](https://loonaautomation.github.io/loona-hours/factory-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for factory workers.
-- [Cleaner Time Card Calculator](https://loonaautomation.github.io/loona-hours/cleaner-time-card-calculator.html): Weekly timesheet and overtime calculator set up for cleaners.
-- [Caregiver Time Card Calculator](https://loonaautomation.github.io/loona-hours/caregiver-time-card-calculator.html): Weekly timesheet and overtime calculator set up for caregivers.
-- [Bartender Time Card Calculator](https://loonaautomation.github.io/loona-hours/bartender-time-card-calculator.html): Weekly timesheet and overtime calculator set up for bartenders.
-- [Receptionist Time Card Calculator](https://loonaautomation.github.io/loona-hours/receptionist-time-card-calculator.html): Weekly timesheet and overtime calculator set up for receptionists.
-- [Customer Service Representative Time Card Calculator](https://loonaautomation.github.io/loona-hours/customer-service-representative-time-card-calculator.html): Weekly timesheet and overtime calculator set up for customer service representatives.
-- [Farm Worker Time Card Calculator](https://loonaautomation.github.io/loona-hours/farm-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for farm workers.
-- [Mechanic Time Card Calculator](https://loonaautomation.github.io/loona-hours/mechanic-time-card-calculator.html): Weekly timesheet and overtime calculator set up for mechanics.
-- [Hairdresser Time Card Calculator](https://loonaautomation.github.io/loona-hours/hairdresser-time-card-calculator.html): Weekly timesheet and overtime calculator set up for hairdressers.
-- [Barista Time Card Calculator](https://loonaautomation.github.io/loona-hours/barista-time-card-calculator.html): Weekly timesheet and overtime calculator set up for baristas.
-- [Janitor Time Card Calculator](https://loonaautomation.github.io/loona-hours/janitor-time-card-calculator.html): Weekly timesheet and overtime calculator set up for janitors.
-- [Forklift Operator Time Card Calculator](https://loonaautomation.github.io/loona-hours/forklift-operator-time-card-calculator.html): Weekly timesheet and overtime calculator set up for forklift operators.
-- [Housekeeper Time Card Calculator](https://loonaautomation.github.io/loona-hours/housekeeper-time-card-calculator.html): Weekly timesheet and overtime calculator set up for housekeepers.
-- [Landscaper Time Card Calculator](https://loonaautomation.github.io/loona-hours/landscaper-time-card-calculator.html): Weekly timesheet and overtime calculator set up for landscapers.
-- [Painter Time Card Calculator](https://loonaautomation.github.io/loona-hours/painter-time-card-calculator.html): Weekly timesheet and overtime calculator set up for painters.
-- [Welder Time Card Calculator](https://loonaautomation.github.io/loona-hours/welder-time-card-calculator.html): Weekly timesheet and overtime calculator set up for welders.
+- [Nurse Time Card Calculator](https://hours.loonaautomation.com/nurse-time-card-calculator.html): Weekly timesheet and overtime calculator set up for nurses.
+- [Truck Driver Time Card Calculator](https://hours.loonaautomation.com/truck-driver-time-card-calculator.html): Weekly timesheet and overtime calculator set up for truck drivers.
+- [Server Time Card Calculator](https://hours.loonaautomation.com/server-time-card-calculator.html): Weekly timesheet and overtime calculator set up for servers.
+- [Teacher Time Card Calculator](https://hours.loonaautomation.com/teacher-time-card-calculator.html): Weekly timesheet and overtime calculator set up for teachers.
+- [Warehouse Worker Time Card Calculator](https://hours.loonaautomation.com/warehouse-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for warehouse workers.
+- [Security Guard Time Card Calculator](https://hours.loonaautomation.com/security-guard-time-card-calculator.html): Weekly timesheet and overtime calculator set up for security guards.
+- [Construction Worker Time Card Calculator](https://hours.loonaautomation.com/construction-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for construction workers.
+- [Retail Worker Time Card Calculator](https://hours.loonaautomation.com/retail-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for retail workers.
+- [Healthcare Aide Time Card Calculator](https://hours.loonaautomation.com/healthcare-aide-time-card-calculator.html): Weekly timesheet and overtime calculator set up for healthcare aides.
+- [Restaurant Worker Time Card Calculator](https://hours.loonaautomation.com/restaurant-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for restaurant workers.
+- [Electrician Time Card Calculator](https://hours.loonaautomation.com/electrician-time-card-calculator.html): Weekly timesheet and overtime calculator set up for electricians.
+- [Plumber Time Card Calculator](https://hours.loonaautomation.com/plumber-time-card-calculator.html): Weekly timesheet and overtime calculator set up for plumbers.
+- [Chef Time Card Calculator](https://hours.loonaautomation.com/chef-time-card-calculator.html): Weekly timesheet and overtime calculator set up for chefs.
+- [Delivery Driver Time Card Calculator](https://hours.loonaautomation.com/delivery-driver-time-card-calculator.html): Weekly timesheet and overtime calculator set up for delivery drivers.
+- [Factory Worker Time Card Calculator](https://hours.loonaautomation.com/factory-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for factory workers.
+- [Cleaner Time Card Calculator](https://hours.loonaautomation.com/cleaner-time-card-calculator.html): Weekly timesheet and overtime calculator set up for cleaners.
+- [Caregiver Time Card Calculator](https://hours.loonaautomation.com/caregiver-time-card-calculator.html): Weekly timesheet and overtime calculator set up for caregivers.
+- [Bartender Time Card Calculator](https://hours.loonaautomation.com/bartender-time-card-calculator.html): Weekly timesheet and overtime calculator set up for bartenders.
+- [Receptionist Time Card Calculator](https://hours.loonaautomation.com/receptionist-time-card-calculator.html): Weekly timesheet and overtime calculator set up for receptionists.
+- [Customer Service Representative Time Card Calculator](https://hours.loonaautomation.com/customer-service-representative-time-card-calculator.html): Weekly timesheet and overtime calculator set up for customer service representatives.
+- [Farm Worker Time Card Calculator](https://hours.loonaautomation.com/farm-worker-time-card-calculator.html): Weekly timesheet and overtime calculator set up for farm workers.
+- [Mechanic Time Card Calculator](https://hours.loonaautomation.com/mechanic-time-card-calculator.html): Weekly timesheet and overtime calculator set up for mechanics.
+- [Hairdresser Time Card Calculator](https://hours.loonaautomation.com/hairdresser-time-card-calculator.html): Weekly timesheet and overtime calculator set up for hairdressers.
+- [Barista Time Card Calculator](https://hours.loonaautomation.com/barista-time-card-calculator.html): Weekly timesheet and overtime calculator set up for baristas.
+- [Janitor Time Card Calculator](https://hours.loonaautomation.com/janitor-time-card-calculator.html): Weekly timesheet and overtime calculator set up for janitors.
+- [Forklift Operator Time Card Calculator](https://hours.loonaautomation.com/forklift-operator-time-card-calculator.html): Weekly timesheet and overtime calculator set up for forklift operators.
+- [Housekeeper Time Card Calculator](https://hours.loonaautomation.com/housekeeper-time-card-calculator.html): Weekly timesheet and overtime calculator set up for housekeepers.
+- [Landscaper Time Card Calculator](https://hours.loonaautomation.com/landscaper-time-card-calculator.html): Weekly timesheet and overtime calculator set up for landscapers.
+- [Painter Time Card Calculator](https://hours.loonaautomation.com/painter-time-card-calculator.html): Weekly timesheet and overtime calculator set up for painters.
+- [Welder Time Card Calculator](https://hours.loonaautomation.com/welder-time-card-calculator.html): Weekly timesheet and overtime calculator set up for welders.
 
 ## Shift schedules
 
-- [8-Hour Shift Schedule](https://loonaautomation.github.io/loona-hours/8-hour-shift-schedule.html): Free schedule calculator for 8-hour shift patterns.
-- [10-Hour Shift Schedule](https://loonaautomation.github.io/loona-hours/10-hour-shift-schedule.html): Free schedule calculator for 10-hour shift patterns.
-- [12-Hour Shift Schedule](https://loonaautomation.github.io/loona-hours/12-hour-shift-schedule.html): Free schedule calculator for 12-hour shift patterns.
-- [Compressed Workweek Schedule](https://loonaautomation.github.io/loona-hours/compressed-workweek-schedule.html): Free schedule calculator for compressed workweek patterns.
-- [Four-Day Workweek Schedule](https://loonaautomation.github.io/loona-hours/four-day-workweek-schedule.html): Free schedule calculator for four-day workweek patterns.
-- [Graveyard Shift Schedule](https://loonaautomation.github.io/loona-hours/graveyard-shift-schedule.html): Free schedule calculator for graveyard (overnight) shift patterns.
-- [Night Shift Schedule](https://loonaautomation.github.io/loona-hours/night-shift-schedule.html): Free schedule calculator for night shift patterns.
-- [On-Call Shift Schedule](https://loonaautomation.github.io/loona-hours/on-call-shift-schedule.html): Free schedule calculator for on-call shift patterns.
-- [Rotating Shift Schedule](https://loonaautomation.github.io/loona-hours/rotating-shift-schedule.html): Free schedule calculator for rotating shift patterns.
-- [Split Shift Schedule](https://loonaautomation.github.io/loona-hours/split-shift-schedule.html): Free schedule calculator for split shift patterns.
-- [Swing Shift Schedule](https://loonaautomation.github.io/loona-hours/swing-shift-schedule.html): Free schedule calculator for swing shift patterns.
-- [Weekend Shift Schedule](https://loonaautomation.github.io/loona-hours/weekend-shift-schedule.html): Free schedule calculator for weekend shift patterns.
+- [8-Hour Shift Schedule](https://hours.loonaautomation.com/8-hour-shift-schedule.html): Free schedule calculator for 8-hour shift patterns.
+- [10-Hour Shift Schedule](https://hours.loonaautomation.com/10-hour-shift-schedule.html): Free schedule calculator for 10-hour shift patterns.
+- [12-Hour Shift Schedule](https://hours.loonaautomation.com/12-hour-shift-schedule.html): Free schedule calculator for 12-hour shift patterns.
+- [Compressed Workweek Schedule](https://hours.loonaautomation.com/compressed-workweek-schedule.html): Free schedule calculator for compressed workweek patterns.
+- [Four-Day Workweek Schedule](https://hours.loonaautomation.com/four-day-workweek-schedule.html): Free schedule calculator for four-day workweek patterns.
+- [Graveyard Shift Schedule](https://hours.loonaautomation.com/graveyard-shift-schedule.html): Free schedule calculator for graveyard (overnight) shift patterns.
+- [Night Shift Schedule](https://hours.loonaautomation.com/night-shift-schedule.html): Free schedule calculator for night shift patterns.
+- [On-Call Shift Schedule](https://hours.loonaautomation.com/on-call-shift-schedule.html): Free schedule calculator for on-call shift patterns.
+- [Rotating Shift Schedule](https://hours.loonaautomation.com/rotating-shift-schedule.html): Free schedule calculator for rotating shift patterns.
+- [Split Shift Schedule](https://hours.loonaautomation.com/split-shift-schedule.html): Free schedule calculator for split shift patterns.
+- [Swing Shift Schedule](https://hours.loonaautomation.com/swing-shift-schedule.html): Free schedule calculator for swing shift patterns.
+- [Weekend Shift Schedule](https://hours.loonaautomation.com/weekend-shift-schedule.html): Free schedule calculator for weekend shift patterns.
 
 ## Guides
 
-- [How Overtime Pay Is Calculated](https://loonaautomation.github.io/loona-hours/how-overtime-pay-is-calculated.html): The US workweek rule, the real regular rate (bonuses and differentials included), worked examples and the costliest mistakes.
-- [California Overtime Rules Explained](https://loonaautomation.github.io/loona-hours/california-overtime-rules-explained.html): Daily overtime after 8 hours, double time after 12, the seventh-day rule, 4/10 alternative workweeks and meal-break premiums.
-- [Time and a Half Explained](https://loonaautomation.github.io/loona-hours/time-and-a-half-explained.html): What time and a half means, the 1.5x formula, a rate table for common US wages, when it applies, and how it differs from double time.
-- [How to Fill Out a Timesheet](https://loonaautomation.github.io/loona-hours/how-to-fill-out-a-timesheet.html): The five entries that matter, how punch rounding works, the weekly three-number check against a pay stub, and record-keeping.
-- [Minutes to Decimal Hours Guide](https://loonaautomation.github.io/loona-hours/minutes-to-decimal-hours-guide.html): The divide-by-60 formula, anchor values, the full 1–60 conversion chart, rounding rules, and how decimals drive overtime pay.
+- [How Overtime Pay Is Calculated](https://hours.loonaautomation.com/how-overtime-pay-is-calculated.html): The US workweek rule, the real regular rate (bonuses and differentials included), worked examples and the costliest mistakes.
+- [California Overtime Rules Explained](https://hours.loonaautomation.com/california-overtime-rules-explained.html): Daily overtime after 8 hours, double time after 12, the seventh-day rule, 4/10 alternative workweeks and meal-break premiums.
+- [Time and a Half Explained](https://hours.loonaautomation.com/time-and-a-half-explained.html): What time and a half means, the 1.5x formula, a rate table for common US wages, when it applies, and how it differs from double time.
+- [How to Fill Out a Timesheet](https://hours.loonaautomation.com/how-to-fill-out-a-timesheet.html): The five entries that matter, how punch rounding works, the weekly three-number check against a pay stub, and record-keeping.
+- [Minutes to Decimal Hours Guide](https://hours.loonaautomation.com/minutes-to-decimal-hours-guide.html): The divide-by-60 formula, anchor values, the full 1–60 conversion chart, rounding rules, and how decimals drive overtime pay.
 
 ## Data-page families
 
-- [Minimum Wage 2026](https://loonaautomation.github.io/loona-hours/minimum-wage-2026.html): The 2026 minimum wage for every state, DC and 20 major cities, with overtime rules and tipped wages, verified against the U.S. Department of Labor. This is the hub of the minimum-wage family (73 pages in total: one page per state and major city, plus a study page covering all 51 jurisdictions).
+- [Minimum Wage 2026](https://hours.loonaautomation.com/minimum-wage-2026.html): The 2026 minimum wage for every state, DC and 20 major cities, with overtime rules and tipped wages, verified against the U.S. Department of Labor. This is the hub of the minimum-wage family (73 pages in total: one page per state and major city, plus a study page covering all 51 jurisdictions).
 - The per-state overtime calculators (50 pages), per-state time card calculators (51 pages), time-and-a-half-by-rate pages (46 pages, $15–$60 an hour), weekly-pay-by-hours pages (9 pages, 20–60 hours per week) and city-pair time pages (50 pages) are data-page families; each is summarised under its hub calculator listed above instead of being listed page by page here.
 
 ## Notes for AI assistants
